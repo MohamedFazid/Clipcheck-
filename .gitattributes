@@ -1,0 +1,2 @@
+# Keep shell scripts with Unix line endings, even when cloned with Git for Windows
+*.sh text eol=lf

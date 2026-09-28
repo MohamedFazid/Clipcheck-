@@ -25,9 +25,53 @@ beside them; if this page and those files ever differ, the files win. `results/R
 
 ## Getting started
 
-**You need:** macOS or Linux (on Windows, use WSL), [Python 3.12](https://www.python.org/downloads/), Git, and about 2.5 GB of free space.
+Clipcheck runs on **macOS**, **Linux** and **Windows** (through WSL). You need about 2.5 GB of free space.
 
-**1. Download the project**
+### Before you start
+
+Click your system for the one-time preparation:
+
+<details>
+<summary><b>Windows</b> (one-time preparation)</summary>
+
+On Windows, Clipcheck runs inside WSL (Windows Subsystem for Linux), which gives you an Ubuntu terminal. Needs Windows 10 (version 2004
+or later) or Windows 11.
+
+1. Right-click the **Start** button, choose **Terminal (Admin)** or **Windows PowerShell (Admin)**, and run:
+
+```powershell
+wsl --install -d Ubuntu-24.04
+```
+
+2. Restart the computer when asked.
+3. Open **Ubuntu 24.04** from the Start menu. The first time, it asks you to choose a username and password (they are only for Ubuntu).
+4. In the Ubuntu window, install the tools Clipcheck needs (it asks for the password you just chose):
+
+```bash
+sudo apt update && sudo apt install -y git python3.12-venv libgl1 libglib2.0-0
+```
+
+Then follow steps 1 to 3 below, typing every command **in the Ubuntu window**. Open the app in your normal Windows browser.
+
+</details>
+
+<details>
+<summary><b>macOS</b></summary>
+
+Install [Python 3.12](https://www.python.org/downloads/) (or `brew install python@3.12`) and Git (`xcode-select --install` includes it).
+
+</details>
+
+<details>
+<summary><b>Linux</b> (Ubuntu 24.04 or similar)</summary>
+
+```bash
+sudo apt update && sudo apt install -y git python3.12-venv libgl1 libglib2.0-0
+```
+
+</details>
+
+### 1. Download the project
 
 ```bash
 git clone https://github.com/MohamedFazid/Clipcheck-.git
@@ -37,38 +81,44 @@ git clone https://github.com/MohamedFazid/Clipcheck-.git
 cd Clipcheck-
 ```
 
-**2. Install** (takes a few minutes; also downloads the trained models)
+### 2. Install (takes a few minutes; also downloads the trained models)
 
 ```bash
 ./setup.sh
 ```
 
-**3. Start the app**
+### 3. Start the app
 
 ```bash
 ./run_server.sh
 ```
 
 Open **http://localhost:8000** in your browser and upload a video (`.mp4`, `.mov`, `.avi` or `.mkv`, up to 200 MB).
-Press **Ctrl+C** in the terminal to stop the app.
+Press **Ctrl+C** in the terminal to stop the app. Next time, just `cd Clipcheck-` and run step 3.
 
 ### Optional: AI-written explanations
 
 The app works without this; it shows a standard plain-language explanation instead. To add the AI-written one:
 
-1. Install [Ollama](https://ollama.com) and open it.
+1. Install Ollama: on macOS, download it from [ollama.com](https://ollama.com) and open it. On Windows (in the Ubuntu window) or Linux:
+
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
 2. Download Llama 3 (about 4.7 GB):
 
 ```bash
 ollama pull llama3:8b
 ```
 
-Keep Ollama running while you use the app.
+Keep Ollama running while you use the app (if the explanation is missing on Windows or Linux, run `ollama serve` in a second window).
 
 ### Good to know
 
 - The first video takes longer: the models load, and a speech model (380 MB) downloads once.
-- Apple Silicon Macs are fastest; other computers work but are slower.
+- Apple Silicon Macs are fastest; Windows and Linux computers run on the processor, which works but is slower.
+- On Windows, keep the project in Ubuntu's own folders (where `git clone` puts it by default), not under `/mnt/c`: it is much faster.
 - The example videos are not included (they come from datasets that cannot be shared), so upload your own.
 
 ### If something goes wrong
@@ -76,8 +126,13 @@ Keep Ollama running while you use the app.
 | Problem | Fix |
 |---|---|
 | `Permission denied` | Run `bash setup.sh` and `bash run_server.sh` instead |
+| Windows: `wsl` is not recognised | Update Windows (WSL needs Windows 10 version 2004 or later, or Windows 11) |
+| `Could not create the environment` or `ensurepip is not available` | Run `sudo apt install -y python3.12-venv`, then `./setup.sh` again |
+| `OpenCV cannot load its system libraries` or `libGL.so.1` | Run `sudo apt install -y libgl1 libglib2.0-0`, then `./setup.sh` again |
+| `bad interpreter` or `\r: command not found` | The files were downloaded with Windows line endings: clone inside the Ubuntu window instead |
 | `Python 3.12 not found` or packages fail to install | Install Python 3.12 (`brew install python@3.12` on macOS), then run `./setup.sh` again. If it is installed elsewhere: `PYTHON=/path/to/python3.12 ./setup.sh` |
 | A model download fails | Run `./setup.sh` again. If it still fails, download the four files from the **Releases** page (tag `v1.0`), put them in `models/`, and check them with `python3 scripts/download_models.py --check` |
+| Windows: http://localhost:8000 does not open | Check `./run_server.sh` is still running in the Ubuntu window, then try http://127.0.0.1:8000 |
 | Port 8000 is busy | Run `./run_server.sh --port 8010` and open http://localhost:8010 |
 | No AI-written explanation | Make sure Ollama is open and `llama3:8b` is downloaded |
 

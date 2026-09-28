@@ -12,6 +12,16 @@ history and file timestamps where the exact date isn't otherwise obvious.
 
 ---
 
+## 2026-09-28 20:22 (released on GitHub; Windows instructions)
+
+Pushed to https://github.com/MohamedFazid/Clipcheck- and published release v1.0 with the four weight files. A fresh clone ran
+`./setup.sh` end to end (weights downloaded and verified) and the app analysed a test clip. `setup.sh` now requires Python 3.12, searches
+the usual install locations, rebuilds a `.venv` made with an older Python, and prints the Ubuntu fix when `venv` or OpenCV's system
+libraries are missing. The README's Getting started gained per-system preparation, including Windows through WSL (Ubuntu 24.04);
+the Windows steps are documented, not tested on a Windows machine. `.gitattributes` keeps `.sh` files with Unix line endings.
+
+---
+
 ## 2026-09-28 19:35 (comments and docstrings shortened for release)
 
 Every comment block and docstring in the code is now at most three lines (133 over three lines rewritten, 22 three-line comment blocks

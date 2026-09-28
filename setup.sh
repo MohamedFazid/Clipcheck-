@@ -39,7 +39,11 @@ if [ ! -x .venv/bin/python ]; then
   VER="$(py_version "$BASE_PY")"
   if [ "$VER" != "3.12" ]; then echo "Note: using Python $VER; the project was tested with 3.12."; fi
   echo "==> Creating .venv with $BASE_PY (Python $VER)"
-  "$BASE_PY" -m venv .venv
+  if ! "$BASE_PY" -m venv .venv; then
+    rm -rf .venv
+    echo "Could not create the environment. On Ubuntu/WSL run: sudo apt install -y python3.12-venv, then ./setup.sh again."
+    exit 1
+  fi
 fi
 PY=.venv/bin/python
 
@@ -48,6 +52,10 @@ echo "==> Installing the app requirements into .venv (several minutes the first 
 if ! "$PY" -m pip install -r requirements-app.txt; then
   echo "Package install failed. Check your internet connection, then run ./setup.sh again."
   echo "If it keeps failing, start clean with Python 3.12: rm -rf .venv && PYTHON=/path/to/python3.12 ./setup.sh"
+  exit 1
+fi
+if ! "$PY" -c "import cv2" >/dev/null 2>&1; then
+  echo "OpenCV cannot load its system libraries. On Ubuntu/WSL run: sudo apt install -y libgl1 libglib2.0-0, then ./setup.sh again."
   exit 1
 fi
 
