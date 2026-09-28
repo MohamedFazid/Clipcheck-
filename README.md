@@ -76,7 +76,7 @@ Keep Ollama running while you use the app.
 | Problem | Fix |
 |---|---|
 | `Permission denied` | Run `bash setup.sh` and `bash run_server.sh` instead |
-| Packages fail to install | Check you have Python 3.12, delete the `.venv` folder, run `PYTHON=python3.12 ./setup.sh` |
+| `Python 3.12 not found` or packages fail to install | Install Python 3.12 (`brew install python@3.12` on macOS), then run `./setup.sh` again. If it is installed elsewhere: `PYTHON=/path/to/python3.12 ./setup.sh` |
 | A model download fails | Run `./setup.sh` again. If it still fails, download the four files from the **Releases** page (tag `v1.0`), put them in `models/`, and check them with `python3 scripts/download_models.py --check` |
 | Port 8000 is busy | Run `./run_server.sh --port 8010` and open http://localhost:8010 |
 | No AI-written explanation | Make sure Ollama is open and `llama3:8b` is downloaded |
@@ -279,7 +279,7 @@ MAINTAINER CHECKLIST before submission (keep this README honest; see docs/LESSON
  [x] Explanation human evaluation scored (E2)
  [x] User-testing round 2; round 1 stays provisional (not confirmable)
  [x] GITHUB_REPO set in scripts/download_models.py
- [ ] Weights release published (tag v1.0)
+ [x] Weights release published (tag v1.0)
  [ ] CI badge once the GitHub remote exists
  [ ] Re-check every number above against results/numbers.md and the ledger
 -->
