@@ -1,22 +1,6 @@
-"""Build the four-category evaluation set from LAV-DF (Cai et al., 2022, arXiv 2204.06228): an independent set with real generators.
+"""Build the four-category set from LAV-DF test clips (50 per category, seed 42, sampling frozen before any scoring).
 
-WHY. Every four-category set so far (eval_fallback/, eval_heldout/) muxes unrelated FF++ video with ASVspoof audio, so the pairing is
-artificial and the audio is in the training corpus's domain. LAV-DF is a published set with all four modification types, made with SV2TTS
-voice cloning (audio) and Wav2Lip lip-sync (video) on VoxCeleb2 speakers, so it tests both branches on data neither has seen.
-
-SAMPLING RULE (frozen 2026-09-22 before any model was run on these clips; the script takes no score as input):
-    population : LAV-DF clips with split == "test" whose bytes lie wholly inside the parts on disk (part .006 gives 2,532)
-    categories : RVRA = not modify_video and not modify_audio    RVFA = not modify_video and modify_audio
-                 FVRA = modify_video and not modify_audio          FVFA = modify_video and modify_audio
-    sample     : 50 per category, random.Random(42) over the file-name-sorted population; NO filter on duration, speech, face or score
-    labels     : video_label 'fake' iff modify_video; audio_label 'spoof' iff modify_audio (LAV-DF's own metadata)
-
-KNOWN LIMITS, recorded in the manifest: VoxCeleb2 speakers are unseen by the audio SVM; Wav2Lip is not one of the three training methods
-of the video model; fake segments average 0.65 s inside clips of up to 20 s, so whole-clip scores can dilute them; faces are 224x224; the
-video-fake and audio-fake segments of one clip need not overlap in time; clips are not FakeAVCeleb.
-
-    /opt/anaconda3/bin/python scripts/build_lavdf_eval_set.py --parts external_datasets/LAV-DF_parts/LAV-DF.zip.006
-"""
+    python scripts/build_lavdf_eval_set.py --parts external_datasets/LAV-DF_parts/LAV-DF.zip.006"""
 import argparse
 import json
 import random

@@ -1,16 +1,4 @@
-"""Pipeline-correctness tests for the audio branch (scripts/audio_branch.py).
-
-IMPORTANT (no fabrication): these are PIPELINE CORRECTNESS tests only. They
-verify that extract_audio_16k(), embed_waveform(), and AudioSpoofSVM execute
-correctly and produce outputs of the right shape/type. They are NOT
-anti-spoofing validation and prove nothing about spoof-detection accuracy:
-AudioSpoofSVM here is fit on tiny synthetic random data, not ASVspoof 2019 LA,
-and its scores carry no genuine bona-fide/spoof meaning. Real anti-spoofing
-evaluation remains pending (see Chapter 5 of the Draft Project Report).
-
-Runs under pytest, or standalone:
-    /opt/anaconda3/bin/python tests/test_audio_branch.py
-"""
+"""Pipeline-correctness tests for the audio branch on synthetic data (shapes and types, not spoofing accuracy)."""
 
 import os
 import sys
@@ -26,9 +14,7 @@ sys.path.insert(0, str(PROJECT_ROOT / 'scripts'))
 from audio_branch import extract_audio_16k, embed_waveform, load_encoder, AudioSpoofSVM, SR  # noqa: E402
 
 DEMO = PROJECT_ROOT / 'demo_videos'
-# FaceForensics++ demo clips are silent by design (confirmed empirically: see
-# app.py's own comment on this). sample_with_audio.mp4 is the one bundled clip
-# with a real audio track.
+# The FaceForensics++ demo clips are silent; sample_with_audio.mp4 is the one bundled clip with an audio track.
 SILENT_CLIP = DEMO / 'original_sequences' / 'youtube' / 'c23' / 'videos' / '183.mp4'
 AUDIO_CLIP = DEMO / 'sample_with_audio.mp4'
 
@@ -66,9 +52,7 @@ def test_embed_waveform_returns_768d_embedding():
 
 
 def test_audio_spoof_svm_fit_and_score_run_without_error():
-    # Small synthetic 2-class embedding-shaped dataset (768-d random vectors).
-    # This is NOT real audio embeddings and NOT a spoofing-detection
-    # validation -- it only checks the sklearn wrapper's fit/score plumbing.
+    # Random 768-d vectors: checks the SVM wrapper's fit/score plumbing, not spoof detection.
     rng = np.random.default_rng(42)
     X = rng.standard_normal((20, 768)).astype(np.float32)
     y = np.array([0, 1] * 10)

@@ -1,15 +1,6 @@
-"""Promote a trained video checkpoint to the model the app serves.
+"""Promote a trained checkpoint to models/best_model.pth and write models/shipped_model.json (dry run unless --apply).
 
-Copies models/runs/<tag>/seed<N>.pth to models/best_model.pth (backing up the current one) and writes
-models/shipped_model.json, which records the architecture (read by video_infer.load_models), the held-out
-clip-level accuracy that fusion.py uses as the video weight, and the evidence for the choice. Dry run by default.
-
-Choose the model on VALIDATION evidence, not test (docs/EXPERIMENTS.md). After shipping, restart the server and
-re-run every evaluation that consumed the video model (4-condition, hybrid, threshold T, Celeb-DF, latency).
-
-    /opt/anaconda3/bin/python scripts/ship_model.py --tag aug_vidsplit --seed 43            # plan only
-    /opt/anaconda3/bin/python scripts/ship_model.py --tag aug_vidsplit --seed 43 --apply
-"""
+    python scripts/ship_model.py --tag aug_vidsplit --seed 43 [--apply]"""
 import argparse
 import hashlib
 import json

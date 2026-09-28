@@ -1,7 +1,6 @@
 #!/bin/bash
-# Multi-method training (Deepfakes + FaceSwap + NeuralTextures, class-balanced via frames_multi/) for the
-# leading backbones, identical recipe to the single-method bake-off (augmentation on, 10 epochs, seeds 42-44).
-# Waits for the backbone bake-off queue to finish so the GPU is never shared. Idempotent via run_cell.sh.
+# Multi-method training (Deepfakes + FaceSwap + NeuralTextures) for the leading backbones, same recipe as the bake-off.
+# Waits for the bake-off queue so the GPU is never shared.
 ROOT="$(cd "$(dirname "$0")/../.." && pwd -P)"; cd "$ROOT" || exit 1
 PY="${PY:-/opt/anaconda3/bin/python}"
 until grep -q "QUEUE bakeoff_video COMPLETE" results/logs/events.log; do sleep 60; done

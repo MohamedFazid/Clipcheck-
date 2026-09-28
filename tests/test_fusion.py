@@ -1,12 +1,4 @@
-"""Unit tests for the disagreement-aware, accuracy-weighted fusion logic
-(scripts/fusion.py). Verifies the module implements exactly the algorithm
-specified in the Draft Project Report, Chapter 3: accuracy-weighted average on
-agreement, no averaging + named-modality flag on disagreement.
-
-Pure-logic tests -- no model, no data. Runs under pytest, or standalone:
-
-    /opt/anaconda3/bin/python tests/test_fusion.py
-"""
+"""Unit tests for disagreement-aware fusion (scripts/fusion.py): weighted average on agreement, named branch on disagreement."""
 
 import sys
 from pathlib import Path
@@ -28,15 +20,8 @@ def test_video_only_passthrough():
 
 
 def test_agreement_uses_accuracy_weighted_average():
-    # Explicit accuracy values, not the module defaults: which branch is more
-    # accurate right now is real, measured, on-disk state (fusion.AUDIO_ACCURACY)
-    # that changes as the audio SVM gets trained/retrained -- it was ~0.5
-    # (untrained placeholder) when this test was first written, then became
-    # 0.9765 (higher than video's 0.9639) once the full ASVspoof run finished,
-    # silently flipping which branch this test's hardcoded assumption favoured.
-    # Pinning both accuracies here makes the test assert the WEIGHTING
-    # MECHANISM (higher accuracy -> fused score sits closer to that branch),
-    # not a specific real-world ordering that can change under it.
+    # Explicit accuracies, not the module defaults, so the test checks the weighting mechanism
+    # (the fused score sits closer to the more accurate branch), not which branch is currently more accurate.
     r = fuse(0.90, 0.80, threshold_T=0.5, video_accuracy=0.95, audio_accuracy=0.60)
     assert r.verdict == 'FAKE'
     assert r.disagreement is False

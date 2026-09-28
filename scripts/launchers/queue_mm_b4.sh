@@ -1,7 +1,6 @@
 #!/bin/bash
-# Multi-method EfficientNet-B4: the architecture promised in the PPR and Draft Report, never trained on the multi-method
-# data (only B0, ResNet-50, Xception and ConvNeXt-Tiny were). Same recipe as the other multi-method runs (V10, V11);
-# only --arch changes. The ship rule that judges this run is frozen in docs/EXPERIMENTS.md (V14), written before the run.
+# Multi-method EfficientNet-B4 (the PPR architecture), same recipe as the other multi-method runs;
+# judged by the ship rule frozen in docs/EXPERIMENTS.md (V14).
 ROOT="$(cd "$(dirname "$0")/../.." && pwd -P)"; cd "$ROOT" || exit 1
 PY="${PY:-/opt/anaconda3/bin/python}"
 mkdir -p results/logs/multimethod

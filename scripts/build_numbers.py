@@ -1,14 +1,6 @@
-"""Build results/numbers.json and results/numbers.md: the single source of every reported number.
+"""Build results/numbers.json and numbers.md from result files: the single source of every reported number.
 
-Everything is computed from result files (per-run metrics.json, history.json, train_config.json; the cross-method,
-audio and evaluation JSONs). Nothing is typed in by hand, so the report, README and app can quote from here and a
-stale figure cannot survive in one document and contradict another (docs/LESSONS.md L8).
-
-Legacy runs on the superseded leaking split (tags '', aug, reg) are included, clearly marked, because the report needs
-the before/after comparison. Do not quote them as valid results.
-
-    /opt/anaconda3/bin/python scripts/build_numbers.py
-"""
+    python scripts/build_numbers.py"""
 import json
 import sys
 import os

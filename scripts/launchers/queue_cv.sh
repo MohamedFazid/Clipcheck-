@@ -1,7 +1,5 @@
 #!/bin/bash
-# 5-fold identity-grouped cross-validation of the leading candidate (Xception, multi-method), fixed seed 42, so results
-# vary with the DATA partition. Waits for the ConvNeXt multi-method queue so two trainings never share the GPU.
-# Idempotent via run_cell.sh. Output: results/cv/cv5_xcep_mm/cv_summary.md
+# 5-fold identity-grouped cross-validation of Xception multi-method (seed 42). Output: results/cv/cv5_xcep_mm/
 ROOT="$(cd "$(dirname "$0")/../.." && pwd -P)"; cd "$ROOT" || exit 1
 PY="${PY:-/opt/anaconda3/bin/python}"
 until grep -q "QUEUE mm_convnext COMPLETE" results/logs/events.log; do sleep 60; done

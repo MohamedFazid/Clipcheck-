@@ -1,7 +1,8 @@
 # Models (model card)
 
-The four trained model files the application loads. They are **not in git** (too large); they are published as GitHub release assets.
-Check a downloaded copy against the SHA-256 below. Every figure here comes from the result
+The four trained model files the application loads. They are **not in git** (too large); they are published as assets of the GitHub
+release tagged `v1.0`. `./setup.sh` or `python3 scripts/download_models.py` downloads them into this folder and checks each against the
+SHA-256 below (`--check` verifies without downloading). Every figure here comes from the result
 file named beside it; the ledger ids refer to `docs/EXPERIMENTS.md`.
 
 | File | What it is | Size | SHA-256 |
@@ -49,9 +50,20 @@ Python 3.12.4, torch 2.12.1, on an Apple M2 Pro (video model on MPS).
 
 ## Intended use and limits
 
+The weights are shared for non-commercial research and education only: the video classifier and the video out-of-domain check are
+derived from FaceForensics++, whose terms of use restrict it to that purpose.
+
 A research prototype for the CM3070 project: it gives likelihoods, not proof. It was trained on three FaceForensics++ methods and one
 speech corpus, is at or below chance on the independent LAV-DF set, and may call genuine speech from other corpora synthetic. The full list
 of limits is in the root `README.md`.
 
 Loading note: the saved objects record the module names `audio_branch.AudioSpoofSVM` and `ood_gate.MahalanobisGate`, so
 `scripts/audio_branch.py` and `scripts/ood_gate.py` must stay importable under those names.
+
+## Publishing the weights (maintainer)
+
+After the repository is on GitHub, attach the four files to a release tagged `v1.0` (GitHub web page: Releases, Draft a new release, or
+with the GitHub CLI: `gh release create v1.0 models/best_model.pth models/*.joblib --title "Model weights v1.0"`), then set `GITHUB_REPO`
+in `scripts/download_models.py` to `"<owner>/<repo>"` so ZIP downloads, which have no git remote, also know where to look. If a file is
+retrained, publish a new tag and update `RELEASE_TAG`, the checksums in the script and the table above together
+(`tests/test_download_models.py` fails if the script and this table disagree).

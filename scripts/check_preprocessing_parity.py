@@ -1,20 +1,6 @@
-"""Does the app see the same thing the model was evaluated on?
+"""Check the app's frame sampling and in-memory crops score the same as the stored JPEG crops the model was evaluated on.
 
-Training and every evaluation used face crops that were saved as JPEG at 1 frame per second (scripts/extract_frames.py).
-The app instead samples about 3 frames per second and keeps the crops in memory (video_infer.sample_face_crops). If the two
-give different scores, the numbers in the report describe a pipeline the app does not run. This script measures that, on the
-test-split videos only, for one trained model, three ways:
-
-  A  stored JPEG crops       what training and evaluate.py used
-  B  the app's own path      video -> frame sampling -> MTCNN -> in-memory crops (video_infer.sample_face_crops)
-  C  B's crops, JPEG round-tripped at PIL's default quality (75, as extract_frames saved them): isolates the JPEG effect
-     from the sampling effect (B vs C = JPEG only; A vs C = sampling and face selection only)
-
-Videos: the 22 test-split real videos plus the 22 test-split fakes of each of Deepfakes, FaceSwap and NeuralTextures.
-Needs MTCNN, so run it in the deepfake-detect environment.
-
-    /opt/anaconda3/envs/deepfake-detect/bin/python scripts/check_preprocessing_parity.py --tag mm_xcep_vidsplit
-"""
+    python scripts/check_preprocessing_parity.py --tag mm_xcep_vidsplit   # app env (needs MTCNN)"""
 import argparse
 import io
 import json

@@ -1,11 +1,6 @@
-"""Aggregate per-seed evaluation metrics into mean +/- std for the report.
+"""Aggregate per-seed metrics (results/runs/seed*/metrics.json) into mean +/- std in results/summary/.
 
-Reads every results/runs/seed*/metrics.json produced by evaluate.py and writes:
-  * results/summary/metrics_summary.json  (machine-readable)
-  * results/summary/metrics_summary.md    (report-ready table)
-
-Usage:  python scripts/aggregate_runs.py
-"""
+    python scripts/aggregate_runs.py"""
 
 import os
 import sys
@@ -54,10 +49,8 @@ def main() -> None:
             'values': vals.tolist(),
         }
 
-    # ── Video-level metrics (evaluate.py's mean-aggregated-per-clip numbers) ──
-    # Primary once present: matches what the deployed pipeline reports (one
-    # score per clip) and avoids pseudo-replicating ~19 correlated frames per
-    # video as independent test cases.
+    # Video-level metrics (one score per clip, as the app reports) are primary once present;
+    # they avoid counting ~19 correlated frames per video as independent samples.
     if all('video_level' in r for r in runs):
         summary['n_test_videos'] = [r['video_level']['n_videos'] for r in runs]
         summary['per_metric_video'] = {}

@@ -1,7 +1,5 @@
 #!/bin/bash
-# Extract MTCNN face crops for ALL videos of the extra FF++ methods (needs the deepfake-detect env for MTCNN).
-# Output: frames_methods/<Method>/<pair>/frame_*.jpg. Test-split pairs were already extracted; re-doing them
-# is deterministic and harmless.
+# Extract MTCNN face crops for all videos of the extra FF++ methods into frames_methods/<Method>/ (app env).
 ROOT="$(cd "$(dirname "$0")/../.." && pwd -P)"; cd "$ROOT" || exit 1
 PYE=/opt/anaconda3/envs/deepfake-detect/bin/python
 for m in FaceSwap NeuralTextures; do

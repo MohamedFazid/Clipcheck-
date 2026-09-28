@@ -1,22 +1,6 @@
-"""Fit and calibrate the two out-of-domain gates (scripts/ood_gate.py; docs/EXPERIMENTS.md O1). Rules fixed 2026-09-22 03:10, before any gate
-was fitted and before any gate result on any set existed.
-
-DATA ROLES (no set plays two roles):
-    fit        audio: ASVspoof 2019 LA TRAIN embeddings (the SVM's own training data, cached)
-               video: FF++ TRAIN-split face crops of frames_multi/ (the shipped Xception's own training crops), frozen split manifest
-    calibrate  audio: ASVspoof DEV embeddings; video: FF++ VALIDATION-split crops. Threshold = 97.5th percentile of their distances
-               (expected in-domain abstention about 2.5% per sample; a clip's video distance is the MEDIAN over its crops, so fewer clips).
-    choose     variant 'pooled' vs 'class' (scripts/ood_gate.py) per branch, on the LAV-DF DEV tuning clips only
-               (results/ood_gate/features/lavdf_dev.joblib): the variant that flags MORE of them; tie -> 'pooled'.
-    test       everything else (scripts/eval_ood_gate.py): LAV-DF TEST (eval_lavdf/), DeepfakeTIMIT, Celeb-DF-v2, the in-domain sets.
-
-SHIP CRITERIA (checked by scripts/eval_ood_gate.py, stated here so they cannot move):
-    (a) per branch, in-domain abstention on eval_heldout/ + eval_fallback/ clips through the app path <= 5%; a branch failing it is not shipped
-    (b) disagreement-aware accuracy on eval_heldout/, counting INCONCLUSIVE as not correct, falls by no more than 2 pp
-    (c) on LAV-DF TEST, the number of confident WRONG verdicts (a REAL/FAKE/PARTIAL verdict that is wrong) falls
-
-    /opt/anaconda3/envs/deepfake-detect/bin/python scripts/fit_ood_gates.py
-"""
+"""Fit and calibrate the out-of-domain gates (fit on training data, threshold at the 97.5th percentile of validation data).
+Ship criteria were fixed before fitting and are checked by eval_ood_gate.py.
+    python scripts/fit_ood_gates.py   # app env"""
 import json
 import subprocess
 import sys
@@ -62,7 +46,7 @@ def ffpp_crop_features():
 def main():
     FEAT.mkdir(parents=True, exist_ok=True)
     dev = joblib.load(FEAT / 'lavdf_dev.joblib')
-    report = {'percentile': PERCENTILE, 'rules': 'see module docstring', 'branches': {}}
+    report = {'percentile': PERCENTILE, 'rules': 'see docs/EXPERIMENTS.md O1', 'branches': {}}
 
     # ---- audio ----
     tr = np.load(EMB / 'train_25380.npz', allow_pickle=True)

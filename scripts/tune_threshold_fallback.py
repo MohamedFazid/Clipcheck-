@@ -1,23 +1,6 @@
-"""Grid-search threshold_T against ANY results file produced by
-eval_fallback_4condition.py, replacing FakeAVCeleb in Ch3.6's originally
-specified tuning procedure until it (or an equivalent) is obtained.
+"""Grid-search the disagreement threshold T on any 4-condition results file (F1 on single-modality cases).
 
-Dataset-agnostic like eval_fallback_4condition.py: this script only reads
-the per_clip_results list and the category labels already in it. Point
---results at whichever dataset's output you want to tune against; no code
-change needed to swap datasets.
-
-Criterion (matching Ch3.6's own stated method): select T that maximises F1
-on correctly identifying genuine single-modality-manipulation cases (RVFA,
-FVRA) as "disagreement", while minimising false-disagreement on genuine
-agreement cases (RVRA, FVFA) -- i.e. treat "should this clip disagree" as
-the binary target and T as the decision threshold on |p_video - p_audio|.
-
-Run: /opt/anaconda3/bin/python scripts/tune_threshold_fallback.py \\
-    [--results results/fallback_eval/fallback_4condition_results.json] \\
-    [--out results/fallback_eval/threshold_tuning.json]
-(no torch/facenet needed -- just reads the saved JSON)
-"""
+    python scripts/tune_threshold_fallback.py [--results <results.json>] [--out <threshold_tuning.json>]"""
 import argparse
 import json
 from pathlib import Path

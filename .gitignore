@@ -34,6 +34,7 @@ eval_lavdf/*/
 # --- Model weights (published as GitHub Release assets, see models/README.md) ---
 models/*.pth
 models/*.joblib
+models/*.part
 models/runs/
 
 # --- Bulky or machine-specific results ---------------------------------------

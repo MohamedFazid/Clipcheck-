@@ -1,32 +1,5 @@
-"""Regression tests for the train/val/test split and the augmentation fix.
-
-These lock in the properties Chapter 4.2/4.3/5.6 of the report depend on:
-
-1. NO VIDEO OR IDENTITY LEAKAGE. Verified directly (see DEV_LOG) that the
-   PREVIOUS frame-level `random_split` put 100% of test-set videos, and 100%
-   of val-set videos, also in the training set -- ~19 near-duplicate frames
-   per video were scattered independently across all three splits. The split
-   is now grouped at the identity level via `utils.grouped_video_split`
-   (every video, and every FF++ Deepfakes reciprocal identity pair built from
-   it, is assigned to exactly one split). This is the fix for the supervisor
-   feedback that flagged implausibly high scores (AUC ~0.998) as a likely
-   overfitting/leakage symptom. If this test ever fails, every video-branch
-   number in the report is compromised the same way again.
-
-2. REPRODUCIBILITY. The grouped split is deterministic for a fixed
-   SPLIT_SEED, so a retrained model is still evaluated on the same held-out
-   videos as the reported figures.
-
-3. THE AUGMENTATION BUG IS FIXED, AND STAYS FIXED. The old code gave all three
-   splits one shared dataset object, so the last `.transform =` assignment won
-   and train-time augmentation never actually ran. These tests assert the
-   training split now genuinely augments while validation/test do not -- the
-   exact property that silently regressed before. Unrelated to (1)/(2) above
-   and unaffected by the split-grouping change.
-
-Pure data-layer tests: no model, no GPU, no training. Runs under pytest, or:
-    /opt/anaconda3/bin/python tests/test_data_split.py
-"""
+"""Regression tests for the identity-disjoint split (no video or identity leakage, deterministic)
+and for the augmentation fix (training crops are augmented, validation and test are not)."""
 
 import sys
 from pathlib import Path
@@ -49,9 +22,7 @@ needs_frames = pytest.mark.skipif(not FRAMES_DIR.exists(), reason='frames/ not p
 IMG_SIZE = 224
 
 EXPECTED_TOTAL = 7566
-# Sizes produced by the identity-grouped split (deterministic for SPLIT_SEED=42).
-# Close to, but not exactly, 80/10/10 by frame count since video length varies
-# and whole identity-pair groups (~4 videos each) are assigned atomically.
+# Split sizes for SPLIT_SEED=42: close to 80/10/10 by frames, since whole identity groups are assigned.
 EXPECTED_TRAIN, EXPECTED_VAL, EXPECTED_TEST = 6072, 736, 758
 
 _val_t = transforms.Compose([
@@ -109,13 +80,7 @@ def test_split_is_deterministic_for_a_fixed_seed():
 
 @needs_frames
 def test_no_video_or_identity_leakage_between_splits():
-    """The actual leakage fix. Regression test for the bug found via
-    supervisor feedback: verified the old frame-level split put 100% of
-    test/val videos also in train. Checks both that no literal video folder
-    is split across sets, AND that no FF++ reciprocal identity pair (e.g.
-    '036_035' / '035_036' / real/036 / real/035) has its two component
-    identities land in different sets, which a video-folder-only split could
-    still allow."""
+    """No video folder is split across sets, and no FF++ reciprocal identity pair lands in two different sets."""
     full = datasets.ImageFolder(str(FRAMES_DIR))
     tr, va, te = _split_indices(full)
 
@@ -167,10 +132,7 @@ def test_splits_are_disjoint():
 
 @needs_frames
 def test_training_split_actually_augments():
-    """The bug fix itself: two reads of the same training sample must differ,
-    because RandomHorizontalFlip / ColorJitter are stochastic. Under the old
-    shared-dataset code this returned identical tensors (augmentation silently
-    disabled) — that is exactly the regression this guards against."""
+    """Two reads of the same training sample must differ (random flip/jitter), proving augmentation runs."""
     train_source = datasets.ImageFolder(str(FRAMES_DIR), transform=_train_t)
     tr, _, _ = _split_indices(train_source)
     train_set = Subset(train_source, list(tr))

@@ -1,43 +1,6 @@
-"""Human-evaluation harness for the explanation layer (Chapter 3.6).
+"""Human evaluation of the explanation layer: `generate` builds cases and a rating packet, `score` computes agreement and kappa.
 
-Chapter 3.6 specifies: 50 generated explanations, two independent raters, three
-dimensions (factual grounding / score accuracy / absence of hallucination),
-each scored 0 (fails) / 1 (partial) / 2 (passes), with inter-rater agreement
-reported as Cohen's Kappa.
-
-This script provides both halves of that:
-
-    generate  ->  builds the case set, generates a real explanation for each,
-                  and writes a rating packet (markdown, for the raters to read)
-                  plus one blank rating sheet per rater (CSV, to fill in).
-
-    score     ->  reads the two completed sheets, and reports per-dimension
-                  scores, raw agreement, and Cohen's Kappa (unweighted and
-                  quadratic-weighted).
-
-FULL RUN (Chapter 3.6): `generate --from-results <4-condition results json> --n 50` draws 50 clips at random (fixed seed) from the
-evaluation set's saved per-clip results and explains each clip's REAL video and audio scores through the current fusion logic.
-FakeAVCeleb was never obtained, so this is the self-built fallback set (register D-A/D-J). The raw LLM text is what the raters
-see (that is the design under test); the automatic faithfulness screen is recorded next to it as supplementary evidence,
-including how often it would have rejected the text.
-
-PILOT vs FULL RUN (stated honestly). Without --from-results this script builds the earlier PILOT on:
-  * REAL cases  -- the live video branch run over the bundled demo clips, which
-    is exactly what the deployed pipeline currently produces (audio=None); and
-  * SPECIFIED cases -- score combinations chosen to cover the decision space
-    (agreement, both disagreement directions, boundary values). These are
-    labelled 'specified' in every artifact: they exercise the explanation
-    layer's grounding, but they are NOT real detections, because the audio
-    branch has no trained classifier.
-
-Running the pilot first is deliberate: it tests whether the RUBRIC itself
-discriminates before the 50-sample run depends on it.
-
-Usage:
-    python scripts/explanation_eval.py generate --n 16
-    python scripts/explanation_eval.py generate --n 16 --include-real-clips
-    python scripts/explanation_eval.py score --rater1 <csv> --rater2 <csv>
-"""
+    python scripts/explanation_eval.py generate --from-results <results.json> --n 50 | score --rater1 <csv> --rater2 <csv>"""
 
 import os
 import sys
@@ -93,12 +56,7 @@ while still inventing an unsupported detail (3=0).
 
 
 def build_cases(n, include_real_clips=False, threshold_T=THRESHOLD_T_DEFAULT):
-    """Return a list of {case_id, source, p_video, p_audio, note} dicts.
-
-    'real' cases come from the live video branch on bundled clips (audio=None,
-    the true current pipeline state). 'specified' cases are chosen score pairs
-    that cover the decision space the fusion logic branches on.
-    """
+    """Pilot cases: 'real' from the video branch on bundled clips, 'specified' score pairs covering the fusion decision space."""
     cases = []
 
     if include_real_clips:
@@ -155,11 +113,7 @@ def build_cases(n, include_real_clips=False, threshold_T=THRESHOLD_T_DEFAULT):
 
 
 def build_cases_from_results(results_path, n=50, seed=42, threshold_T=THRESHOLD_T_DEFAULT):
-    """Cases drawn AT RANDOM (fixed seed, recorded) from an evaluation set's saved per-clip results, as PPR 3.6 specifies.
-
-    `results_path` is a results JSON written by scripts/eval_fallback_4condition.py (it holds each clip's real p_video and
-    p_audio). Ground truth (category, labels) and the clip id (which encodes the category) are kept in the case metadata but are NOT part of what the raters read: they
-    judge the explanation against the structured input only, never against whether the clip is really fake."""
+    """Cases drawn at random (fixed seed) from saved 4-condition results. Ground truth stays in metadata and is never shown to raters."""
     d = json.load(open(results_path))
     clips = d['per_clip_results']
     if n > len(clips):
@@ -182,10 +136,8 @@ def build_cases_from_results(results_path, n=50, seed=42, threshold_T=THRESHOLD_
 
 
 def anomalies_for_cases(cases, project_root):
-    """Real, timestamped video-anomaly windows for each case, by re-running the actual video branch on each case's real
-    clip (`output_path`), exactly as server.py does for a live upload -- never estimated from the stored aggregate
-    score. Returns {case_id: anomalies_list}; a case with no output_path or no detectable face is simply absent (its
-    caller then gets anomalies=None, the honest 'not available' state, not a fabricated one)."""
+    """Real timing windows per case, by re-running the video branch on each clip as the server does.
+    Cases with no clip or no face are left out (the caller then gets None, 'not available')."""
     from video_infer import load_models, analyse_video_file
     sys.path.insert(0, str(project_root))
     import server as server_module           # reuses the exact _frame_anomalies / fps-probing the app itself uses
@@ -388,11 +340,7 @@ def cmd_score(args):
         pooled_b += b
 
         agree = float(np.mean([x == y for x, y in zip(a, b)]))
-        # Cohen's Kappa is undefined when neither rater's scores vary: the
-        # expected-agreement term equals observed agreement and the ratio is
-        # 0/0. sklearn returns nan/0 here, which reads as "no agreement" and is
-        # exactly backwards. Detect and report it rather than printing a
-        # misleading number (the kappa paradox).
+        # Kappa is undefined (0/0) when neither rater's scores vary; report that instead of sklearn's misleading nan/0.
         if len(set(a)) == 1 and len(set(b)) == 1:
             k_txt = w_txt = '_undefined_'
             degenerate.append(d)
@@ -404,10 +352,8 @@ def cmd_score(args):
             except Exception:
                 w_txt = 'n/a'
             k_txt = f'{k:.3f}'
-            # High agreement with near-zero/negative kappa is the kappa
-            # paradox: when almost every rating is the same value, chance
-            # agreement is estimated as almost as high as observed agreement,
-            # so kappa collapses even though the raters clearly agreed.
+            # Kappa paradox: when nearly all ratings are identical, chance agreement is almost as high as observed,
+            # so kappa collapses even though the raters agreed.
             if agree >= 0.8 and k < 0.4:
                 paradoxical.append((d, agree, k))
 

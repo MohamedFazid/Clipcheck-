@@ -1,19 +1,6 @@
-"""Extract LAV-DF files from INDIVIDUAL parts of its split zip, without downloading or joining the whole 25 GB archive.
+"""Extract LAV-DF files from single parts of its split zip, without downloading all 25 GB (CRC-32 checked).
 
-WHY THIS WORKS. The LAV-DF release is one zip cut into raw 1000 MiB pieces (LAV-DF.zip.001 ... .024, concatenate them to get the zip). Each
-member is stored as a self-contained local header followed by its deflate stream, and these headers carry the sizes and a CRC-32 (general
-purpose flag 0, no data descriptor). So every member that lies wholly inside one part can be recovered from that part alone. A member that
-straddles two parts is skipped, and the CRC-32 of everything written is checked, so a false signature match cannot produce a bad file.
-
-WHAT IS WHERE (measured 2026-09-22 from the central directory held in part .024; see docs/EXPERIMENTS.md):
-    .006  LAV-DF/metadata.json (21 MB compressed) and metadata.min.json, plus about 3,400 dev and 2,500 test clips
-    .024  the archive's central directory and 4,462 train clips
-So .006 alone gives the labels and thousands of labelled clips; .024 adds more. Nothing else is needed for a few-hundred-clip evaluation.
-
-    /opt/anaconda3/bin/python scripts/carve_lavdf_parts.py --parts external_datasets/LAV-DF_parts/LAV-DF.zip.006 --metadata-only
-    /opt/anaconda3/bin/python scripts/carve_lavdf_parts.py --parts external_datasets/LAV-DF_parts/LAV-DF.zip.0* --list
-    /opt/anaconda3/bin/python scripts/carve_lavdf_parts.py --parts external_datasets/LAV-DF_parts/LAV-DF.zip.0* --names selection.txt
-"""
+    python scripts/carve_lavdf_parts.py --parts external_datasets/LAV-DF_parts/LAV-DF.zip.006 [--metadata-only | --list | --names FILE]"""
 import argparse
 import struct
 import sys

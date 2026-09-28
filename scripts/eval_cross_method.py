@@ -1,21 +1,6 @@
-"""Per-method evaluation of the video branch on unseen identities.
+"""Per-method detection (Deepfakes, FaceSwap, NeuralTextures) on test-split identities only; n = 22 fake + 22 real per method.
 
-For single-method models (trained on Deepfakes only) FaceSwap and NeuralTextures are zero-shot: never seen. For
-multi-method models (frames_multi) all three methods were seen in training, identities were not; the output says
-which case applies. This script tests fakes made by FaceSwap and NeuralTextures (and Deepfakes as reference). Leakage control: only identities assigned to the
-TEST split in the frozen manifest (data_splits/split_v2_identity_grouped.json) are used, so neither the
-identities nor the manipulation method were seen in training. The same test-split real videos are the
-negatives for every method, so methods are comparable.
-
-Prerequisite (MTCNN env):  extract_frames.py --fake-method <M> --fake-only --only-split test
-                           --out-root frames_methods/<M>
-
-Unit of evaluation is the clip (mean P(fake) over a video's crops). n = 22 fake + 22 real videos per method,
-so one video moves accuracy by 2.3 pp: read the numbers with that granularity, and prefer AUC and the fake
-detection rate.
-
-    /opt/anaconda3/bin/python scripts/eval_cross_method.py --tags aug_vidsplit
-"""
+    python scripts/eval_cross_method.py --tags aug_vidsplit"""
 import argparse
 import json
 import os
@@ -111,7 +96,7 @@ def main():
     real_ids, fake_ids = test_videos()
     for m in METHODS[1:]:
         if not (PROJECT_ROOT / 'frames_methods' / m).exists():
-            sys.exit(f'missing frames_methods/{m}: run extract_frames.py first (see docstring)')
+            sys.exit(f'missing frames_methods/{m}: run extract_frames.py --fake-method {m} --fake-only --only-split test --out-root frames_methods/{m} (app env)')
 
     for tag in args.tags:
         per_seed = {}

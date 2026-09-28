@@ -1,18 +1,6 @@
-"""Score the 50-case explanation-eval packet once BOTH human raters have filled their CSVs (Draft Report Ch 3.6).
+"""Score the 50-case explanation evaluation from both raters' CSVs: means, agreement and quadratic-weighted kappa.
 
-Reads results/explanation_eval_full/rating_sheet_rater{1,2}.csv. Refuses to run while either sheet still has blank cells
-(the packet's own instructions: score independently, in order, before comparing), so it cannot be run early by mistake.
-
-Reports, per dimension (factual_grounding, score_accuracy, absence_of_hallucination) and overall:
-  - each rater's mean score (0-2)
-  - exact agreement rate (identical score)
-  - quadratic-weighted Cohen's Kappa (the standard measure for a 3-point ordinal scale; unweighted kappa treats a
-    1-point and 2-point disagreement as equally bad, which is not what this rubric intends)
-  - cases where the two raters differ by 2 (a full disagreement, worth resolving by discussion), listed by id
-Only the two human sheets are read; no automated or model-generated score enters this report.
-
-    /opt/anaconda3/bin/python scripts/score_explanation_eval.py
-"""
+    python scripts/score_explanation_eval.py   # refuses to run while a sheet has blank cells"""
 import csv
 import json
 import sys

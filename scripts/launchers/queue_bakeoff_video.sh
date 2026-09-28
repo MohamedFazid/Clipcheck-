@@ -1,7 +1,5 @@
 #!/bin/bash
-# Video-backbone bake-off on the identity-disjoint split. Identical recipe to aug_vidsplit
-# (EfficientNet-B4 incumbent: augmentation on, no regularisation, 10 epochs, seeds 42-44);
-# only --arch varies. Idempotent via run_cell.sh, safe to re-run after an interruption.
+# Video-backbone bake-off on the identity-disjoint split: same recipe as aug_vidsplit, only --arch varies.
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"; cd "$ROOT" || exit 1
 PY="${PY:-/opt/anaconda3/bin/python}"
 mkdir -p results/logs/bakeoff_video

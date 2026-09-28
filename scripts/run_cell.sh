@@ -1,10 +1,6 @@
 #!/bin/bash
-# One experiment cell = train.py then evaluate.py, idempotent and restart-safe.
-#   scripts/run_cell.sh <tag> <seed> [extra train.py args...]
-# - Skips if results/runs/<tag>/seed<seed>/metrics.json already exists.
-# - A checkpoint with no history.json is a killed run: it is moved to
-#   models/runs/_partial/ (never evaluated, never deleted).
-# - Every step is appended to results/logs/events.log for the experiment ledger.
+# One experiment cell: train.py then evaluate.py. Usage: scripts/run_cell.sh <tag> <seed> [train.py args...]
+# Skips finished cells; a checkpoint without history.json is moved to models/runs/_partial/; steps are logged to results/logs/events.log.
 set -u
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT" || exit 1

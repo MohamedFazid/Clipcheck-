@@ -1,7 +1,4 @@
-"""Guarantees of the frozen 5-fold cross-validation manifest, checked from names alone (no dataset), so CI runs them.
-
-Cross-validation is only worth reporting if every fold is leak-free and every video is scored out-of-fold exactly once.
-"""
+"""Checks the frozen 5-fold manifest from names alone (no dataset): every fold leak-free, every video tested once."""
 import hashlib
 import json
 from pathlib import Path

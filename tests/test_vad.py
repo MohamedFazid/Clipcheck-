@@ -1,23 +1,5 @@
-"""Tests for the VAD gate (scripts/vad.py).
-
-These are TRUE correctness tests, not plumbing checks: every case has ground
-truth that is definitional rather than assumed.
-
-  * A sine tone, white noise and digital silence are not speech BY
-    CONSTRUCTION -- no judgement call is involved in labelling them.
-  * tests/fixtures/speech_sample.wav is macOS `say` output: synthetic, but
-    acoustically speech (formants, prosody, inter-word pauses), which is
-    exactly what a VAD is meant to fire on. Regenerate it with:
-        say -v Samantha -o /tmp/s.aiff "…" && ffmpeg -i /tmp/s.aiff \
-            -ac 1 -ar 16000 tests/fixtures/speech_sample.wav
-
-The gate's purpose (Ch3.4/Ch4.4) is to stop the untrained-on-non-speech spoof
-classifier from being handed music/tones/noise and producing an
-out-of-distribution number that would look like a real spoof judgement.
-
-Skips if silero-vad is not installed. Runs under pytest, or:
-    /opt/anaconda3/bin/python tests/test_vad.py
-"""
+"""Tests for the VAD gate with definitional ground truth: tone, noise and silence are not speech; the fixture is.
+Fixture: macOS `say` output converted to 16 kHz mono with ffmpeg. Skipped if silero-vad is not installed."""
 
 import sys
 import wave
@@ -39,6 +21,7 @@ try:
 except ImportError:
     pytest = None
 
+# Regenerate: say -v Samantha -o /tmp/s.aiff "<text>" && ffmpeg -i /tmp/s.aiff -ac 1 -ar 16000 tests/fixtures/speech_sample.wav
 FIXTURE = PROJECT_ROOT / 'tests' / 'fixtures' / 'speech_sample.wav'
 TONE_CLIP = PROJECT_ROOT / 'demo_videos' / 'sample_with_audio.mp4'
 _RNG = np.random.default_rng(42)
@@ -88,7 +71,7 @@ def test_empty_waveform_is_handled():
 # ── Genuine speech must be accepted ─────────────────────────────────────────
 
 def test_speech_fixture_is_detected_as_speech():
-    assert FIXTURE.exists(), f'missing fixture: {FIXTURE} (see module docstring)'
+    assert FIXTURE.exists(), f'missing fixture: {FIXTURE} (see the regenerate comment above FIXTURE)'
     r = analyse(_load_wav(FIXTURE))
     assert r.has_speech, f'genuine speech was rejected: {r}'
     assert r.speech_seconds >= 1.0
@@ -107,11 +90,7 @@ def test_speech_ratio_is_high_for_speech_and_zero_for_tone():
 # ── The project's own bundled clip: a documented non-speech case ────────────
 
 def test_bundled_sample_with_audio_is_not_speech():
-    """The one bundled clip with an audio track carries a constant low-frequency
-    tone, not speech (frame-energy dynamic range ~0.2 dB; 84% of energy below
-    300 Hz). It therefore exercises exactly the out-of-distribution case Ch3.4
-    describes, and the gate must reject it. If this ever fails, the fixture has
-    been replaced and the audio-branch documentation needs revisiting."""
+    """The one bundled clip with audio carries a constant low tone, not speech, so the gate must reject it."""
     if not TONE_CLIP.exists():
         return
     from audio_branch import extract_audio_16k

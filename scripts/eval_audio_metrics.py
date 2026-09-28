@@ -1,21 +1,6 @@
-"""Full metric set for the trained audio branch (wav2vec2 + SVM) on the ASVspoof 2019 LA eval partition.
+"""Full audio metrics (accuracy, balanced accuracy, F1, AUC) from the cached eval embeddings; writes extra_metrics.json.
 
-The PPR (Ch3.6) promises accuracy, F1 and AUC-ROC per branch, but results/audio_branch/metrics.json (written by
-train_audio_svm.py) holds only EER and accuracy. This script adds the rest from the CACHED eval embeddings and the saved SVM,
-with no audio decoding, no wav2vec2 and no GPU, and writes results/audio_branch/extra_metrics.json. It never touches
-metrics.json (which fusion.py reads for the audio weight).
-
-Two honesty checks are built in:
-  * it recomputes EER and accuracy and compares them with metrics.json (they must agree, otherwise the cached embeddings or
-    the checkpoint are not the ones that produced the reported numbers);
-  * the eval partition is heavily imbalanced (mostly spoofed utterances), so plain accuracy flatters the classifier. The
-    majority-class baseline and balanced accuracy are reported next to it. The accuracy that fusion.py uses as the audio weight
-    is the plain 0.9765; balanced accuracy is the fairer figure to quote for how well BOTH classes are recognised.
-
-Label convention (train_audio_svm.py): 1 = spoof = the positive ("fake") class.
-
-    /opt/anaconda3/bin/python scripts/eval_audio_metrics.py
-"""
+    python scripts/eval_audio_metrics.py"""
 import json
 import os
 import sys

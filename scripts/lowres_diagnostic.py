@@ -1,19 +1,6 @@
-"""Why does the video branch fail on LAV-DF? Re-score held-out FF++ videos after making them LAV-DF-like.
+"""Does low resolution and compression explain the video branch's LAV-DF failure? Re-scores held-out FF++ videos as 224x224 close-ups.
 
-Docs/EXPERIMENTS.md F6: the shipped video model scores 92.5% on held-out FF++ (F5) but has AUC 0.377 on LAV-DF. LAV-DF frames are 224x224
-close-ups: the face fills most of the frame and the clip is a ~100 kbps H.264 re-encode. This script takes the SAME videos F5 used (unique FF++
-videos in eval_heldout/manifest.json, all test-split identities) and re-scores them through the app's own path (video_infer.analyse_video_file):
-
-    original  : the FF++ video unchanged (must reproduce F5's video-branch behaviour)
-    closeup   : per-video fixed square crop around the MTCNN face box (side = SIDE x the larger box dimension), scaled to 224x224, H.264 at 100 kbps,
-                audio dropped. A crop, resize and bitrate change only; the manipulation content is untouched.
-
-If closeup scores collapse relative to original, resolution, framing and compression alone break the model, independent of the manipulation
-method (Wav2Lip) or the speakers (VoxCeleb2). If they hold, those are the suspects instead. Decided before running: the diagnostic is read as
-"resolution explains it" when closeup AUC falls by more than 0.15 from original AUC.
-
-    /opt/anaconda3/envs/deepfake-detect/bin/python scripts/lowres_diagnostic.py
-"""
+    python scripts/lowres_diagnostic.py   # app env"""
 import argparse
 import json
 import subprocess

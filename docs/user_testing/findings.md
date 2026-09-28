@@ -115,7 +115,7 @@ problems is not known; a round 3 would re-test T3 and T7, with a clearer publish
 ## Inputs
 
 1. **A design review of v2 against a checklist of defaults that make generated interfaces look templated**,
-   done by the developer with an AI assistant on 2026-09-26, not by a designer. What it found in v2: a near-black background (#0b0d10) with a serif
+   Completed by the developer on 2026-09-26, not by a designer. What it found in v2: a near-black background (#0b0d10) with a serif
    display face; every section inside the same rounded card (one 14 px radius and border for everything, so the verdict and "What to do next" looked
    equally important); capitals-only labels ("DEEPFAKE CHECKER", "VERDICT", "ANALYSING"); dot-joined text ("TV interview · built test clip · 0:03");
    an arrow and the same film icon on every example, which carried no information; a monospace face for times and data labels; and the two scores in
@@ -173,7 +173,7 @@ with `./run_v2_interface.sh` on port 8002. v4 is `static/`.
 
 1. **The developer's review of v2 and v3:** both still looked generated, and v3 kept v2's screens, order and boxes, so it read as a repaint rather than
    a redesign. The developer asked for a new design from scratch, with a different typographic feel.
-2. **Choices made by the developer from shown options** (live previews built with an AI assistant, 26 Sep): a glass look inspired by macOS but not a
+2. **Choices made by the developer from shown options** (live previews built on 26 Sep): a glass look inspired by macOS but not a
    copy of it; smoked glass with film grain (chosen over frosted glass, scanlines and a chromatic edge); the spring pop-in kept; level meters for the
    scores (over a gap band, a two-needle dial and sliders); a demo videos section that names each clip and says whether its face and voice are real or
    fake (the developer rejected four Dock-like variants as not informative enough); a hover in which the tracks move, green for a real part and red for a

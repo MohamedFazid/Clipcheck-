@@ -1,10 +1,5 @@
-"""Leakage guarantee checked on the FROZEN split manifest alone (no dataset needed).
-
-data_splits/split_v2_identity_grouped.json is plain JSON and is committed, so this runs in CI on a machine that has
-none of the FaceForensics++ data. It asserts the properties that make the video-branch numbers trustworthy:
-no video and no underlying identity appears in more than one split, every fake pair's two identities and both
-real videos are in the same split, and the recorded hash matches the recomputed one (the manifest was not edited).
-"""
+"""Leakage guarantees checked on the committed split manifest alone (runs in CI without FF++ data):
+no video or identity in two splits, fake pairs kept with their real videos, and the stored hash matches."""
 import hashlib
 import json
 from pathlib import Path

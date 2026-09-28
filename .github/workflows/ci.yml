@@ -16,8 +16,8 @@ jobs:
         run: pip install pytest numpy requests scikit-learn
       - name: Byte-compile all sources
         run: python -m compileall -q scripts server.py
-      - name: Data-free tests (leakage guarantee, fusion logic, explanation checks, evaluation view)
-        run: python -m pytest tests/test_frozen_split_manifest.py tests/test_cv_folds_manifest.py tests/test_fusion.py tests/test_explain_checks.py tests/test_evaluation_view.py tests/test_heldout_eval_manifest.py tests/test_lavdf_manifest.py tests/test_ood_gate.py tests/test_user_testing_survey.py -q
+      - name: Data-free tests (leakage guarantee, fusion logic, explanation checks, evaluation view, weight download)
+        run: python -m pytest tests/test_frozen_split_manifest.py tests/test_cv_folds_manifest.py tests/test_fusion.py tests/test_explain_checks.py tests/test_evaluation_view.py tests/test_heldout_eval_manifest.py tests/test_lavdf_manifest.py tests/test_ood_gate.py tests/test_user_testing_survey.py tests/test_download_models.py -q
         env:
           DEEPFAKE_SKIP_HEAVY: '1'
 # Suites that need the FaceForensics++ data, trained weights or a local LLM (test_data_split, test_pipeline,

@@ -1,8 +1,6 @@
 #!/bin/bash
-# Regularised multi-method EfficientNet-B4: the recipe the PPR (Phase 2, Ch4.5) and Draft Report (Ch4.3) promised for the video
-# branch: dropout 0.3 before the head, label smoothing 0.1, early stopping (patience 3, on validation loss). Everything else is
-# identical to the plain multi-method B4 run (queue_mm_b4.sh). Waits for that run so two trainings never share the GPU.
-# Judged by the same frozen ship rule as the plain run (docs/EXPERIMENTS.md, V14). To cancel before it starts: kill this script.
+# Regularised multi-method EfficientNet-B4 (dropout 0.3, label smoothing 0.1, early stopping 3), judged by the same ship rule.
+# Waits for queue_mm_b4.sh so two trainings never share the GPU.
 ROOT="$(cd "$(dirname "$0")/../.." && pwd -P)"; cd "$ROOT" || exit 1
 PY="${PY:-/opt/anaconda3/bin/python}"
 until grep -q "QUEUE mm_b4 COMPLETE" results/logs/events.log; do sleep 60; done

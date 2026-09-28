@@ -1,24 +1,6 @@
-"""Deterministic explainer and automatic faithfulness screen for the explanation layer.
-
-Two things, both pure Python (no Ollama needed):
-
-1. explain_template(result): a no-LLM explanation built directly from the structured input
-   (explain.build_structured_input). It is faithful by construction and is the BASELINE the LLM must beat:
-   if a template is as clear and always faithful, an LLM adds risk without adding value.
-
-2. check_faithfulness(text, structured): an automatic screen for ANY explanation text (template or LLM). It flags:
-     number      a number in the text that is not derivable from the input scores (0.5 boundary allowed)
-     direction   a sentence about ONE branch that says it looks fake when the input says it leans genuine, or the
-                 reverse (the pilot's failure: 0.46 described as "fake")
-     certainty   certainty language ("definitely", "proves", ...): the input carries scores, not certainty
-     unlisted    claims that are not in the input (generator names, identities, causes)
-     unevaluated a branch marked "not evaluated" that the text nevertheless scores or judges
-     disagreement  disagreement claimed when the input says none, or not named when the input says yes
-     timing      a clip timestamp (m:ss) in the text that is not one of the windows in video_anomaly_timing
-   It is a SCREEN, not proof. Sentences naming BOTH branches are only checked for one thing (claiming both are
-   manipulated when the input says one leans genuine); no other per-branch direction check is possible on them. A pass does
-   not replace the human rubric. A failure is always a genuine reason to look at the text.
-"""
+"""Deterministic template explainer (explain_template) and automatic faithfulness screen (check_faithfulness).
+The screen flags numbers, directions, certainty, unlisted claims, unevaluated branches, disagreement and timing not in the input.
+It is a screen, not proof; pure Python, no Ollama."""
 import re
 from typing import Optional
 
@@ -45,19 +27,13 @@ NEUTRALISE = (
     r'(?:very |extremely )?(?:low|small|minimal|negligible) (?:likelihood|probabilit\w+) (?:of|that) (?:it |the \w+ )?'
     r'(?:being )?(?:manipulated|fake|altered|synthetic|spoofed|tampered)',
 )
-# Same idea for the disagreement claim below: a sentence can contain "disagree" (or differ/conflict/...) while actually
-# DENYING it ("no indication that the video and audio branches disagree", "does not disagree"), which must not count as
-# claiming disagreement. A negation cue anywhere in the same clause (no punctuation between) as the word is enough;
-# exact phrase matching is too brittle against ordinary paraphrase ("branches disagree" vs "branches ... disagree").
+# A negation cue in the same clause ("no indication that ... disagree") means the sentence denies disagreement,
+# so it must not count as claiming it.
 DISAGREEMENT_NEG_RE = re.compile(
     r'\b(?:no|not|never|nor|n\'t)\b[^.!?;:]{0,60}?\b(disagree\w*|differ\w*|conflict\w*|inconsisten\w*|mismatch\w*)\b')
 
-# A FAKE_WORDS or GENUINE_WORDS hit preceded (within 40 chars, no clause break assumed since callers pass one
-# sentence) by a negation cue does not count as claiming that direction. Found live on the video anomaly timing
-# feature: "There is no indication that the video and audio are manipulated in different ways" and "but these do
-# not suggest manipulation" both slipped past the NEUTRALISE phrase list, which cannot enumerate every paraphrase
-# of a negation. This is the general mechanism NEUTRALISE's fixed phrases are specific cases of; kept as a second,
-# broader layer rather than replacing NEUTRALISE, which also catches non-negations (relative comparisons).
+# A fake/genuine word preceded (within 40 chars) by a negation cue does not claim that direction.
+# A broader second layer on top of NEUTRALISE's fixed phrases, which cannot list every negation.
 NEG_CUE_RE = re.compile(r"\b(?:no|not|never|nor|isn't|aren't|wasn't|weren't|doesn't|don't|didn't|n't)\b")
 
 
@@ -161,9 +137,8 @@ def check_faithfulness(text: str, structured: dict) -> dict:
         low = _strip(sent)
         has_v, has_a = _mentions(low, 'video'), _mentions(low, 'audio')
         if has_v and has_a:
-            # A sentence naming BOTH branches cannot be direction-checked per branch, but one specific claim can: asserting
-            # that both are manipulated when the input says one of them leans genuine. Found in the 50-case run, where
-            # "the video and audio content are partially manipulated" was generated for audio = 0.000 (docs/EXPERIMENTS.md E3).
+            # A sentence naming both branches can only be checked for one claim: both manipulated when one leans genuine
+            # (seen in the 50-case run for audio = 0.000, ledger E3).
             says_fake_both = _unnegated_word_hit(low, FAKE_WORDS)
             conjunctive = re.search(r'(video and audio|audio and video|both\b)', low)
             genuine_branch = [b for b in ('video', 'audio') if 'GENUINE' in assessment[b]]
@@ -224,12 +199,8 @@ def _chance(score: str) -> str:
 
 
 def explain_template(result, anomalies=None) -> str:
-    """Deterministic plain-language explanation of a FusionResult (+ optional real anomaly windows), from the structured input only.
-
-    Reworded 2026-09-25 for non-technical readers (the "layman terms" requirement and round 1 user testing): "picture
-    check" and "voice check" instead of "video/audio analysis", chances as percentages in words, no system labels (FAKE, REAL,
-    PARTIAL_MANIPULATION). The facts stated are unchanged, and tests/test_explain_checks.py runs every score combination through
-    the faithfulness screen. Each sentence names at most one of the face and the voice, except where both lean the same way."""
+    """Plain-language explanation built only from the structured input ("picture check", "voice check", chances in words).
+    tests/test_explain_checks.py runs every score combination through the faithfulness screen."""
     s = build_structured_input(result, anomalies)
     verdict = s['verdict']
     v_eval, a_eval = 'not evaluated' not in s['video_assessment'], 'not evaluated' not in s['audio_assessment']

@@ -1,9 +1,5 @@
-"""Tests for the deterministic explainer and the automatic faithfulness screen (scripts/explain_checks.py).
-
-The template must pass its own screen on EVERY score combination (it is faithful by construction), and the screen must
-catch deliberately unfaithful texts, including the failure the human-eval pilot found: a score just under 0.5
-described as "fake". No Ollama needed.
-"""
+"""Tests for the template explainer and faithfulness screen: the template passes on every score combination,
+and deliberately unfaithful texts (e.g. 0.46 called "fake") are caught. No Ollama needed."""
 import itertools
 import sys
 from pathlib import Path

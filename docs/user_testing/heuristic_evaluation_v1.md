@@ -7,7 +7,7 @@ in `docs/user_testing/screenshots/v1/` (named below) and measurements taken on t
 
 A **heuristic evaluation**: an inspection of the interface against Nielsen's ten usability heuristics (Nielsen, 1994), each problem rated on
 Nielsen's 0 to 4 severity scale (0 not a problem, 1 cosmetic, 2 minor, 3 major, 4 usability catastrophe). It was carried out by **one evaluator,
-the developer** (with the AI assistant), not by users and not by independent usability experts. Nielsen recommends three to five evaluators because
+the developer** , not by users and not by independent usability experts. Nielsen recommends three to five evaluators because
 one finds only part of the problems; a single developer-evaluator also knows how the system works, which hides problems a newcomer would hit.
 So this is **not user testing** and is never reported as such. Its job is to (a) document v1's problems with evidence before any change, and
 (b) state hypotheses that round 1 of real user testing (ledger U1) confirms or refutes. Every v2 change must trace to a round 1 finding, to this

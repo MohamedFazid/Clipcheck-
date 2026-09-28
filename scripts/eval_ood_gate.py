@@ -1,16 +1,6 @@
-"""Evaluate the out-of-domain gates end to end, with and without them, on every cached set (docs/EXPERIMENTS.md O1).
+"""Evaluate the out-of-domain gates on every cached set, with and without the gate, against the ship criteria (ledger O1).
 
-Reads results/ood_gate/features/<set>.joblib (scripts/extract_app_features.py, the app's own branch code) and the fitted gates in models/.
-For each clip: the ungated verdict = fusion.fuse(p_video, p_audio), exactly the app before the gate; the gated verdict = the same call with a
-branch's score replaced by None when that branch's input is out of domain, exactly what the app does after the gate. Checks the three ship
-criteria fixed in scripts/fit_ood_gates.py before any result existed.
-
-Scoring (same as scripts/eval_fallback_4condition.py): a clip is fake when its video is fake OR its audio is spoofed; a verdict of FAKE or
-PARTIAL_MANIPULATION counts as predicting fake; INCONCLUSIVE is an abstention, reported separately, never counted as correct. Celeb-DF clips
-are face-manipulated only, so their audio counts as genuine. The Veo clips are reported for flag rates only (no ground truth for the audio).
-
-    /opt/anaconda3/envs/deepfake-detect/bin/python scripts/eval_ood_gate.py
-"""
+    python scripts/eval_ood_gate.py   # app env"""
 import json
 import sys
 from collections import Counter

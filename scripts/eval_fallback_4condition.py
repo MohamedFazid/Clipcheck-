@@ -1,36 +1,6 @@
-"""Four-condition comparison over ANY manifest matching the schema in
-build_fallback_eval_set.py -- video/audio label pairs with a category tag
-(RVRA/RVFA/FVRA/FVFA). Deliberately dataset-agnostic: this script does not
-care whether the manifest came from the constructed fallback set, DFDC,
-DeepfakeTIMIT, or (if it ever arrives) FakeAVCeleb itself. Swapping the
-evaluation dataset means running a different build_*.py script to produce a
-manifest in this same schema, then pointing --manifest here at it. No
-change to this file, fusion.py, or any other pipeline code is needed.
+"""Four-condition comparison (video only, audio only, standard fusion, disagreement-aware fusion) over any manifest in the same schema.
 
-Runs the REAL, already-trained/evaluated pipeline (same code the live app
-uses -- video_infer.py, audio_branch.py, vad.py, fusion.py) over every clip
-in the manifest and computes:
-  1. Video-only accuracy (video score vs video_label)
-  2. Audio-only accuracy (audio score vs audio_label)
-  3. Standard (naive) fusion: simple average of the two scores, evaluated
-     against "is either modality manipulated" (the ground truth a
-     non-disagreement-aware system would be trying to predict)
-  4. Disagreement-aware fusion (this project's fuse()): same binary accuracy
-     for a direct comparison, PLUS the metric that actually matters for this
-     project's research question -- on genuinely single-modality-manipulated
-     clips (RVFA, FVRA), does fuse() correctly flag disagreement AND name
-     the correct implicated modality? This is the fallback-set equivalent of
-     the "partial-manipulation F1" Ch3.6 specifies against FakeAVCeleb.
-
-HONESTY NOTE: every number below comes from running the real pipeline on
-whichever dataset produced the manifest passed in. Report the manifest's own
-"source" field as the provenance, never assume or imply FakeAVCeleb unless
-the manifest actually says so.
-
-Run (needs facenet-pytorch + transformers, i.e. the deepfake-detect env):
-    /opt/anaconda3/envs/deepfake-detect/bin/python scripts/eval_fallback_4condition.py \\
-        [--manifest eval_fallback/manifest.json] [--out-dir results/fallback_eval]
-"""
+    python scripts/eval_fallback_4condition.py [--manifest eval_fallback/manifest.json] [--out-dir results/fallback_eval]   # app env"""
 
 import argparse
 import json
@@ -51,14 +21,8 @@ from fusion import fuse, AUDIO_ACCURACY_IS_MEASURED, AUDIO_ACCURACY_SOURCE, VIDE
 
 
 def run_pipeline(video_path, mtcnn, model, video_device, fe, enc, audio_device, svm):
-    """Runs the real 5-stage pipeline on one clip. Returns dict of raw
-    per-branch outputs, or None if the video branch found no faces.
-
-    video_device and audio_device are deliberately separate: the video
-    model runs on whatever load_models() picked (MPS on this Mac), but the
-    audio encoder is loaded via load_encoder('cpu') -- passing the video
-    device into embed_waveform() crashes with a device-mismatch error
-    (caught by actually running this, not assumed)."""
+    """Run the real pipeline on one clip; None if no face is found.
+    The audio encoder stays on CPU: passing the video device to embed_waveform() causes a device mismatch."""
     video_result = analyse_video_file(str(video_path), mtcnn, model, video_device, max_faces=20)
     if video_result is None:
         return None

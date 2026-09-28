@@ -1,20 +1,6 @@
-"""Why does the audio branch call genuine unseen-corpus speech spoofed? Channel mismatch, or corpus mismatch?
+"""Is the audio branch's false alarm on unseen speech caused by the codec or by the corpus? Re-scores ASVspoof eval clips after AAC/MP3.
 
-The branch flags 100 of 100 genuine DeepfakeTIMIT clips as spoof (docs/EXPERIMENTS.md A3). Two explanations compete, and they
-imply different fixes:
-
-  CHANNEL mismatch  ASVspoof 2019 LA is 16 kHz FLAC, losslessly stored. Audio arriving from a video file has been through a lossy
-                    codec (AAC in MP4, MP3 elsewhere). If lossy compression alone moves the wav2vec2 embedding enough to flip the
-                    SVM, the branch is partly measuring the codec, and the fix is codec augmentation at training time.
-  CORPUS mismatch   Different speakers, microphones, room and language. The fix is more diverse bona fide training data, which is
-                    a much larger job.
-
-This script isolates the first by re-encoding ASVspoof's OWN eval clips (same speakers, same corpus, known labels) through AAC
-and MP3 and re-scoring them with the shipped SVM. Any degradation is caused by the codec alone, because nothing else changed.
-
-Run (base env; no GPU needed, wav2vec2 runs on CPU):
-    /opt/anaconda3/bin/python scripts/audio_channel_diagnostic.py --root ~/Downloads/LA --n-per-class 100
-"""
+    python scripts/audio_channel_diagnostic.py --root ~/Downloads/LA --n-per-class 100"""
 import argparse
 import json
 import os

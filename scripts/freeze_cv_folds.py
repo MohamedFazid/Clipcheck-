@@ -1,15 +1,6 @@
-"""Freeze 5-fold identity-grouped cross-validation folds into data_splits/cv5_identity_grouped.json.
+"""Freeze 5-fold identity-grouped cross-validation folds (every one of the 400 videos is tested once, unseen).
 
-Why: the main split has only 44 test videos and every seed shares it, so "3 seeds" varied only the initialisation. Cross-
-validation makes each of the 100 identity groups (one reciprocal FF++ pair = 2 real + 2 fake videos) a test group exactly
-once, so every one of the 400 videos is scored while unseen, and results vary with the DATA, not just the seed.
-
-Per fold k: test = the 20 groups of fold k; validation = 10 further groups (for checkpoint selection only, never test);
-train = the remaining 70 groups. Groups are never split, so no video and no identity crosses roles. Deterministic (seed 42),
-hashed, and built from the frozen main manifest's names only: no dataset needed, so it is testable in CI.
-
-    /opt/anaconda3/bin/python scripts/freeze_cv_folds.py
-"""
+    python scripts/freeze_cv_folds.py"""
 import hashlib
 import json
 import os

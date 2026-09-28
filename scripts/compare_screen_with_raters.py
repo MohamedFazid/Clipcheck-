@@ -1,14 +1,6 @@
-"""Compare the app's automatic faithfulness screen with the two human raters on the 50-case explanation packet (ledger E2).
+"""Compare the app's faithfulness screen with the two human raters on the 50 explanations (ledger E2); descriptive only.
 
-    /opt/anaconda3/bin/python scripts/compare_screen_with_raters.py
-
-Reads results/explanation_eval_full/cases.json (the screen's verdict per case, recorded when the packet was generated on 22 Sep and
-re-screened after the L32 fixes) and the two completed rating sheets. Writes results/explanation_eval_full/screen_vs_raters.json.
-Descriptive only: the human scores are never changed, and the screen result is the one stored in cases.json, not re-computed.
-Definitions (stated here, chosen after the ratings were seen, so this is an exploratory analysis, not a pre-registered test):
-  total        = factual_grounding + score_accuracy + absence_of_hallucination for one rater (0 to 6)
-  human-flagged = BOTH raters scored factual_grounding below 2 (the raters agree the text says something the facts do not support)
-"""
+    python scripts/compare_screen_with_raters.py   # writes results/explanation_eval_full/screen_vs_raters.json"""
 import ast
 import csv
 import json
@@ -18,6 +10,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DIR = ROOT / 'results' / 'explanation_eval_full'
 DIMS = ('factual_grounding', 'score_accuracy', 'absence_of_hallucination')
+# Written into the output file; chosen after the ratings were seen, so the analysis is exploratory.
+DEFINITIONS = (
+    '(stated here, chosen after the ratings were seen, so this is an exploratory analysis, not a pre-registered test):\n'
+    '  total        = factual_grounding + score_accuracy + absence_of_hallucination for one rater (0 to 6)\n'
+    '  human-flagged = BOTH raters scored factual_grounding below 2 (the raters agree the text says something the facts do not support)'
+)
 
 
 def sheet(n):
@@ -54,7 +52,7 @@ def main():
     confusion = {'screen_rejected_and_human_flagged': both(False, True), 'screen_rejected_not_human_flagged': both(False, False),
                  'screen_passed_but_human_flagged': both(True, True), 'screen_passed_not_human_flagged': both(True, False)}
     zero_passed = [x['case_id'] for x in rows if x['screen_passed'] and (0 in x['r1'].values() or 0 in x['r2'].values())]
-    out = {'n_cases': len(rows), 'definitions': __doc__.split('Definitions')[1].strip(),
+    out = {'n_cases': len(rows), 'definitions': DEFINITIONS,
            'by_verdict': by_verdict, 'by_screen': by_screen, 'screen_vs_human_flag': confusion,
            'screen_passed_but_a_rater_gave_0': zero_passed, 'per_case': rows}
     (DIR / 'screen_vs_raters.json').write_text(json.dumps(out, indent=1))

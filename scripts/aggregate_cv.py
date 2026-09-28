@@ -1,16 +1,6 @@
-"""Pool cross-validation folds into out-of-fold results with identity-cluster bootstrap confidence intervals.
+"""Pool the cross-validation folds into out-of-fold metrics with identity-cluster bootstrap 95% intervals.
 
-Reads results/runs/<prefix><k>/seed<seed>/per_video_predictions.json for each fold k (written by evaluate.py) and reports:
-  * pooled out-of-fold metrics over ALL videos (every video is scored once, by a model that never saw its identity);
-  * the same per fold, as mean and std: this spread comes from the DATA partition, not just the random seed, which is the
-    variation a single split with several seeds cannot show;
-  * 95% confidence intervals from a cluster bootstrap that resamples whole identity groups (a reciprocal FF++ pair = 2 real +
-    2 fake videos), because videos of one identity are not independent;
-  * per-method fake detection, using data_splits/multimethod_assignment_v1.json;
-  * clip-level Brier score and binary ECE on all pooled videos (a far larger sample than the 44-video test set).
-
-    /opt/anaconda3/bin/python scripts/aggregate_cv.py --prefix cv5_xcep_f --name cv5_xcep_mm
-"""
+    python scripts/aggregate_cv.py --prefix cv5_xcep_f --name cv5_xcep_mm"""
 import argparse
 import json
 import os

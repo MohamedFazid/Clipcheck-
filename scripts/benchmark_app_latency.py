@@ -1,16 +1,6 @@
-"""End-to-end latency of the running app, as a user meets it (added 2026-09-25).
+"""End-to-end latency of the running app (POST /api/analyze until the result is ready) on each featured example clip.
 
-scripts/benchmark_latency.py times each pipeline stage in one process on one clip. This script times the whole request path of
-the live server (http://localhost:8000): POST /api/analyze, polling /api/progress every 0.1 s as the interface does, until the
-result is ready, on each featured example clip (one per kind of result). It therefore includes what the stage benchmark leaves
-out: the server's own work (face-crop image, waveform, out-of-domain checks, moment windows, explanation with timing, the
-faithfulness screen and its template fallback) and polling granularity (up to 0.1 s).
-
-The server must already be warm (models loaded); one untimed warm-up pass over all clips is run first. Jobs created here are
-removed afterwards. Writes results/latency/app_end_to_end.json; an existing file is never overwritten without --overwrite.
-
-    /opt/anaconda3/bin/python scripts/benchmark_app_latency.py --runs 3
-"""
+    python scripts/benchmark_app_latency.py --runs 3   # server must be running and warm"""
 import argparse
 import json
 import statistics

@@ -1,23 +1,6 @@
-"""EXPERIMENT ONLY (not shipped): does adding VoxCeleb2 speech to the audio SVM's training data fix its LAV-DF failure?
+"""Experiment only (not shipped): does adding LAV-DF speech to the SVM's training data fix its LAV-DF failure? (ledger F6/F7)
 
-Docs/EXPERIMENTS.md F6: the shipped SVM (ASVspoof 2019 LA only) scores P(spoof) about 0.99 on every LAV-DF clip, genuine or fake (AUC 0.52).
-Earlier work (A3, A5, A6) traced unseen-corpus false alarms to the training corpus, not the codec or the encoder. This tests that claim directly
-by changing ONLY the SVM's training data, with the frozen wav2vec2 encoder, the RBF SVM recipe, C and the scoring path all unchanged.
-
-    S0  shipped recipe, ASVspoof train only                       (reproduces F6; the control)
-    B2  + LAV-DF dev clips whose audio is genuine, labelled bona fide         (adds ONLY a second bona fide corpus)
-    B1  B2 + LAV-DF dev clips whose audio is faked, labelled spoof            (whole-clip labels: a "fake" clip is only 5 to 13% cloned speech)
-
-DATA DISCIPLINE (fixed before running). Training clips come from the LAV-DF DEV split; scoring uses eval_lavdf/ (LAV-DF TEST split, the 200
-clips scored in F6), which is never used for fitting, choosing C or choosing a threshold. C is the shipped value (results/audio_branch/metrics.json).
-Speakers are disjoint between LAV-DF splits by construction. Fitted models are written under results/audio_lavdf_experiment/, NOT models/.
-Nothing here changes the app, fusion weights or T.
-
-DECISION RULE (fixed before running): "the corpus explains the failure" if B2 cuts the genuine-audio false-alarm rate on the LAV-DF test clips from
-about 100% to below 50% while ASVspoof eval EER stays within 1.0 pp of S0. Reported either way.
-
-    /opt/anaconda3/envs/deepfake-detect/bin/python scripts/audio_lavdf_experiment.py --parts external_datasets/LAV-DF_parts/LAV-DF.zip.006
-"""
+    python scripts/audio_lavdf_experiment.py --parts external_datasets/LAV-DF_parts/LAV-DF.zip.006"""
 import argparse
 import json
 import random

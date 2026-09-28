@@ -1,23 +1,6 @@
-"""Audio anti-spoofing branch: wav2vec2-base (frozen) embedding and an RBF SVM trained on ASVspoof 2019 LA.
+"""Audio branch: frozen wav2vec2-base embedding -> RBF SVM trained on ASVspoof 2019 LA -> P(audio_fake).
 
-STATUS (updated 2026-09-25): trained and evaluated on the full ASVspoof 2019 LA partitions (eval EER 3.96%, balanced accuracy 95.7%;
-`results/audio_branch/metrics.json`, ledger A-series) and used by the app. The "no trained model" paragraph further down is the
-original note from before the dataset arrived; it is kept for the record and no longer describes the code.
-
-Architecture (mirrors the PPR design):
-    raw waveform (16 kHz) -> wav2vec2 SSL encoder -> mean-pooled 768-d embedding
-    -> SVM (bona-fide vs spoof) -> spoof score -> EER
-
-IMPORTANT (no fabrication): there is NO trained model or real metric here. The
-ASVspoof 2019 LA dataset is not available on disk, so this file implements and
-*verifies that the pipeline executes end to end*. The __main__ block runs it on
-SYNTHETIC placeholder audio — a PLUMBING TEST that proves the code path works, NOT
-an anti-spoofing result. A real EER requires training/evaluating on ASVspoof 2019 LA
-(specified as a pending experiment in the report).
-
-Run (base env has transformers + soundfile + sklearn):
-    /opt/anaconda3/bin/python scripts/audio_branch.py
-"""
+    python scripts/audio_branch.py   # plumbing check on synthetic audio"""
 
 import os
 import sys
@@ -51,11 +34,7 @@ def load_encoder(device='cpu'):
 
 
 def extract_audio_16k(video_path):
-    """Decode a video's audio track to a mono 16 kHz float32 waveform.
-
-    Uses the ffmpeg binary bundled by imageio-ffmpeg (no system ffmpeg needed).
-    Returns a 1-D np.float32 array, or None if the clip has no decodable audio.
-    """
+    """Decode a video's audio track to mono 16 kHz float32 (bundled ffmpeg); None if there is no audio."""
     import subprocess
     import imageio_ffmpeg
     ffmpeg = imageio_ffmpeg.get_ffmpeg_exe()
@@ -77,14 +56,8 @@ def embed_waveform(waveform, fe, enc, device='cpu', sr=SR):
 
 
 class AudioSpoofSVM:
-    """SVM back-end: bona-fide (0) vs spoof (1). Score = signed SVM margin.
-
-    probability=True adds Platt scaling (5-fold internal CV during fit) so
-    spoof_probability() can return a calibrated P(spoof) in [0, 1] for fusion;
-    it does not touch decision_function() or predict(), so spoof_score(), the
-    EER computed from it, and .clf.predict() accuracy are unaffected -- the
-    reported ASVspoof metrics (train_audio_svm.py) are identical either way.
-    """
+    """SVM back end: bona fide (0) vs spoof (1). probability=True adds Platt scaling for spoof_probability();
+    it does not change decision_function() or predict(), so the reported EER and accuracy are unaffected."""
 
     def __init__(self, seed=42):
         self.clf = make_pipeline(
@@ -105,13 +78,7 @@ class AudioSpoofSVM:
 
 
 def load_trained_svm(path=None):
-    """Load a trained AudioSpoofSVM checkpoint (scripts/train_audio_svm.py's
-    output), or return None if it hasn't been trained yet (ASVspoof pending).
-
-    Built ahead of the data landing, matching this project's pattern elsewhere
-    (train_audio_svm.py itself): so the app/report need zero further code
-    changes the moment ASVspoof 2019 LA is obtained and the SVM is trained.
-    """
+    """Load the trained AudioSpoofSVM (from train_audio_svm.py), or None if it has not been trained."""
     path = path or TRAINED_SVM_PATH
     if not os.path.exists(path):
         return None

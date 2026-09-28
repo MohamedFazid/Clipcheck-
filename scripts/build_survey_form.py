@@ -1,16 +1,6 @@
-"""Build the user-testing survey form (ledger U1): one self-contained offline HTML file used in every session, both rounds.
+"""Build the offline user-testing survey form; SURVEY below is the single source of question ids (the scorer imports it).
 
-    /opt/anaconda3/bin/python scripts/build_survey_form.py      ->  docs/user_testing/survey_form.html
-
-The facilitator opens the form on a second screen (or a printout is filled and typed in afterwards) during a session run under
-`docs/user_testing/protocol.md`. Parts marked FACILITATOR record what the participant did; parts marked PARTICIPANT are the
-participant's own ratings and words, read out or handed over for them to fill. Download writes `survey_P<n>_round<r>.csv`
-(long format: participant, round, section, item, value), which `scripts/score_user_testing.py` reads. Progress is kept in that
-browser only. The form never contains the facilitator's answer key (ground truth, expected scores); a test checks this.
-
-SURVEY below is the single source of truth for the question ids; the scorer imports it, so the two cannot drift apart.
-The usability items are the standard System Usability Scale (Brooke, 1996), unchanged wording, scored 0 to 100.
-"""
+    python scripts/build_survey_form.py   # -> docs/user_testing/survey_form.html"""
 import json
 import sys
 from pathlib import Path
@@ -126,10 +116,8 @@ SURVEY = {'tasks': TASKS, 'sus': SUS, 'project': PROJECT_QS, 'features': FEATURE
           'facilitator': FACILITATOR_NOTES, 'meta': META, 'meta_choices': META_CHOICES, 'outcomes': OUTCOMES}
 REQUIRED_TASKS = [t['id'] for t in TASKS if not t.get('optional')]
 
-# Short variant (added 2026-09-24 for 10 to 12 minute sessions): the four tasks that test the project's
-# contribution and its honesty features (T2 clear case, T3 split verdict, T7 unfamiliar-input warning, T8 finding the limits), the full
-# SUS (so every participant, short or full, has a comparable usability score), and the first two open questions. Task ids are kept
-# so the scorer can pool short and full sessions item by item.
+# Short variant (10 to 12 minute sessions): tasks T2, T3, T7 and T8, the full SUS and the first two open questions.
+# Task ids are kept so short and full sessions can be pooled.
 SHORT_TASK_IDS = ['T2', 'T3', 'T7', 'T8']
 SHORT_OPEN_IDS = ['O1', 'O2']
 SHORT_FACILITATOR_IDS = ['top_problem', 'debrief', 'differed']

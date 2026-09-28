@@ -1,50 +1,6 @@
-"""Train the video branch (seeded, optionally regularised).
+"""Train the video branch (seeded; any timm classifier via --arch; regularisation is opt-in).
 
-Architecture is chosen with --arch (default efficientnet_b4, the PPR incumbent); any timm image classifier works.
-
-TWO CHANGES vs the version that produced the Draft Project Report's baseline
-figures, both of them deliberate and both flagged in that report as planned
-work:
-
-1. AUGMENTATION TRANSFORM BUG FIXED (Ch4.3 / Ch5.6 improvement #2).
-   The old code built train/val/test as three Subsets over ONE shared
-   ImageFolder. Because `transform` is a property of the shared dataset, the
-   last assignment won and the validation (no-augmentation) transform was
-   applied to all three splits -- so RandomHorizontalFlip / ColorJitter never
-   actually ran during training. This version builds a SEPARATE ImageFolder
-   per transform and indexes both with the SAME split indices, so the splits
-   are byte-for-byte the same samples as the baseline while the training
-   split now genuinely gets augmented.
-
-   Because random_split's permutation depends only on the total length and the
-   generator seed (not on dataset contents), splitting range(n) here yields
-   exactly the indices the baseline used. The test set is therefore identical
-   and results remain directly comparable.
-
-   Pass --no-augment to reproduce the old (unaugmented) training condition
-   with this clean code path -- useful for isolating the augmentation effect
-   from the regularisation effect.
-
-2. REGULARISATION IS AVAILABLE BUT OPT-IN (Ch3.7 Phase 2).
-   --dropout, --label-smoothing and --early-stopping-patience all default to
-   OFF, so the default command reproduces the baseline training recipe. The
-   regularised condition the report specifies is:
-       --dropout 0.3 --label-smoothing 0.1 --early-stopping-patience 3
-
-Checkpoint selection: with early stopping enabled the checkpoint is taken at
-the best validation LOSS (the same quantity the stopping criterion watches);
-without it, the baseline's best-validation-ACCURACY rule is kept. This is a
-deliberate pairing, not an oversight -- mixing a loss-based stop with an
-accuracy-based checkpoint would stop on one signal and select on another.
-
-Use --tag to write into an isolated results/models subdirectory so a new
-experiment never overwrites the reported baseline artifacts.
-
-Examples:
-    python scripts/train.py --seed 42
-    python scripts/train.py --seed 42 --tag reg --dropout 0.3 \
-        --label-smoothing 0.1 --early-stopping-patience 3
-"""
+    python scripts/train.py --seed 42 [--tag reg --dropout 0.3 --label-smoothing 0.1 --early-stopping-patience 3]"""
 
 import os
 import sys
@@ -141,20 +97,15 @@ if augment:
 else:
     train_transforms = val_transforms
 
-# ── Splits: two datasets, one set of indices (the transform-bug fix) ─────────
-# Separate ImageFolder instances mean each split carries its OWN transform,
-# instead of three Subsets sharing one mutable dataset object.
+# ── Splits: separate ImageFolders so each split has its own transform (the augmentation-bug fix) ──
 train_source = datasets.ImageFolder(DATA_DIR, transform=train_transforms)
 eval_source = datasets.ImageFolder(DATA_DIR, transform=val_transforms)
 
 print(f'Classes: {train_source.classes}')
 print(f'Total samples: {len(train_source)}')
 
-# Identity-disjoint split (see utils.grouped_video_split docstring): every
-# frame of a given video, AND every video built from a given real identity
-# (through FF++'s reciprocal Deepfakes pairing), is assigned to exactly one
-# of train/val/test. Fixes a confirmed leak in the previous frame-level
-# random_split, where 100% of test-set videos also had frames in train.
+# Identity-disjoint split: every frame of a video, and every video built from one identity,
+# goes to exactly one of train/val/test (the old frame-level split leaked every test video).
 train_idx, val_idx, test_idx = get_split(train_source, args.frames_dir, split_seed=SPLIT_SEED, fold=args.fold)
 
 train_set = Subset(train_source, list(train_idx))   # augmented (if enabled)

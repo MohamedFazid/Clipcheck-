@@ -1,40 +1,6 @@
-"""Build a self-constructed 4-category audio-visual evaluation set.
-
-WHY THIS EXISTS (read before touching): the project's four-condition
-evaluation (Ch3.6/Ch3.7) was designed around FakeAVCeleb, which requires
-gated author approval. As of this script's creation, TWO separate official
-requests have failed to produce data in time for the project deadline: the
-FakeAVCeleb request went unanswered, and a subsequent AV-Deepfake1M request
-was rejected. This script builds a substitute evaluation set from datasets
-ALREADY on disk and already used elsewhere in this project -- no new
-external dependency, no provenance risk, fully auditable.
-
-Method: FakeAVCeleb's four categories are (real video, real audio),
-(real video, fake audio), (fake video, real audio), (fake video, fake
-audio). This script reproduces that same 2x2 structure by muxing:
-  - video track from FaceForensics++ (already labelled real/fake, the same
-    data the video branch is trained and evaluated on)
-  - audio track from ASVspoof 2019 LA's eval partition (already labelled
-    bonafide/spoof, the same data the audio branch is trained and
-    evaluated on -- and MORE diverse than FakeAVCeleb's own audio side,
-    since ASVspoof's spoof class spans 19 distinct attack algorithms
-    (A01-A19: various TTS/voice-conversion systems), vs FakeAVCeleb's
-    single SV2TTS method)
-
-HONESTY NOTE: this is a constructed evaluation set, not a benchmark dataset.
-It demonstrates the disagreement-aware fusion mechanism against real,
-correctly-labelled single-modality manipulation cases; it does not carry
-FakeAVCeleb's external validity (its clips are not adversarially designed
-audio-visual deepfakes -- they are independently-real video paired with
-independently-real/spoofed audio, which is exactly what's needed to test
-"does disagreement between two real, correctly-labelled signals get
-detected," but not a claim that this matches the difficulty of a genuine
-end-to-end audio-visual deepfake). Report this distinction explicitly.
-
-Run (no torch/facenet needed -- just file listing + ffmpeg subprocess calls,
-works in either conda env; base is used here for consistency):
-    /opt/anaconda3/bin/python scripts/build_fallback_eval_set.py --n-per-category 20
-"""
+"""Build a self-constructed four-category set (FF++ video muxed with ASVspoof audio) as a FakeAVCeleb substitute.
+Not a benchmark: it tests whether disagreement is detected, not real end-to-end audio-visual deepfakes.
+    python scripts/build_fallback_eval_set.py --n-per-category 20"""
 
 import argparse
 import json
@@ -77,12 +43,8 @@ def _probe_duration(path: Path) -> float:
 
 
 def mux(video_path: Path, audio_path: Path, out_path: Path):
-    """Video track from video_path + audio track from audio_path, trimmed to
-    the shorter of the two. NOTE: `-shortest` alone does NOT reliably trim
-    when the video stream is `-c:v copy` (confirmed by testing -- the
-    container kept the full original video duration with a much shorter
-    audio track). Fixed by explicitly probing both durations and passing
-    `-t <min>` rather than trusting `-shortest`."""
+    """Mux video_path's video with audio_path's audio, trimmed to the shorter duration.
+    Uses an explicit -t because -shortest does not trim reliably with -c:v copy."""
     duration = min(_probe_duration(video_path), _probe_duration(audio_path))
     cmd = [
         FFMPEG, '-y', '-i', str(video_path), '-i', str(audio_path),

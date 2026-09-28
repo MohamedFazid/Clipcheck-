@@ -31,6 +31,8 @@ wherever MTCNN, the server or `video_infer` runs; see the root README).
 | `ship_model.py` | Promote a trained checkpoint to the model the app serves (`models/shipped_model.json`) |
 | `train_audio_svm.py` | Train the audio SVM on ASVspoof 2019 LA |
 | `download_ff.py`, `download_extra_methods.sh` | FaceForensics++ download helpers |
+| `download_models.py` | Download the four trained weight files from the GitHub release and verify their SHA-256 (used by `setup.sh` and the launchers) |
+| `app_python.sh` | Sourced by the launchers (`run_*.sh`): picks the app environment's Python |
 
 ## 3. Evaluation (each writes under `results/`; see `docs/EXPERIMENTS.md` for the ledger entry)
 

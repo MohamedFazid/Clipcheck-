@@ -1,21 +1,6 @@
-"""Confidence interval for the research question's headline: how much better is disagreement-aware fusion than standard fusion?
+"""Bootstrap 95% interval for the accuracy gain of disagreement-aware over standard fusion (paired, per clip).
 
-The four-condition evaluation reports two accuracies (docs/EXPERIMENTS.md F3, F5). A gap between two accuracies measured on about 76
-to 79 clips needs an interval before it is called a result. This script scores every clip under both rules, exactly as
-scripts/eval_fallback_4condition.py does, and bootstraps the paired per-clip difference.
-
-Scoring rules (copied from eval_fallback_4condition.py so the numbers reproduce its output):
-    standard fusion      : predicts fake when (p_video + p_audio) / 2 >= 0.5
-    disagreement-aware   : predicts fake when the fusion verdict is FAKE or PARTIAL_MANIPULATION
-    ground truth         : fake when the video is fake OR the audio is spoofed
-Only clips that have BOTH scores enter (a clip whose audio was gated by the speech detector has no audio score).
-
-CAVEATS, recorded in the output file: clips are resampled independently, but real videos repeat across RVRA and RVFA (the
-held-out set has only 22 real videos), so the intervals are slightly narrower than the truth; the sets are self-built, not FakeAVCeleb.
-
-    /opt/anaconda3/bin/python scripts/bootstrap_fusion_advantage.py \\
-        --results results/heldout_eval_shipped/fallback_4condition_results.json --out results/heldout_eval_shipped/advantage_bootstrap.json
-"""
+    python scripts/bootstrap_fusion_advantage.py --results <4-condition results.json> --out <advantage_bootstrap.json>"""
 import argparse
 import json
 from pathlib import Path

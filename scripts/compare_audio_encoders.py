@@ -1,27 +1,6 @@
-"""Controlled comparison of self-supervised audio encoders behind the SVM back end (wav2vec2 vs WavLM).
+"""Compare wav2vec2 and WavLM behind the same SVM on the same ASVspoof subsample (subsample numbers, not full-set figures).
 
-WHY. The PPR justifies wav2vec2 from the literature (Tak et al., 2022; Li, Ahmadiadli and Zhang, 2025) and the project measured
-it against a hand-crafted MFCC baseline (docs/EXPERIMENTS.md A2), but it never compared it with another SSL encoder. The module
-brief asks for evidence that several pretrained models were tried and chosen between, so this closes that gap for the audio branch.
-
-WHAT MAKES IT FAIR. Everything except the encoder is held constant:
-  * the same balanced subsample of ASVspoof 2019 LA (same clips, same labels, same seed) for every encoder;
-  * the same decoder (the project's own bundled ffmpeg path, scripts/audio_branch.extract_audio_16k);
-  * the same back end (scripts/audio_branch.AudioSpoofSVM: StandardScaler + RBF SVC), the same C grid, C selected on dev,
-    eval scored once;
-  * the same environment and process, so no library-version difference can creep in.
-
-Both encoders are embedded FRESH here. The cached full-dataset wav2vec2 embeddings are deliberately NOT reused: they were made in
-a different environment, and reusing them would confound the encoder with the environment. Consequence to respect when reading the
-output: these are SUBSAMPLE numbers and are NOT comparable with the full-dataset figures in results/audio_branch/metrics.json
-(eval EER 3.96%), which are measured on 71,237 clips. Compare the encoders with each other here, nothing else.
-
-Both models are base-sized and pretrained on the same 960 hours of LibriSpeech, so this is a like-for-like comparison. Larger and
-better-pretrained variants exist (wavlm-base-plus, wavlm-large) and are not tested here.
-
-Run (app env, which is the one whose transformers can import WavLM):
-    /opt/anaconda3/envs/deepfake-detect/bin/python scripts/compare_audio_encoders.py --root ~/Downloads/LA --per-class 500
-"""
+    python scripts/compare_audio_encoders.py --root ~/Downloads/LA --per-class 500   # app env"""
 import argparse
 import json
 import os

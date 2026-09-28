@@ -1,29 +1,6 @@
-"""Build the four-category evaluation set from HELD-OUT video only (the corrected version of eval_fallback/).
+"""Build the four-category set from test-split video only (the leak-free replacement for eval_fallback/).
 
-WHY THIS EXISTS. scripts/build_fallback_eval_set.py (13 Sep) samples videos at random from ALL FaceForensics++ files. The
-identity-disjoint split arrived on 19 Sep and the video model was retrained on it, but the set was never re-checked: 57 of its 80
-videos turned out to belong to the shipped model's TRAINING split (docs/EXPERIMENTS.md F3 caveat, docs/LESSONS.md L29). The
-comparison between standard and disagreement-aware fusion stays valid (both rules get identical scores), but every absolute
-figure was optimistic for the video branch.
-
-WHAT THIS DOES DIFFERENTLY. Video is drawn ONLY from videos whose identity group is in the TEST partition of
-data_splits/split_v2_identity_grouped.json, so no model trained or validated on this project's split has seen any of them:
-    real videos : the 22 test-split real videos
-    fake videos : the 22 test-split identity pairs, in each of the three manipulation methods the shipped model was trained on
-                  (Deepfakes, FaceSwap, NeuralTextures) = 66 fakes; none of these identities was in training under ANY method
-Audio is unchanged from the original set: ASVspoof 2019 LA eval partition (the SVM trained on the train partition only).
-
-Every chosen video is asserted to be in the test split before anything is written, and the manifest records the split file's
-hash, so tests/test_heldout_eval_manifest.py can re-verify it later without any video on disk.
-
-LIMITATIONS, stated so they are not rediscovered as flaws:
-  * Only 22 real videos exist in the test split, so RVRA and RVFA (20 clips each) draw from the same 22 and share most videos; only
-    the audio differs. Video scores for a shared real video are identical, so the effective number of distinct real videos is 22.
-  * FVRA and FVFA use DISJOINT fake videos (40 distinct of the 66 available), stratified across the three methods.
-  * Still a self-constructed set, not FakeAVCeleb, and the pairing of a video with unrelated audio is artificial.
-
-    /opt/anaconda3/bin/python scripts/build_heldout_eval_set.py --n-per-category 20
-"""
+    python scripts/build_heldout_eval_set.py --n-per-category 20"""
 import argparse
 import json
 import random

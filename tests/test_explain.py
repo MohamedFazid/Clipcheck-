@@ -1,22 +1,5 @@
-"""Grounding / correctness tests for the explanation layer (scripts/explain.py).
-
-IMPORTANT (no overclaiming): these are PIPELINE-CORRECTNESS and GROUNDING
-tests, not a validation of explanation quality. They check that the generated
-text actually reflects the structured input it was given -- that the stated
-score matches, that an unevaluated branch is reported as unevaluated rather
-than invented, and that the implicated modality is named on disagreement.
-They are a cheap automated proxy for a subset of the Chapter 3.6 human-
-evaluation rubric (factual grounding / score accuracy / absence of
-hallucination, 50 samples, 2 raters, Cohen's Kappa), NOT a substitute for it.
-That rubric remains pending.
-
-The whole module skips if no local Ollama server is reachable, mirroring the
-project's existing tolerance for optional local services (cf. app.py's
-AUDIO_OK guard).
-
-Runs under pytest, or standalone:
-    /opt/anaconda3/bin/python tests/test_explain.py
-"""
+"""Grounding tests for the explanation layer (scores stated correctly, unevaluated branches reported as such).
+Not a quality evaluation; skipped when no local Ollama server is reachable."""
 
 import sys
 from pathlib import Path
@@ -44,11 +27,7 @@ except ImportError:      # standalone run without pytest installed
 
 
 def _score_mentioned(text: str, score: float) -> bool:
-    """True if `text` states `score` in any reasonable surface form.
-
-    The model may verbalise 0.95 as "0.950", "0.95", "95%" or "95 percent";
-    all are faithful renderings of the same number, so all count as grounded.
-    """
+    """True if `text` states `score` in any usual form (0.950, 0.95, 95%, 95 percent)."""
     candidates = {
         f'{score:.3f}', f'{score:.2f}', f'{score:g}',
         f'{score * 100:.1f}', f'{score * 100:.0f}',
@@ -59,22 +38,14 @@ def _score_mentioned(text: str, score: float) -> bool:
 # ── Structured input: the constraint boundary (no LLM needed) ────────────────
 
 def test_structured_input_exposes_only_specified_fields():
-    """Chapter 3.4 fixes the input to verdict + 2 scores + disagreement flag
-    + disagreement type. Internal fusion detail (weights, raw gap, notes) must
-    not leak to the model.
-
-    The two *_assessment fields are not additional information: they are the
-    deterministic reading of the two scores already listed, resolved in code
-    rather than left to the LLM (see explain.assess)."""
+    """Only the specified fields reach the model; weights, raw gap and notes must not leak."""
     si = build_structured_input(fuse(0.95, 0.30))
     assert set(si) == {'verdict', 'video_score', 'audio_score',
                        'video_assessment', 'audio_assessment', 'video_anomaly_timing',
                        'disagreement', 'implicated_modality'}
 
 
-# ── The 0.5 comparison, now deterministic and therefore testable ─────────────
-# This logic previously lived in the prompt, where it could not be unit-tested
-# and where Llama 3 8B applied it inconsistently (see explain.assess docstring).
+# ── The 0.5 comparison, now in code (see explain.assess) and therefore testable ──
 
 def test_assess_above_threshold_leans_fake():
     assert 'FAKE' in assess(0.51)
@@ -118,11 +89,7 @@ def test_prompt_carries_the_precomputed_direction():
 
 
 def test_explain_does_not_call_a_sub_half_audio_score_fake():
-    """End-to-end regression for the pilot's headline finding.
-
-    With video 0.60 / audio 0.46 the layer previously wrote "the video and
-    audio are both estimated to be fake". The audio must now be described as
-    genuine-leaning, since 0.46 < 0.5."""
+    """Regression for the pilot's finding: with video 0.60 / audio 0.46 the audio must be described as genuine-leaning."""
     text = explain(fuse(0.60, 0.46)).lower()
     assert 'audio' in text
     idx = text.find('audio')

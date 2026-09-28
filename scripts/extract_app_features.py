@@ -1,20 +1,6 @@
-"""Run the APP's own branch code over evaluation clips and cache what the out-of-domain gate needs (docs/EXPERIMENTS.md O1).
-
-Per clip: P(video_fake) and the pooled Xception features of every face crop (video_infer.analyse_video_file, the app's path, with
-return_features=True); the speech-gate decision, the wav2vec2 embedding and P(audio_fake) (the server's own order: decode, VAD, embed, SVM).
-Nothing is fitted here. Output: results/ood_gate/features/<set>.joblib, one list of dicts per set.
-
-Sets (sampling fixed before any gate existed; seeds in the code):
-    heldout   eval_heldout/ (80; FF++ test-split video + ASVspoof eval audio: in-domain for BOTH branches)
-    fallback  eval_fallback/ (80; FF++ video + different ASVspoof eval utterances: in-domain for both)
-    lavdf     eval_lavdf/ (200; LAV-DF TEST split; the set the gate must handle)
-    lavdf_dev 200 LAV-DF DEV clips, 50 per category, carved from part .006 (TUNING set: chooses the gate variant)
-    timit     the 20 DeepfakeTIMIT clips of eval_hybrid/ (unseen video generator AND unseen genuine speech)
-    celebdf   100 Celeb-DF-v2 test videos, 50 real + 50 fake (unseen dataset for the video branch)
-    veo       the AI-generated clips in demo_videos/ai_generated_2026/ (informative only)
-
-    /opt/anaconda3/envs/deepfake-detect/bin/python scripts/extract_app_features.py --sets heldout fallback lavdf lavdf_dev timit celebdf veo
-"""
+"""Run the app's own branch code over evaluation clips and cache the features and scores the out-of-domain gate needs.
+Sets: heldout, fallback, lavdf, lavdf_dev (tuning), timit, celebdf, veo (AI-generated clips, informative only).
+    python scripts/extract_app_features.py --sets heldout fallback lavdf lavdf_dev timit celebdf veo   # app env"""
 import argparse
 import json
 import random

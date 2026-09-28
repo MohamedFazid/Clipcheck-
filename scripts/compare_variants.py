@@ -1,28 +1,6 @@
-"""Compare training variants (baseline vs augmentation-fixed vs regularised).
+"""Compare training variants (baseline, augmentation-fixed, regularised): test metrics and the train-val overfitting gap.
 
-Answers the question Chapter 5.6 poses but could not yet answer: does fixing
-the augmentation-transform bug, and then adding regularisation, actually reduce
-the overfitting visible in the baseline training curves -- and at what cost to
-test-set performance?
-
-For each variant it reports:
-  * test-set metrics as mean +/- std across seeds (from evaluate.py output);
-  * the OVERFITTING GAP, defined as final-epoch train_acc minus final-epoch
-    val_acc, averaged across seeds. This is the quantity Chapter 5.4 describes
-    qualitatively ("training accuracy climbs to 99.93% while validation
-    accuracy plateaus around 94.9-95.8%") and is the number that says whether
-    the intervention worked;
-  * epochs actually run (early stopping makes this vary).
-
-All variants are evaluated on the SAME fixed test split
-(tests/test_data_split.py asserts index-identity), so the comparison is valid.
-
-Usage:
-    python scripts/compare_variants.py                       # baseline vs aug vs reg
-    python scripts/compare_variants.py --variants "" aug     # only those two
-    python scripts/compare_variants.py --variants base_vidsplit aug_vidsplit reg_vidsplit \\
-        --baseline-tag base_vidsplit --out-name variant_comparison_vidsplit
-"""
+    python scripts/compare_variants.py [--variants base_vidsplit aug_vidsplit] [--baseline-tag TAG --out-name NAME]"""
 
 import os
 import sys
@@ -138,9 +116,7 @@ def summarise(runs):
             out['v_' + m] = (float(vals.mean()),
                              float(vals.std(ddof=1)) if vals.size > 1 else 0.0)
 
-    # Which epoch each checkpoint criterion would select (1-indexed). Accuracy
-    # rule keeps the FIRST epoch reaching the max (train.py saves on strict
-    # improvement); loss rule is the epoch of minimum val loss.
+    # Epoch each checkpoint rule would pick (1-indexed): accuracy keeps the first epoch at the max, loss the minimum.
     acc_ep, loss_ep = [], []
     for r in runs:
         h = r['history']

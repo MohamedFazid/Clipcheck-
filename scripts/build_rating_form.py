@@ -1,19 +1,6 @@
-"""Build the rater-facing form for the 50-case explanation evaluation (Draft Report Ch 3.6): one self-contained HTML file.
+"""Build the offline HTML form raters use to score the 50 explanations; it hides clip ids, labels and check results.
 
-Each rater opens `results/explanation_eval_full/rating_form.html` in any browser (offline, no account), chooses Rater 1 or Rater 2,
-scores every case on the three rubric dimensions, and downloads `rating_sheet_rater1.csv` / `rating_sheet_rater2.csv` in exactly the
-format `scripts/score_explanation_eval.py` reads. Progress is kept in that browser only.
-
-What a rater sees per case: the structured input the explanation model was given (all seven fields Chapter 3.4 specifies, including the
-two deterministic "leans genuine / leans fake" readings that the markdown packet leaves out) and the generated explanation. What a rater
-never sees: the clip id, the ground-truth category or labels, the raw probabilities beyond the input, and any automated check result.
-`tests/test_rating_form.py` checks that none of those can leak into the page.
-
-The two worked examples are real Llama 3 outputs from clips that are NOT among the 50, filled in to show the method; they are not
-part of the evaluation and are never written to either CSV.
-
-    /opt/anaconda3/bin/python scripts/build_rating_form.py
-"""
+    python scripts/build_rating_form.py"""
 import json
 import sys
 from pathlib import Path

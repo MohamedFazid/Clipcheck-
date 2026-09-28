@@ -1,19 +1,6 @@
-"""Audio baseline: MFCC + SVM versus the wav2vec2 + SVM incumbent, on identical protocol.
+"""MFCC + SVM baseline against wav2vec2 + SVM on identical ASVspoof protocol, plus false alarms on unseen genuine speech.
 
-Answers "why wav2vec2?" with a measurement instead of a citation. Same data (ASVspoof 2019 LA), same partitions
-(train fits, dev selects C from (0.1, 1, 10), eval scored once), same classifier class (AudioSpoofSVM: StandardScaler
-+ RBF SVC + Platt scaling), same metrics (eval EER, accuracy). Only the front end differs.
-
-Front end here: MFCC(20) + delta + delta-delta = 60 coefficients per frame, mean and std pooled over time -> 120-d.
-
-Second criterion, generalisation: false-alarm rate on GENUINE speech from a corpus neither model has seen
-(DeepfakeTIMIT's untouched original audio). The wav2vec2 pipeline scored this kind of audio at about 0.98 fake in
-the hybrid evaluation (results/hybrid_eval), a channel-mismatch failure. Both models are scored on the same
-clips, at two operating points: probability >= 0.5 (what fusion uses) and the model's own eval-EER threshold.
-
-    /opt/anaconda3/bin/python scripts/eval_audio_baseline.py --root /Users/<you>/Downloads
-    /opt/anaconda3/bin/python scripts/eval_audio_baseline.py --root ... --max-per-class 100 --out-name smoke   # quick check
-"""
+    python scripts/eval_audio_baseline.py --root ~/Downloads [--max-per-class 100 --out-name smoke]"""
 import argparse
 import json
 import os

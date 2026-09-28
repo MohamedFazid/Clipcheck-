@@ -1,34 +1,6 @@
-"""Voice-activity detection gate for the audio branch.
+"""Voice-activity gate (Silero VAD): the audio branch only scores clips that contain speech.
 
-WHY THIS EXISTS (Draft Project Report, Ch3.4 and Ch4.4). The audio anti-spoofing
-classifier is trained exclusively on ASVspoof's speech data, so its output is
-only meaningful when the input actually contains speech:
-
-    "fed a non-speech track such as background music, it will still output a
-     number, but that number reflects out-of-distribution behaviour rather than
-     a genuine spoofing judgment"
-
-Both reports state the speech-only assumption as a known, unclosed limitation,
-with a VAD pre-check named as the planned fix (motivated by Ogura and Haynes,
-2021, who show VAD stays reliable in the presence of music and noise). This
-module is that pre-check: it gates the audio branch so a spoof score is only
-ever produced for audio that genuinely contains speech.
-
-IMPLEMENTATION NOTE (honest deviation). Ogura and Haynes evaluate an
-x-vector-based VAD; their result is cited as evidence that a VAD gate is
-viable in music/noise conditions, not as a requirement to use that specific
-architecture. This module uses Silero VAD -- a small, permissively licensed,
-offline model that is the current practical standard for this job. The design
-commitment (gate the branch on detected speech) is the report's; the concrete
-detector is an implementation choice, and swapping it would not change the
-architecture.
-
-WHAT THIS DOES NOT DO: VAD answers "is there speech here?", never "is this
-speech genuine or spoofed?". It is a precondition for the spoof classifier,
-not a detector in its own right.
-
-Run:  /opt/anaconda3/bin/python scripts/vad.py
-"""
+    python scripts/vad.py"""
 
 import os
 import sys
@@ -41,10 +13,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 SR = 16000
 
-# A spoof judgement needs enough speech to be meaningful. ASVspoof 2019 LA
-# utterances run roughly 1-10s, so requiring at least one second of detected
-# speech keeps the gate aligned with the classifier's training distribution
-# rather than being an arbitrary cutoff.
+# At least 1 s of speech, matching ASVspoof utterances (about 1 to 10 s).
 MIN_SPEECH_SECONDS = 1.0
 
 _model = None
@@ -85,12 +54,7 @@ class VADResult:
 
 def analyse(waveform: np.ndarray, sr: int = SR,
             min_speech_seconds: float = MIN_SPEECH_SECONDS) -> VADResult:
-    """Detect speech in a 1-D float32 waveform.
-
-    Returns a VADResult carrying the gate decision AND the evidence behind it,
-    so the UI/report can show *why* the audio branch did or did not run rather
-    than just asserting it.
-    """
+    """Detect speech in a 1-D float32 waveform; returns the gate decision and the evidence behind it."""
     import torch
 
     if waveform is None or waveform.size == 0:
@@ -128,13 +92,7 @@ def has_speech(waveform: np.ndarray, sr: int = SR,
 
 
 def _demo():
-    """Run the gate over known-ground-truth signals.
-
-    Ground truth here is definitional, not assumed: a sine tone and white noise
-    are not speech by construction, and the fixture is text-to-speech output,
-    which is speech acoustically (formants, prosody, inter-word pauses) even
-    though it is synthetic.
-    """
+    """Run the gate on signals with known answers: a tone and noise (not speech) and the text-to-speech fixture (speech)."""
     import wave
     from pathlib import Path
 

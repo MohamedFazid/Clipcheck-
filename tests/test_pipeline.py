@@ -1,11 +1,4 @@
-"""A6 — integration test for the video-branch pipeline.
-
-End-to-end: load model + MTCNN, run real demo clips through
-frame-sample -> face-crop -> classify -> aggregate, and assert the verdicts
-are sane and correct. Runs under pytest, or standalone:
-
-    /opt/anaconda3/envs/deepfake-detect/bin/python tests/test_pipeline.py
-"""
+"""Integration test for the video branch: real demo clips through sampling, face crops, classification and aggregation."""
 
 import os
 import sys

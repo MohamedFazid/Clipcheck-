@@ -1,8 +1,5 @@
 #!/bin/bash
-# Re-runs every evaluation that consumed the video model, now that a model is shipped.
-# Sequential on purpose: each step loads the model on the GPU, and latency is meaningless if anything else is running.
-# Outputs go to *_shipped folders, which build_numbers.py reads, so the app's Evaluation tab fills in by itself.
-# The superseded results stay untouched in results/OLD_model/ and results/{fallback_eval,hybrid_eval,latency}/.
+# Re-runs every evaluation that used the video model, one at a time, into *_shipped folders (read by build_numbers.py).
 ROOT="$(cd "$(dirname "$0")/../.." && pwd -P)"; cd "$ROOT" || exit 1
 PY="${PY:-/opt/anaconda3/bin/python}"
 APP="${APP:-/opt/anaconda3/envs/deepfake-detect/bin/python}"

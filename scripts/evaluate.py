@@ -62,9 +62,7 @@ full_dataset = datasets.ImageFolder(str(FRAMES), transform=val_transforms)
 class_names  = full_dataset.classes
 print(f'Classes (index order): {class_names}')
 
-# Same identity-disjoint split as training -> evaluating on the identical
-# held-out test set, with no video (or paired identity) shared with train.
-# See utils.grouped_video_split for why this replaced a frame-level split.
+# Same identity-disjoint split as training, so the test set shares no video or identity with train.
 FOLD = _cfgd.get('fold')
 _, _, test_idx = get_split(full_dataset, str(FRAMES), split_seed=SPLIT_SEED, fold=FOLD)
 test_set = Subset(full_dataset, list(test_idx))
@@ -105,13 +103,8 @@ cm        = confusion_matrix(all_labels, all_preds)
 y_true_fake = (all_labels == 0).astype(int)
 eer, eer_thr = compute_eer(y_true_fake, all_probs)
 
-# ── Video-level aggregation ──────────────────────────────────────────────────
-# Frame-level metrics above treat ~19 correlated crops per video as
-# independent samples (pseudo-replication), and are not what the deployed
-# system reports: server.py/video_infer.py aggregate per-frame P(video_fake)
-# into ONE score per clip. Re-aggregating here evaluates the same unit the
-# app actually outputs, on an honest ~n_test_videos independent test cases
-# rather than an inflated crop count.
+# Video-level aggregation: one score per clip, the unit the app reports,
+# instead of counting ~19 correlated crops per video as independent samples.
 video_true, video_prob = {}, {}
 for lbl, prob, vf in zip(all_labels, all_probs, test_video_folders):
     video_true.setdefault(vf, lbl)

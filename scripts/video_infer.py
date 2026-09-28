@@ -1,11 +1,4 @@
-"""Pure video-branch inference (no UI dependency).
-
-Shared by the web app (server.py) and the integration tests: load the model +
-MTCNN, run a video through frame-sampling -> face crop -> the shipped image
-classifier, and return the aggregated P(video_fake) verdict. The classifier
-architecture is read from models/shipped_model.json (see scripts/ship_model.py);
-without that file it is EfficientNet-B4, the original default.
-"""
+"""Video-branch inference used by the app and tests: frame sampling -> MTCNN face crops -> shipped classifier -> P(video_fake)."""
 
 import json
 import os
@@ -32,10 +25,8 @@ _val_transforms = transforms.Compose([
 ])
 
 
-# Training crops were saved as JPEG by scripts/extract_frames.py with PIL's default quality (75), so the model was
-# trained and evaluated on JPEG-compressed crops. Feeding it uncompressed in-memory crops shifts its operating point
-# (measured: two real test videos flip to fake and 7 of 88 verdicts change; see results/preprocessing_parity/), so
-# inference applies the same round trip. Ranking quality (AUC) is unaffected either way.
+# Training crops were saved as JPEG (quality 75), so inference applies the same round trip;
+# without it 7 of 88 verdicts changed (results/preprocessing_parity/).
 TRAINING_JPEG_QUALITY = 75
 
 
@@ -69,9 +60,7 @@ def shipped_temperature(default=1.0):
     return default
 
 
-# timm architecture name -> the name shown to users. Every place that names the video model (sidebar, "models that ran"
-# table, face-crop caption, latency labels) goes through video_model_summary(), so shipping a different architecture
-# cannot leave a stale name behind (the Draft Report, 4.6 and 5.5, is explicit that an app must not misstate its status).
+# timm architecture name -> display name; every place that names the video model uses video_model_summary().
 ARCH_DISPLAY_NAMES = {
     'efficientnet_b4': 'EfficientNet-B4', 'efficientnet_b0': 'EfficientNet-B0', 'resnet50': 'ResNet-50',
     'legacy_xception': 'Xception', 'convnext_tiny': 'ConvNeXt-Tiny',
@@ -83,11 +72,7 @@ def arch_display_name(arch):
 
 
 def video_model_summary(manifest_path=None):
-    """What the app is actually serving as its video model, read from models/shipped_model.json.
-
-    Returns a dict with: shipped (bool), arch, name (display name), tag, seed, trained_on, checkpoint (short sha256),
-    accuracy_source and status (a one-line, honest description). With no shipped_model.json the checkpoint is a legacy
-    file that was never promoted through scripts/ship_model.py, so it is labelled as such rather than given a clean name."""
+    """Summary of the served video model from models/shipped_model.json (arch, name, seed, checkpoint hash, status)."""
     p = manifest_path or (MODELS_DIR / 'shipped_model.json')
     m = None
     if os.path.exists(p):
@@ -124,11 +109,7 @@ def is_shipped_checkpoint(model_path):
 
 
 def load_models(model_path=None, arch=None):
-    """Load MTCNN and the classifier.
-
-    The architecture comes from models/shipped_model.json whenever the checkpoint being loaded IS the shipped one, whether
-    model_path is None or the shipped path spelled out. For any other checkpoint pass arch= explicitly; it falls back to
-    EfficientNet-B4 (the historical default) only to keep old single-checkpoint call sites working."""
+    """Load MTCNN and the classifier; the architecture comes from shipped_model.json for the shipped checkpoint, else pass arch=."""
     device = get_device()
     mtcnn = MTCNN(image_size=IMG_SIZE, margin=20, device='cpu',
                   keep_all=False, select_largest=True)
@@ -144,10 +125,7 @@ def load_models(model_path=None, arch=None):
 
 
 def sample_face_crops(video_path, mtcnn, max_faces=20, on_progress=None):
-    """The app's exact frame-sampling and face-cropping path: about 3 frames per second, MTCNN, up to max_faces
-    crops, returned as in-memory PIL images (no JPEG round trip). Empty list if the video cannot be opened or no
-    face is found. Shared by analyse_video_file and scripts/check_preprocessing_parity.py so the parity check
-    tests the real path, not a copy of it."""
+    """The app's frame sampling and face cropping: ~3 frames per second, MTCNN, up to max_faces in-memory crops ([] if none)."""
     cap = cv2.VideoCapture(str(video_path))
     if not cap.isOpened():
         return []
@@ -176,13 +154,8 @@ def sample_face_crops(video_path, mtcnn, max_faces=20, on_progress=None):
 
 def analyse_video_file(video_path, mtcnn, model, device, max_faces=20, on_progress=None, match_training_jpeg=True,
                        return_features=False):
-    """Return dict(p_fake, per_frame, n_faces, verdict, sample_face) or None if no faces found.
-
-    sample_face is a PIL image of the first successfully detected face crop (for UI preview); on_progress(fraction,
-    text) is an optional callback for UI progress bars. match_training_jpeg=True (default) applies the JPEG round trip the
-    training crops went through (see TRAINING_JPEG_QUALITY); False feeds raw in-memory crops. This is the single video-branch inference path, used by the
-    web app (server.py), the evaluation scripts and tests/test_pipeline.py.
-    """
+    """Return dict(p_fake, per_frame, n_faces, verdict, sample_face), or None if no face is found.
+    match_training_jpeg applies the training JPEG round trip; on_progress(fraction, text) reports progress."""
     crops = sample_face_crops(video_path, mtcnn, max_faces, on_progress)
     if not crops:
         return None

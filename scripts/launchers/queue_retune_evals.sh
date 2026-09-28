@@ -1,9 +1,6 @@
 #!/bin/bash
-# Re-runs the two fusion evaluations with the RE-TUNED threshold T = 0.35.
-# Why a re-run and not an edit: conditions 3 and 4 and the modality-implication metrics are produced by fusion at the T the
-# process imported, and the first shipped-model pass ran at the old T = 0.30. The per-clip p_video/p_audio scores do not depend
-# on T, so the threshold tuning derived from that pass stays valid; only the fusion verdicts change.
-# The T = 0.30 pass is kept as *_T030 for the record. Waits for the shipped-evals queue so two jobs never share the GPU.
+# Re-runs the two fusion evaluations at the re-tuned T = 0.35 (the earlier pass used T = 0.30, kept as *_T030).
+# Waits for the shipped-evals queue so two jobs never share the GPU.
 ROOT="$(cd "$(dirname "$0")/../.." && pwd -P)"; cd "$ROOT" || exit 1
 PY="${PY:-/opt/anaconda3/bin/python}"
 APP="${APP:-/opt/anaconda3/envs/deepfake-detect/bin/python}"

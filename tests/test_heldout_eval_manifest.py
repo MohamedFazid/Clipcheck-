@@ -1,10 +1,5 @@
-"""Data-free guard for the held-out four-category evaluation set (eval_heldout/manifest.json).
-
-WHY. The first evaluation set (eval_fallback/) was built before the identity-disjoint split existed and was never re-checked
-against it: 57 of its 80 videos turned out to be in the shipped model's TRAINING split (docs/LESSONS.md L29). This test makes that
-class of mistake impossible to repeat for the replacement set. It needs only two committed JSON manifests, no video on disk, so it
-runs in CI. It is skipped when the held-out set has not been built.
-"""
+"""Data-free guard: every video in eval_heldout/ must be in the test split (the mistake found in eval_fallback/, LESSONS L29).
+Skipped when the held-out set has not been built."""
 import json
 import os
 from collections import Counter

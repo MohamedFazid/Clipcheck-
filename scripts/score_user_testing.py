@@ -1,13 +1,6 @@
-"""Score the user-testing survey (ledger U1): reads every `survey_P<n>_round<r>.csv` in docs/user_testing/responses/.
+"""Score the user-testing survey CSVs in docs/user_testing/responses/ into summary.json and summary.md.
 
-    /opt/anaconda3/bin/python scripts/score_user_testing.py
-Writes docs/user_testing/results/summary.json and summary.md. Reads only CSVs downloaded from `survey_form.html` in real
-sessions; it never fills a gap. A file missing a required answer, or with an answer that is not one of the form's options,
-is refused with the reason. Question ids come from scripts/build_survey_form.py (SURVEY), the same source the form is built from.
-
-With 3 to 5 participants per round the report gives each participant's figure and the median; means are shown only next to
-the individual values, and no significance test is run.
-"""
+    python scripts/score_user_testing.py"""
 import csv
 import json
 import statistics

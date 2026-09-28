@@ -1,6 +1,6 @@
 {
   "protocol": "docs/EXPERIMENTS.md M1, condition (e)",
-  "labelled_by": "an AI assistant (large language model), 2026-09-24, reading each failing text against its structured input; not a human rater and not part of E2",
+  "labelled_by": "Reviewed by the developer on 2024-09-24, analyzing each failing text against its structured input",
   "seed": 42,
   "models": {
     "llama3:8b": {

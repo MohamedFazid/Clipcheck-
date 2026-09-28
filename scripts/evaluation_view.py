@@ -1,15 +1,5 @@
-"""Builds the in-app Evaluation tab and the per-verdict Limitations panel from results/numbers.json.
-
-Pure Python (no torch, no dataset), so it is unit-testable and cheap to import. The governing rule (docs/LESSONS.md L8, L15):
-every figure shown comes from a result file via numbers.json, never typed in here, and anything produced with a superseded
-video model is WITHHELD (status "pending") instead of shown, so a stale number cannot be quoted from the app.
-
-    build_evaluation(numbers, shipped, latency, fusion_info) -> {'shipped': ..., 'sections': [...]}
-    build_limitations(numbers, shipped, fusion_info)          -> [{'id', 'text', 'source'}, ...]
-
-`shipped` is models/shipped_model.json (or None), `latency` is results/latency/latency.json (or None), `fusion_info` is a dict with
-threshold_T, threshold_T_source, video_accuracy_source, audio_accuracy_source. Text produced here uses no em dashes.
-"""
+"""Build the app's Accuracy page and limits list from results/numbers.json; figures from superseded models are withheld.
+Pure Python, no torch."""
 from typing import Optional
 
 # Display order: single-method models first, then the multi-method ones. Unknown tags are appended.

@@ -1,15 +1,5 @@
-"""Shared utilities for the deepfake video branch.
-
-Provides:
-  * PROJECT_ROOT / standard directory paths, derived from this file's location
-    (no dependence on any hardcoded project-folder path).
-  * set_seed(): seed every RNG source so training/eval runs are reproducible.
-
-NOTE on determinism: on the Apple MPS backend full bit-exact determinism is not
-guaranteed even with all seeds fixed. Seeding collapses the large run-to-run
-variance (classifier-head init, shuffle order, augmentation); any residual tiny
-variance is expected and is captured by the mean +/- std reporting in A1.
-"""
+"""Shared paths and helpers for the video branch (seeding, splits, EER).
+MPS is not bit-exact even when seeded, so results are reported as mean +/- std over seeds."""
 
 import json
 import os
@@ -34,16 +24,7 @@ SPLIT_SEED = 42
 
 
 def run_paths(seed: int, tag: str = ''):
-    """Return (model_checkpoint_path, results_run_dir) for a training run.
-
-    An empty tag keeps the ORIGINAL baseline layout used by the figures already
-    reported in the Draft Project Report:
-        models/runs/seed42.pth        results/runs/seed42/
-    A non-empty tag isolates a variant in its own subdirectory:
-        models/runs/reg/seed42.pth    results/runs/reg/seed42/
-    so re-running an experiment can never overwrite the reported baseline
-    artifacts.
-    """
+    """Return (checkpoint_path, results_dir): an empty tag keeps the original layout, a tag gets its own subfolder."""
     if tag:
         return (MODEL_RUNS_DIR / tag / f'seed{seed}.pth',
                 RUNS_DIR / tag / f'seed{seed}')
@@ -70,12 +51,7 @@ def get_device() -> torch.device:
 
 
 def compute_eer(y_true, scores):
-    """Equal Error Rate: the operating point where the false-acceptance rate
-    (FAR = fpr) equals the false-rejection rate (FRR = 1 - tpr).
-
-    y_true: 1 for the positive (fake) class, 0 otherwise.
-    scores: P(fake). Returns (eer, threshold).
-    """
+    """Equal Error Rate: where false-acceptance equals false-rejection. y_true 1 = fake, scores = P(fake); returns (eer, threshold)."""
     from sklearn.metrics import roc_curve
     fpr, tpr, thr = roc_curve(y_true, scores)
     fnr = 1 - tpr
@@ -93,41 +69,8 @@ def _video_folder_of(path: str) -> str:
 
 def grouped_video_split(dataset, split_seed: int = SPLIT_SEED,
                         train_frac: float = 0.8, val_frac: float = 0.1):
-    """Identity-disjoint train/val/test split over an ImageFolder of face
-    crops, replacing a frame-level random_split.
-
-    WHY THIS EXISTS: the previous split (torch random_split over every
-    individual frame) had no notion of "video" at all. Verified directly:
-    100% of the old test split's distinct videos also had frames in the old
-    train split, and 100% of the old val split's videos did too, because
-    ~19 near-duplicate frames per video (same face, lighting, background)
-    were scattered independently across all three sets. A model can then
-    partly solve the task by recognising "I've seen this exact video before"
-    rather than learning generalisable manipulation artefacts, which
-    plausibly explains implausibly high scores (AUC ~0.998), a validation
-    set that no longer reveals true overfitting because it leaks the same
-    way as the test set, and 3-seed comparisons that vary only training
-    stochasticity on an otherwise-identical (leaking) split -- exactly the
-    issues raised in supervisor feedback on the Draft Report.
-
-    A second, subtler leak: FF++ Deepfakes videos are released as
-    reciprocal identity pairs (both '036_035' and '035_036' exist, i.e. two
-    real identities' faces swapped onto each other's footage). Splitting by
-    video FOLDER alone would still let identity 036's face appear in both
-    train (as real/036 or fake/035_036) and test (as fake/036_035), leaking
-    the same face's appearance across the split even with zero literal
-    video-file overlap. This function instead groups by underlying identity:
-    every real id and every fake pair built from it are assigned to the
-    split as one atomic unit, via union-find over the id graph (edges are
-    the two ids named in each fake pair folder).
-
-    Group (not frame) count determines the 80/10/10 target, accumulated by
-    frame count in shuffled group order, so the realised split sizes won't
-    be exactly 80/10/10 (video lengths vary slightly) but are close.
-
-    Returns (train_idx, val_idx, test_idx): plain lists of dataset indices,
-    a drop-in replacement for the three lists random_split used to return.
-    """
+    """Identity-disjoint train/val/test split: each real identity and every fake pair built from it (union-find) stays in one split.
+    Replaces a frame-level random_split that leaked every test video into training. Returns (train_idx, val_idx, test_idx)."""
     from collections import defaultdict
 
     parent = {}
@@ -186,13 +129,7 @@ SPLIT_MANIFEST = PROJECT_ROOT / 'data_splits' / 'split_v2_identity_grouped.json'
 
 
 def split_from_manifest(dataset, manifest_path=None):
-    """Train/val/test indices read from the FROZEN split manifest (scripts/freeze_split.py).
-
-    Used for any frames folder other than the default (for example the multi-method folder, where crop
-    counts per video differ and a recomputed frame-count split could shift group boundaries). Every
-    'class/video-folder' key must exist in the manifest, so a folder that drifts from the frozen split
-    fails loudly instead of silently changing the split.
-    """
+    """Train/val/test indices from the frozen split manifest; fails loudly if a folder is not in it."""
     assign = json.load(open(manifest_path or SPLIT_MANIFEST))['assignment']
     out = {'train': [], 'val': [], 'test': []}
     missing = set()

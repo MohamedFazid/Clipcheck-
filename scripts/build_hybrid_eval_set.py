@@ -1,30 +1,6 @@
-"""Builds a hybrid manifest.json: RVRA/RVFA/FVFA from the self-constructed
-fallback set (build_fallback_eval_set.py, FF++ video muxed with ASVspoof
-audio), but FVRA (fake video, real audio) replaced with genuinely
-naturally-paired clips from DeepfakeTIMIT (Idiap/Zenodo, Korshunov and
-Marcel), where the original speaker's own unaltered audio was kept when
-the face was swapped, no muxing involved.
-
-Why this exists: DFDC's access flow turned out to be non-functional (the
-"Join the competition" control produces no response, confirmed manually
-after a click and a page refresh, on a competition that closed for entries
-in 2020). DeepfakeTIMIT required no account, no approval, and downloaded in
-one step, but it only covers the fake-video/real-audio category. This
-script upgrades exactly that one category from a construction to a real
-paired result while keeping the other three as they were, and is itself a
-stopgap: if FakeAVCeleb is approved, build_fakeavceleb_eval_set.py replaces
-all four categories at once with fully real, jointly-manipulated data, and
-that becomes authoritative over this hybrid.
-
-HONESTY NOTE: this manifest's clips are NOT uniform provenance. Each clip
-carries its own "source" field so this is auditable per clip, and the
-top-level "source" field states the mixture plainly. Never describe results
-from this manifest as a single clean dataset; report the FVRA category and
-the other three separately if asked to justify the numbers.
-
-Run (no torch/facenet needed -- just file listing):
-    /opt/anaconda3/bin/python scripts/build_hybrid_eval_set.py
-"""
+"""Build a hybrid manifest: fallback-set RVRA/RVFA/FVFA plus real DeepfakeTIMIT clips for FVRA (fake video, genuine audio).
+Clips have mixed provenance (per-clip "source" field); report FVRA separately.
+    python scripts/build_hybrid_eval_set.py"""
 
 import argparse
 import json

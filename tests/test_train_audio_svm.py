@@ -1,24 +1,5 @@
-"""Tests for the ASVspoof 2019 LA training script (scripts/train_audio_svm.py).
-
-The real dataset has not been obtained, so these tests build a SYNTHETIC
-mini-dataset that reproduces the official ASVspoof 2019 LA directory layout
-and protocol-file format exactly, then drive the real code paths over it.
-
-What this does and does not establish. It establishes that the layout
-resolution, protocol parsing, balanced subsampling, audio loading, embedding,
-caching, SVM fitting and EER computation all work end to end, and that a
-malformed or missing dataset fails immediately with a clear message instead of
-training on a partial set. It establishes NOTHING about anti-spoofing accuracy:
-the synthetic "bona fide" and "spoof" classes here are a tone and noise, which
-are trivially separable and carry no relationship to real speech spoofing. The
-genuine EER can only come from the real ASVspoof partitions.
-
-Building the fixture this way means the script is exercised before the data
-arrives, so a download turns into a run rather than a debugging session.
-
-Runs under pytest, or standalone:
-    /opt/anaconda3/bin/python tests/test_train_audio_svm.py
-"""
+"""Tests for train_audio_svm.py on a synthetic mini-dataset in the official ASVspoof 2019 LA layout.
+Checks the code path end to end and clear failures on bad layouts; says nothing about spoofing accuracy."""
 
 import shutil
 import sys

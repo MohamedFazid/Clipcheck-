@@ -1,8 +1,4 @@
-"""Tests for the user-testing survey form and scorer (ledger U1). Data-free: fixtures are written to pytest's tmp_path only.
-
-The fixture CSVs here exercise the scorer's arithmetic and refusals; they are not participant data and are never written to
-docs/user_testing/responses/ (human evaluations rest on humans only).
-"""
+"""Tests for the user-testing survey form and scorer; fixtures live in tmp_path only and are not participant data."""
 import csv
 import sys
 from pathlib import Path

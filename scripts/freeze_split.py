@@ -1,16 +1,6 @@
-"""Freeze the current identity-grouped split into a manifest with a hash.
+"""Freeze the identity-disjoint split into data_splits/split_v2_identity_grouped.json with a SHA-256 hash.
 
-Writes data_splits/split_v2_identity_grouped.json: for every video folder, which
-split it belongs to, plus per-split counts and a SHA-256 over the sorted
-(video, split) assignments. Any result can then cite "split v2, hash <first 12>",
-and tests/CI can assert the hash has not silently changed.
-
-split v1 = the original frame-level random_split (leaky, SUPERSEDED, kept only
-as a description; it is not regenerated here).
-split v2 = utils.grouped_video_split (identity-disjoint), SPLIT_SEED=42.
-
-Run:  /opt/anaconda3/bin/python scripts/freeze_split.py
-"""
+    python scripts/freeze_split.py"""
 import hashlib
 import json
 import os

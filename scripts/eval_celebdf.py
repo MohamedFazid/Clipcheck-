@@ -1,32 +1,6 @@
-"""Cross-dataset evaluation of the trained video branch on Celeb-DF (v2).
+"""Zero-shot evaluation of the shipped video model on the Celeb-DF-v2 official test list (518 videos).
 
-The video branch (whichever architecture is shipped; Xception multi-method as of 2026-09-21) was trained and evaluated on FaceForensics++
-only (Chapter 5). Both the PPR and Draft Report flag that FF++-trained
-detectors typically drop to 70-75% accuracy on Celeb-DF-V2 (Khan and
-Dang-Nguyen, 2023) and identify this cross-dataset check as the single most
-informative next experiment for understanding the model's actual
-generalisation (Draft Report Ch5.6). This script runs that check: NO
-retraining happens here, the model is used exactly as shipped
-(models/best_model.pth by default).
-
-Evaluated on the dataset authors' own official held-out test split
-(List_of_testing_videos.txt, 518 videos: 178 real, 340 fake), not the full
-~6,200-video corpus, matching standard practice for this dataset and keeping
-runtime tractable. Celeb-DF's label convention in that file is 1 = real,
-0 = fake; this script converts to this project's convention (1 = fake) at
-load time and states so explicitly in the output, to avoid a silent label
-inversion, which would fabricate a result in the worst possible way (a
-flipped accuracy figure that looks plausible).
-
-Reuses scripts/video_infer.py's load_models()/analyse_video_file() untouched,
-so this is exercising the identical code path the live app and
-tests/test_pipeline.py use, not a parallel implementation.
-
-Usage:
-    python scripts/eval_celebdf.py --root ~/Downloads/Celeb-DF-v2 --check
-    python scripts/eval_celebdf.py --root ~/Downloads/Celeb-DF-v2 --max-videos 20
-    python scripts/eval_celebdf.py --root ~/Downloads/Celeb-DF-v2
-"""
+    python scripts/eval_celebdf.py --root ~/Downloads/Celeb-DF-v2 [--check | --max-videos 20]"""
 
 import os
 import sys
@@ -49,11 +23,7 @@ OUT_DIR = RESULTS_DIR / 'cross_dataset' / 'celebdf_v2'
 
 
 def parse_test_list(root: Path):
-    """Parse List_of_testing_videos.txt: '<celebdf_label> <relative_path>' per
-    line, celebdf_label 1 = real, 0 = fake. Returns list of
-    (video_path, is_fake) with is_fake following THIS project's convention
-    (1 = fake, 0 = real) -- the flip happens exactly once, here.
-    """
+    """Parse List_of_testing_videos.txt into (video_path, is_fake). Celeb-DF uses 1 = real; the flip to 1 = fake happens here only."""
     list_path = root / 'List_of_testing_videos.txt'
     if not list_path.exists():
         raise FileNotFoundError(

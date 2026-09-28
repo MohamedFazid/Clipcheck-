@@ -1,9 +1,6 @@
 #!/bin/bash
-# Download two extra FaceForensics++ manipulation methods (c23, first 200 videos, which are the same
-# identity pairs as the Deepfakes set) for the cross-method test.
-# Run this yourself: the FF++ download script asks you to accept the FaceForensics terms of use.
-#   bash scripts/download_extra_methods.sh          # default server EU2
-#   bash scripts/download_extra_methods.sh EU       # or CA, if a server times out
+# Download FaceSwap and NeuralTextures (FF++ c23, first 200 videos) for the cross-method test.
+# Usage: bash scripts/download_extra_methods.sh [EU2|EU|CA]   (asks you to accept the FF++ terms)
 ROOT="$(cd "$(dirname "$0")/.." && pwd -P)"
 PY=/opt/anaconda3/bin/python
 SERVER="${1:-EU2}"

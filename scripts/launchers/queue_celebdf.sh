@@ -1,7 +1,5 @@
 #!/bin/bash
-# Cross-dataset (Celeb-DF-v2 official test list, 518 videos) for the finalists. Waits for the ConvNeXt multi-method
-# queue. The seed of each tag is the one with the best VALIDATION accuracy (never chosen on test).
-# Needs the deepfake-detect env (MTCNN).  Output: results/cross_dataset/celebdf_v2__<tag>/
+# Celeb-DF-v2 cross-dataset test (518 videos) for the finalists, each at its best-validation seed (app env).
 ROOT="$(cd "$(dirname "$0")/../.." && pwd -P)"; cd "$ROOT" || exit 1
 PYE=/opt/anaconda3/envs/deepfake-detect/bin/python
 CELEB="${CELEBDF_ROOT:-$HOME/Downloads/Celeb-DF-v2}"   # Celeb-DF-v2 folder

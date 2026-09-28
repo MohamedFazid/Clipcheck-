@@ -1,20 +1,6 @@
-"""Build frames_multi/: a class-balanced, multi-method training folder made of symlinks.
+"""Build frames_multi/: symlinks to real crops plus one manipulation method per fake pair, balanced 1:1 (assignment saved in data_splits/).
 
-Layout (ImageFolder-compatible, identical video-folder names to frames/, so the frozen split applies):
-    frames_multi/real/<id>   -> frames/real/<id>
-    frames_multi/fake/<a_b>  -> frames/fake/<a_b>                     (Deepfakes)
-                             or frames_methods/FaceSwap/<a_b>
-                             or frames_methods/NeuralTextures/<a_b>
-
-Each fake pair-direction <a_b> is assigned exactly ONE method, cycling through the methods within each split
-(after a seeded shuffle), so real:fake stays 1:1 and each method contributes about one third of the fakes in
-train, val and test. A model therefore sees every method but never the same clip in two versions. Test-split
-identities are unseen in training whichever method they use.
-
-The assignment is written to data_splits/multimethod_assignment_v1.json (tracked) for provenance.
-
-    /opt/anaconda3/bin/python scripts/build_multimethod_frames.py
-"""
+    python scripts/build_multimethod_frames.py"""
 import json
 import os
 import random

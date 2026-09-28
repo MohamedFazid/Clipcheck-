@@ -1,18 +1,6 @@
-"""Temperature-scale a trained video model and report calibration before and after.
+"""Fit temperature scaling on validation crops and report calibration (NLL, Brier, ECE) before and after.
 
-Why: fusion.py treats each branch's P(fake) as a probability. An over-confident network pushes scores to 0 or 1, which
-makes the disagreement gap |P(video) - P(audio)| behave badly and makes displayed scores misleading. Temperature scaling
-divides the logits by one scalar T (fitted on the VALIDATION crops only), so it cannot change any decision (the sign of
-the logit difference is unchanged, so accuracy, AUC and EER are identical) but it makes the probabilities honest.
-
-Reports, for validation and test crops and for test clips (mean of a video's crop probabilities, the unit the app shows):
-NLL, Brier score, and binary ECE (equal-width bins on P(fake)), before and after. Writes results/calibration/<tag>_seed<N>/
-calibration.json and a reliability diagram. Clip-level ECE uses only the test videos (about 44), so it is noisy: read it
-together with the crop-level figures.
-
-    /opt/anaconda3/bin/python scripts/calibrate_video.py --tag mm_xcep_vidsplit            # best-validation seed
-    /opt/anaconda3/bin/python scripts/calibrate_video.py --tag mm_xcep_vidsplit --seed 43
-"""
+    python scripts/calibrate_video.py --tag mm_xcep_vidsplit [--seed 43]"""
 import argparse
 import json
 import os

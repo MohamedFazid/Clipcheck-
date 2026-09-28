@@ -1,16 +1,6 @@
-"""Explanation LLM comparison (ledger M1, pre-registered 2026-09-24 17:50 +08).
+"""Compare local LLMs on the app's explanation prompt and faithfulness screen (ledger M1).
 
-Runs the app's own explanation prompt (explain.PROMPT_TEMPLATE, explain.GEN_OPTIONS) through several local Ollama models on the
-50 structured inputs of the human-rating packet, and scores every text with the app's own faithfulness screen
-(explain_checks.check_faithfulness). Nothing in the app is changed: the model name is passed per request, never by editing
-explain.MODEL_NAME. The deterministic template is scored as a reference row.
-
-Usage (base env):
-  python scripts/compare_llms.py run --models llama3:8b mistral:7b qwen2.5:7b      # resumable
-  python scripts/compare_llms.py summarise
-Output: results/llm_comparison/generations.jsonl (one line per model x seed x case), summary.json, summary.md.
-The switch rule and its caveats are in docs/EXPERIMENTS.md (M1); this script only measures.
-"""
+    python scripts/compare_llms.py run --models llama3:8b mistral:7b qwen2.5:7b; python scripts/compare_llms.py summarise"""
 import os
 import re
 import sys

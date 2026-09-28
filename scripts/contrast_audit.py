@@ -1,17 +1,6 @@
-"""WCAG 2.1 contrast audit of the FINAL interface (v4, frozen 2026-09-27 19:59), on the same ten screens as the v3 audit (findings.md):
-(Copied into the repository on 2026-09-28 from Final Report/figures/src/, where the report build keeps the original.)
-Check a video; results partly manipulated, unfamiliar, no verdict; the four Details tabs; History; Accuracy. The landing page is measured
-separately.
+"""WCAG 2.1 contrast audit of the final interface (v4) on ten screens; writes results/ui_contrast_v4_final.json.
 
-    /opt/anaconda3/bin/python scripts/contrast_audit.py
-
-Method: every visible element that directly holds text is measured. Text colour is the computed colour; a gradient label (background-clip:
-text) is measured at its lower-contrast gradient stop. The background is found by compositing the computed background colours of the element
-and its ancestors (alpha blending) over the page's base colour; background images, blur and the decorative pixel field are ignored, so
-translucent panels are measured against the dark base they sit on. Ratio per WCAG 2.1: (L1 + 0.05) / (L2 + 0.05). Reported: elements below
-4.5:1 (the strict criterion used for v1 to v3), and elements failing AA (large text, at least 24 px or 18.66 px bold, needs 3:1).
-Creates its own analysis jobs and deletes only those. Output: results/ui_contrast_v4_final.json in the project.
-"""
+    python scripts/contrast_audit.py   # creates its own analysis jobs and deletes only those"""
 import json
 import time
 from datetime import datetime
@@ -19,6 +8,15 @@ from pathlib import Path
 
 import requests
 from playwright.sync_api import sync_playwright
+
+# Written into the output file as the method description.
+METHOD = (
+    'every visible element that directly holds text is measured. Text colour is the computed colour; a gradient label (background-clip:\n'
+    'text) is measured at its lower-contrast gradient stop. The background is found by compositing the computed background colours of the element\n'
+    "and its ancestors (alpha blending) over the page's base colour; background images, blur and the decorative pixel field are ignored, so\n"
+    'translucent panels are measured against the dark base they sit on. Ratio per WCAG 2.1: (L1 + 0.05) / (L2 + 0.05). Reported: elements below\n'
+    '4.5:1 (the strict criterion used for v1 to v3), and elements failing AA (large text, at least 24 px or 18.66 px bold, needs 3:1).'
+)
 
 BASE = 'http://localhost:8000'
 MDD = Path(__file__).resolve().parent.parent   # the repository root
@@ -127,7 +125,7 @@ def main():
                           'below_4_5_examples': sorted(below45, key=lambda e: e['ratio'])[:12]}
     OUT.write_text(json.dumps({'interface': 'v4 final (ui_v4_final_snapshot, frozen 2026-09-27 19:59)',
                                'measured_at': datetime.now().astimezone().isoformat(timespec='seconds'),
-                               'method': __doc__.split('Method: ')[1].split('Creates its own')[0].strip(),
+                               'method': METHOD,
                                'summary': summary, 'screens': screens}, indent=1))
     print(json.dumps({k: {x: v[x] for x in ('elements', 'below_4_5', 'fail_wcag_aa', 'lowest_ratio', 'per_screen')} for k, v in summary.items()}, indent=1))
     for k, v in summary.items():

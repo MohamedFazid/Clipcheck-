@@ -1,47 +1,6 @@
-"""Per-stage inference latency benchmark (Chapter 3.6).
+"""Per-stage latency of the pipeline, with model loading and warm per-clip time reported separately.
 
-Chapter 3.6 commits to timing each pipeline stage separately on a fixed test
-clip and reporting total end-to-end latency alongside the hardware
-configuration, because the system targets journalists and moderators making
-time-sensitive decisions: a tool whose processing time is incompatible with
-practical use fails regardless of its accuracy.
-
-WHAT IS TIMED, AND THE DISTINCTION THAT MATTERS MOST. Model loading and
-per-clip inference are reported separately. Loading the video model, wav2vec2,
-MTCNN and the VAD costs seconds, but it happens once per session, not once per
-clip; the figure that governs whether the tool is usable is the WARM per-clip
-time. Reporting a single blended number would either overstate the cost of
-analysing a clip or hide the startup cost entirely, so both are given.
-
-Stages (the video model is whichever one is shipped, named from models/shipped_model.json):
-    1. Face extraction (MTCNN) + video-model scoring        -- measured together,
-       since they interleave per sampled frame and cannot be cleanly separated
-       without changing the inference path the rest of the project uses.
-    2. Audio decode (ffmpeg) -> waveform
-    3. VAD gate (Silero)
-    4. wav2vec2 embedding
-    5. SVM spoof prediction (trained on ASVspoof 2019 LA)
-    6. Fusion decision (on the REAL video and audio scores of the clip)
-    7. Llama 3 explanation generation (real fusion result, local Ollama)
-    8. Faithfulness screen on that explanation
-Added 2026-09-25, so the benchmark times what the app does now (the 21 Sep figure predates both additions):
-    1b. Out-of-domain check on the face features (ledger O1; features come from the same forward pass as stage 1)
-    1c. Suspicious-moment windows from the per-frame scores (ledger T1; includes reading the clip's frame rate)
-    5b. Out-of-domain check on the speech embedding
-    and stages 7 and 8 now receive the real moment windows, as the app's explanation does.
-The functions are imported from server.py, so the timed code is the app's own code, not a copy.
-
-A stage that cannot run in the current environment (for example Ollama not reachable) is reported as pending, never
-estimated, and the result is then marked complete_pipeline = false.
-
-Refuses to run while a training job is active (latency measured against a busy GPU is meaningless, and running the model
-while training swapped the trainer out once, LESSONS L26), and refuses to overwrite an existing latency.json (archive the
-old one first, LESSONS L14).
-
-Usage:
-    /opt/anaconda3/envs/deepfake-detect/bin/python scripts/benchmark_latency.py
-    ... --clip demo_videos/composite_real_video_synthetic_speech.mp4 --runs 5
-"""
+    python scripts/benchmark_latency.py [--clip PATH] [--runs 5]   # app env; refuses to overwrite latency.json"""
 
 import os
 import sys

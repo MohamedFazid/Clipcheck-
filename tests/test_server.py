@@ -1,16 +1,4 @@
-"""Headless tests for the FastAPI + vanilla-JS frontend (server.py + static/).
-
-Checks track the pipeline's REAL current state (via
-fusion.AUDIO_ACCURACY_IS_MEASURED) rather than pinning one moment in time,
-and specifically assert the honesty contract -- no field is ever a
-fabricated number where a real one doesn't exist. (The Streamlit frontend
-this app replaced had an equivalent suite, tests/test_app.py, built on
-streamlit.testing.v1.AppTest; that UI and test file were retired and
-retired once this one took over.)
-
-Runs under pytest, or standalone:
-    /opt/anaconda3/envs/deepfake-detect/bin/python tests/test_server.py
-"""
+"""Headless tests for the FastAPI app (server.py + static/), including that no response field is a made-up number."""
 
 import sys
 import time
@@ -33,9 +21,8 @@ import server as server_module
 
 client = TestClient(server_module.app)
 
-# Tests marked `heavy` run the REAL pipeline: the video model on the GPU (MPS) and the real Llama 3 through Ollama (about 5 GB
-# resident). Set DEEPFAKE_SKIP_HEAVY=1 to skip every one of them, for example while a training run is using the machine (running
-# them then swapped the training process out and slowed it about 60x on 2026-09-20). All other tests here are model-free.
+# `heavy` tests run the real models (video on MPS, Llama 3 via Ollama). Set DEEPFAKE_SKIP_HEAVY=1 to skip them,
+# e.g. while training runs. All other tests here are model-free.
 heavy = pytest.mark.skipif(os.environ.get('DEEPFAKE_SKIP_HEAVY') == '1',
                            reason='runs the real video model and Ollama; skipped by DEEPFAKE_SKIP_HEAVY=1')
 
@@ -142,9 +129,7 @@ def test_real_demo_clip_has_no_audio_and_no_fabricated_audio_score():
     audio = result['audio']
     assert audio is not None
     if audio['available']:
-        # Some bundled clips do carry a (non-speech) audio track; either way
-        # a spoof score must never appear without a genuinely trained SVM
-        # having produced it.
+        # A spoof score must only come from the trained SVM, never appear otherwise.
         if not AUDIO_ACCURACY_IS_MEASURED:
             assert audio['p_audio_fake'] is None
     else:
@@ -154,10 +139,7 @@ def test_real_demo_clip_has_no_audio_and_no_fabricated_audio_score():
 @heavy
 @needs_demo_clips
 def test_composite_clip_exercises_full_audio_path():
-    """The composite clip (real video + synthetic speech) is the only bundled
-    clip with genuine detectable speech -- confirms the VAD/embedding path
-    genuinely runs, and (once the SVM is trained) that fusion receives a
-    real, non-null audio score rather than a placeholder."""
+    """The composite clip (real video + synthetic speech) exercises the full audio path: VAD, embedding and a real audio score."""
     demos = client.get('/api/demo_clips').json()
     composite = next(d for d in demos if 'COMPOSITE' in d['kind'])
     job = client.post(f'/api/demo/{composite["demo_id"]}').json()
@@ -400,10 +382,8 @@ def test_demo_library_has_all_four_categories_chosen_by_a_fixed_rule():
 
 
 def test_featured_shelf_follows_its_rule():
-    """The shelf of eight (27 Sep): per category, the first two clips by id that the shipped model gets fully right in
-    results/fallback_eval_shipped (both parts on the right side of 0.5, and the right verdict) and that raise no unfamiliar-input
-    warning in the app (skips recorded in SHELF_SKIPPED_FOR_WARNING), shown alternately by kind.
-    Testing mode keeps the eight clips rounds 1 and 2 of user testing used, including the wrong verdict task 7 needs."""
+    """The shelf of eight follows its rule: first two clips per category that are fully right with no warning, alternating by kind.
+    Testing mode keeps the eight clips used in user testing rounds 1 and 2."""
     assert server_module.TESTING_DEMOS == ['RVRA_000.mp4', 'RVFA_000.mp4', 'FVRA_000.mp4', 'FVFA_002.mp4', '183_253.mp4',
                                            '183.mp4', 'LAVDF_RVRA_000.mp4', 'noface_silent.mp4']
     res = PROJECT_ROOT / 'results' / 'fallback_eval_shipped' / 'fallback_4condition_results.json'

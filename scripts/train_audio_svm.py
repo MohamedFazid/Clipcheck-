@@ -1,44 +1,6 @@
-"""Train and evaluate the audio anti-spoofing branch on ASVspoof 2019 LA.
+"""Train and evaluate the audio SVM on ASVspoof 2019 LA (train fits, dev picks C, eval scored once; embeddings cached).
 
-Implements the audio half of the pipeline specified in Chapter 3:
-
-    ASVspoof 2019 LA flac -> wav2vec2-base SSL encoder -> mean-pooled 768-d
-    embedding -> SVM (bona fide vs spoof) -> P(audio_fake) -> EER
-
-The Logical Access partition is used because its evaluation set contains attack
-types never seen in training (Chapter 2), so the reported EER reflects unseen
-attacks rather than memorised ones. The three official partitions are honoured
-exactly as distributed: train fits the SVM, dev selects hyperparameters, and
-eval is scored once at the end and never used for any fitting decision.
-
-EXPECTED LAYOUT. The script targets the dataset as officially distributed:
-
-    <root>/LA/ASVspoof2019_LA_train/flac/*.flac
-    <root>/LA/ASVspoof2019_LA_dev/flac/*.flac
-    <root>/LA/ASVspoof2019_LA_eval/flac/*.flac
-    <root>/LA/ASVspoof2019_LA_cm_protocols/
-        ASVspoof2019.LA.cm.train.trn.txt
-        ASVspoof2019.LA.cm.dev.trl.txt
-        ASVspoof2019.LA.cm.eval.trl.txt
-
-Protocol lines are whitespace-separated, with the utterance id in column 2 and
-the bona fide/spoof key in the final column. If the layout differs the script
-fails immediately with the paths it tried, rather than silently training on a
-partial set. Run --check-layout first to validate a download without waiting
-for a full embedding pass.
-
-COST. Embedding is the expensive step, not fitting: the full train partition is
-25,380 utterances and wav2vec2 runs per-utterance. Embeddings are therefore
-cached to .npy per partition and reused, and --max-per-class subsamples for a
-first pass. Any subsampling is recorded in the metrics file, because an EER
-computed on a subset is not comparable to a published full-set figure and must
-not be reported as though it were.
-
-Usage:
-    python scripts/train_audio_svm.py --root ~/data/ASVspoof2019 --check-layout
-    python scripts/train_audio_svm.py --root ~/data/ASVspoof2019 --max-per-class 2000
-    python scripts/train_audio_svm.py --root ~/data/ASVspoof2019
-"""
+    python scripts/train_audio_svm.py --root ~/data/ASVspoof2019 [--check-layout | --max-per-class 2000]"""
 
 import os
 import sys
@@ -78,18 +40,13 @@ def resolve_paths(root: Path, partition: str):
         raise FileNotFoundError(
             f'ASVspoof layout not as expected for partition {partition!r}. '
             f'Missing: {missing}. Expected the dataset as officially '
-            f'distributed (see this module docstring); pass --root pointing at '
+            f'distributed (LA/ASVspoof2019_LA_<part>/flac/ and LA/ASVspoof2019_LA_cm_protocols/); pass --root pointing at '
             f'the directory that contains LA/.')
     return flac_dir, proto
 
 
 def read_protocol(proto_path: Path):
-    """Parse a CM protocol file -> [(utt_id, label)] with label 1 = spoof.
-
-    Format: <speaker> <utt_id> <...> <system_id> <bonafide|spoof>
-    Only columns 2 and last are used, which is stable across the LA protocol
-    files (trn and trl differ in their middle columns).
-    """
+    """Parse a CM protocol file -> [(utt_id, label)], label 1 = spoof (uses column 2 and the last column)."""
     items = []
     with open(proto_path) as f:
         for lineno, line in enumerate(f, 1):

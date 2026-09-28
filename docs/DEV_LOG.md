@@ -4,11 +4,35 @@ Running, chronological notes on everything done to this project, kept
 separate from the report. It is the single record of the project's history
 and current state. This file is append-only: newest entries at the top, nothing gets
 deleted or rewritten as the project moves on. Purpose: a quick answer to
-"what did we actually do, and when" for starting a new chat or writing up
-the report later — not a submission artifact itself.
+"what did we actually do, and when" for writing up
+the report later - not a submission artifact itself.
 
 Entries are dated by when the work happened, reconstructed from conversation
 history and file timestamps where the exact date isn't otherwise obvious.
+
+---
+
+## 2026-09-28 19:35 (comments and docstrings shortened for release)
+
+Every comment block and docstring in the code is now at most three lines (133 over three lines rewritten, 22 three-line comment blocks
+tightened); stale notes in them (for example "the audio SVM is untrained") went with the rewrite. `static/` is untouched (frozen v4
+interface). Two scripts wrote parts of their own docstring into result files; that text now lives in constants (`DEFINITIONS`,
+`METHOD`), byte-identical. Three messages that pointed at removed docstring text now state the detail directly. Both requirements files
+keep their pins; only their comments were shortened. Checked by comparing every Python file's syntax tree, docstrings aside, with the
+last commit: code changed only in those six files. Base 153 passed, 11 skipped; app 28 passed, 24 skipped; CI subset 99 passed, 1 skipped.
+
+---
+
+## 2026-09-28 19:15 (model weights downloadable after cloning; one-step setup)
+
+The four trained weight files (about 114 MB) stay out of git and are to be published as assets of GitHub release `v1.0`.
+`scripts/download_models.py` (standard library only) downloads them, checks each against the SHA-256 in `models/README.md` before moving
+it into place, and skips files already verified; `--check` verifies only. `setup.sh` creates `.venv` from `requirements-app.txt`, runs the
+download and offers the Llama 3 pull. The three launchers now pick their Python through `scripts/app_python.sh` (`$PYTHON`, `.venv`, the
+conda environment, `python3`) and fetch missing weights before starting, so a fresh clone runs without the developer's paths. A dry-run
+install of `requirements-app.txt` in a clean Python 3.12 venv resolved to the pinned versions. New suite `tests/test_download_models.py`
+(11 tests, local HTTP server, no internet) added to CI. Model card notes the FaceForensics++ research-only terms. Still to do at release:
+publish the tag and set `GITHUB_REPO` in the script. Base 153 passed, 11 skipped; app 28 passed, 24 skipped; CI subset 99 passed, 1 skipped.
 
 ---
 

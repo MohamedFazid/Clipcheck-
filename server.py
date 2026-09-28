@@ -1,19 +1,6 @@
-"""FastAPI backend for the multimodal deepfake detector.
-
-This is a DELIVERY LAYER only over the pipeline. Every inference module
-underneath it (scripts/video_infer.py, scripts/audio_branch.py,
-scripts/vad.py, scripts/fusion.py, scripts/explain.py) is called directly --
-no model, no threshold, no fusion rule, no explanation prompt lives here.
-
-HONESTY CONTRACT (the project's governing rule, enforced here): every field in
-every API response either comes from a model that actually ran on the clip
-in question, or is explicitly null/omitted with a stated reason. Nothing is
-invented to fill out a UI element that has no real data behind it -- see
-each endpoint's docstring for exactly what is real vs. honestly omitted.
-
-Run:  ./run_server.sh
-      (or /opt/anaconda3/envs/deepfake-detect/bin/python -m uvicorn server:app --port 8000)
-"""
+"""FastAPI backend: a delivery layer over the pipeline modules in scripts/ (no model, threshold or prompt lives here).
+Every response field comes from a model that ran on the clip, or is null with a stated reason.
+Run: ./run_server.sh"""
 
 import base64
 import io
@@ -115,12 +102,8 @@ try:
 except Exception:
     OOD_OK = False
 
-# Out-of-domain gates (scripts/ood_gate.py, docs/EXPERIMENTS.md O1): an ADDITIVE safety net. When a branch's input is unlike
-# the data that branch was trained on, its score is withheld from fusion and the reason is stated, exactly as for a clip with no
-# face or no speech. With the gate files absent the pipeline is the PPR/Draft pipeline unchanged.
-# Mode, chosen on measured evidence (docs/EXPERIMENTS.md O1): 'warn' (default) keeps every score and verdict and flags unfamiliar input;
-# 'withhold' drops an unfamiliar branch's score from fusion (failed the pre-set in-domain accuracy criterion, so not the default);
-# 'off' disables the gate.
+# Out-of-domain gates (ledger O1). DEEPFAKE_OOD_MODE: 'warn' (default, flags unfamiliar input),
+# 'withhold' (drops that branch's score; failed its pre-set rule) or 'off'.
 OOD_MODE = os.environ.get('DEEPFAKE_OOD_MODE', 'warn').strip().lower()
 OOD_GATE_PATHS = {'audio': PROJECT_ROOT / 'models' / 'audio_ood_gate.joblib',
                   'video': PROJECT_ROOT / 'models' / 'video_ood_gate.joblib'}
@@ -176,12 +159,7 @@ def get_audio_svm():
     return _audio_svm if AUDIO_ACCURACY_IS_MEASURED else None
 
 
-# ── In-memory job store ───────────────────────────────────────────────────────
-# No auth/session/db exists anywhere in this project (confirmed by audit) --
-# this is new, honestly-scoped functionality: a queue that lives only for the
-# life of this server process, not persisted across restarts. Good enough to
-# support the sidebar/history feature the new UI asks for; not a claim of
-# durable storage.
+# In-memory job store: lives only as long as this server process (not persisted).
 JOBS: dict[str, dict] = {}
 
 
@@ -223,10 +201,7 @@ def _previewable_video_path(path: str) -> str:
 
 
 def _probe_duration_and_fps(path: str, ffmpeg_exe: str) -> tuple[Optional[float], Optional[float]]:
-    """Real duration/fps read from ffmpeg's own stream-info dump (no ffprobe
-    bundled here, same approach as _is_browser_safe). Used only to convert
-    video_infer's frame-index samples into approximate real timestamps for
-    the anomaly list / progress-bar tick marks -- never to fabricate scores."""
+    """Duration and fps from ffmpeg's stream info, used only to turn sampled frame indexes into timestamps."""
     try:
         out = subprocess.run([ffmpeg_exe, '-i', path],
                               capture_output=True, timeout=15).stderr.decode(errors='replace')
@@ -252,12 +227,7 @@ def _probe_duration_and_fps(path: str, ffmpeg_exe: str) -> tuple[Optional[float]
 
 
 def _frame_anomalies(per_frame: list[float], fps: Optional[float]) -> list[dict]:
-    """Turn video_infer's real per-sampled-frame P(fake) array into real,
-    timestamped anomaly rows -- genuine data, not fabricated. video_infer.py
-    samples every `max(1, fps // 3)`-th frame (its own documented rule); this
-    reproduces that same interval to map sample index -> approximate seconds.
-    If fps could not be read, falls back to plain sample-index ranges (no
-    fabricated times)."""
+    """Turn the per-sampled-frame P(fake) into timestamped anomaly windows (sample indexes if fps is unknown)."""
     interval_seconds = (max(1, int(fps) // 3) / fps) if fps else None
     rows = []
     i = 0
@@ -315,14 +285,8 @@ def _overall_score(fusion_result, p_video, p_audio):
 
 
 def _explanation_block(fusion_result, anomalies=None) -> dict:
-    """Stage 5, with a safety net. Llama 3 8B stays the primary explainer (PPR 3.4). Its text is run through the automatic
-    faithfulness screen (scripts/explain_checks.py); if it fails the screen, or the LLM is unreachable, or there is nothing
-    to verbalise (INCONCLUSIVE), the deterministic template is shown instead and labelled as such. The rejected LLM text
-    is kept in the result for audit, never shown as the explanation. `source` says which produced the text.
-
-    `anomalies`: the same real, timestamped video-anomaly windows shown in the Visual tab (server._frame_anomalies), or
-    None/[] when there are none to give (see explain.format_anomaly_timing for the three honestly distinct states).
-    Passed through so the explanation may state WHEN elevated likelihood occurred, never WHAT is visible then."""
+    """Stage 5: Llama 3 text if it passes the faithfulness screen, otherwise the template (labelled); `source` says which.
+    The rejected LLM text is kept for audit. `anomalies` are the timing windows from the Visual tab."""
     block = {'available': False, 'text': None, 'source': None, 'generation_time_s': None,
              'unavailable_reason': None, 'fallback_reason': None, 'faithfulness': None, 'rejected_llm_text': None}
     llm_text, why_no_llm = None, None
@@ -597,12 +561,8 @@ def limitations():
             'limitations': build_limitations(_read_json(NUMBERS_PATH) or {}, _read_json(SHIPPED_PATH), _fusion_info())}
 
 
-# Plain-language names for the example list (interface v2), in the designer's form "<scene>, <what was changed>" (25 Sep).
-# The change words come from how the clip was made (its folder or the evaluation manifest's category), never from a model
-# output. The scene words describe the footage as seen in a frame of each clip, and never identify the person on screen.
-# FEATURED_DEMOS (below) is the shelf of eight; TESTING_DEMOS is the list in testing mode. The neutral 'code'
-# is what round 1 of user testing saw, and what the page shows in testing mode (#testing), so names cannot hint at the
-# answer during sessions.
+# Plain-language names for the example clips, "<scene>, <what was changed>", taken from how each clip was made.
+# Testing mode (#testing) shows the neutral codes instead, so names cannot hint at the answer.
 _CAT_TITLES = {'RVRA': 'genuine face and voice', 'RVFA': 'voice replaced',
                'FVRA': 'face replaced', 'FVFA': 'face and voice replaced'}
 # LAV-DF fakes are Wav2Lip lip-sync and SV2TTS voice cloning of a few words (each fake part under one second), not face swaps.
@@ -637,12 +597,8 @@ _SCENES = {   # display name: (scene, setting)
     'LAVDF_FVFA_000.mp4': ('Post-match interview', ''),
     'LAVDF_FVFA_001.mp4': ('Post-match interview', ''), 'LAVDF_FVFA_002.mp4': ('Post-match interview', ''),
 }
-# The shelf of eight (27 Sep: demos the tool gets right): per category, the first two clips BY ID that the
-# shipped model gets fully right in results/fallback_eval_shipped (both parts on the right side of 0.5 and the right verdict)
-# and that raise no unfamiliar-input warning in the app, shown alternately by kind. Skipped for the warning (checked in the app,
-# 27 Sep): FVFA_003, voice distance 43.4 against the limit 43.1. These illustrate; they are chosen for being right, so they
-# are not evidence of accuracy (the Accuracy page and the report carry that), and the page says so. Checked by
-# test_featured_shelf_follows_its_rule.
+# The shelf of eight: per category, the first two clips by id the shipped model gets fully right with no warning.
+# Chosen for being right, so they illustrate and are not evidence of accuracy (test_featured_shelf_follows_its_rule).
 FEATURED_DEMOS = ['RVRA_000.mp4', 'RVFA_000.mp4', 'FVRA_000.mp4', 'FVFA_002.mp4',
                   'RVRA_001.mp4', 'RVFA_001.mp4', 'FVRA_001.mp4', 'FVFA_004.mp4']
 SHELF_SKIPPED_FOR_WARNING = ['FVFA_003.mp4']
@@ -845,12 +801,7 @@ def get_result(job_id: str):
 
 @app.post('/api/analyze/{job_id}')
 def analyze(job_id: str):
-    """Starts the five-stage pipeline in a background thread and returns
-    immediately -- the caller polls GET /api/progress/{job_id} for real
-    progress (see _run_analysis) and GET /api/result/{job_id} once done.
-    This exists so the UI's "Analysing NN%" overlay reflects genuine
-    pipeline progress (e.g. the video branch's actual per-frame-crop
-    count), never a simulated/timer-based number."""
+    """Start the pipeline in a background thread; poll /api/progress/{job_id}, then fetch /api/result/{job_id}."""
     job = JOBS.get(job_id)
     if job is None:
         raise HTTPException(404, 'No such job.')
@@ -876,14 +827,8 @@ def get_progress(job_id: str):
 
 
 def _run_analysis_inner(job_id: str):
-    """The actual five-stage pipeline, run off the request thread. Every
-    field it eventually stores in job['result'] is either a real number
-    from a model that ran on this clip, or null with the reason stated --
-    same honesty contract as the retired Streamlit app, just as JSON.
-
-    Progress checkpoints below are tied to real stage transitions (and, for
-    the video branch, a real per-frame-crop callback from
-    analyse_video_file) -- not a timer standing in for unknown progress."""
+    """The pipeline, run off the request thread. Every stored field is a real model output or null with a reason;
+    progress updates follow real stage transitions."""
     job = JOBS.get(job_id)
     if job is None:
         return
@@ -1023,9 +968,7 @@ def _run_analysis_inner(job_id: str):
 
     job['progress'] = 99
 
-    # Overall score: the real fused score on agreement; on disagreement there is deliberately no single fused number
-    # (no averaging across a genuine disagreement), so "overall" reflects the higher-scoring branch, clearly labelled as
-    # such rather than invented. None when neither branch scored (INCONCLUSIVE).
+    # Overall score: the fused score on agreement; on disagreement, the higher branch (labelled as such). None if INCONCLUSIVE.
     overall_score = _overall_score(fusion_result, p_video_fake, p_audio_fake)
 
     result = {
@@ -1092,11 +1035,7 @@ def _run_analysis_inner(job_id: str):
 
 
 def _run_analysis(job_id: str):
-    """Thread entry point: runs the pipeline and guarantees the job always ends in 'done' or 'error'.
-
-    Without this, any exception in the pipeline (an undecodable file, a model or device error, a classifier failure)
-    killed the thread silently and left the job at 'analyzing' forever, so the UI's progress overlay never closed.
-    The failure is reported honestly: no verdict, the exception type and message, never a guessed result."""
+    """Thread entry point: the job always ends as 'done' or 'error' (with the exception), never stuck at 'analyzing'."""
     try:
         _run_analysis_inner(job_id)
     except Exception as e:                                   # noqa: BLE001 - the whole point is to catch everything

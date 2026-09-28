@@ -1,43 +1,24 @@
-# Base environment — training, evaluation, audio branch, explanation layer.
-#
-# This is the CANONICAL environment: every figure reported in the project's
-# results/ directory and in the report was produced here. Do not mix reported
-# numbers across environments (see README.md, "Setup").
-#
-# Install:  /opt/anaconda3/bin/python -m pip install -r requirements-base.txt
-#
-# Versions are those actually used to produce the reported results, pinned so
-# the figures are reproducible rather than approximately reproducible.
+# Research environment: training and evaluation. Every reported result was produced with these exact versions.
+# Not needed to run the app (see README.md, "Development setup"). Install: python -m pip install -r requirements-base.txt
 
-# ── Core deep learning ───────────────────────────────────────────────────────
 torch==2.12.1
 torchvision==0.27.1
 torchaudio==2.11.0
-timm==1.0.27                 # the video backbones (Xception shipped; EfficientNet-B4 and others compared)
+timm==1.0.27                 # video backbones
 
-# ── Numerics, classical ML, plotting ─────────────────────────────────────────
 numpy==1.26.4
-scikit-learn==1.4.2          # SVM back-end, metrics, Cohen's kappa
-joblib==1.4.2                # trained SVM serialisation
+scikit-learn==1.4.2          # audio SVM, metrics, Cohen's kappa
+joblib==1.4.2                # saves the SVM
 matplotlib==3.8.4
 seaborn==0.13.2
 tqdm==4.66.4
 
-# ── Audio branch ─────────────────────────────────────────────────────────────
-transformers==4.57.3         # wav2vec2-base SSL encoder
-soundfile==0.14.0            # reads ASVspoof .flac (NOT present in the app env)
-silero-vad==6.2.1            # voice-activity gate (scripts/vad.py)
-imageio-ffmpeg==0.6.0        # bundled ffmpeg binary; no system ffmpeg needed
+transformers==4.57.3         # wav2vec2 speech encoder
+soundfile==0.14.0            # reads ASVspoof .flac files
+silero-vad==6.2.1            # speech detection
+imageio-ffmpeg==0.6.0        # bundled ffmpeg
 
-# ── Explanation layer ────────────────────────────────────────────────────────
-requests==2.32.2             # talks to the local Ollama HTTP API
-# Llama 3 8B Instruct is NOT a pip package. Install separately:
-#     brew install ollama && ollama serve && ollama pull llama3:8b
-# The explanation layer degrades gracefully when it is not running.
+requests==2.32.2             # talks to Ollama (Llama 3 is installed separately: ollama pull llama3:8b)
 
-# ── Image I/O (frame extraction, crops) ──────────────────────────────────────
-opencv-python==4.11.0.86
+opencv-python==4.11.0.86     # frame extraction
 pillow==10.3.0
-
-# NOTE: facenet-pytorch (MTCNN) is deliberately absent here. It lives in the
-# app environment; see requirements-app.txt.

@@ -1,34 +1,6 @@
-"""Disagreement-aware accuracy-weighted fusion (used by the app on the real video and audio scores; T = 0.35, weights from measured
-accuracies; updated description 2026-09-25, the original said "logic only, not yet wired to real audio").
-
-Implements exactly the algorithm specified in the Draft Project Report, Chapter 3
-(System Architecture, stages 3-4):
-
-    gap = |P(video_fake) - P(audio_fake)|
-
-    gap <  T:  accuracy-weighted average of the two branches -> one final score
-               (Large, Lines and Bagnall, 2019: cross-validated accuracy weighting
-               outperforms simple averaging for heterogeneous classifier ensembles)
-
-    gap >= T:  no averaging. Flag "partial manipulation"; report both scores
-               separately; name whichever branch scored higher as the modality
-               more likely to be manipulated.
-
-STATE OF THE INPUTS (each is read from a file, never hand-copied):
-  * audio_accuracy is the BALANCED accuracy of the audio branch at the 0.5 operating point
-    (results/audio_branch/extra_metrics.json), trusted only for a full-dataset run; plain accuracy on
-    that partition is inflated because it is about 90% spoof (see _resolve_audio_accuracy).
-  * video_accuracy comes from models/shipped_model.json, written when a video model is promoted
-    to models/best_model.pth. Until one exists it falls back to a legacy constant and says so
-    (VIDEO_ACCURACY_IS_MEASURED is False). That constant is from the superseded leaking split.
-  * threshold_T was tuned on the self-built fallback set with the SHIPPED video model
-    (docs/EXPERIMENTS.md F4); re-tune if either branch model changes.
-  * Verdicts: REAL, FAKE, PARTIAL_MANIPULATION, and INCONCLUSIVE when neither branch produced a
-    score. If only one branch has a score, that branch's score is passed through and the result
-    is flagged single-modality.
-
-Run:  /opt/anaconda3/bin/python scripts/fusion.py
-"""
+"""Disagreement-aware fusion: if |P(video) - P(audio)| >= T, report PARTIAL_MANIPULATION and name the higher branch;
+otherwise take an accuracy-weighted average (Large, Lines and Bagnall, 2019). T and weights are read from files.
+Run: python scripts/fusion.py"""
 
 import json
 from dataclasses import dataclass
@@ -59,9 +31,7 @@ def _resolve_video_accuracy():
 
 VIDEO_ACCURACY_DEFAULT, VIDEO_ACCURACY_IS_MEASURED, VIDEO_ACCURACY_SOURCE = _resolve_video_accuracy()
 
-# Placeholder only: no trained/evaluated audio classifier exists yet. 0.5 (chance
-# level) is used so an untrained branch cannot outweigh the video branch in the
-# accuracy-weighted average until it has a genuine measured accuracy.
+# Fallback when no measured audio accuracy exists: chance level, so an unmeasured branch cannot outweigh video.
 AUDIO_ACCURACY_PLACEHOLDER = 0.5
 
 _AUDIO_METRICS_PATH = Path(__file__).resolve().parent.parent / 'results' / 'audio_branch' / 'metrics.json'
@@ -72,31 +42,16 @@ _AUDIO_OPERATING_POINT = 'at_probability_0.5 (as the app and fusion use it)'
 
 
 def _resolve_audio_accuracy():
-    """Read the real eval_accuracy from scripts/train_audio_svm.py's output if
-    the audio SVM has been trained on the FULL ASVspoof 2019 LA eval partition;
-    otherwise fall back to the placeholder.
-
-    A --max-per-class subsample run is deliberately NOT accepted as a measured
-    accuracy: train_audio_svm.py records full_dataset=false for those, and its
-    own output warns that a subset EER/accuracy is not comparable to a full-set
-    figure. Weighting fusion by a 400-utterance subset result while labelling it
-    "measured" would be exactly the kind of silent inaccuracy this project's
-    methodology exists to catch, so the subset case keeps the placeholder and
-    says so via AUDIO_ACCURACY_SOURCE.
-
-    Returns (accuracy, is_measured, source_description).
-    """
+    """Return (accuracy, is_measured, source) for the audio branch, from a FULL ASVspoof eval run only;
+    subsample runs are not accepted as measured and keep the placeholder."""
     if _AUDIO_METRICS_PATH.exists():
         try:
             with open(_AUDIO_METRICS_PATH) as f:
                 m = json.load(f)
             acc = float(m['eval_accuracy'])
             if m.get('full_dataset') is True:
-                # Prefer BALANCED accuracy. The ASVspoof eval partition is about 90% spoofed (7,355 bona fide against 63,882
-                # spoof), so plain accuracy is inflated: always answering "spoof" scores 89.7% on it. Weighting fusion by that
-                # figure would overstate the audio branch against a video branch measured on a balanced set. Balanced accuracy
-                # is the mean of the two per-class recalls, which is what "how well does this branch do" should mean here.
-                # See docs/EXPERIMENTS.md A4. Falls back to plain accuracy if extra_metrics.json has not been generated.
+                # Use BALANCED accuracy: the ASVspoof eval set is ~90% spoof, so plain accuracy is inflated.
+                # Falls back to plain accuracy if extra_metrics.json does not exist (ledger A4).
                 if _AUDIO_EXTRA_PATH.exists():
                     try:
                         with open(_AUDIO_EXTRA_PATH) as f:
@@ -122,19 +77,8 @@ def _resolve_audio_accuracy():
 
 AUDIO_ACCURACY, AUDIO_ACCURACY_IS_MEASURED, AUDIO_ACCURACY_SOURCE = _resolve_audio_accuracy()
 
-# Tuned on the SHIPPED model (Xception multi-method, seed 44) against the self-constructed fallback evaluation set
-# (NOT FakeAVCeleb, which was never obtained; see scripts/build_fallback_eval_set.py), via
-# scripts/tune_threshold_fallback.py: grid search over |p_video - p_audio| as a disagreement predictor, F1 against
-# genuine single-modality-manipulation ground truth, which is the criterion the PPR (3.6) specifies.
-#
-# 79 clips with both scores. F1 by T: 0.842 (0.05), 0.860, 0.870, 0.889 (0.20), 0.886, 0.897 (0.30), 0.907 (0.35),
-# 0.894, 0.881, 0.881, 0.889, 0.889 (0.60). The maximum is INTERIOR at T = 0.35 (precision 0.848, recall 0.975: one
-# of 40 single-modality cases missed), so it is taken directly, unlike the previous tuning on the superseded model
-# where recall was 1.000 across the entire range and the raw optimum sat at the edge of the grid (T = 0.55), which is
-# why 0.30 was chosen then instead. The curve is flat (F1 0.88 to 0.91 across 0.20 to 0.60), so the verdict does not
-# hinge on the exact value. Alternative worth stating in the report: T = 0.20 gives recall 1.000 at precision 0.800,
-# which would favour never missing a partial manipulation over avoiding false disagreement.
-# Re-tune if FakeAVCeleb or an equivalent gated dataset is ever obtained, or if either branch model changes.
+# Tuned on the shipped model with scripts/tune_threshold_fallback.py (F1 on single-modality cases, 79 clips): best T = 0.35.
+# The F1 curve is flat (0.88 to 0.91 for T = 0.20 to 0.60). Re-tune if either branch model changes.
 THRESHOLD_T_DEFAULT = 0.35
 THRESHOLD_T_SOURCE = ('tuned on the shipped model (Xception multi-method, seed 44) against the self-built fallback '
                       'evaluation set, maximising F1 on identifying genuine single-modality manipulation '
@@ -164,18 +108,8 @@ def fuse(
     video_accuracy: float = VIDEO_ACCURACY_DEFAULT,
     audio_accuracy: float = AUDIO_ACCURACY,
 ) -> FusionResult:
-    """Disagreement-aware, accuracy-weighted fusion of branch fake-probabilities.
-
-    p_video : P(fake) from the video branch, or None when the branch produced no score (for
-              example no detectable face). With p_audio present this becomes audio-only.
-    p_audio : P(fake) from the audio branch, or None when unavailable (no audio track or no speech).
-              With None, fusion is a pass-through of the video score, flagged single-modality.
-              If BOTH are None the verdict is INCONCLUSIVE.
-    threshold_T : gap threshold separating "agreement" from "partial manipulation".
-    video_accuracy, audio_accuracy : held-out accuracy of each branch, used as
-              fusion weights on agreement, following Large, Lines and Bagnall
-              (2019). See module docstring for the honesty caveat on audio_accuracy.
-    """
+    """Fuse the branch fake-probabilities. A None score means that branch did not run (single-modality pass-through);
+    both None gives INCONCLUSIVE. threshold_T separates agreement from partial manipulation; accuracies weight the average."""
     if p_video is None and p_audio is None:
         return FusionResult(verdict='INCONCLUSIVE', gap=None, disagreement=False,
                             note='no branch produced a score (no detectable face and no usable speech)')
