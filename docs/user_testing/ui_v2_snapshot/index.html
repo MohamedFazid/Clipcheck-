@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clipcheck · Multimodal Deepfake Detector</title>
+<link rel="stylesheet" href="/static/style.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Crect width=%2724%27 height=%2724%27 rx=%276%27 fill=%27%23eef1f4%27/%3E%3Cpath d=%27M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01%27 stroke=%27%230b0d10%27 stroke-width=%272%27 stroke-linecap=%27round%27 fill=%27none%27/%3E%3C/svg%3E" />
+</head>
+<body>
+<!-- Interface v2 ("Clipcheck"), built 2026-09-24 from the designer mockups and the user-testing round 1 findings.
+     The pre-redesign interface (v1) is frozen in docs/user_testing/ui_v1_snapshot/ and runs with ./run_v1_interface.sh. -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#/check" aria-label="Clipcheck, check a video">
+      <span class="brand-mark" id="brand-mark"></span>
+      <span class="brand-name">Clipcheck</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="nav-link" data-nav="check" href="#/check">Check a video</a>
+      <a class="nav-link" data-nav="history" href="#/history">History</a>
+      <a class="nav-link" data-nav="accuracy" href="#/accuracy">Accuracy</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="view" id="view-check"></section>
+  <section class="view" id="view-analysing" hidden></section>
+  <section class="view" id="view-result" hidden></section>
+  <section class="view" id="view-history" hidden></section>
+  <section class="view" id="view-accuracy" hidden></section>
+</main>
+
+<footer class="site-foot">
+  <div class="container foot-inner">
+    <span>Clipcheck, the Multimodal Deepfake Detector (CM3070 final project prototype). It gives likelihoods, not proof.</span>
+    <span id="testing-flag" hidden>Testing mode: neutral example names</span>
+  </div>
+</footer>
+
+<input type="file" id="file-input" accept=".mp4,.mov,.avi,.mkv,video/*" hidden />
+<script src="/static/app.js"></script>
+</body>
+</html>

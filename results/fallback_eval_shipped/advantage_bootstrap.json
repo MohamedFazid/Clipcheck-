@@ -1,0 +1,39 @@
+{
+  "results_file": "results/fallback_eval_shipped/fallback_4condition_results.json",
+  "n_clips_with_both_scores": 79,
+  "bootstrap_resamples": 20000,
+  "seed": 0,
+  "standard_fusion_accuracy_pct": 73.41772151898735,
+  "disagreement_aware_accuracy_pct": 97.46835443037975,
+  "advantage_pp": 24.0506329113924,
+  "advantage_ci95_pp": [
+    13.924050632911399,
+    34.17721518987342
+  ],
+  "ci_excludes_zero": true,
+  "clips_only_disagreement_aware_correct": 20,
+  "clips_only_standard_correct": 1,
+  "per_category_pct": {
+    "RVRA": {
+      "n": 19,
+      "standard": 100.0,
+      "disagreement_aware": 94.73684210526315
+    },
+    "RVFA": {
+      "n": 20,
+      "standard": 75.0,
+      "disagreement_aware": 100.0
+    },
+    "FVRA": {
+      "n": 20,
+      "standard": 25.0,
+      "disagreement_aware": 95.0
+    },
+    "FVFA": {
+      "n": 20,
+      "standard": 95.0,
+      "disagreement_aware": 100.0
+    }
+  },
+  "caveats": "Clips are resampled independently but real videos repeat across RVRA and RVFA, so the interval is slightly narrow. Self-built set, not FakeAVCeleb. Clips without an audio score are excluded."
+}

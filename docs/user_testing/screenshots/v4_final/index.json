@@ -1,0 +1,202 @@
+{
+  "version": "v4 final (frozen 2026-09-27 19:59)",
+  "captured_at": "2026-09-27T23:07:15+08:00",
+  "reduced_motion": true,
+  "device_scale_factor": 1.5,
+  "console_errors": [],
+  "explanations": {
+    "real_real": {
+      "source": "llama3",
+      "passed": true,
+      "verdict": "REAL"
+    },
+    "partial_voice": {
+      "source": "template",
+      "passed": false,
+      "verdict": "PARTIAL_MANIPULATION"
+    },
+    "partial_picture": {
+      "source": "template",
+      "passed": false,
+      "verdict": "PARTIAL_MANIPULATION"
+    },
+    "fake_timing": {
+      "source": "llama3",
+      "passed": true,
+      "verdict": "FAKE"
+    },
+    "unfamiliar": {
+      "source": "llama3",
+      "passed": true,
+      "verdict": "FAKE"
+    },
+    "no_verdict": {
+      "source": "template",
+      "passed": null,
+      "verdict": "INCONCLUSIVE"
+    }
+  },
+  "screens": [
+    {
+      "file": "00_landing_hero_desktop.png",
+      "url": "",
+      "shows": "landing page, first screen"
+    },
+    {
+      "file": "01_check_desktop.png",
+      "url": "#/check",
+      "shows": "Check a video: upload and the demo row"
+    },
+    {
+      "file": "crops/check_page.png",
+      "shows": "Check a video page with the eight demo videos"
+    },
+    {
+      "file": "02_result_real_real_desktop.png",
+      "url": "#/result/3c9cb73979dc46cfb33cc48faee8d07e",
+      "shows": "result: real_real"
+    },
+    {
+      "file": "crops/top_real_real.png",
+      "shows": "verdict and meters: real_real"
+    },
+    {
+      "file": "crops/top_player_real_real.png",
+      "shows": "verdict, meters and player: real_real"
+    },
+    {
+      "file": "crops/explanation_real_real.png",
+      "shows": "explanation card: real_real"
+    },
+    {
+      "file": "02_result_partial_voice_desktop.png",
+      "url": "#/result/62e5df819c45460aa3d88ed7561fe52e",
+      "shows": "result: partial_voice"
+    },
+    {
+      "file": "crops/top_partial_voice.png",
+      "shows": "verdict and meters: partial_voice"
+    },
+    {
+      "file": "crops/top_player_partial_voice.png",
+      "shows": "verdict, meters and player: partial_voice"
+    },
+    {
+      "file": "crops/explanation_partial_voice.png",
+      "shows": "explanation card: partial_voice"
+    },
+    {
+      "file": "02_result_partial_picture_desktop.png",
+      "url": "#/result/60d774c4e85f44a1b75caff53263fe4a",
+      "shows": "result: partial_picture"
+    },
+    {
+      "file": "crops/top_partial_picture.png",
+      "shows": "verdict and meters: partial_picture"
+    },
+    {
+      "file": "crops/top_player_partial_picture.png",
+      "shows": "verdict, meters and player: partial_picture"
+    },
+    {
+      "file": "crops/explanation_partial_picture.png",
+      "shows": "explanation card: partial_picture"
+    },
+    {
+      "file": "02_result_fake_timing_desktop.png",
+      "url": "#/result/caea27050a77469cb3ad0c1f1c47e010",
+      "shows": "result: fake_timing"
+    },
+    {
+      "file": "crops/top_fake_timing.png",
+      "shows": "verdict and meters: fake_timing"
+    },
+    {
+      "file": "crops/top_player_fake_timing.png",
+      "shows": "verdict, meters and player: fake_timing"
+    },
+    {
+      "file": "crops/explanation_fake_timing.png",
+      "shows": "explanation card: fake_timing"
+    },
+    {
+      "file": "02_result_unfamiliar_desktop.png",
+      "url": "#/result/a3c8a0d05220442d8b24c062c9229e50",
+      "shows": "result: unfamiliar"
+    },
+    {
+      "file": "crops/top_unfamiliar.png",
+      "shows": "verdict and meters: unfamiliar"
+    },
+    {
+      "file": "crops/top_player_unfamiliar.png",
+      "shows": "verdict, meters and player: unfamiliar"
+    },
+    {
+      "file": "crops/explanation_unfamiliar.png",
+      "shows": "explanation card: unfamiliar"
+    },
+    {
+      "file": "02_result_no_verdict_desktop.png",
+      "url": "#/result/1c7f28e7ef204af682aa888143183fa9",
+      "shows": "result: no_verdict"
+    },
+    {
+      "file": "crops/top_no_verdict.png",
+      "shows": "verdict and meters: no_verdict"
+    },
+    {
+      "file": "crops/top_player_no_verdict.png",
+      "shows": "verdict, meters and player: no_verdict"
+    },
+    {
+      "file": "crops/explanation_no_verdict.png",
+      "shows": "explanation card: no_verdict"
+    },
+    {
+      "file": "03_details_findings_desktop.png",
+      "url": "#/result/60d774c4e85f44a1b75caff53263fe4a",
+      "shows": "Details sheet: findings"
+    },
+    {
+      "file": "03_details_technical_desktop.png",
+      "url": "#/result/60d774c4e85f44a1b75caff53263fe4a",
+      "shows": "Details sheet: technical"
+    },
+    {
+      "file": "03_details_limits_desktop.png",
+      "url": "#/result/60d774c4e85f44a1b75caff53263fe4a",
+      "shows": "Details sheet: limits"
+    },
+    {
+      "file": "03_details_glossary_desktop.png",
+      "url": "#/result/60d774c4e85f44a1b75caff53263fe4a",
+      "shows": "Details sheet: glossary"
+    },
+    {
+      "file": "04_history_desktop.png",
+      "url": "#/history",
+      "shows": "History"
+    },
+    {
+      "file": "05_accuracy_desktop.png",
+      "url": "#/accuracy",
+      "shows": "Accuracy page, first screen"
+    },
+    {
+      "file": "06_analysing_desktop.png",
+      "url": "#/analysing",
+      "shows": "analysing, real progress"
+    },
+    {
+      "file": "07_result_partial_picture_mobile.png",
+      "url": "#/result/60d774c4e85f44a1b75caff53263fe4a",
+      "shows": "result on a phone"
+    },
+    {
+      "file": "08_check_mobile.png",
+      "url": "#/check",
+      "shows": "start page on a phone"
+    }
+  ]
+}

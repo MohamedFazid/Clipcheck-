@@ -1,0 +1,57 @@
+{
+  "dataset": "ASVspoof 2019 LA eval (full)",
+  "n_eval": 71237,
+  "n_bonafide": 7355,
+  "n_spoof": 63882,
+  "majority_class_baseline_accuracy": 0.8967530917921867,
+  "auc_roc": 0.9937213733061664,
+  "eer": 0.039553288374080064,
+  "at_svm_decision_boundary (clf.predict, as in metrics.json)": {
+    "accuracy": 0.9765009756166038,
+    "balanced_accuracy": 0.9485194437032538,
+    "precision_spoof": 0.9899502236784071,
+    "recall_spoof": 0.9837825991672146,
+    "f1_spoof": 0.986856774963491,
+    "f1_bonafide": 0.8891977760127086,
+    "f1_macro": 0.9380272754880998,
+    "specificity_bonafide_recall": 0.913256288239293,
+    "confusion_matrix_[bonafide,spoof]x[pred_bonafide,pred_spoof]": [
+      [
+        6717,
+        638
+      ],
+      [
+        1036,
+        62846
+      ]
+    ]
+  },
+  "at_probability_0.5 (as the app and fusion use it)": {
+    "accuracy": 0.9707315018880638,
+    "balanced_accuracy": 0.9568521497115337,
+    "precision_spoof": 0.9928855142050439,
+    "recall_spoof": 0.9743433204971667,
+    "f1_spoof": 0.9835270322585742,
+    "f1_bonafide": 0.8688926617619317,
+    "f1_macro": 0.9262098470102529,
+    "specificity_bonafide_recall": 0.9393609789259008,
+    "confusion_matrix_[bonafide,spoof]x[pred_bonafide,pred_spoof]": [
+      [
+        6909,
+        446
+      ],
+      [
+        1639,
+        62243
+      ]
+    ]
+  },
+  "consistency_with_metrics_json": {
+    "eer_recomputed": 0.039553288374080064,
+    "eer_reported": 0.039553288374080064,
+    "accuracy_recomputed": 0.9765009756166038,
+    "accuracy_reported": 0.9765009756166038,
+    "agrees": true
+  },
+  "note": "Computed by scripts/eval_audio_metrics.py from cached embeddings and the saved SVM. metrics.json is untouched."
+}

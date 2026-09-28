@@ -1,0 +1,41 @@
+{
+  "seed": 43,
+  "tag": "mm_r50_vidsplit",
+  "arch": "resnet50",
+  "frames_dir": "frames_multi",
+  "model_path": "models/runs/mm_r50_vidsplit/seed43.pth",
+  "test_crops": 722,
+  "n_test_videos": 44,
+  "f1": 0.8272859216255443,
+  "auc_roc": 0.9004592413671086,
+  "eer": 0.16488457425940595,
+  "eer_threshold": 0.4862784147262573,
+  "precision": 0.8236994219653179,
+  "recall": 0.8309037900874635,
+  "accuracy": 0.8351800554016621,
+  "confusion_matrix": [
+    [
+      285,
+      58
+    ],
+    [
+      61,
+      318
+    ]
+  ],
+  "class_names": [
+    "fake",
+    "real"
+  ],
+  "video_level": {
+    "note": "Per-video mean-aggregated P(fake), matching what the deployed pipeline reports (one score per clip), evaluated on 44 independent held-out videos rather than 722 correlated frame crops.",
+    "n_videos": 44,
+    "accuracy": 0.8863636363636364,
+    "f1": 0.8837209302325582,
+    "precision": 0.9047619047619048,
+    "recall": 0.8636363636363636,
+    "auc_roc": 0.96900826446281,
+    "eer": 0.06818181818181816,
+    "eer_threshold": 0.32380133867263794
+  }
+}

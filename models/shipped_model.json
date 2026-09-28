@@ -1,0 +1,23 @@
+{
+  "shipped_at": "2026-09-20T17:47:55+00:00",
+  "tag": "mm_xcep_vidsplit",
+  "seed": 44,
+  "arch": "legacy_xception",
+  "frames_dir": "frames_multi",
+  "trained_on": "multi-method (Deepfakes + FaceSwap + NeuralTextures)",
+  "checkpoint_sha256": "fdd60748dc1c18441d493fc01ee8eb3e9028e7a5c75a938a79cf846062a75bd4",
+  "temperature": 1.0,
+  "temperature_source": "none (T = 1.0)",
+  "video_accuracy": 0.828,
+  "video_accuracy_source": "cross-validated: pooled out-of-fold clip accuracy over all 400 videos, 5 identity-grouped folds (results/cv/cv5_xcep_mm/cv_summary.json), 95% interval 79.2% to 86.2%. Chosen over the 96.2% figure from the 44-video test split because the PPR's weighting basis (Large, Lines and Bagnall, 2019) is cross-validated accuracy and the small split is optimistic.",
+  "video_accuracy_alternatives": {
+    "clip_level_44_video_test_split_mean_over_seeds": 0.962121212121212,
+    "note": "The figure above in video_accuracy is the one fusion.py uses as the weight; this records what else was available."
+  },
+  "selection_evidence": {
+    "val_accuracy_at_best_epoch": 0.8811881188118812,
+    "val_loss_min": 0.41455405128552864,
+    "run_metrics": "results/runs/mm_xcep_vidsplit/seed44/metrics.json"
+  },
+  "previous_checkpoint_backup": "best_model.pth.pre-20260921-014755.bak"
+}

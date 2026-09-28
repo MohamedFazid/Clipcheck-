@@ -1,0 +1,55 @@
+# --- OS / Python / tooling -------------------------------------------------
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+*.bak
+
+# --- Datasets and anything derived from them --------------------------------
+# FaceForensics++ terms forbid redistribution, so raw videos, extracted face crops and
+# clips built from them (demo_videos/, eval_fallback/ clips) are never committed.
+# Scripts to download and rebuild them are in scripts/. Manifests ARE committed.
+data/
+frames/
+frames_methods/
+frames_multi/
+external_datasets/
+demo_videos/
+eval_fallback/*/
+eval_hybrid/*/
+eval_heldout/*/
+eval_lavdf/*/
+*.mp4
+*.avi
+*.mov
+*.webm
+*.flac
+*.wav
+
+# --- Model weights (published as GitHub Release assets, see models/README.md) ---
+models/*.pth
+models/*.joblib
+models/runs/
+
+# --- Bulky or machine-specific results ---------------------------------------
+results/audio_branch/embeddings/
+results/**/*.npz
+results/**/*.log
+results/logs/
+results/**/sample_predictions.png
+# feature caches and experiment-only classifiers (about 84 MB; rebuilt by the scripts that made them)
+results/ood_gate/features/
+results/audio_lavdf_experiment/*.joblib
+# server logs from running the app locally
+logs/
+
+# --- Allow demo assets that are owned or licensed for redistribution ----------
+!examples/
+!examples/**
+# the VAD tests' speech sample: synthetic speech made with macOS `say`, not from any dataset
+!tests/fixtures/speech_sample.wav

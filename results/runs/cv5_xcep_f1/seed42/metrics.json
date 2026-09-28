@@ -1,0 +1,42 @@
+{
+  "seed": 42,
+  "tag": "cv5_xcep_f1",
+  "arch": "legacy_xception",
+  "frames_dir": "frames_multi",
+  "fold": 1,
+  "model_path": "models/runs/cv5_xcep_f1/seed42.pth",
+  "test_crops": 1492,
+  "n_test_videos": 80,
+  "f1": 0.8028962188254224,
+  "auc_roc": 0.9204456056527105,
+  "eer": 0.1554495391655179,
+  "eer_threshold": 0.08751285076141357,
+  "precision": 0.9155963302752294,
+  "recall": 0.7148997134670487,
+  "accuracy": 0.8357908847184986,
+  "confusion_matrix": [
+    [
+      499,
+      199
+    ],
+    [
+      46,
+      748
+    ]
+  ],
+  "class_names": [
+    "fake",
+    "real"
+  ],
+  "video_level": {
+    "note": "Per-video mean-aggregated P(fake), matching what the deployed pipeline reports (one score per clip), evaluated on 80 independent held-out videos rather than 1492 correlated frame crops.",
+    "n_videos": 80,
+    "accuracy": 0.875,
+    "f1": 0.8571428571428571,
+    "precision": 1.0,
+    "recall": 0.75,
+    "auc_roc": 0.951875,
+    "eer": 0.09999999999999999,
+    "eer_threshold": 0.2774903178215027
+  }
+}

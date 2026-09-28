@@ -1,0 +1,32 @@
+{
+  "dataset": "Celeb-DF-v2",
+  "split": "official test list (List_of_testing_videos.txt)",
+  "model_path": "models/runs/mm_xcep_vidsplit/seed44.pth",
+  "arch": "legacy_xception",
+  "n_videos_evaluated": 518,
+  "n_videos_skipped_no_face": 0,
+  "n_real": 178,
+  "n_fake": 340,
+  "accuracy": 0.5907335907335908,
+  "f1": 0.6280701754385964,
+  "precision": 0.7782608695652173,
+  "recall": 0.5264705882352941,
+  "auc_roc": 0.6957699933906146,
+  "eer": 0.37068737607402513,
+  "eer_threshold": 0.3680798054207116,
+  "confusion_matrix": [
+    [
+      127,
+      51
+    ],
+    [
+      161,
+      179
+    ]
+  ],
+  "confusion_matrix_labels": [
+    "real",
+    "fake"
+  ],
+  "note": "FF++-trained model, evaluated zero-shot (no retraining/fine-tuning) on Celeb-DF-v2. Literature (Khan and Dang-Nguyen, 2023) reports FF++-trained detectors typically fall to 70-75% accuracy on this dataset; compare against that range, not against the 96%+ FF++ in-distribution figure."
+}

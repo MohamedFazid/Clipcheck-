@@ -1,0 +1,40 @@
+{
+  "seed": 42,
+  "tag": "b0_vidsplit",
+  "arch": "efficientnet_b0",
+  "model_path": "models/runs/b0_vidsplit/seed42.pth",
+  "test_crops": 758,
+  "n_test_videos": 44,
+  "f1": 0.93717277486911,
+  "auc_roc": 0.9870580126844007,
+  "eer": 0.060686015831134546,
+  "eer_threshold": 0.6440902352333069,
+  "precision": 0.9298701298701298,
+  "recall": 0.9445910290237467,
+  "accuracy": 0.9366754617414248,
+  "confusion_matrix": [
+    [
+      358,
+      21
+    ],
+    [
+      27,
+      352
+    ]
+  ],
+  "class_names": [
+    "fake",
+    "real"
+  ],
+  "video_level": {
+    "note": "Per-video mean-aggregated P(fake), matching what the deployed pipeline reports (one score per clip), evaluated on 44 independent held-out videos rather than 758 correlated frame crops.",
+    "n_videos": 44,
+    "accuracy": 1.0,
+    "f1": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "auc_roc": 1.0,
+    "eer": 0.0,
+    "eer_threshold": 0.7224409580230713
+  }
+}

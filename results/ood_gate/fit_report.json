@@ -1,0 +1,30 @@
+{
+ "percentile": 97.5,
+ "rules": "see module docstring",
+ "branches": {
+  "audio": {
+   "fit": "ASVspoof 2019 LA train (25,380)",
+   "calibrate": "ASVspoof 2019 LA dev (24,844)",
+   "tuning_clips_lavdf_dev": 200,
+   "flag_rate_on_tuning": {
+    "pooled": 0.88,
+    "class": 0.88
+   },
+   "chosen": "pooled",
+   "threshold": 43.130489349365234
+  },
+  "video": {
+   "fit": "FF++ train-split crops of frames_multi (5734)",
+   "calibrate": "FF++ validation-split crops (707)",
+   "clip_rule": "median over crops",
+   "tuning_clips_lavdf_dev": 200,
+   "flag_rate_on_tuning": {
+    "pooled": 0.315,
+    "class": 0.31
+   },
+   "chosen": "pooled",
+   "threshold": 99.94376373291016
+  }
+ },
+ "fitted_at": "2026-09-22 03:14"
+}

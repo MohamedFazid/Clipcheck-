@@ -1,0 +1,18 @@
+{
+  "arch": "efficientnet_b0",
+  "seed": 43,
+  "tag": "b0_vidsplit",
+  "epochs_requested": 10,
+  "epochs_run": 10,
+  "stopped_early_at": null,
+  "augmentation": true,
+  "dropout": 0.0,
+  "label_smoothing": 0.0,
+  "early_stopping_patience": 0,
+  "checkpoint_criterion": "val_acc",
+  "best_val_acc": 0.9592391304347826,
+  "best_val_loss": 0.2081219685499926,
+  "split_seed": 42,
+  "batch_size": 32,
+  "lr": 0.0001
+}

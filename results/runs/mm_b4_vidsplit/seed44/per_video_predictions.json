@@ -1,0 +1,266 @@
+[
+ {
+  "video": "real/015",
+  "is_fake": 0,
+  "p_fake": 0.2345864474773407,
+  "n_crops": 15
+ },
+ {
+  "video": "fake/015_919",
+  "is_fake": 1,
+  "p_fake": 0.5741211175918579,
+  "n_crops": 15
+ },
+ {
+  "video": "real/096",
+  "is_fake": 0,
+  "p_fake": 0.31865251064300537,
+  "n_crops": 17
+ },
+ {
+  "video": "fake/096_101",
+  "is_fake": 1,
+  "p_fake": 0.9741826057434082,
+  "n_crops": 17
+ },
+ {
+  "video": "real/101",
+  "is_fake": 0,
+  "p_fake": 0.37010785937309265,
+  "n_crops": 30
+ },
+ {
+  "video": "fake/101_096",
+  "is_fake": 1,
+  "p_fake": 0.779484748840332,
+  "n_crops": 17
+ },
+ {
+  "video": "real/107",
+  "is_fake": 0,
+  "p_fake": 0.459326833486557,
+  "n_crops": 23
+ },
+ {
+  "video": "fake/107_109",
+  "is_fake": 1,
+  "p_fake": 0.7869355082511902,
+  "n_crops": 12
+ },
+ {
+  "video": "real/109",
+  "is_fake": 0,
+  "p_fake": 0.28484636545181274,
+  "n_crops": 12
+ },
+ {
+  "video": "fake/109_107",
+  "is_fake": 1,
+  "p_fake": 0.347499281167984,
+  "n_crops": 12
+ },
+ {
+  "video": "real/134",
+  "is_fake": 0,
+  "p_fake": 0.15650001168251038,
+  "n_crops": 12
+ },
+ {
+  "video": "fake/134_192",
+  "is_fake": 1,
+  "p_fake": 0.6596823930740356,
+  "n_crops": 10
+ },
+ {
+  "video": "real/192",
+  "is_fake": 0,
+  "p_fake": 0.006515633314847946,
+  "n_crops": 10
+ },
+ {
+  "video": "fake/192_134",
+  "is_fake": 1,
+  "p_fake": 0.8751673698425293,
+  "n_crops": 10
+ },
+ {
+  "video": "real/251",
+  "is_fake": 0,
+  "p_fake": 0.12307765334844589,
+  "n_crops": 14
+ },
+ {
+  "video": "fake/251_375",
+  "is_fake": 1,
+  "p_fake": 0.47810792922973633,
+  "n_crops": 14
+ },
+ {
+  "video": "real/257",
+  "is_fake": 0,
+  "p_fake": 0.44734853506088257,
+  "n_crops": 30
+ },
+ {
+  "video": "fake/257_420",
+  "is_fake": 1,
+  "p_fake": 0.823003888130188,
+  "n_crops": 30
+ },
+ {
+  "video": "real/288",
+  "is_fake": 0,
+  "p_fake": 0.37946149706840515,
+  "n_crops": 22
+ },
+ {
+  "video": "fake/288_321",
+  "is_fake": 1,
+  "p_fake": 0.8912540078163147,
+  "n_crops": 22
+ },
+ {
+  "video": "real/321",
+  "is_fake": 0,
+  "p_fake": 0.10175900906324387,
+  "n_crops": 23
+ },
+ {
+  "video": "fake/321_288",
+  "is_fake": 1,
+  "p_fake": 0.9388929605484009,
+  "n_crops": 22
+ },
+ {
+  "video": "real/375",
+  "is_fake": 0,
+  "p_fake": 0.09269826114177704,
+  "n_crops": 15
+ },
+ {
+  "video": "fake/375_251",
+  "is_fake": 1,
+  "p_fake": 0.6380249261856079,
+  "n_crops": 15
+ },
+ {
+  "video": "real/420",
+  "is_fake": 0,
+  "p_fake": 0.25159376859664917,
+  "n_crops": 30
+ },
+ {
+  "video": "fake/420_257",
+  "is_fake": 1,
+  "p_fake": 0.3548221290111542,
+  "n_crops": 30
+ },
+ {
+  "video": "real/651",
+  "is_fake": 0,
+  "p_fake": 0.08436984568834305,
+  "n_crops": 16
+ },
+ {
+  "video": "fake/651_835",
+  "is_fake": 1,
+  "p_fake": 0.7889333963394165,
+  "n_crops": 16
+ },
+ {
+  "video": "real/817",
+  "is_fake": 0,
+  "p_fake": 0.053386490792036057,
+  "n_crops": 14
+ },
+ {
+  "video": "fake/817_827",
+  "is_fake": 1,
+  "p_fake": 0.574054479598999,
+  "n_crops": 11
+ },
+ {
+  "video": "real/827",
+  "is_fake": 0,
+  "p_fake": 0.10705253481864929,
+  "n_crops": 11
+ },
+ {
+  "video": "fake/827_817",
+  "is_fake": 1,
+  "p_fake": 0.7474240660667419,
+  "n_crops": 11
+ },
+ {
+  "video": "real/835",
+  "is_fake": 0,
+  "p_fake": 0.22665388882160187,
+  "n_crops": 18
+ },
+ {
+  "video": "fake/835_651",
+  "is_fake": 1,
+  "p_fake": 0.48200687766075134,
+  "n_crops": 16
+ },
+ {
+  "video": "real/876",
+  "is_fake": 0,
+  "p_fake": 0.08022696524858475,
+  "n_crops": 11
+ },
+ {
+  "video": "fake/876_891",
+  "is_fake": 1,
+  "p_fake": 0.42893821001052856,
+  "n_crops": 10
+ },
+ {
+  "video": "real/891",
+  "is_fake": 0,
+  "p_fake": 0.06468617916107178,
+  "n_crops": 10
+ },
+ {
+  "video": "fake/891_876",
+  "is_fake": 1,
+  "p_fake": 0.4693724513053894,
+  "n_crops": 10
+ },
+ {
+  "video": "real/919",
+  "is_fake": 0,
+  "p_fake": 0.23819568753242493,
+  "n_crops": 18
+ },
+ {
+  "video": "fake/919_015",
+  "is_fake": 1,
+  "p_fake": 0.7395540475845337,
+  "n_crops": 15
+ },
+ {
+  "video": "real/953",
+  "is_fake": 0,
+  "p_fake": 0.012594984844326973,
+  "n_crops": 15
+ },
+ {
+  "video": "fake/953_974",
+  "is_fake": 1,
+  "p_fake": 0.5506784915924072,
+  "n_crops": 15
+ },
+ {
+  "video": "real/974",
+  "is_fake": 0,
+  "p_fake": 0.07730163633823395,
+  "n_crops": 13
+ },
+ {
+  "video": "fake/974_953",
+  "is_fake": 1,
+  "p_fake": 0.7395644783973694,
+  "n_crops": 13
+ }
+]

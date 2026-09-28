@@ -1,0 +1,36 @@
+{
+  "protocol": "ASVspoof 2019 LA: train fits, dev selects C in (0.1, 1, 10), eval scored once",
+  "subsampled_per_class": null,
+  "full_dataset": true,
+  "n_train": 25380,
+  "n_dev": 24844,
+  "n_eval": 71237,
+  "mfcc_svm": {
+    "features": "MFCC20 + delta + delta-delta, mean and std pooled (120-d)",
+    "svm_C": 0.1,
+    "dev_eer": 0.07793613429473803,
+    "eval_eer": 0.1025005644861316,
+    "eval_accuracy": 0.9320437413142046
+  },
+  "wav2vec2_svm": {
+    "svm_C": 10.0,
+    "dev_eer": 0.011078466743159952,
+    "eval_eer": 0.039553288374080064,
+    "eval_accuracy": 0.9765009756166038
+  },
+  "unseen_corpus_genuine_speech": {
+    "corpus": "DeepfakeTIMIT original audio (higher_quality, random sample)",
+    "n_clips": 100,
+    "mfcc_svm": {
+      "fa_at_p0.5": 1.0,
+      "fa_at_eer_threshold": 1.0,
+      "median_p_spoof": 0.9999998924246878
+    },
+    "wav2vec2_svm": {
+      "fa_at_p0.5": 1.0,
+      "fa_at_eer_threshold": 1.0,
+      "median_p_spoof": 0.9826989813981601
+    }
+  },
+  "seed": 42
+}

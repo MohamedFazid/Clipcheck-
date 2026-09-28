@@ -1,0 +1,278 @@
+{
+  "generated": "2026-09-01",
+  "n_cases": 16,
+  "records": [
+    {
+      "case_id": "spec-01",
+      "source": "specified (NOT a real detection \u2014 audio branch untrained)",
+      "p_video": 0.97,
+      "p_audio": null,
+      "note": "video-only, confident FAKE (current pipeline state)",
+      "structured_input": {
+        "verdict": "FAKE",
+        "video_score": "0.970",
+        "audio_score": "not evaluated",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "was not evaluated",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is estimated to be fake with a high likelihood of 0.970. The audio branch was not evaluated, so the overall verdict is based solely on the video branch."
+    },
+    {
+      "case_id": "spec-02",
+      "source": "specified (NOT a real detection \u2014 audio branch untrained)",
+      "p_video": 0.03,
+      "p_audio": null,
+      "note": "video-only, confident REAL (current pipeline state)",
+      "structured_input": {
+        "verdict": "REAL",
+        "video_score": "0.030",
+        "audio_score": "not evaluated",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "was not evaluated",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered real. The video branch suggests it's genuine, with a likelihood of 0.030. The audio branch was not evaluated, so the verdict is based solely on the video branch."
+    },
+    {
+      "case_id": "spec-03",
+      "source": "specified (NOT a real detection \u2014 audio branch untrained)",
+      "p_video": 0.52,
+      "p_audio": null,
+      "note": "video-only, borderline just above 0.5",
+      "structured_input": {
+        "verdict": "FAKE",
+        "video_score": "0.520",
+        "audio_score": "not evaluated",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "was not evaluated",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered fake by the model, with a 52% likelihood that it was manipulated. The audio branch was not evaluated, so the verdict is based solely on the video branch."
+    },
+    {
+      "case_id": "spec-04",
+      "source": "specified (NOT a real detection \u2014 audio branch untrained)",
+      "p_video": 0.48,
+      "p_audio": null,
+      "note": "video-only, borderline just below 0.5",
+      "structured_input": {
+        "verdict": "REAL",
+        "video_score": "0.480",
+        "audio_score": "not evaluated",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "was not evaluated",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered real, and the model's analysis suggests that the visual content is genuine, with a likelihood of 0.480. The audio branch was not evaluated, so the overall verdict is based solely on the video analysis."
+    },
+    {
+      "case_id": "spec-05",
+      "source": "specified (NOT a real detection \u2014 audio branch untrained)",
+      "p_video": 1.0,
+      "p_audio": null,
+      "note": "video-only, boundary value 1.0",
+      "structured_input": {
+        "verdict": "FAKE",
+        "video_score": "1.000",
+        "audio_score": "not evaluated",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "was not evaluated",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered fake by the model, with a high likelihood of manipulation estimated at 1.000. The audio branch was not evaluated, so the verdict is based solely on the video branch."
+    },
+    {
+      "case_id": "spec-06",
+      "source": "specified (NOT a real detection \u2014 audio branch untrained)",
+      "p_video": 0.0,
+      "p_audio": null,
+      "note": "video-only, boundary value 0.0",
+      "structured_input": {
+        "verdict": "REAL",
+        "video_score": "0.000",
+        "audio_score": "not evaluated",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "was not evaluated",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered real. The video branch suggests that the video is genuine, with a likelihood of 0.000. The audio branch was not evaluated, so the verdict is based solely on the video branch."
+    },
+    {
+      "case_id": "spec-07",
+      "source": "specified (NOT a real detection \u2014 audio branch untrained)",
+      "p_video": 0.91,
+      "p_audio": 0.88,
+      "note": "agreement, both high -> FAKE",
+      "structured_input": {
+        "verdict": "FAKE",
+        "video_score": "0.910",
+        "audio_score": "0.880",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video and audio branches both lean towards being fake, with the video branch estimated to be 91% likely to be manipulated and the audio branch estimated to be 88% likely to be manipulated. Overall, the verdict is that the content is fake."
+    },
+    {
+      "case_id": "spec-08",
+      "source": "specified (NOT a real detection \u2014 audio branch untrained)",
+      "p_video": 0.06,
+      "p_audio": 0.11,
+      "note": "agreement, both low -> REAL",
+      "structured_input": {
+        "verdict": "REAL",
+        "video_score": "0.060",
+        "audio_score": "0.110",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video and audio branches both lean towards being genuine, with estimated probabilities of 0.060 and 0.110 respectively. Overall, the verdict is that the content is real."
+    },
+    {
+      "case_id": "spec-09",
+      "source": "specified (NOT a real detection \u2014 audio branch untrained)",
+      "p_video": 0.55,
+      "p_audio": 0.49,
+      "note": "agreement, both near the decision boundary",
+      "structured_input": {
+        "verdict": "FAKE",
+        "video_score": "0.550",
+        "audio_score": "0.490",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered fake by the model, with a score of 0.550 indicating that it leans towards being manipulated. The audio, on the other hand, is estimated to be genuine, with a score of 0.490."
+    },
+    {
+      "case_id": "spec-10",
+      "source": "specified (NOT a real detection \u2014 audio branch untrained)",
+      "p_video": 0.95,
+      "p_audio": 0.2,
+      "note": "disagreement, video implicated (large gap)",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.950",
+        "audio_score": "0.200",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "disagreement": "yes",
+        "implicated_modality": "video"
+      },
+      "explanation": "The analysis suggests that the video is partially manipulated. The video branch leans towards being fake, with a likelihood of 0.950, indicating that the model estimates this is likely manipulated. The audio branch, on the other hand, leans towards being genuine, with a likelihood of 0.200. Since the branches disagree, the video modality is flagged as more likely manipulated, suggesting that only part of the content may be manipulated."
+    },
+    {
+      "case_id": "spec-11",
+      "source": "specified (NOT a real detection \u2014 audio branch untrained)",
+      "p_video": 0.15,
+      "p_audio": 0.8,
+      "note": "disagreement, audio implicated (large gap)",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.150",
+        "audio_score": "0.800",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The analysis suggests that the content is partially manipulated. The video branch leans genuine, indicating that the video itself is likely authentic. However, the audio branch leans fake, suggesting that the audio may have been manipulated. Since the branches disagree, it's possible that only the audio was manipulated, and the video remains genuine."
+    },
+    {
+      "case_id": "spec-12",
+      "source": "specified (NOT a real detection \u2014 audio branch untrained)",
+      "p_video": 0.7,
+      "p_audio": 0.54,
+      "note": "disagreement, marginal (just over T)",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.700",
+        "audio_score": "0.540",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "disagreement": "yes",
+        "implicated_modality": "video"
+      },
+      "explanation": "The analysis suggests that the video and audio content are partially manipulated. The video branch leans towards being fake, with a likelihood of 0.700, while the audio branch also leans towards being fake, with a likelihood of 0.540. The two branches disagree, with the video modality flagged as more likely manipulated."
+    },
+    {
+      "case_id": "spec-13",
+      "source": "specified (NOT a real detection \u2014 audio branch untrained)",
+      "p_video": 0.6,
+      "p_audio": 0.46,
+      "note": "agreement, marginal (just under T)",
+      "structured_input": {
+        "verdict": "FAKE",
+        "video_score": "0.600",
+        "audio_score": "0.460",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered fake by the model, with a score of 0.600 indicating that it is likely manipulated. The audio branch, on the other hand, suggests that the audio is genuine, with a score of 0.460. Since the branches do not disagree, the overall verdict is that the video is fake."
+    },
+    {
+      "case_id": "spec-14",
+      "source": "specified (NOT a real detection \u2014 audio branch untrained)",
+      "p_video": 0.99,
+      "p_audio": 0.01,
+      "note": "disagreement, maximal gap",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.990",
+        "audio_score": "0.010",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "disagreement": "yes",
+        "implicated_modality": "video"
+      },
+      "explanation": "The analysis suggests that the video is partially manipulated. The video branch leans towards being fake, with a high probability of 0.990. However, the audio branch leans towards being genuine, with a low probability of 0.010. Since the branches disagree, this suggests that only part of the content may be manipulated, and the video modality is flagged as more likely manipulated."
+    },
+    {
+      "case_id": "spec-15",
+      "source": "specified (NOT a real detection \u2014 audio branch untrained)",
+      "p_video": 0.4,
+      "p_audio": 0.62,
+      "note": "disagreement, audio implicated, both mid-range",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.400",
+        "audio_score": "0.620",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The analysis suggests that the video and audio may have been manipulated, but to different degrees. The video branch leans towards being genuine, with a likelihood of 0.400, while the audio branch leans towards being fake, with a likelihood of 0.620. Since the branches disagree, it's possible that only the audio was manipulated, and the video remains genuine."
+    },
+    {
+      "case_id": "spec-16",
+      "source": "specified (NOT a real detection \u2014 audio branch untrained)",
+      "p_video": 0.8,
+      "p_audio": 0.05,
+      "note": "disagreement, video implicated, audio very low",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.800",
+        "audio_score": "0.050",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "disagreement": "yes",
+        "implicated_modality": "video"
+      },
+      "explanation": "The analysis suggests that the video is partially manipulated. The video branch leans towards being fake, with a likelihood of 0.800, indicating that the model estimates this is likely manipulated. However, the audio branch leans towards being genuine, with a likelihood of 0.050, suggesting that the audio content is not manipulated. Since the branches disagree, the video modality is flagged as more likely manipulated, implying that only part of the content may be manipulated."
+    }
+  ]
+}

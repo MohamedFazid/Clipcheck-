@@ -1,0 +1,170 @@
+{
+  "tag": "b0_vidsplit",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "split_manifest": "split_v2_identity_grouped.json",
+  "note": "Zero-shot: trained on Deepfakes only; tested on test-split identities.",
+  "per_seed": {
+    "42": {
+      "arch": "efficientnet_b0",
+      "Deepfakes": {
+        "n_real_videos": 22,
+        "n_fake_videos": 22,
+        "auc_roc": 1.0,
+        "eer": 0.0,
+        "accuracy": 1.0,
+        "fake_detection_rate": 1.0,
+        "real_specificity": 1.0
+      },
+      "FaceSwap": {
+        "n_real_videos": 22,
+        "n_fake_videos": 22,
+        "auc_roc": 0.365702479338843,
+        "eer": 0.5909090909090908,
+        "accuracy": 0.5,
+        "fake_detection_rate": 0.0,
+        "real_specificity": 1.0
+      },
+      "NeuralTextures": {
+        "n_real_videos": 22,
+        "n_fake_videos": 22,
+        "auc_roc": 0.8057851239669421,
+        "eer": 0.22727272727272727,
+        "accuracy": 0.6136363636363636,
+        "fake_detection_rate": 0.22727272727272727,
+        "real_specificity": 1.0
+      }
+    },
+    "43": {
+      "arch": "efficientnet_b0",
+      "Deepfakes": {
+        "n_real_videos": 22,
+        "n_fake_videos": 22,
+        "auc_roc": 1.0,
+        "eer": 0.0,
+        "accuracy": 1.0,
+        "fake_detection_rate": 1.0,
+        "real_specificity": 1.0
+      },
+      "FaceSwap": {
+        "n_real_videos": 22,
+        "n_fake_videos": 22,
+        "auc_roc": 0.3347107438016529,
+        "eer": 0.6363636363636364,
+        "accuracy": 0.5,
+        "fake_detection_rate": 0.0,
+        "real_specificity": 1.0
+      },
+      "NeuralTextures": {
+        "n_real_videos": 22,
+        "n_fake_videos": 22,
+        "auc_roc": 0.7913223140495868,
+        "eer": 0.2727272727272727,
+        "accuracy": 0.6136363636363636,
+        "fake_detection_rate": 0.22727272727272727,
+        "real_specificity": 1.0
+      }
+    },
+    "44": {
+      "arch": "efficientnet_b0",
+      "Deepfakes": {
+        "n_real_videos": 22,
+        "n_fake_videos": 22,
+        "auc_roc": 1.0,
+        "eer": 0.0,
+        "accuracy": 1.0,
+        "fake_detection_rate": 1.0,
+        "real_specificity": 1.0
+      },
+      "FaceSwap": {
+        "n_real_videos": 22,
+        "n_fake_videos": 22,
+        "auc_roc": 0.2954545454545454,
+        "eer": 0.7045454545454546,
+        "accuracy": 0.5,
+        "fake_detection_rate": 0.0,
+        "real_specificity": 1.0
+      },
+      "NeuralTextures": {
+        "n_real_videos": 22,
+        "n_fake_videos": 22,
+        "auc_roc": 0.7231404958677686,
+        "eer": 0.40909090909090906,
+        "accuracy": 0.6136363636363636,
+        "fake_detection_rate": 0.22727272727272727,
+        "real_specificity": 1.0
+      }
+    }
+  },
+  "mean_std": {
+    "Deepfakes": {
+      "auc_roc": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "eer": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "accuracy": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "fake_detection_rate": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "real_specificity": {
+        "mean": 1.0,
+        "std": 0.0
+      }
+    },
+    "FaceSwap": {
+      "auc_roc": {
+        "mean": 0.33195592286501374,
+        "std": 0.035204897848848664
+      },
+      "eer": {
+        "mean": 0.6439393939393939,
+        "std": 0.05719571541871786
+      },
+      "accuracy": {
+        "mean": 0.5,
+        "std": 0.0
+      },
+      "fake_detection_rate": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "real_specificity": {
+        "mean": 1.0,
+        "std": 0.0
+      }
+    },
+    "NeuralTextures": {
+      "auc_roc": {
+        "mean": 0.7734159779614326,
+        "std": 0.044136280909124255
+      },
+      "eer": {
+        "mean": 0.30303030303030304,
+        "std": 0.09462118179391511
+      },
+      "accuracy": {
+        "mean": 0.6136363636363636,
+        "std": 0.0
+      },
+      "fake_detection_rate": {
+        "mean": 0.22727272727272727,
+        "std": 0.0
+      },
+      "real_specificity": {
+        "mean": 1.0,
+        "std": 0.0
+      }
+    }
+  }
+}

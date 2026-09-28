@@ -1,0 +1,39 @@
+{
+  "seed": 42,
+  "tag": "base_vidsplit",
+  "model_path": "models/runs/base_vidsplit/seed42.pth",
+  "test_crops": 758,
+  "n_test_videos": 44,
+  "f1": 0.8707482993197279,
+  "auc_roc": 0.951048099080346,
+  "eer": 0.1279683377308707,
+  "eer_threshold": 0.30863678455352783,
+  "precision": 0.898876404494382,
+  "recall": 0.8443271767810027,
+  "accuracy": 0.8746701846965699,
+  "confusion_matrix": [
+    [
+      320,
+      59
+    ],
+    [
+      36,
+      343
+    ]
+  ],
+  "class_names": [
+    "fake",
+    "real"
+  ],
+  "video_level": {
+    "note": "Per-video mean-aggregated P(fake), matching what the deployed pipeline reports (one score per clip), evaluated on 44 independent held-out videos rather than 758 correlated frame crops.",
+    "n_videos": 44,
+    "accuracy": 0.9545454545454546,
+    "f1": 0.9545454545454546,
+    "precision": 0.9545454545454546,
+    "recall": 0.9545454545454546,
+    "auc_roc": 0.9958677685950413,
+    "eer": 0.022727272727272707,
+    "eer_threshold": 0.5223309397697449
+  }
+}

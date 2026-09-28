@@ -1,0 +1,10 @@
+{
+  "statement": "Facilitator's statement, 2026-09-27: rounds 1 and 2 were the same four people. P1 = P5, P2 = P6, P3 = P7, P4 = P8. Raw CSVs unchanged.",
+  "pairs": {"P1": "P5", "P2": "P6", "P3": "P7", "P4": "P8"},
+  "background_as_stated": {
+    "P1/P5": {"background": "preschool teacher", "ml_background": "yes"},
+    "P2/P6": {"background": "engineer", "ml_background": "yes"},
+    "P3/P7": {"background": "business student", "ml_background": "no"},
+    "P4/P8": {"background": "med student", "ml_background": "no"}
+  }
+}

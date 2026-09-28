@@ -1,0 +1,184 @@
+{
+  "version": "v2",
+  "captured_at": "2026-09-25T17:53:44+08:00",
+  "screens": [
+    {
+      "file": "01_empty_desktop.png",
+      "state": "empty",
+      "viewport": "desktop",
+      "shows": "first screen, nothing selected (task 1)",
+      "verdict": null
+    },
+    {
+      "file": "02_real_real_desktop.png",
+      "state": "real_real",
+      "viewport": "desktop",
+      "shows": "clear REAL result (task 2)",
+      "verdict": "REAL"
+    },
+    {
+      "file": "03_partial_video_desktop.png",
+      "state": "partial_video",
+      "viewport": "desktop",
+      "shows": "PARTIAL_MANIPULATION naming the video (tasks 3 and 4)",
+      "verdict": "PARTIAL_MANIPULATION"
+    },
+    {
+      "file": "04_fake_timing_desktop.png",
+      "state": "fake_timing",
+      "viewport": "desktop",
+      "shows": "FAKE with timing in the explanation (task 5)",
+      "verdict": "FAKE"
+    },
+    {
+      "file": "05_inconclusive_desktop.png",
+      "state": "inconclusive",
+      "viewport": "desktop",
+      "shows": "INCONCLUSIVE for a no-face silent upload (task 6)",
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "file": "06_unfamiliar_desktop.png",
+      "state": "unfamiliar",
+      "viewport": "desktop",
+      "shows": "unfamiliar-input caution on a wrong verdict (task 7)",
+      "verdict": "FAKE"
+    },
+    {
+      "file": "07_learn_legend_desktop.png",
+      "state": "learn_legend",
+      "viewport": "desktop",
+      "shows": "Learn more, legend tab (FVRA_000)",
+      "verdict": null
+    },
+    {
+      "file": "08_learn_findings_desktop.png",
+      "state": "learn_findings",
+      "viewport": "desktop",
+      "shows": "Learn more, findings tab (FVRA_000)",
+      "verdict": null
+    },
+    {
+      "file": "09_learn_technical_desktop.png",
+      "state": "learn_technical",
+      "viewport": "desktop",
+      "shows": "Learn more, technical tab (FVRA_000)",
+      "verdict": null
+    },
+    {
+      "file": "10_learn_accuracy_desktop.png",
+      "state": "learn_accuracy",
+      "viewport": "desktop",
+      "shows": "Learn more, accuracy tab (FVRA_000)",
+      "verdict": null
+    },
+    {
+      "file": "11_history_desktop.png",
+      "state": "history",
+      "viewport": "desktop",
+      "shows": "History",
+      "verdict": null
+    },
+    {
+      "file": "12_accuracy_desktop.png",
+      "state": "accuracy",
+      "viewport": "desktop",
+      "shows": "Accuracy page",
+      "verdict": null
+    },
+    {
+      "file": "13_analysing_desktop.png",
+      "state": "analysing",
+      "viewport": "desktop",
+      "shows": "Analysing screen, real progress (FVRA_001)",
+      "verdict": null
+    },
+    {
+      "file": "14_empty_mobile.png",
+      "state": "empty",
+      "viewport": "mobile",
+      "shows": "first screen, nothing selected (task 1)",
+      "verdict": null
+    },
+    {
+      "file": "15_real_real_mobile.png",
+      "state": "real_real",
+      "viewport": "mobile",
+      "shows": "clear REAL result (task 2)",
+      "verdict": "REAL"
+    },
+    {
+      "file": "16_partial_video_mobile.png",
+      "state": "partial_video",
+      "viewport": "mobile",
+      "shows": "PARTIAL_MANIPULATION naming the video (tasks 3 and 4)",
+      "verdict": "PARTIAL_MANIPULATION"
+    },
+    {
+      "file": "17_fake_timing_mobile.png",
+      "state": "fake_timing",
+      "viewport": "mobile",
+      "shows": "FAKE with timing in the explanation (task 5)",
+      "verdict": "FAKE"
+    },
+    {
+      "file": "18_inconclusive_mobile.png",
+      "state": "inconclusive",
+      "viewport": "mobile",
+      "shows": "INCONCLUSIVE for a no-face silent upload (task 6)",
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "file": "19_unfamiliar_mobile.png",
+      "state": "unfamiliar",
+      "viewport": "mobile",
+      "shows": "unfamiliar-input caution on a wrong verdict (task 7)",
+      "verdict": "FAKE"
+    },
+    {
+      "file": "20_learn_legend_mobile.png",
+      "state": "learn_legend",
+      "viewport": "mobile",
+      "shows": "Learn more, legend tab (FVRA_000)",
+      "verdict": null
+    },
+    {
+      "file": "21_learn_findings_mobile.png",
+      "state": "learn_findings",
+      "viewport": "mobile",
+      "shows": "Learn more, findings tab (FVRA_000)",
+      "verdict": null
+    },
+    {
+      "file": "22_learn_technical_mobile.png",
+      "state": "learn_technical",
+      "viewport": "mobile",
+      "shows": "Learn more, technical tab (FVRA_000)",
+      "verdict": null
+    },
+    {
+      "file": "23_learn_accuracy_mobile.png",
+      "state": "learn_accuracy",
+      "viewport": "mobile",
+      "shows": "Learn more, accuracy tab (FVRA_000)",
+      "verdict": null
+    },
+    {
+      "file": "24_history_mobile.png",
+      "state": "history",
+      "viewport": "mobile",
+      "shows": "History",
+      "verdict": null
+    },
+    {
+      "file": "25_accuracy_mobile.png",
+      "state": "accuracy",
+      "viewport": "mobile",
+      "shows": "Accuracy page",
+      "verdict": null
+    },
+    {
+      "console_errors": []
+    }
+  ]
+}

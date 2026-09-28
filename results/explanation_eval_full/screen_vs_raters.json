@@ -1,0 +1,972 @@
+{
+ "n_cases": 50,
+ "definitions": "(stated here, chosen after the ratings were seen, so this is an exploratory analysis, not a pre-registered test):\n  total        = factual_grounding + score_accuracy + absence_of_hallucination for one rater (0 to 6)\n  human-flagged = BOTH raters scored factual_grounding below 2 (the raters agree the text says something the facts do not support)",
+ "by_verdict": {
+  "FAKE": {
+   "n": 8,
+   "mean_total_r1": 5.62,
+   "mean_total_r2": 5.62,
+   "both_full_marks": 5,
+   "human_flagged": 0,
+   "mean_factual_grounding_both": 2.0,
+   "mean_score_accuracy_both": 1.75,
+   "mean_absence_of_hallucination_both": 1.88
+  },
+  "PARTIAL_MANIPULATION": {
+   "n": 27,
+   "mean_total_r1": 4.3,
+   "mean_total_r2": 4,
+   "both_full_marks": 3,
+   "human_flagged": 15,
+   "mean_factual_grounding_both": 1.33,
+   "mean_score_accuracy_both": 1.28,
+   "mean_absence_of_hallucination_both": 1.54
+  },
+  "REAL": {
+   "n": 15,
+   "mean_total_r1": 5.53,
+   "mean_total_r2": 5.07,
+   "both_full_marks": 5,
+   "human_flagged": 0,
+   "mean_factual_grounding_both": 1.87,
+   "mean_score_accuracy_both": 1.47,
+   "mean_absence_of_hallucination_both": 1.97
+  }
+ },
+ "by_screen": {
+  "screen_passed": {
+   "n": 26,
+   "mean_total_r1": 5.58,
+   "mean_total_r2": 5.35,
+   "both_full_marks": 12,
+   "human_flagged": 0,
+   "mean_factual_grounding_both": 1.92,
+   "mean_score_accuracy_both": 1.58,
+   "mean_absence_of_hallucination_both": 1.96
+  },
+  "screen_rejected": {
+   "n": 24,
+   "mean_total_r1": 4.12,
+   "mean_total_r2": 3.75,
+   "both_full_marks": 1,
+   "human_flagged": 15,
+   "mean_factual_grounding_both": 1.25,
+   "mean_score_accuracy_both": 1.23,
+   "mean_absence_of_hallucination_both": 1.46
+  }
+ },
+ "screen_vs_human_flag": {
+  "screen_rejected_and_human_flagged": 15,
+  "screen_rejected_not_human_flagged": 9,
+  "screen_passed_but_human_flagged": 0,
+  "screen_passed_not_human_flagged": 26
+ },
+ "screen_passed_but_a_rater_gave_0": [
+  "eval-21",
+  "eval-29",
+  "eval-37",
+  "eval-46"
+ ],
+ "per_case": [
+  {
+   "case_id": "eval-01",
+   "verdict": "REAL",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 6,
+   "total_r2": 5,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-02",
+   "verdict": "REAL",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 5,
+   "total_r2": 5,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-03",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 5,
+   "total_r2": 4,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-04",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 6,
+   "total_r2": 5,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-05",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 1
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 1
+   },
+   "total_r1": 4,
+   "total_r2": 3,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-06",
+   "verdict": "REAL",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 6,
+   "total_r2": 6,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-07",
+   "verdict": "REAL",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 6,
+   "total_r2": 6,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-08",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 1,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 1
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 1
+   },
+   "total_r1": 3,
+   "total_r2": 3,
+   "human_flagged": true
+  },
+  {
+   "case_id": "eval-09",
+   "verdict": "REAL",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 6,
+   "total_r2": 6,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-10",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 5,
+   "total_r2": 5,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-11",
+   "verdict": "REAL",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 6,
+   "total_r2": 5,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-12",
+   "verdict": "FAKE",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 6,
+   "total_r2": 6,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-13",
+   "verdict": "FAKE",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 5,
+   "total_r2": 5,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-14",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 1,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 1
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 1
+   },
+   "total_r1": 3,
+   "total_r2": 3,
+   "human_flagged": true
+  },
+  {
+   "case_id": "eval-15",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 6,
+   "total_r2": 5,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-16",
+   "verdict": "FAKE",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 6,
+   "total_r2": 6,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-17",
+   "verdict": "FAKE",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 6,
+   "total_r2": 6,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-18",
+   "verdict": "FAKE",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 5,
+   "total_r2": 5,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-19",
+   "verdict": "REAL",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 5,
+   "total_r2": 5,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-20",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 1
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 4,
+   "total_r2": 5,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-21",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 0,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 5,
+   "total_r2": 4,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-22",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 1,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 1
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 0,
+    "absence_of_hallucination": 1
+   },
+   "total_r1": 3,
+   "total_r2": 2,
+   "human_flagged": true
+  },
+  {
+   "case_id": "eval-23",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 1,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 1
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 1
+   },
+   "total_r1": 4,
+   "total_r2": 4,
+   "human_flagged": true
+  },
+  {
+   "case_id": "eval-24",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 6,
+   "total_r2": 6,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-25",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 1,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 1
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 1
+   },
+   "total_r1": 3,
+   "total_r2": 3,
+   "human_flagged": true
+  },
+  {
+   "case_id": "eval-26",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 1,
+    "score_accuracy": 0,
+    "absence_of_hallucination": 0
+   },
+   "r2": {
+    "factual_grounding": 0,
+    "score_accuracy": 0,
+    "absence_of_hallucination": 0
+   },
+   "total_r1": 1,
+   "total_r2": 0,
+   "human_flagged": true
+  },
+  {
+   "case_id": "eval-27",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 1,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 4,
+   "total_r2": 4,
+   "human_flagged": true
+  },
+  {
+   "case_id": "eval-28",
+   "verdict": "FAKE",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 1
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 1
+   },
+   "total_r1": 5,
+   "total_r2": 5,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-29",
+   "verdict": "REAL",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 0,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 5,
+   "total_r2": 4,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-30",
+   "verdict": "REAL",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 5,
+   "total_r2": 6,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-31",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 6,
+   "total_r2": 6,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-32",
+   "verdict": "REAL",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 6,
+   "total_r2": 5,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-33",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 1,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 1
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 1
+   },
+   "total_r1": 3,
+   "total_r2": 3,
+   "human_flagged": true
+  },
+  {
+   "case_id": "eval-34",
+   "verdict": "FAKE",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 6,
+   "total_r2": 6,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-35",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 6,
+   "total_r2": 5,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-36",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 5,
+   "total_r2": 5,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-37",
+   "verdict": "REAL",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 0,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 5,
+   "total_r2": 4,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-38",
+   "verdict": "FAKE",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 6,
+   "total_r2": 6,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-39",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 1,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 0,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 4,
+   "total_r2": 3,
+   "human_flagged": true
+  },
+  {
+   "case_id": "eval-40",
+   "verdict": "REAL",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 6,
+   "total_r2": 6,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-41",
+   "verdict": "REAL",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 6,
+   "total_r2": 6,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-42",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 1,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 5,
+   "total_r2": 5,
+   "human_flagged": true
+  },
+  {
+   "case_id": "eval-43",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 6,
+   "total_r2": 6,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-44",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 1,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 5,
+   "total_r2": 5,
+   "human_flagged": true
+  },
+  {
+   "case_id": "eval-45",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 1,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 5,
+   "total_r2": 5,
+   "human_flagged": true
+  },
+  {
+   "case_id": "eval-46",
+   "verdict": "REAL",
+   "screen_passed": true,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 0,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 5,
+   "total_r2": 4,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-47",
+   "verdict": "REAL",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 2,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 2,
+    "score_accuracy": 0,
+    "absence_of_hallucination": 1
+   },
+   "total_r1": 5,
+   "total_r2": 3,
+   "human_flagged": false
+  },
+  {
+   "case_id": "eval-48",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 1,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 1
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 1,
+    "absence_of_hallucination": 1
+   },
+   "total_r1": 3,
+   "total_r2": 3,
+   "human_flagged": true
+  },
+  {
+   "case_id": "eval-49",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 1,
+    "score_accuracy": 0,
+    "absence_of_hallucination": 0
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 0,
+    "absence_of_hallucination": 0
+   },
+   "total_r1": 1,
+   "total_r2": 1,
+   "human_flagged": true
+  },
+  {
+   "case_id": "eval-50",
+   "verdict": "PARTIAL_MANIPULATION",
+   "screen_passed": false,
+   "r1": {
+    "factual_grounding": 1,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "r2": {
+    "factual_grounding": 1,
+    "score_accuracy": 2,
+    "absence_of_hallucination": 2
+   },
+   "total_r1": 5,
+   "total_r2": 5,
+   "human_flagged": true
+  }
+ ]
+}

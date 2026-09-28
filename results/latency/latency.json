@@ -1,0 +1,148 @@
+{
+  "clip": "composite_real_video_synthetic_speech.mp4",
+  "video_model": {
+    "shipped": true,
+    "arch": "legacy_xception",
+    "name": "Xception",
+    "tag": "mm_xcep_vidsplit",
+    "seed": 44,
+    "trained_on": "multi-method (Deepfakes + FaceSwap + NeuralTextures)",
+    "checkpoint": "fdd60748dc1c",
+    "accuracy_source": "cross-validated: pooled out-of-fold clip accuracy over all 400 videos, 5 identity-grouped folds (results/cv/cv5_xcep_mm/cv_summary.json), 95% interval 79.2% to 86.2%. Chosen over the 96.2% figure from the 44-video test split because the PPR's weighting basis (Large, Lines and Bagnall, 2019) is cross-validated accuracy and the small split is optimistic.",
+    "status": "fine-tuned on FaceForensics++ c23, multi-method (Deepfakes + FaceSwap + NeuralTextures); checkpoint fdd60748dc1c"
+  },
+  "runs": 5,
+  "warmup_discarded": 1,
+  "hardware": {
+    "platform": "macOS-15.3.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "processor": "arm",
+    "python": "3.12.4",
+    "torch": "2.12.1",
+    "torch_device": "mps",
+    "cpu": "Apple M2 Pro"
+  },
+  "cold_start_s": {
+    "video_models_mtcnn_legacy_xception": 1.4750397499883547,
+    "audio_svm": 0.0064446249743923545,
+    "wav2vec2": 2.4421412499505095,
+    "silero_vad": 0.039886208018288016,
+    "ood_gates": 0.15648762503406033
+  },
+  "cold_start_total_s": 4.119999457965605,
+  "stages": [
+    {
+      "stage": "1. Face extraction + Xception",
+      "status": "measured",
+      "note": "MTCNN crop + Xception scoring, up to 20 frames",
+      "mean_s": 5.286797708389349,
+      "std_s": 0.07855176749362072,
+      "min_s": 5.18055029201787,
+      "max_s": 5.397153416008223,
+      "n": 5
+    },
+    {
+      "stage": "1b. Unfamiliar-input check (face)",
+      "status": "measured",
+      "note": "Mahalanobis distance of the face features to the training data",
+      "mean_s": 0.10848081659059972,
+      "std_s": 0.001645268719391989,
+      "min_s": 0.10650320898275822,
+      "max_s": 0.11012666701572016,
+      "n": 5
+    },
+    {
+      "stage": "1c. Suspicious-moment windows",
+      "status": "measured",
+      "note": "frame rate read + per-frame scores grouped into timed windows",
+      "mean_s": 0.03894558340543881,
+      "std_s": 0.016259530421256385,
+      "min_s": 0.029809792002197355,
+      "max_s": 0.0678602919797413,
+      "n": 5
+    },
+    {
+      "stage": "2. Audio decode (ffmpeg)",
+      "status": "measured",
+      "note": "video -> mono 16 kHz waveform",
+      "mean_s": 0.02802523321006447,
+      "std_s": 0.003264441489042071,
+      "min_s": 0.02518595801666379,
+      "max_s": 0.03320837498176843,
+      "n": 5
+    },
+    {
+      "stage": "3. VAD gate (Silero)",
+      "status": "measured",
+      "note": "speech / non-speech decision",
+      "mean_s": 0.037734633591026065,
+      "std_s": 0.0014053061135905513,
+      "min_s": 0.03624849999323487,
+      "max_s": 0.03938129200832918,
+      "n": 5
+    },
+    {
+      "stage": "4. wav2vec2 embedding",
+      "status": "measured",
+      "note": "768-d mean-pooled SSL embedding",
+      "mean_s": 0.3965456416015513,
+      "std_s": 0.012025798984075343,
+      "min_s": 0.3793483329936862,
+      "max_s": 0.4121309159672819,
+      "n": 5
+    },
+    {
+      "stage": "5. SVM spoof prediction",
+      "status": "measured",
+      "note": "RBF SVM on the embedding (ASVspoof 2019 LA)",
+      "mean_s": 0.0023618917912244797,
+      "std_s": 0.001206007116053858,
+      "min_s": 0.0012974999845027924,
+      "max_s": 0.004293333971872926,
+      "n": 5
+    },
+    {
+      "stage": "5b. Unfamiliar-input check (speech)",
+      "status": "measured",
+      "note": "Mahalanobis distance of the speech embedding to the training data",
+      "mean_s": 0.0010515915928408504,
+      "std_s": 0.00013112142993521985,
+      "min_s": 0.0009181660134345293,
+      "max_s": 0.0012340410030446947,
+      "n": 5
+    },
+    {
+      "stage": "6. Fusion decision",
+      "status": "measured",
+      "note": "disagreement check + weighting, on the clip's real scores",
+      "mean_s": 1.5008205082267523e-05,
+      "std_s": 8.094692864694504e-06,
+      "min_s": 6.7909713834524155e-06,
+      "max_s": 2.758402843028307e-05,
+      "n": 5
+    },
+    {
+      "stage": "7. Llama 3 explanation",
+      "status": "measured",
+      "note": "constrained generation via local Ollama, with the real moment windows",
+      "mean_s": 1.3768798663979396,
+      "std_s": 0.03162038185631083,
+      "min_s": 1.359141750028357,
+      "max_s": 1.4330292079830542,
+      "n": 5
+    },
+    {
+      "stage": "8. Faithfulness screen",
+      "status": "measured",
+      "note": "automatic check of the generated explanation",
+      "mean_s": 0.001108858606312424,
+      "std_s": 0.00018263829288006018,
+      "min_s": 0.0009185420349240303,
+      "max_s": 0.0013789170188829303,
+      "n": 5
+    }
+  ],
+  "measured_total_warm_s": 7.277946833381429,
+  "complete_pipeline": true,
+  "pending_stages": []
+}

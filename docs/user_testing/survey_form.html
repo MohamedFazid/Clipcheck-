@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deepfake Detector: User Testing Survey</title>
+<style>
+:root { --bg:#f6f5f2; --card:#fff; --ink:#1d1d1f; --muted:#5f6368; --line:#dcdad5; --accent:#2f5d8a; --warn:#9a3b12; --ok:#23703f; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+main { max-width: 860px; margin: 0 auto; padding: 24px 16px 96px; }
+h1 { font-size: 1.6rem; margin: 0 0 4px; }
+h2 { font-size: 1.2rem; margin: 32px 0 8px; padding-top: 8px; border-top: 2px solid var(--line); }
+.who { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.06em; padding:2px 8px; border-radius:99px; margin-left:8px; vertical-align:middle; }
+.who.fac { background:#e6eef7; color:var(--accent); } .who.par { background:#f3ece0; color:#7a4b00; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; margin:12px 0; }
+.muted { color:var(--muted); font-size:.92rem; }
+.q { margin: 12px 0 4px; font-weight: 600; }
+.prompt { font-style: italic; color: var(--muted); margin: 4px 0 8px; }
+.choices { display:flex; flex-wrap:wrap; gap:6px; }
+.choices label { border:1px solid var(--line); border-radius:8px; padding:6px 10px; cursor:pointer; background:#fbfaf8; }
+.choices input { margin-right:6px; }
+.choices label:has(input:checked) { border-color: var(--accent); background:#e6eef7; }
+.scale { display:grid; grid-template-columns: 1fr auto; gap: 8px; align-items:center; padding:8px 0; border-bottom:1px solid var(--line); }
+.scale:last-child { border-bottom: 0; }
+.scale .choices label { min-width: 40px; text-align:center; padding:6px 8px; }
+.ends { font-size:.78rem; color:var(--muted); }
+textarea, input[type=text] { width:100%; font:inherit; padding:8px; border:1px solid var(--line); border-radius:8px; background:#fff; }
+textarea { min-height: 64px; }
+.bar { position: fixed; left:0; right:0; bottom:0; background:#fff; border-top:1px solid var(--line); padding:10px 16px; display:flex; gap:12px; align-items:center; justify-content:center; flex-wrap:wrap; }
+button { font:inherit; padding:8px 16px; border-radius:8px; border:1px solid var(--accent); background:#fff; color:var(--accent); cursor:pointer; }
+button.primary { background:var(--accent); color:#fff; }
+#status { font-size:.9rem; }
+#status.err { color: var(--warn); } #status.ok { color: var(--ok); }
+.missing { outline: 2px solid var(--warn); outline-offset: 3px; border-radius: 8px; }
+@media (max-width: 560px) { .scale { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>User testing survey</h1>
+  <p><b>Full version: 8 tasks plus 1 optional, about 25 minutes.</b></p>
+  <p class="muted">Multimodal Deepfake Detector, CM3070 final project. One form per participant per round. Anonymous: no names, no recordings.
+  Your answers stay in this browser until you press <b>Download</b>, which saves a CSV file.
+  <span class="who fac">FACILITATOR</span> parts record what the participant did; <span class="who par">PARTICIPANT</span> parts are the participant's own answers.</p>
+
+  <p id="sheet" class="card" style="margin-top:12px"></p>
+
+  <h2>1. Session <span class="who fac">FACILITATOR</span></h2>
+  <div class="card" id="meta"></div>
+
+  <h2>2. Tasks <span class="who fac">FACILITATOR</span> <span class="who par">PARTICIPANT</span></h2>
+  <p class="muted">Read each task aloud. Record the outcome and what they said. After each task, ask the participant:
+  "How easy or difficult was that task?" (1 = very difficult, 7 = very easy).</p>
+  <div id="tasks"></div>
+
+  <h2>3. Using the tool overall <span class="who par">PARTICIPANT</span></h2>
+  <p class="muted">For each statement: 1 = strongly disagree, 5 = strongly agree. Answer quickly; first reactions are best.</p>
+  <div class="card" id="sus"></div>
+
+  <section id="sec-project">
+  <h2>4. About this tool's results <span class="who par">PARTICIPANT</span></h2>
+  <p class="muted">1 = strongly disagree, 5 = strongly agree.</p>
+  <div class="card" id="project"></div>
+  </section>
+
+  <section id="sec-features">
+  <h2>5. Features <span class="who par">PARTICIPANT</span></h2>
+  <p class="muted">How useful was each part for deciding whether to trust a clip? 1 = not useful, 5 = very useful, or "did not notice it".</p>
+  <div class="card" id="features"></div>
+  </section>
+
+  <h2>6. Your views <span class="who par">PARTICIPANT</span></h2>
+  <div class="card" id="open"></div>
+
+  <h2>7. Facilitator notes <span class="who fac">FACILITATOR</span></h2>
+  <p class="muted">Fill in straight after the session.</p>
+  <div class="card" id="facilitator"></div>
+</main>
+<div class="bar">
+  <span id="status" class="muted">Not saved to a file yet.</span>
+  <button type="button" id="reset">Clear this form</button>
+  <button type="button" class="primary" id="download">Download CSV</button>
+</div>
+<script>
+const SURVEY = {"tasks": [{"id": "T1", "title": "First impression (no clicking)", "prompt": "Look at this screen. Without clicking anything, what do you think this tool does, and where would you start?", "checks": [{"id": "understood_purpose", "q": "Their description of what the tool does was", "options": ["accurate", "partly accurate", "wrong or no idea"]}]}, {"id": "T2", "title": "Clip RVRA_000", "prompt": "Analyse the clip called RVRA_000 and tell me what the tool concluded. How sure is it?", "checks": [{"id": "found_verdict", "q": "Found the verdict without help", "options": ["yes", "no"]}]}, {"id": "T3", "title": "Clip FVRA_000", "prompt": "Now analyse FVRA_000. What did the tool conclude this time? Which part of the clip does it think is the problem, the picture or the sound? Would you publish this clip? Would you share this clip as genuine?", "checks": [{"id": "named_part", "q": "The part they said the tool suspects", "options": ["the video", "the audio", "could not say"]}, {"id": "would_publish", "q": "Would they publish it", "options": ["yes", "no", "unsure"]}, {"id": "share_as_genuine", "q": "Would they share this clip as genuine (asked from round 3)", "options": ["yes", "no", "unsure"]}]}, {"id": "T4", "title": "Reading the numbers", "prompt": "There are three percentages near the top. In your own words, what does each one mean? If one said 55%, what would that tell you?", "checks": [{"id": "score_reading", "q": "How they read a score", "options": ["as a likelihood (as intended)", "as a certainty (\"it IS fake\")", "as the share of the clip that is fake", "could not say"]}]}, {"id": "T5", "title": "Clip 183_253: explanation and timing", "prompt": "Analyse 183_253 and read the written summary. Does it tell you anything the numbers did not? When in the clip did the tool find something suspicious? Can you check that on the video player?", "checks": [{"id": "found_time", "q": "Found the suspicious time on the player", "options": ["yes", "partly", "no"]}, {"id": "noticed_badge", "q": "Noticed which writer produced the text (Llama 3 or template)", "options": ["yes", "no"]}, {"id": "wanted_what", "q": "Expected the tool to say WHAT looks wrong", "options": ["yes", "no"]}]}, {"id": "T6", "title": "Upload the file noface_silent.mp4", "prompt": "Upload this file using the upload area and tell me what the tool says about it.", "checks": [{"id": "uploaded_unaided", "q": "Uploaded without help", "options": ["yes", "no"]}, {"id": "inconclusive_reading", "q": "They read the result as", "options": ["the tool cannot judge this", "the video is authentic", "an error or a crash", "something else"]}]}, {"id": "T7", "title": "Clip LAVDF_RVRA_000", "prompt": "Analyse LAVDF_RVRA_000. What did the tool conclude, and is there anything on the screen that changes how much you would trust it?", "checks": [{"id": "saw_warning", "q": "Saw the unfamiliar-input warning", "options": ["yes, unprompted", "yes, after a hint", "no"]}, {"id": "lowered_trust", "q": "Lowered their trust because of it", "options": ["yes", "partly", "no"]}]}, {"id": "T8", "title": "When not to trust it", "prompt": "Your editor asks: how accurate is this tool, and when should we not rely on it? Find the answer in the tool.", "checks": [{"id": "found_limits", "q": "Where they found it", "options": ["the limits panel under the result", "the Evaluation tab", "both", "neither"]}]}, {"id": "T9", "title": "Optional: keeping a record", "prompt": "You want to keep a copy of the result for your notes. How would you do that?", "optional": true, "checks": [{"id": "found_record", "q": "Found a way (History, Export PDF or Copy JSON)", "options": ["yes", "no"]}]}], "sus": ["I think that I would like to use this system frequently.", "I found the system unnecessarily complex.", "I thought the system was easy to use.", "I think that I would need the support of a technical person to be able to use this system.", "I found the various functions in this system were well integrated.", "I thought there was too much inconsistency in this system.", "I would imagine that most people would learn to use this system very quickly.", "I found the system very cumbersome to use.", "I felt very confident using the system.", "I needed to learn a lot of things before I could get going with this system."], "project": [["Q1", "The final verdict was easy to find and understand."], ["Q2", "When the tool said only one part was manipulated, I could tell whether it meant the video or the audio."], ["Q3", "I understood what the percentage scores meant."], ["Q4", "The written explanation helped me understand the result."], ["Q5", "The tool made it clear when its result should not be trusted."], ["Q6", "If I were verifying a video for work, I would use this tool's output as one input to my decision."]], "features": [["F_verdict", "The verdict box at the top of a result"], ["F_partial", "The message saying which part (video or audio) looks manipulated"], ["F_scores", "The three percentage scores"], ["F_explanation", "The written explanation"], ["F_timing", "The times in the clip when the video looked suspicious (in the text and the marks on the progress bar)"], ["F_warning", "The \"unfamiliar input\" warning"], ["F_limits", "The panel \"How to read this result, and its limits\""], ["F_evaluation", "The Evaluation tab"], ["F_models", "The list of models in the sidebar"], ["F_record", "History, Export PDF and Copy JSON"]], "open": [["O1", "What was the single most confusing thing on the screen?"], ["O2", "What would you change first?"], ["O3", "Was there anything you expected the tool to tell you that it did not?"], ["O4", "Did anything make you trust it less, or more?"], ["O5", "Describe how the tool looks and feels in three words."]], "facilitator": [["top_problem", "Top usability problem observed in this session"], ["surprise", "Anything the participant did that surprised you"], ["debrief", "Their reaction when told the ground truth at the debrief"], ["differed", "Any result on the day that differed from the answer key"]], "meta": [["background", "Job or field of study (general terms, NOT a name)"]], "meta_choices": [["ml_background", "Any machine-learning background?", ["no", "yes"]], ["checks_videos", "How often do you check whether an online video is genuine?", ["never", "sometimes", "often", "it is part of my job"]]], "outcomes": ["done unaided", "done with a hint", "not done", "not attempted"]};
+const REQUIRED_TASKS = ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"];
+const FORM = "full";
+// One separate sheet per participant and round (fixed 2026-09-24 20:3x: the first version kept ONE set of answers, so answers not re-entered
+// for the next participant carried over from the previous one; round 1 files P2 to P4 show this). Choosing a different participant or round
+// saves the current sheet and opens that participant's own sheet, blank if new. Nothing is ever copied from one sheet to another.
+const KEY = 'mdd_user_testing_survey_v2_' + FORM;
+let store = { sheets: {}, current: '' };
+try { const s = JSON.parse(localStorage.getItem(KEY) || 'null'); if (s && s.sheets) store = s; } catch (e) {}
+let state = { answers: store.sheets[store.current] || {} };
+const sheetKey = a => (a['meta/participant'] || '') + '|' + (a['meta/round'] || '');
+const save = () => { store.current = sheetKey(state.answers); store.sheets[store.current] = state.answers;
+                     try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) {} };
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let uid = 0;
+
+function choices(key, options) {
+  const name = 'n' + (uid++);
+  return `<div class="choices" data-key="${esc(key)}">` + options.map(o =>
+    `<label><input type="radio" name="${name}" value="${esc(o)}" data-key="${esc(key)}" ${state.answers[key] === String(o) ? 'checked' : ''}>${esc(o)}</label>`
+  ).join('') + '</div>';
+}
+function text(key, multi) {
+  const v = esc(state.answers[key] || '');
+  return multi ? `<textarea data-key="${esc(key)}">${v}</textarea>` : `<input type="text" data-key="${esc(key)}" value="${v}">`;
+}
+function scale(key, label, lo, hi, loTxt, hiTxt, extra) {
+  const opts = []; for (let i = lo; i <= hi; i++) opts.push(String(i)); if (extra) opts.push(extra);
+  return `<div class="scale"><div>${esc(label)}<div class="ends">${lo} = ${esc(loTxt)}, ${hi} = ${esc(hiTxt)}</div></div>${choices(key, opts)}</div>`;
+}
+
+function renderAll() {
+uid = 0;
+const cur = state.answers['meta/participant'];
+document.getElementById('sheet').innerHTML = cur
+  ? `Sheet: <b>${esc(cur)}, round ${esc(state.answers['meta/round'] || '?')}</b>. Choosing another participant or round opens a separate, blank sheet.`
+  : 'Choose the participant first. Each participant and round gets its own blank sheet.';
+document.getElementById('meta').innerHTML =
+  `<div class="q">Participant</div>${choices('meta/participant', ['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10','P11','P12'])}` +
+  `<div class="q">Round</div>${choices('meta/round', ['1','2','3'])}<div class="muted">Round 1 = the interface before changes (v1); round 2 = the redesigned interface (v2); round 3 = the final interface (v4, frozen 27 Sep).</div>` +
+  `<div class="q">Consent</div>${choices('meta/consent', ['given: anonymous notes, no recording, can stop any time', 'given: signed consent form (PR/001) before the session'])}` +
+  SURVEY.meta.map(([id, q]) => `<div class="q">${esc(q)}</div>${text('meta/' + id)}`).join('') +
+  SURVEY.meta_choices.map(([id, q, o]) => `<div class="q">${esc(q)}</div>${choices('meta/' + id, o)}`).join('');
+
+document.getElementById('tasks').innerHTML = SURVEY.tasks.map(t =>
+  `<div class="card" data-task="${t.id}"><div class="q">${t.id}. ${esc(t.title)}${t.optional ? ' <span class="muted">(optional)</span>' : ''}</div>
+   <div class="prompt">"${esc(t.prompt)}"</div>
+   <div class="q">Outcome</div>${choices('task/' + t.id + '/outcome', SURVEY.outcomes)}
+   ${t.checks.map(c => `<div class="q">${esc(c.q)}</div>${choices('task/' + t.id + '/' + c.id, c.options)}`).join('')}
+   ${scale('task/' + t.id + '/ease', 'Participant: how easy or difficult was that task?', 1, 7, 'very difficult', 'very easy')}
+   <div class="q">What they did and said (quotes are best)</div>${text('task/' + t.id + '/notes', true)}</div>`).join('');
+
+document.getElementById('sus').innerHTML = SURVEY.sus.map((q, i) =>
+  scale('sus/SUS' + (i + 1), (i + 1) + '. ' + q, 1, 5, 'strongly disagree', 'strongly agree')).join('');
+document.getElementById('project').innerHTML = SURVEY.project.map(([id, q]) =>
+  scale('project/' + id, q, 1, 5, 'strongly disagree', 'strongly agree')).join('');
+document.getElementById('features').innerHTML = SURVEY.features.map(([id, q]) =>
+  scale('feature/' + id, q, 1, 5, 'not useful', 'very useful', 'did not notice it')).join('');
+if (!SURVEY.project.length) document.getElementById('sec-project').hidden = true;
+if (!SURVEY.features.length) document.getElementById('sec-features').hidden = true;
+document.getElementById('open').innerHTML = SURVEY.open.map(([id, q]) => `<div class="q">${esc(q)}</div>${text('open/' + id, true)}`).join('');
+document.getElementById('facilitator').innerHTML = SURVEY.facilitator.map(([id, q]) => `<div class="q">${esc(q)}</div>${text('facilitator/' + id, true)}`).join('');
+}
+renderAll();
+
+document.addEventListener('change', e => {
+  const k = e.target.dataset.key; if (!k) return;
+  const a = state.answers;
+  const switching = (k === 'meta/participant' && a['meta/participant'] && a['meta/participant'] !== e.target.value) ||
+                    (k === 'meta/round' && a['meta/round'] && a['meta/round'] !== e.target.value);
+  if (switching) {
+    save();                                                     // keep the current participant's sheet as it is
+    const next = { ...a, [k]: e.target.value };
+    const target = (next['meta/participant'] || '') + '|' + (next['meta/round'] || '');
+    const saved = store.sheets[target];
+    state.answers = saved ? saved : { 'meta/participant': next['meta/participant'], ...(next['meta/round'] ? { 'meta/round': next['meta/round'] } : {}) };
+    delete store.sheets[''];
+    save(); renderAll(); window.scrollTo(0, 0);
+    status(saved ? `Opened the saved sheet for ${next['meta/participant']}, round ${next['meta/round']}.`
+                 : `New blank sheet for ${next['meta/participant']}. The previous participant's answers are saved on their own sheet.`, 'ok');
+    return;
+  }
+  if (k === 'meta/participant' || k === 'meta/round') delete store.sheets[sheetKey(a)];   // renaming a sheet still being set up
+  a[k] = e.target.value; save(); if (k === 'meta/participant' || k === 'meta/round') renderAll(); status('');
+});
+document.addEventListener('input', e => { const k = e.target.dataset.key; if (!k || e.target.type === 'radio') return; state.answers[k] = e.target.value; save(); });
+
+function requiredKeys() {
+  const keys = ['meta/participant', 'meta/round', 'meta/consent'];
+  REQUIRED_TASKS.forEach(t => keys.push('task/' + t + '/outcome'));
+  SURVEY.sus.forEach((_, i) => keys.push('sus/SUS' + (i + 1)));
+  SURVEY.project.forEach(([id]) => keys.push('project/' + id));
+  SURVEY.features.forEach(([id]) => keys.push('feature/' + id));
+  return keys;
+}
+function status(msg, cls) { const s = document.getElementById('status'); s.textContent = msg || 'Answers kept in this browser.'; s.className = cls || 'muted'; }
+
+document.getElementById('download').addEventListener('click', () => {
+  document.querySelectorAll('.missing').forEach(n => n.classList.remove('missing'));
+  const missing = requiredKeys().filter(k => !state.answers[k]);
+  if (missing.length) {
+    missing.forEach(k => { const n = document.querySelector(`.choices[data-key="${CSS.escape(k)}"]`); if (n) n.classList.add('missing'); });
+    const first = document.querySelector('.missing'); if (first) first.scrollIntoView({block: 'center'});
+    status(`${missing.length} required answer(s) missing (marked in red). Nothing downloaded.`, 'err');
+    return;
+  }
+  const p = state.answers['meta/participant'], r = state.answers['meta/round'];
+  const q = v => '"' + String(v).replace(/"/g, '""') + '"';
+  state.answers['meta/form'] = FORM;
+  const lines = ['participant,round,section,item,value'];
+  Object.keys(state.answers).sort().forEach(k => {
+    const v = state.answers[k]; if (v === '' || v == null) return;
+    const [section, ...rest] = k.split('/');
+    lines.push([p, r, section, rest.join('/'), v].map(q).join(','));
+  });
+  const blob = new Blob([lines.join('\n') + '\n'], {type: 'text/csv'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `survey_${p}_round${r}.csv`;
+  document.body.appendChild(a); a.click(); a.remove();
+  status(`Downloaded survey_${p}_round${r}.csv. Copy it into docs/user_testing/responses/. For the next person, choose their participant number: a blank sheet opens.`, 'ok');
+});
+document.getElementById('reset').addEventListener('click', () => {
+  if (!confirm('Clear every answer on THIS participant\'s sheet? Download first if you need them.')) return;
+  delete store.sheets[sheetKey(state.answers)]; state.answers = {}; store.current = '';
+  try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) {}
+  renderAll(); status('Sheet cleared.');
+});
+</script>
+</body>
+</html>

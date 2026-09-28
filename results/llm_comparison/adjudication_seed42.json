@@ -1,0 +1,197 @@
+{
+  "protocol": "docs/EXPERIMENTS.md M1, condition (e)",
+  "labelled_by": "an AI assistant (large language model), 2026-09-24, reading each failing text against its structured input; not a human rater and not part of E2",
+  "seed": 42,
+  "models": {
+    "llama3:8b": {
+      "screen_failures": 24,
+      "genuine": 22,
+      "screen_false_positive": 2,
+      "raw_pass": "26 of 50",
+      "pass_after_removing_false_positives": "28 of 50",
+      "labels": {
+        "eval-03": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-04": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-05": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-08": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-14": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-15": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-20": {
+          "label": "screen false positive",
+          "reason": "faithful; the conjunctive direction rule misfires on \"The video and audio branches disagree, suggesting that only part of the content may be manipulated\" (video leans fake and is implicated, so the opener is consistent)"
+        },
+        "eval-22": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-23": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-24": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-25": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-26": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-27": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-33": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-35": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-36": {
+          "label": "screen false positive",
+          "reason": "same misfire as eval-20"
+        },
+        "eval-39": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-42": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-44": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-45": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-47": {
+          "label": "genuine",
+          "reason": "says \"no elevated-likelihood windows detected\" and then gives the two real windows: self-contradictory about the timing input"
+        },
+        "eval-48": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-49": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        },
+        "eval-50": {
+          "label": "genuine",
+          "reason": "opener \"The video has been partially manipulated\" (or \"The analysis suggests that the video is partially manipulated\") states the video is manipulated while the input says the video leans genuine"
+        }
+      }
+    },
+    "qwen2.5:7b": {
+      "screen_failures": 19,
+      "genuine": 8,
+      "screen_false_positive": 11,
+      "raw_pass": "31 of 50",
+      "pass_after_removing_false_positives": "42 of 50",
+      "labels": {
+        "eval-03": {
+          "label": "genuine",
+          "reason": "opener \"the video is partially manipulated\" while video leans genuine (same failure as Llama)"
+        },
+        "eval-04": {
+          "label": "screen false positive",
+          "reason": "faithful; conjunctive direction rule misfires on \"Since the video and audio branches disagree, ... only part of the content is manipulated\""
+        },
+        "eval-10": {
+          "label": "genuine",
+          "reason": "says the audio \"is considered genuine with a 11.6% probability\": 0.116 is P(fake), misstated as P(genuine)"
+        },
+        "eval-15": {
+          "label": "genuine",
+          "reason": "never states that the branches disagree (prompt rule 5) and says the video \"was not evaluated for any specific anomalies\", which is misleading (it was evaluated)"
+        },
+        "eval-16": {
+          "label": "screen false positive",
+          "reason": "faithful paraphrase of windows 0:00-0:00 and 0:01-0:02 as \"from 0 to 2 seconds\"; the number check reads 0 and 2 as scores"
+        },
+        "eval-20": {
+          "label": "screen false positive",
+          "reason": "faithful: \"The audio branch is not manipulated, and since the branches disagree\"; direction and disagreement checks miss the negation; \"0 to 5 seconds\" number misfire"
+        },
+        "eval-21": {
+          "label": "screen false positive",
+          "reason": "only violation is \"0 to 2 seconds\" for window 0:00-0:02 (number check misfire); rest faithful"
+        },
+        "eval-22": {
+          "label": "genuine",
+          "reason": "video leans genuine (0.438) but text says \"the video is partially manipulated\""
+        },
+        "eval-23": {
+          "label": "screen false positive",
+          "reason": "same misfire as eval-04"
+        },
+        "eval-24": {
+          "label": "genuine",
+          "reason": "same opener failure"
+        },
+        "eval-29": {
+          "label": "screen false positive",
+          "reason": "faithful: states the real windows as \"between 0 seconds and 4 seconds\" and that this does not change the verdict; direction check reads \"elevated likelihood of being manipulated\" as a fake claim"
+        },
+        "eval-35": {
+          "label": "screen false positive",
+          "reason": "same misfire as eval-04"
+        },
+        "eval-36": {
+          "label": "screen false positive",
+          "reason": "only violation is \"between 0 and 4 seconds\" for window 0:00-0:04 (number check misfire); rest faithful"
+        },
+        "eval-40": {
+          "label": "screen false positive",
+          "reason": "faithful: \"Neither branch disagrees with the other\"; disagreement check misses the negation"
+        },
+        "eval-42": {
+          "label": "screen false positive",
+          "reason": "same misfire as eval-04"
+        },
+        "eval-45": {
+          "label": "screen false positive",
+          "reason": "same misfire as eval-04"
+        },
+        "eval-48": {
+          "label": "genuine",
+          "reason": "same opener failure"
+        },
+        "eval-49": {
+          "label": "genuine",
+          "reason": "does not state that the branches disagree or that only part may be manipulated (prompt rule 5)"
+        },
+        "eval-50": {
+          "label": "genuine",
+          "reason": "same opener failure"
+        }
+      }
+    }
+  }
+}

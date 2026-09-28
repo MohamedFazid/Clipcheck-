@@ -1,0 +1,40 @@
+{
+  "seed": 43,
+  "tag": "aug",
+  "model_path": "models/runs/aug/seed43.pth",
+  "eer_test": 0.01721590275454442,
+  "eer_threshold": 0.2915504574775696,
+  "threshold_selection": {
+    "youden_j": {
+      "threshold": 0.20303405821323395,
+      "j_stat_val": 0.9420943839119924
+    },
+    "f1_optimal": {
+      "threshold": 0.14,
+      "f1_val": 0.9689608636977058
+    }
+  },
+  "test_metrics": {
+    "at_0.5": {
+      "threshold": 0.5,
+      "accuracy": 0.974934036939314,
+      "f1": 0.9754838709677419,
+      "precision": 0.9869451697127938,
+      "recall": 0.9642857142857143
+    },
+    "at_youden": {
+      "threshold": 0.20303405821323395,
+      "accuracy": 0.9802110817941952,
+      "f1": 0.9810366624525917,
+      "precision": 0.9724310776942355,
+      "recall": 0.9897959183673469
+    },
+    "at_f1optimal": {
+      "threshold": 0.14,
+      "accuracy": 0.9775725593667546,
+      "f1": 0.9786163522012579,
+      "precision": 0.9652605459057072,
+      "recall": 0.9923469387755102
+    }
+  }
+}

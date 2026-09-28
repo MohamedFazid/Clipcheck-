@@ -1,0 +1,9501 @@
+{
+ "interface": "v4 final (ui_v4_final_snapshot, frozen 2026-09-27 19:59)",
+ "measured_at": "2026-09-27T23:42:13+08:00",
+ "method": "every visible element that directly holds text is measured. Text colour is the computed colour; a gradient label (background-clip:\ntext) is measured at its lower-contrast gradient stop. The background is found by compositing the computed background colours of the element\nand its ancestors (alpha blending) over the page's base colour; background images, blur and the decorative pixel field are ignored, so\ntranslucent panels are measured against the dark base they sit on. Ratio per WCAG 2.1: (L1 + 0.05) / (L2 + 0.05). Reported: elements below\n4.5:1 (the strict criterion used for v1 to v3), and elements failing AA (large text, at least 24 px or 18.66 px bold, needs 3:1).",
+ "summary": {
+  "app_ten_screens": {
+   "elements": 1054,
+   "per_screen": {
+    "check": 81,
+    "result_partial": 48,
+    "result_unfamiliar": 59,
+    "result_no_verdict": 41,
+    "details_findings": 76,
+    "details_technical": 99,
+    "details_limits": 68,
+    "details_glossary": 95,
+    "history": 29,
+    "accuracy": 458
+   },
+   "below_4_5": 0,
+   "fail_wcag_aa": 0,
+   "lowest_ratio": 5.19,
+   "below_4_5_examples": []
+  },
+  "landing": {
+   "elements": 124,
+   "per_screen": {
+    "landing": 124
+   },
+   "below_4_5": 2,
+   "fail_wcag_aa": 0,
+   "lowest_ratio": 4.2,
+   "below_4_5_examples": [
+    {
+     "text": "Made by a person,",
+     "tag": "SPAN",
+     "cls": "hw-base",
+     "size": 66.24,
+     "large": true,
+     "ratio": 4.2
+    },
+    {
+     "text": "or by a machine?",
+     "tag": "SPAN",
+     "cls": "hw-base",
+     "size": 66.24,
+     "large": true,
+     "ratio": 4.2
+    }
+   ]
+  }
+ },
+ "screens": {
+  "check": [
+   {
+    "text": "Home",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 10.38
+   },
+   {
+    "text": "Clipcheck",
+    "tag": "SPAN",
+    "cls": "brand-name",
+    "size": 16,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Check a video",
+    "tag": "SPAN",
+    "cls": "long",
+    "size": 13,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "History",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Accuracy",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Check a video",
+    "tag": "H1",
+    "cls": "large",
+    "size": 48,
+    "large": true,
+    "ratio": 15.98
+   },
+   {
+    "text": "The tool checks the picture and the voice separately and say",
+    "tag": "P",
+    "cls": "lede",
+    "size": 17,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Drop a video here",
+    "tag": "B",
+    "cls": "",
+    "size": 16,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "MP4, MOV, AVI or MKV, up to 200 MB and 120 seconds",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Choose a file",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.34
+   },
+   {
+    "text": "Recent checks",
+    "tag": "H2",
+    "cls": "h3",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "See all",
+    "tag": "A",
+    "cls": "link",
+    "size": 14,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Test pattern, no face and no sound",
+    "tag": "SPAN",
+    "cls": "grow",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "No verdict",
+    "tag": "SPAN",
+    "cls": "vchip tone-none",
+    "size": 13,
+    "large": false,
+    "ratio": 8.74
+   },
+   {
+    "text": "TV interview, genuine face and voice",
+    "tag": "SPAN",
+    "cls": "grow",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Likely manipulated, may be wrong",
+    "tag": "SPAN",
+    "cls": "vchip tone-manip",
+    "size": 13,
+    "large": false,
+    "ratio": 6.78
+   },
+   {
+    "text": "Business newsreader, face replaced",
+    "tag": "SPAN",
+    "cls": "grow",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Partly manipulated: the picture",
+    "tag": "SPAN",
+    "cls": "vchip tone-partial",
+    "size": 13,
+    "large": false,
+    "ratio": 8.36
+   },
+   {
+    "text": "Demo videos",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.99
+   },
+   {
+    "text": "Clips with known answers. Each shows whether its face and vo",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.32
+   },
+   {
+    "text": "Studio guest",
+    "tag": "B",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.73
+   },
+   {
+    "text": "TV interview, built test clip",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 5.36
+   },
+   {
+    "text": "Face",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 10.99
+   },
+   {
+    "text": "Real",
+    "tag": "B",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.77
+   },
+   {
+    "text": "Voice",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 10.99
+   },
+   {
+    "text": "Real",
+    "tag": "B",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.77
+   },
+   {
+    "text": "0:03",
+    "tag": "SPAN",
+    "cls": "tnum",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Webcam streamer",
+    "tag": "B",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.73
+   },
+   {
+    "text": "Desk microphone, built test clip",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 5.36
+   },
+   {
+    "text": "Face",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 10.99
+   },
+   {
+    "text": "Real",
+    "tag": "B",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.77
+   },
+   {
+    "text": "Voice",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 10.99
+   },
+   {
+    "text": "Fake",
+    "tag": "B",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 7.49
+   },
+   {
+    "text": "0:02",
+    "tag": "SPAN",
+    "cls": "tnum",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Business newsreader",
+    "tag": "B",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.73
+   },
+   {
+    "text": "Financial news desk, built test clip",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 5.36
+   },
+   {
+    "text": "Face",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 10.99
+   },
+   {
+    "text": "Fake",
+    "tag": "B",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 7.49
+   },
+   {
+    "text": "Voice",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 10.99
+   },
+   {
+    "text": "Real",
+    "tag": "B",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.77
+   },
+   {
+    "text": "0:04",
+    "tag": "SPAN",
+    "cls": "tnum",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Checked",
+    "tag": "SPAN",
+    "cls": "done",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Vlogger",
+    "tag": "B",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.73
+   },
+   {
+    "text": "Home webcam, built test clip",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 5.36
+   },
+   {
+    "text": "Face",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 10.99
+   },
+   {
+    "text": "Fake",
+    "tag": "B",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 7.49
+   },
+   {
+    "text": "Voice",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 10.99
+   },
+   {
+    "text": "Fake",
+    "tag": "B",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 7.49
+   },
+   {
+    "text": "0:02",
+    "tag": "SPAN",
+    "cls": "tnum",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Checked",
+    "tag": "SPAN",
+    "cls": "done",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "News presenter",
+    "tag": "B",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.73
+   },
+   {
+    "text": "Standing, news ticker, built test clip",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 5.36
+   },
+   {
+    "text": "Face",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 10.99
+   },
+   {
+    "text": "Real",
+    "tag": "B",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.77
+   },
+   {
+    "text": "Voice",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 10.99
+   },
+   {
+    "text": "Real",
+    "tag": "B",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.77
+   },
+   {
+    "text": "0:03",
+    "tag": "SPAN",
+    "cls": "tnum",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Checked",
+    "tag": "SPAN",
+    "cls": "done",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Newsreader",
+    "tag": "B",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.73
+   },
+   {
+    "text": "World-map studio, built test clip",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 5.36
+   },
+   {
+    "text": "Face",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 10.99
+   },
+   {
+    "text": "Real",
+    "tag": "B",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.77
+   },
+   {
+    "text": "Voice",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 10.99
+   },
+   {
+    "text": "Fake",
+    "tag": "B",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 7.49
+   },
+   {
+    "text": "0:03",
+    "tag": "SPAN",
+    "cls": "tnum",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "News anchor",
+    "tag": "B",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.73
+   },
+   {
+    "text": "Flag backdrop, built test clip",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 5.36
+   },
+   {
+    "text": "Face",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 10.99
+   },
+   {
+    "text": "Fake",
+    "tag": "B",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 7.49
+   },
+   {
+    "text": "Voice",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 10.99
+   },
+   {
+    "text": "Real",
+    "tag": "B",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.77
+   },
+   {
+    "text": "0:02",
+    "tag": "SPAN",
+    "cls": "tnum",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Checked",
+    "tag": "SPAN",
+    "cls": "done",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "TV presenter",
+    "tag": "B",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.73
+   },
+   {
+    "text": "Skyline studio, built test clip",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 5.36
+   },
+   {
+    "text": "Face",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 10.99
+   },
+   {
+    "text": "Fake",
+    "tag": "B",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 7.49
+   },
+   {
+    "text": "Voice",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 10.99
+   },
+   {
+    "text": "Fake",
+    "tag": "B",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 7.49
+   },
+   {
+    "text": "0:02",
+    "tag": "SPAN",
+    "cls": "tnum",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Clipcheck, the Multimodal Deepfake Detector (CM3070 final pr",
+    "tag": "FOOTER",
+    "cls": "foot glass",
+    "size": 12,
+    "large": false,
+    "ratio": 11.04
+   }
+  ],
+  "result_partial": [
+   {
+    "text": "Home",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 10.38
+   },
+   {
+    "text": "Clipcheck",
+    "tag": "SPAN",
+    "cls": "brand-name",
+    "size": 16,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Check a video",
+    "tag": "SPAN",
+    "cls": "long",
+    "size": 13,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "History",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Accuracy",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Business newsreader, face replaced",
+    "tag": "DIV",
+    "cls": "res-name",
+    "size": 17,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Demo video; known answer: face fake, voice real. Checked 27 ",
+    "tag": "DIV",
+    "cls": "res-when",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "Details",
+    "tag": "BUTTON",
+    "cls": "btn",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Save as PDF",
+    "tag": "BUTTON",
+    "cls": "btn",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Copy data",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Partly manipulated: the picture",
+    "tag": "H1",
+    "cls": "v-head tone-partial",
+    "size": 40,
+    "large": true,
+    "ratio": 9.28
+   },
+   {
+    "text": "The face looks manipulated but the voice sounds genuine, so ",
+    "tag": "P",
+    "cls": "v-reason",
+    "size": 17,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "0%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "50%: unsure",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "100%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Picture",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Leans manipulated",
+    "tag": "SPAN",
+    "cls": "lean",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": ">99%",
+    "tag": "DIV",
+    "cls": "cap-val",
+    "size": 22,
+    "large": true,
+    "ratio": 14.39
+   },
+   {
+    "text": "Voice",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Leans genuine",
+    "tag": "SPAN",
+    "cls": "lean",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "<1%",
+    "tag": "DIV",
+    "cls": "cap-val",
+    "size": 22,
+    "large": true,
+    "ratio": 14.39
+   },
+   {
+    "text": "100 points apart",
+    "tag": "SPAN",
+    "cls": "b-label ",
+    "size": 13,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "35-point line",
+    "tag": "SPAN",
+    "cls": "r-label ",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "The two checks are 100 points apart. At 35 or more, the tool",
+    "tag": "P",
+    "cls": "gap-text",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "partly manipulated",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "When in the clip",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Marks show when the picture check's estimate was high, not w",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "when",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "0:00 / 0:04",
+    "tag": "SPAN",
+    "cls": "p-time tnum",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Picture",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Voice",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "0:00",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "0:04",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "0:00 to 0:05 peak >99%",
+    "tag": "BUTTON",
+    "cls": "chip-btn",
+    "size": 13,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "peak >99%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 5.91
+   },
+   {
+    "text": "The voice check gives one estimate for the whole clip, so it",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "What the tool found",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Standard wording",
+    "tag": "SPAN",
+    "cls": "byline",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "The picture check found a very high chance that the face was",
+    "tag": "P",
+    "cls": "explain-text",
+    "size": 16,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "The AI model's text said something the results do not suppor",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "standard wording",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "Show the AI model's text that was not used",
+    "tag": "SUMMARY",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "The video has been partially manipulated. The video branch s",
+    "tag": "BLOCKQUOTE",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Before you share it",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Use this as one input, not proof. The tool gives likelihoods",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Check where the clip came from and whether others have publi",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Look again at the marked moments.",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Clipcheck, the Multimodal Deepfake Detector (CM3070 final pr",
+    "tag": "FOOTER",
+    "cls": "foot glass",
+    "size": 12,
+    "large": false,
+    "ratio": 11.04
+   }
+  ],
+  "result_unfamiliar": [
+   {
+    "text": "Home",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 10.38
+   },
+   {
+    "text": "Clipcheck",
+    "tag": "SPAN",
+    "cls": "brand-name",
+    "size": 16,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Check a video",
+    "tag": "SPAN",
+    "cls": "long",
+    "size": 13,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "History",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Accuracy",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "TV interview, genuine face and voice",
+    "tag": "DIV",
+    "cls": "res-name",
+    "size": 17,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Demo video; known answer: face real, voice real. Checked 27 ",
+    "tag": "DIV",
+    "cls": "res-when",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "Details",
+    "tag": "BUTTON",
+    "cls": "btn",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Save as PDF",
+    "tag": "BUTTON",
+    "cls": "btn",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Copy data",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Likely manipulated",
+    "tag": "H1",
+    "cls": "v-head tone-manip",
+    "size": 40,
+    "large": true,
+    "ratio": 7.52
+   },
+   {
+    "text": "but it may be wrong for this clip",
+    "tag": "P",
+    "cls": "maybe",
+    "size": 20,
+    "large": false,
+    "ratio": 12.96
+   },
+   {
+    "text": "The picture and voice checks agree, and together they point ",
+    "tag": "P",
+    "cls": "v-reason",
+    "size": 17,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Treat this verdict with caution",
+    "tag": "H3",
+    "cls": "",
+    "size": 16,
+    "large": false,
+    "ratio": 9.8
+   },
+   {
+    "text": "This clip's speech is unlike what the tool learned from. In ",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 12.09
+   },
+   {
+    "text": "Unfamiliar clip",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 14,
+    "large": false,
+    "ratio": 12.09
+   },
+   {
+    "text": "0%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "50%: unsure",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "100%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Picture",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Leans manipulated",
+    "tag": "SPAN",
+    "cls": "lean",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "85%",
+    "tag": "DIV",
+    "cls": "cap-val",
+    "size": 22,
+    "large": true,
+    "ratio": 14.39
+   },
+   {
+    "text": "Voice",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Leans manipulated, unfamiliar",
+    "tag": "SPAN",
+    "cls": "lean",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "unfamiliar",
+    "tag": "SPAN",
+    "cls": "tone-caution",
+    "size": 13,
+    "large": false,
+    "ratio": 11.67
+   },
+   {
+    "text": ">99%",
+    "tag": "DIV",
+    "cls": "cap-val",
+    "size": 22,
+    "large": true,
+    "ratio": 14.39
+   },
+   {
+    "text": "15 points apart",
+    "tag": "SPAN",
+    "cls": "b-label ",
+    "size": 13,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "35-point line",
+    "tag": "SPAN",
+    "cls": "r-label ",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Combined",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "voice counts 54%, picture 46%",
+    "tag": "SPAN",
+    "cls": "lean",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "93%",
+    "tag": "DIV",
+    "cls": "cap-val",
+    "size": 22,
+    "large": true,
+    "ratio": 14.39
+   },
+   {
+    "text": "The two checks are 15 points apart, under the 35-point line,",
+    "tag": "P",
+    "cls": "gap-text",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "combined",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "When in the clip",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Marks show when the picture check's estimate was high, not w",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "when",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "0:00 / 0:07",
+    "tag": "SPAN",
+    "cls": "p-time tnum",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Picture",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Voice",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "0:00",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "0:07",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "at 0:00 peak 99%",
+    "tag": "BUTTON",
+    "cls": "chip-btn",
+    "size": 13,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "peak 99%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 5.91
+   },
+   {
+    "text": "0:00 to 0:03 peak >99%",
+    "tag": "BUTTON",
+    "cls": "chip-btn",
+    "size": 13,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "peak >99%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 5.91
+   },
+   {
+    "text": "0:04 to 0:06 peak >99%",
+    "tag": "BUTTON",
+    "cls": "chip-btn",
+    "size": 13,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "peak >99%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 5.91
+   },
+   {
+    "text": "The voice check gives one estimate for the whole clip, so it",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "What the tool found",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Written by Llama 3 8B, checked against the results",
+    "tag": "SPAN",
+    "cls": "byline",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "The video is considered fake, with a high likelihood of mani",
+    "tag": "P",
+    "cls": "explain-text",
+    "size": 16,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "About the written explanation.",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "written explanation",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "Before you share it",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Treat this result with extra caution: the clip is unfamiliar",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Use this as one input, not proof. The tool gives likelihoods",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Check where the clip came from and whether others have publi",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Look again at the marked moments.",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Clipcheck, the Multimodal Deepfake Detector (CM3070 final pr",
+    "tag": "FOOTER",
+    "cls": "foot glass",
+    "size": 12,
+    "large": false,
+    "ratio": 11.04
+   }
+  ],
+  "result_no_verdict": [
+   {
+    "text": "Home",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 10.38
+   },
+   {
+    "text": "Clipcheck",
+    "tag": "SPAN",
+    "cls": "brand-name",
+    "size": 16,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Check a video",
+    "tag": "SPAN",
+    "cls": "long",
+    "size": 13,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "History",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Accuracy",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Test pattern, no face and no sound",
+    "tag": "DIV",
+    "cls": "res-name",
+    "size": 17,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Demo video; known answer: face none, voice none. Checked 27 ",
+    "tag": "DIV",
+    "cls": "res-when",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "Details",
+    "tag": "BUTTON",
+    "cls": "btn",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Save as PDF",
+    "tag": "BUTTON",
+    "cls": "btn",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Copy data",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "No verdict",
+    "tag": "H1",
+    "cls": "v-head tone-none",
+    "size": 40,
+    "large": true,
+    "ratio": 9.71
+   },
+   {
+    "text": "The tool could not check this clip: no face was found and th",
+    "tag": "P",
+    "cls": "v-reason",
+    "size": 17,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "0%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "50%: unsure",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "100%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Picture",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Not checked",
+    "tag": "SPAN",
+    "cls": "lean",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "No face was found",
+    "tag": "SPAN",
+    "cls": "cap-none",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Voice",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Not checked",
+    "tag": "SPAN",
+    "cls": "lean",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "The clip has no sound",
+    "tag": "SPAN",
+    "cls": "cap-none",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "When in the clip",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Marks show when the picture check's estimate was high, not w",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "when",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "0:00 / 0:06",
+    "tag": "SPAN",
+    "cls": "p-time tnum",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Picture",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "No face found",
+    "tag": "SPAN",
+    "cls": "trk-none",
+    "size": 12,
+    "large": false,
+    "ratio": 5.19
+   },
+   {
+    "text": "Voice",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "No sound track",
+    "tag": "SPAN",
+    "cls": "trk-none",
+    "size": 12,
+    "large": false,
+    "ratio": 5.19
+   },
+   {
+    "text": "0:00",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "0:06",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "The picture was not checked, so there are no moments to mark",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "What the tool found",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Standard wording",
+    "tag": "SPAN",
+    "cls": "byline",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "No verdict could be given: neither the picture check nor the",
+    "tag": "P",
+    "cls": "explain-text",
+    "size": 16,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "There were no scores to explain, so standard wording is show",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "standard wording",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "Before you share it",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Use this as one input, not proof. The tool gives likelihoods",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Check where the clip came from and whether others have publi",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Clipcheck, the Multimodal Deepfake Detector (CM3070 final pr",
+    "tag": "FOOTER",
+    "cls": "foot glass",
+    "size": 12,
+    "large": false,
+    "ratio": 11.04
+   }
+  ],
+  "details_findings": [
+   {
+    "text": "Home",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 10.38
+   },
+   {
+    "text": "Clipcheck",
+    "tag": "SPAN",
+    "cls": "brand-name",
+    "size": 16,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Check a video",
+    "tag": "SPAN",
+    "cls": "long",
+    "size": 13,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "History",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Accuracy",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Business newsreader, face replaced",
+    "tag": "DIV",
+    "cls": "res-name",
+    "size": 17,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Demo video; known answer: face fake, voice real. Checked 27 ",
+    "tag": "DIV",
+    "cls": "res-when",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "Details",
+    "tag": "BUTTON",
+    "cls": "btn",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Save as PDF",
+    "tag": "BUTTON",
+    "cls": "btn",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Copy data",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Partly manipulated: the picture",
+    "tag": "H1",
+    "cls": "v-head tone-partial",
+    "size": 40,
+    "large": true,
+    "ratio": 9.28
+   },
+   {
+    "text": "The face looks manipulated but the voice sounds genuine, so ",
+    "tag": "P",
+    "cls": "v-reason",
+    "size": 17,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "0%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "50%: unsure",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "100%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Picture",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Leans manipulated",
+    "tag": "SPAN",
+    "cls": "lean",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": ">99%",
+    "tag": "DIV",
+    "cls": "cap-val",
+    "size": 22,
+    "large": true,
+    "ratio": 14.39
+   },
+   {
+    "text": "Voice",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Leans genuine",
+    "tag": "SPAN",
+    "cls": "lean",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "<1%",
+    "tag": "DIV",
+    "cls": "cap-val",
+    "size": 22,
+    "large": true,
+    "ratio": 14.39
+   },
+   {
+    "text": "100 points apart",
+    "tag": "SPAN",
+    "cls": "b-label ",
+    "size": 13,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "35-point line",
+    "tag": "SPAN",
+    "cls": "r-label ",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "The two checks are 100 points apart. At 35 or more, the tool",
+    "tag": "P",
+    "cls": "gap-text",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "partly manipulated",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "When in the clip",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Marks show when the picture check's estimate was high, not w",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "when",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "0:00 / 0:04",
+    "tag": "SPAN",
+    "cls": "p-time tnum",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Picture",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Voice",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "0:00",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "0:04",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "0:00 to 0:05 peak >99%",
+    "tag": "BUTTON",
+    "cls": "chip-btn",
+    "size": 13,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "peak >99%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 5.91
+   },
+   {
+    "text": "The voice check gives one estimate for the whole clip, so it",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "What the tool found",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Standard wording",
+    "tag": "SPAN",
+    "cls": "byline",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "The picture check found a very high chance that the face was",
+    "tag": "P",
+    "cls": "explain-text",
+    "size": 16,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "The AI model's text said something the results do not suppor",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "standard wording",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "Show the AI model's text that was not used",
+    "tag": "SUMMARY",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "The video has been partially manipulated. The video branch s",
+    "tag": "BLOCKQUOTE",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Before you share it",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Use this as one input, not proof. The tool gives likelihoods",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Check where the clip came from and whether others have publi",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Look again at the marked moments.",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Clipcheck, the Multimodal Deepfake Detector (CM3070 final pr",
+    "tag": "FOOTER",
+    "cls": "foot glass",
+    "size": 12,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Details",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.82
+   },
+   {
+    "text": "Business newsreader, face replaced",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.24
+   },
+   {
+    "text": "Findings",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Technical",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Accuracy and limits",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Glossary",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Picture check",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": ">99% chance the picture is manipulated, from 16 face frames.",
+    "tag": "P",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Voice check",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "<1% chance the voice is manipulated.",
+    "tag": "P",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "3.7 s of speech found in 0:04 of sound.",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 6.5
+   },
+   {
+    "text": "How far apart the checks were",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "100 points apart. The line for \"partly manipulated\" is 35 po",
+    "tag": "P",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Suspicious moments",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "0:00 to 0:05, peak >99%",
+    "tag": "LI",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Familiarity",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Face footage: Within what the tool knows (distance 55.3, lim",
+    "tag": "DIV",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Face footage:",
+    "tag": "B",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "(distance 55.3, limit 99.9)",
+    "tag": "SPAN",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 6.5
+   },
+   {
+    "text": "Speech: Within what the tool knows (distance 32.1, limit 43.",
+    "tag": "DIV",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Speech:",
+    "tag": "B",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "(distance 32.1, limit 43.1)",
+    "tag": "SPAN",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 6.5
+   },
+   {
+    "text": "The explanation",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Written by: standard wording (no AI model)",
+    "tag": "DIV",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Written by:",
+    "tag": "B",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Automatic check: did not pass",
+    "tag": "DIV",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Automatic check:",
+    "tag": "B",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Why: it described a part as manipulated when the results say",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 6.5
+   }
+  ],
+  "details_technical": [
+   {
+    "text": "Home",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 10.38
+   },
+   {
+    "text": "Clipcheck",
+    "tag": "SPAN",
+    "cls": "brand-name",
+    "size": 16,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Check a video",
+    "tag": "SPAN",
+    "cls": "long",
+    "size": 13,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "History",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Accuracy",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Business newsreader, face replaced",
+    "tag": "DIV",
+    "cls": "res-name",
+    "size": 17,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Demo video; known answer: face fake, voice real. Checked 27 ",
+    "tag": "DIV",
+    "cls": "res-when",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "Details",
+    "tag": "BUTTON",
+    "cls": "btn",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Save as PDF",
+    "tag": "BUTTON",
+    "cls": "btn",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Copy data",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Partly manipulated: the picture",
+    "tag": "H1",
+    "cls": "v-head tone-partial",
+    "size": 40,
+    "large": true,
+    "ratio": 9.28
+   },
+   {
+    "text": "The face looks manipulated but the voice sounds genuine, so ",
+    "tag": "P",
+    "cls": "v-reason",
+    "size": 17,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "0%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "50%: unsure",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "100%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Picture",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Leans manipulated",
+    "tag": "SPAN",
+    "cls": "lean",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": ">99%",
+    "tag": "DIV",
+    "cls": "cap-val",
+    "size": 22,
+    "large": true,
+    "ratio": 14.39
+   },
+   {
+    "text": "Voice",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Leans genuine",
+    "tag": "SPAN",
+    "cls": "lean",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "<1%",
+    "tag": "DIV",
+    "cls": "cap-val",
+    "size": 22,
+    "large": true,
+    "ratio": 14.39
+   },
+   {
+    "text": "100 points apart",
+    "tag": "SPAN",
+    "cls": "b-label ",
+    "size": 13,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "35-point line",
+    "tag": "SPAN",
+    "cls": "r-label ",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "The two checks are 100 points apart. At 35 or more, the tool",
+    "tag": "P",
+    "cls": "gap-text",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "partly manipulated",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "When in the clip",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Marks show when the picture check's estimate was high, not w",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "when",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "0:00 / 0:04",
+    "tag": "SPAN",
+    "cls": "p-time tnum",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Picture",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Voice",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "0:00",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "0:04",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "0:00 to 0:05 peak >99%",
+    "tag": "BUTTON",
+    "cls": "chip-btn",
+    "size": 13,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "peak >99%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 5.91
+   },
+   {
+    "text": "The voice check gives one estimate for the whole clip, so it",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "What the tool found",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Standard wording",
+    "tag": "SPAN",
+    "cls": "byline",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "The picture check found a very high chance that the face was",
+    "tag": "P",
+    "cls": "explain-text",
+    "size": 16,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "The AI model's text said something the results do not suppor",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "standard wording",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "Show the AI model's text that was not used",
+    "tag": "SUMMARY",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "The video has been partially manipulated. The video branch s",
+    "tag": "BLOCKQUOTE",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Before you share it",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Use this as one input, not proof. The tool gives likelihoods",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Check where the clip came from and whether others have publi",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Look again at the marked moments.",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Clipcheck, the Multimodal Deepfake Detector (CM3070 final pr",
+    "tag": "FOOTER",
+    "cls": "foot glass",
+    "size": 12,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Details",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.82
+   },
+   {
+    "text": "Business newsreader, face replaced",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.24
+   },
+   {
+    "text": "Findings",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Technical",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Accuracy and limits",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Glossary",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Models behind each step",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Xception + MTCNNVideo",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Video",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.5
+   },
+   {
+    "text": "fine-tuned on FaceForensics++ c23, multi-method (Deepfakes +",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Silero VADSpeech gate",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Speech gate",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.5
+   },
+   {
+    "text": "gates the audio branch: no speech, no audio score",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "wav2vec2-base (frozen)Audio encoder",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Audio encoder",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.5
+   },
+   {
+    "text": "facebook/wav2vec2-base, not fine-tuned",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "SVM (RBF)Audio classifier",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Audio classifier",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.5
+   },
+   {
+    "text": "trained, 3.96% EER (ASVspoof 2019 LA)",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Llama 3 8B Instruct (llama3:8b)Explanation",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Explanation",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.5
+   },
+   {
+    "text": "reachable via Ollama",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "What ran on this clip",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "MTCNN + Xception",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "P(video_fake)1.84 s",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "1.84 s",
+    "tag": "SMALL",
+    "cls": "tnum",
+    "size": 12,
+    "large": false,
+    "ratio": 6.5
+   },
+   {
+    "text": "Out-of-domain gate (video)",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "score kept (distance 55 <= limit 100)",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Silero VAD",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "speech / not speech0.02 s",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "0.02 s",
+    "tag": "SMALL",
+    "cls": "tnum",
+    "size": 12,
+    "large": false,
+    "ratio": 6.5
+   },
+   {
+    "text": "wav2vec2-base",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "768-d embedding0.91 s",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "0.91 s",
+    "tag": "SMALL",
+    "cls": "tnum",
+    "size": 12,
+    "large": false,
+    "ratio": 6.5
+   },
+   {
+    "text": "SVM (ASVspoof)",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "P(audio_fake) = 0.0010.005 s",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "0.005 s",
+    "tag": "SMALL",
+    "cls": "tnum",
+    "size": 12,
+    "large": false,
+    "ratio": 6.5
+   },
+   {
+    "text": "Out-of-domain gate (audio)",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "score kept (distance 32 <= limit 43)",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "fusion.py",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "PARTIAL_MANIPULATION0 s",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "0 s",
+    "tag": "SMALL",
+    "cls": "tnum",
+    "size": 12,
+    "large": false,
+    "ratio": 6.5
+   },
+   {
+    "text": "Deterministic template (Llama 3 not used)",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "plain-language explanation; reason: the language-model text ",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "3.2 s",
+    "tag": "SMALL",
+    "cls": "tnum",
+    "size": 12,
+    "large": false,
+    "ratio": 6.5
+   },
+   {
+    "text": "Model version",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "fdd60748dc1c",
+    "tag": "P",
+    "cls": "tnum",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "legacy_xception, seed 44, trained on multi-method (Deepfakes",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 6.5
+   },
+   {
+    "text": "Combining the checks",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Weights: voice 0.54, picture 0.46. Disagreement line T = 0.3",
+    "tag": "P",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Faces: FaceForensics++. Voices: ASVspoof 2019 LA.",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 6.5
+   }
+  ],
+  "details_limits": [
+   {
+    "text": "Home",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 10.38
+   },
+   {
+    "text": "Clipcheck",
+    "tag": "SPAN",
+    "cls": "brand-name",
+    "size": 16,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Check a video",
+    "tag": "SPAN",
+    "cls": "long",
+    "size": 13,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "History",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Accuracy",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Business newsreader, face replaced",
+    "tag": "DIV",
+    "cls": "res-name",
+    "size": 17,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Demo video; known answer: face fake, voice real. Checked 27 ",
+    "tag": "DIV",
+    "cls": "res-when",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "Details",
+    "tag": "BUTTON",
+    "cls": "btn",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Save as PDF",
+    "tag": "BUTTON",
+    "cls": "btn",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Copy data",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Partly manipulated: the picture",
+    "tag": "H1",
+    "cls": "v-head tone-partial",
+    "size": 40,
+    "large": true,
+    "ratio": 9.28
+   },
+   {
+    "text": "The face looks manipulated but the voice sounds genuine, so ",
+    "tag": "P",
+    "cls": "v-reason",
+    "size": 17,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "0%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "50%: unsure",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "100%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Picture",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Leans manipulated",
+    "tag": "SPAN",
+    "cls": "lean",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": ">99%",
+    "tag": "DIV",
+    "cls": "cap-val",
+    "size": 22,
+    "large": true,
+    "ratio": 14.39
+   },
+   {
+    "text": "Voice",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Leans genuine",
+    "tag": "SPAN",
+    "cls": "lean",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "<1%",
+    "tag": "DIV",
+    "cls": "cap-val",
+    "size": 22,
+    "large": true,
+    "ratio": 14.39
+   },
+   {
+    "text": "100 points apart",
+    "tag": "SPAN",
+    "cls": "b-label ",
+    "size": 13,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "35-point line",
+    "tag": "SPAN",
+    "cls": "r-label ",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "The two checks are 100 points apart. At 35 or more, the tool",
+    "tag": "P",
+    "cls": "gap-text",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "partly manipulated",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "When in the clip",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Marks show when the picture check's estimate was high, not w",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "when",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "0:00 / 0:04",
+    "tag": "SPAN",
+    "cls": "p-time tnum",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Picture",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Voice",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "0:00",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "0:04",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "0:00 to 0:05 peak >99%",
+    "tag": "BUTTON",
+    "cls": "chip-btn",
+    "size": 13,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "peak >99%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 5.91
+   },
+   {
+    "text": "The voice check gives one estimate for the whole clip, so it",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "What the tool found",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Standard wording",
+    "tag": "SPAN",
+    "cls": "byline",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "The picture check found a very high chance that the face was",
+    "tag": "P",
+    "cls": "explain-text",
+    "size": 16,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "The AI model's text said something the results do not suppor",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "standard wording",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "Show the AI model's text that was not used",
+    "tag": "SUMMARY",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "The video has been partially manipulated. The video branch s",
+    "tag": "BLOCKQUOTE",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Before you share it",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Use this as one input, not proof. The tool gives likelihoods",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Check where the clip came from and whether others have publi",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Look again at the marked moments.",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Clipcheck, the Multimodal Deepfake Detector (CM3070 final pr",
+    "tag": "FOOTER",
+    "cls": "foot glass",
+    "size": 12,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Details",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.82
+   },
+   {
+    "text": "Business newsreader, face replaced",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.24
+   },
+   {
+    "text": "Findings",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Technical",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Accuracy and limits",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Glossary",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "83 in 100",
+    "tag": "DIV",
+    "cls": "big",
+    "size": 40,
+    "large": true,
+    "ratio": 14.21
+   },
+   {
+    "text": "judged correctly on people the tool had not seen (95% range ",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Open the Accuracy page",
+    "tag": "A",
+    "cls": "btn sec-print-hide",
+    "size": 14,
+    "large": false,
+    "ratio": 11.19
+   },
+   {
+    "text": "Limits",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Each score is the model's estimate, from 0% to 100%, of how ",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 6.5
+   },
+   {
+    "text": "The video model was trained on three of the four FaceForensi",
+    "tag": "LI",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Estimated accuracy on people the model has not seen is about",
+    "tag": "LI",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "On a different dataset (Celeb-DF-v2) this model's accuracy f",
+    "tag": "LI",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "The audio classifier was trained on one speech corpus. It fl",
+    "tag": "LI",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "When a clip is unlike the data these models were trained on,",
+    "tag": "LI",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Audio is only scored when speech is detected. A clip with mu",
+    "tag": "LI",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Fully synthetic faces (no source face) and live scanning are",
+    "tag": "LI",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "The disagreement threshold T = 0.35 was tuned on the shipped",
+    "tag": "LI",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Scores are estimates, not proof. The written explanation is ",
+    "tag": "LI",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.21
+   }
+  ],
+  "details_glossary": [
+   {
+    "text": "Home",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 10.38
+   },
+   {
+    "text": "Clipcheck",
+    "tag": "SPAN",
+    "cls": "brand-name",
+    "size": 16,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Check a video",
+    "tag": "SPAN",
+    "cls": "long",
+    "size": 13,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "History",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Accuracy",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Business newsreader, face replaced",
+    "tag": "DIV",
+    "cls": "res-name",
+    "size": 17,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Demo video; known answer: face fake, voice real. Checked 27 ",
+    "tag": "DIV",
+    "cls": "res-when",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "Details",
+    "tag": "BUTTON",
+    "cls": "btn",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Save as PDF",
+    "tag": "BUTTON",
+    "cls": "btn",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Copy data",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "Partly manipulated: the picture",
+    "tag": "H1",
+    "cls": "v-head tone-partial",
+    "size": 40,
+    "large": true,
+    "ratio": 9.28
+   },
+   {
+    "text": "The face looks manipulated but the voice sounds genuine, so ",
+    "tag": "P",
+    "cls": "v-reason",
+    "size": 17,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "0%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "50%: unsure",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "100%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Picture",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Leans manipulated",
+    "tag": "SPAN",
+    "cls": "lean",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": ">99%",
+    "tag": "DIV",
+    "cls": "cap-val",
+    "size": 22,
+    "large": true,
+    "ratio": 14.39
+   },
+   {
+    "text": "Voice",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Leans genuine",
+    "tag": "SPAN",
+    "cls": "lean",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "<1%",
+    "tag": "DIV",
+    "cls": "cap-val",
+    "size": 22,
+    "large": true,
+    "ratio": 14.39
+   },
+   {
+    "text": "100 points apart",
+    "tag": "SPAN",
+    "cls": "b-label ",
+    "size": 13,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "35-point line",
+    "tag": "SPAN",
+    "cls": "r-label ",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "The two checks are 100 points apart. At 35 or more, the tool",
+    "tag": "P",
+    "cls": "gap-text",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "partly manipulated",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "When in the clip",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Marks show when the picture check's estimate was high, not w",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "when",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "0:00 / 0:04",
+    "tag": "SPAN",
+    "cls": "p-time tnum",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Picture",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Voice",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "0:00",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "0:04",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "0:00 to 0:05 peak >99%",
+    "tag": "BUTTON",
+    "cls": "chip-btn",
+    "size": 13,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "peak >99%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 5.91
+   },
+   {
+    "text": "The voice check gives one estimate for the whole clip, so it",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "What the tool found",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Standard wording",
+    "tag": "SPAN",
+    "cls": "byline",
+    "size": 12,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "The picture check found a very high chance that the face was",
+    "tag": "P",
+    "cls": "explain-text",
+    "size": 16,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "The AI model's text said something the results do not suppor",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "standard wording",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "Show the AI model's text that was not used",
+    "tag": "SUMMARY",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "The video has been partially manipulated. The video branch s",
+    "tag": "BLOCKQUOTE",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Before you share it",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Use this as one input, not proof. The tool gives likelihoods",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Check where the clip came from and whether others have publi",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Look again at the marked moments.",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Clipcheck, the Multimodal Deepfake Detector (CM3070 final pr",
+    "tag": "FOOTER",
+    "cls": "foot glass",
+    "size": 12,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Details",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.82
+   },
+   {
+    "text": "Business newsreader, face replaced",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.24
+   },
+   {
+    "text": "Findings",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Technical",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Accuracy and limits",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Glossary",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Deepfake",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "A video or audio clip changed by software to show someone do",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Picture check",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "The part of the tool that looks at the face in each sampled ",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Technical name: video branch",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Voice check",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "The part of the tool that listens to the speech. It only run",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Technical name: audio branch",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Chance of manipulation",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "The tool's estimate, from 0% to 100%, that a part of the cli",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Technical name: P(fake)",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Partly manipulated",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "The picture and voice checks strongly disagree (35 points or",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Technical name: PARTIAL_MANIPULATION (disagreement-aware fus",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Combined score",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "When the two checks agree, the tool combines them, giving sl",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Technical name: accuracy-weighted late fusion",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "No verdict",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "The tool could not check the clip at all, for example when t",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Technical name: INCONCLUSIVE",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Unfamiliar clip",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "The face footage or the speech is unlike anything the tool l",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Technical name: out-of-domain input, measured as a distance ",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Suspicious moments",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "Times in the clip where the picture check's estimate was 50%",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Technical name: anomaly windows",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Written explanation",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "A short summary written for each clip by an AI language mode",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Technical name: Llama 3 8B via Ollama, faithfulness screen",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Standard wording",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "A fixed, pre-written explanation filled in with this clip's ",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Technical name: deterministic template",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Accuracy",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "How often the tool was right in testing. About 83% on people",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "False alarm",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "A genuine clip wrongly flagged as manipulated.",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Technical name: false positive",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Training data",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "The example videos and recordings the tool learned from: Fac",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   },
+   {
+    "text": "Model",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.21
+   },
+   {
+    "text": "A trained AI program that does one step. This tool chains si",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.81
+   }
+  ],
+  "history": [
+   {
+    "text": "Home",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 10.38
+   },
+   {
+    "text": "Clipcheck",
+    "tag": "SPAN",
+    "cls": "brand-name",
+    "size": 16,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Check a video",
+    "tag": "SPAN",
+    "cls": "long",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "History",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Accuracy",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Past checks",
+    "tag": "H1",
+    "cls": "title1",
+    "size": 32,
+    "large": true,
+    "ratio": 15.98
+   },
+   {
+    "text": "Kept while the tool is running. Open a check to save it as a",
+    "tag": "P",
+    "cls": "sub",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Test pattern, no face and no sound",
+    "tag": "B",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "27 September 2026 at 23:41",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "No verdict",
+    "tag": "SPAN",
+    "cls": "vchip tone-none",
+    "size": 13,
+    "large": false,
+    "ratio": 8.74
+   },
+   {
+    "text": "TV interview, genuine face and voice",
+    "tag": "B",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "27 September 2026 at 23:41",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Likely manipulated, may be wrong",
+    "tag": "SPAN",
+    "cls": "vchip tone-manip",
+    "size": 13,
+    "large": false,
+    "ratio": 6.78
+   },
+   {
+    "text": "Business newsreader, face replaced",
+    "tag": "B",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "27 September 2026 at 23:41",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Partly manipulated: the picture",
+    "tag": "SPAN",
+    "cls": "vchip tone-partial",
+    "size": 13,
+    "large": false,
+    "ratio": 8.36
+   },
+   {
+    "text": "News presenter, genuine face and voice",
+    "tag": "B",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "27 September 2026 at 20:13",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Likely genuine",
+    "tag": "SPAN",
+    "cls": "vchip tone-genuine",
+    "size": 13,
+    "large": false,
+    "ratio": 8.83
+   },
+   {
+    "text": "News anchor, face replaced",
+    "tag": "B",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "27 September 2026 at 19:23",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Partly manipulated: the picture",
+    "tag": "SPAN",
+    "cls": "vchip tone-partial",
+    "size": 13,
+    "large": false,
+    "ratio": 8.36
+   },
+   {
+    "text": "Vlogger, face and voice replaced",
+    "tag": "B",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "27 September 2026 at 19:15",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Likely manipulated",
+    "tag": "SPAN",
+    "cls": "vchip tone-manip",
+    "size": 13,
+    "large": false,
+    "ratio": 6.78
+   },
+   {
+    "text": "News interview, face replaced",
+    "tag": "B",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "27 September 2026 at 19:05",
+    "tag": "SMALL",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Likely manipulated",
+    "tag": "SPAN",
+    "cls": "vchip tone-manip",
+    "size": 13,
+    "large": false,
+    "ratio": 6.78
+   },
+   {
+    "text": "Clipcheck, the Multimodal Deepfake Detector (CM3070 final pr",
+    "tag": "FOOTER",
+    "cls": "foot glass",
+    "size": 12,
+    "large": false,
+    "ratio": 11.04
+   }
+  ],
+  "accuracy": [
+   {
+    "text": "Home",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 10.38
+   },
+   {
+    "text": "Clipcheck",
+    "tag": "SPAN",
+    "cls": "brand-name",
+    "size": 16,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Check a video",
+    "tag": "SPAN",
+    "cls": "long",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "History",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Accuracy",
+    "tag": "A",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "How accurate is this tool?",
+    "tag": "H1",
+    "cls": "title1",
+    "size": 32,
+    "large": true,
+    "ratio": 15.98
+   },
+   {
+    "text": "Useful, but not always right. It works best on clips like th",
+    "tag": "P",
+    "cls": "sub",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "83 in 100",
+    "tag": "DIV",
+    "cls": "big",
+    "size": 40,
+    "large": true,
+    "ratio": 14.39
+   },
+   {
+    "text": "judged correctly on people it had not seen. The true figure ",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "59 in 100",
+    "tag": "DIV",
+    "cls": "big",
+    "size": 40,
+    "large": true,
+    "ratio": 14.39
+   },
+   {
+    "text": "right on a different video collection (Celeb-DF) that it nev",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "29 in 100",
+    "tag": "DIV",
+    "cls": "big",
+    "size": 40,
+    "large": true,
+    "ratio": 14.39
+   },
+   {
+    "text": "genuine videos in that collection wrongly flagged as manipul",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "false alarms",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "100 of 100",
+    "tag": "DIV",
+    "cls": "big",
+    "size": 40,
+    "large": true,
+    "ratio": 14.39
+   },
+   {
+    "text": "genuine voices recorded somewhere unfamiliar were called syn",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Why it names the part instead of averaging",
+    "tag": "H3",
+    "cls": "",
+    "size": 17,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Accuracy on 76 built test clips of people the tool had not s",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Picture check alone",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "92.5%",
+    "tag": "SPAN",
+    "cls": "val",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Voice check alone",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "92.1%",
+    "tag": "SPAN",
+    "cls": "val",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Averaging the two checks",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "76.3%",
+    "tag": "SPAN",
+    "cls": "val",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Naming the part when they disagree",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "94.7%",
+    "tag": "SPAN",
+    "cls": "val",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Naming the part was 18.4 points more accurate than averaging",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "It covers three common face-manipulation methods, not every ",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "How the two checks are combined",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Disagreement line: 35 points. At or above it the result is p",
+    "tag": "DIV",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Disagreement line:",
+    "tag": "B",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "partly manipulated",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Weights when they agree: voice 0.54, picture 0.46, from each",
+    "tag": "DIV",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Weights when they agree:",
+    "tag": "B",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Limits",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "The video model was trained on three of the four FaceForensi",
+    "tag": "LI",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Estimated accuracy on people the model has not seen is about",
+    "tag": "LI",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "On a different dataset (Celeb-DF-v2) this model's accuracy f",
+    "tag": "LI",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "The audio classifier was trained on one speech corpus. It fl",
+    "tag": "LI",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "When a clip is unlike the data these models were trained on,",
+    "tag": "LI",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Audio is only scored when speech is detected. A clip with mu",
+    "tag": "LI",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Fully synthetic faces (no source face) and live scanning are",
+    "tag": "LI",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "The disagreement threshold T = 0.35 was tuned on the shipped",
+    "tag": "LI",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Scores are estimates, not proof. The written explanation is ",
+    "tag": "LI",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "For experts: research tables",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Every table the figures above come from. Open one to see it.",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "Video model comparison",
+    "tag": "H3",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "13 rows",
+    "tag": "SPAN",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Model",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Trained on",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Validation accuracy",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Clip accuracy (44 test videos)",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Frame accuracy",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Train minus validation gap",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "EfficientNet-B4, augmentation (incumbent)",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Deepfakes only",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "92.3 \u00b1 0.4%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "97.0 \u00b1 1.3%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "89.9 \u00b1 1.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "7.1 pp",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "EfficientNet-B4, no augmentation",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Deepfakes only",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "90.7 \u00b1 0.3%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "97.0 \u00b1 1.3%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "86.8 \u00b1 0.6%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "9.5 pp",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "EfficientNet-B4, augmentation + regularised",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Deepfakes only",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "90.7 \u00b1 0.7%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "97.0 \u00b1 1.3%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "88.3 \u00b1 1.8%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "6.1 pp",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "EfficientNet-B0",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Deepfakes only",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "94.7 \u00b1 2.1%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "100.0 \u00b1 0.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "94.6 \u00b1 1.6%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "5.8 pp",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "ResNet-50",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Deepfakes only",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "98.3 \u00b1 0.5%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "99.2 \u00b1 1.3%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "94.0 \u00b1 0.1%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "1.5 pp",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Xception",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Deepfakes only",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "97.0 \u00b1 0.3%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "99.2 \u00b1 1.3%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "94.7 \u00b1 0.4%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "3.4 pp",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "ConvNeXt-Tiny",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Deepfakes only",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "97.8 \u00b1 0.3%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "100.0 \u00b1 0.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "96.3 \u00b1 0.5%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "2.4 pp",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "EfficientNet-B4, multi-method",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "multi-method",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "74.5 \u00b1 2.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "91.7 \u00b1 4.7%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "76.9 \u00b1 2.5%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "21.3 pp",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "EfficientNet-B4, multi-method, regularised",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "multi-method",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "70.6 \u00b1 1.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "91.7 \u00b1 3.5%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "75.4 \u00b1 2.1%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "17.7 pp",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "EfficientNet-B0, multi-method",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "multi-method",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "80.3 \u00b1 1.1%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "84.1 \u00b1 3.9%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "76.9 \u00b1 2.3%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "19.4 pp",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "ResNet-50, multi-method",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "multi-method",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "76.8 \u00b1 1.3%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "87.1 \u00b1 4.7%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "80.5 \u00b1 2.7%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "21.0 pp",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Xception, multi-method  [SHIPPED]",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 12.48
+   },
+   {
+    "text": "multi-method",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 12.48
+   },
+   {
+    "text": "86.3 \u00b1 2.1%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 12.48
+   },
+   {
+    "text": "96.2 \u00b1 3.5%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 12.48
+   },
+   {
+    "text": "88.3 \u00b1 2.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 12.48
+   },
+   {
+    "text": "13.7 pp",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 12.48
+   },
+   {
+    "text": "ConvNeXt-Tiny, multi-method",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "multi-method",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "88.9 \u00b1 1.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "93.2 \u00b1 2.3%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "86.1 \u00b1 2.6%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "11.7 pp",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Identity-disjoint split: no video or identity is shared betw",
+    "tag": "P",
+    "cls": "t-note",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Source: results/numbers.json (video)",
+    "tag": "P",
+    "cls": "t-src",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Detection by manipulation method",
+    "tag": "H3",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "11 rows",
+    "tag": "SPAN",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Model",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Test condition",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Deepfakes fakes detected",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "FaceSwap fakes detected",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "NeuralTextures fakes detected",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Real videos kept real",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "EfficientNet-B4, augmentation (incumbent)",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "FaceSwap and NeuralTextures never seen",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "93.9 \u00b1 2.6%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.0 \u00b1 0.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "15.2 \u00b1 2.6%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "100.0 \u00b1 0.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "EfficientNet-B0",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "FaceSwap and NeuralTextures never seen",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "100.0 \u00b1 0.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.0 \u00b1 0.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "22.7 \u00b1 0.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "100.0 \u00b1 0.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "ResNet-50",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "FaceSwap and NeuralTextures never seen",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "100.0 \u00b1 0.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.0 \u00b1 0.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "15.2 \u00b1 2.6%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "98.5 \u00b1 2.6%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Xception",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "FaceSwap and NeuralTextures never seen",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "98.5 \u00b1 2.6%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.0 \u00b1 0.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "16.7 \u00b1 13.9%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "100.0 \u00b1 0.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "ConvNeXt-Tiny",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "FaceSwap and NeuralTextures never seen",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "100.0 \u00b1 0.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.0 \u00b1 0.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "9.1 \u00b1 4.5%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "100.0 \u00b1 0.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "EfficientNet-B4, multi-method",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "all three methods seen in training",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "93.9 \u00b1 2.6%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "60.6 \u00b1 6.9%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "72.7 \u00b1 7.9%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "98.5 \u00b1 2.6%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "EfficientNet-B4, multi-method, regularised",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "all three methods seen in training",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "97.0 \u00b1 2.6%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "60.6 \u00b1 11.4%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "66.7 \u00b1 2.6%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "97.0 \u00b1 2.6%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "EfficientNet-B0, multi-method",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "all three methods seen in training",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "90.9 \u00b1 7.9%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "66.7 \u00b1 2.6%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "77.3 \u00b1 7.9%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "90.9 \u00b1 0.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "ResNet-50, multi-method",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "all three methods seen in training",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "92.4 \u00b1 2.6%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "89.4 \u00b1 5.2%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "69.7 \u00b1 2.6%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "87.9 \u00b1 5.2%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Xception, multi-method  [SHIPPED]",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 12.48
+   },
+   {
+    "text": "all three methods seen in training",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 12.48
+   },
+   {
+    "text": "90.9 \u00b1 4.5%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 12.48
+   },
+   {
+    "text": "87.9 \u00b1 5.2%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 12.48
+   },
+   {
+    "text": "81.8 \u00b1 4.5%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 12.48
+   },
+   {
+    "text": "97.0 \u00b1 2.6%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 12.48
+   },
+   {
+    "text": "ConvNeXt-Tiny, multi-method",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "all three methods seen in training",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "95.5 \u00b1 4.5%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "87.9 \u00b1 6.9%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "69.7 \u00b1 6.9%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "90.9 \u00b1 0.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Test videos are unseen identities (22 real + 22 fake per met",
+    "tag": "P",
+    "cls": "t-note",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Source: results/numbers.json (cross_method)",
+    "tag": "P",
+    "cls": "t-src",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Cross-validation (legacy_xception, 400 videos)",
+    "tag": "H3",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "7 rows",
+    "tag": "SPAN",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Metric",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Pooled out-of-fold",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "95% interval",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Accuracy at 0.5",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "82.8%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "79.2% to 86.2%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "AUC-ROC",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.918",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.891 to 0.942",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Real videos kept real",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "93.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "88.5% to 97.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Fakes detected",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "72.5%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "66.0% to 79.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "FaceSwap detected",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "77.3%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "66.2% to 87.5%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "NeuralTextures detected",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "62.1%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "50.0% to 73.3%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "EER",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "17.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "12.8% to 20.2%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Every video is scored once by a model that never saw its ide",
+    "tag": "P",
+    "cls": "t-note",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Source: results/cv/cv5_xcep_mm/cv_summary.json",
+    "tag": "P",
+    "cls": "t-src",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Different dataset: Celeb-DF-v2 (zero-shot)",
+    "tag": "H3",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "3 rows",
+    "tag": "SPAN",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Model",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Seed",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Accuracy at 0.5",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "AUC-ROC",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "EER",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Fakes detected",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Real videos kept real",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "ConvNeXt-Tiny",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "44",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "40.3%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.650",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "39.4%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "11.5%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "95.5%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Xception, multi-method  [SHIPPED]",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 12.48
+   },
+   {
+    "text": "44",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 12.48
+   },
+   {
+    "text": "59.1%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 12.48
+   },
+   {
+    "text": "0.696",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 12.48
+   },
+   {
+    "text": "37.1%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 12.48
+   },
+   {
+    "text": "52.6%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 12.48
+   },
+   {
+    "text": "71.3%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 12.48
+   },
+   {
+    "text": "ConvNeXt-Tiny, multi-method",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "43",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "58.9%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.671",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "39.6%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "56.2%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "64.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Official test list: 178 real + 340 fake videos, no retrainin",
+    "tag": "P",
+    "cls": "t-note",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Source: results/cross_dataset/celebdf_v2__*/metrics.json",
+    "tag": "P",
+    "cls": "t-src",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Audio branch (ASVspoof 2019 LA)",
+    "tag": "H3",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "2 rows",
+    "tag": "SPAN",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Front end",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "EER",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Accuracy",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Balanced accuracy",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Genuine speech from another corpus flagged as spoof",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "MFCC + SVM (baseline)",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "10.25%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "93.20%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "n/a",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "100% of 100",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "wav2vec2 + SVM (used)",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "3.96%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "97.65%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "95.7%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "100% of 100",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "The evaluation set is mostly spoofed audio, so always answer",
+    "tag": "P",
+    "cls": "t-note",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Source: results/audio_baseline/metrics.json, results/audio_b",
+    "tag": "P",
+    "cls": "t-src",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Four-condition comparison, HELD-OUT video (authoritative)",
+    "tag": "H3",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "9 rows",
+    "tag": "SPAN",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Measure",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Value",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Video only",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "92.5%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Audio only",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "92.1%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Standard (unweighted) fusion",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "76.3%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Disagreement-aware fusion",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "94.7%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Advantage of disagreement-aware over standard fusion",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "+18.4 pp (95% interval +7.9 to +28.9, 76 clips)",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Correctly named AUDIO on real video + fake audio",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "100%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Correctly named VIDEO on fake video + real audio",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "75%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Wrongly reported as disagreement, real video + real audio",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "11%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Wrongly reported as disagreement, fake video + fake audio",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "10%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Every video is from the TEST partition of the frozen identit",
+    "tag": "P",
+    "cls": "t-note",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Source: results/heldout_eval_shipped/",
+    "tag": "P",
+    "cls": "t-src",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Four-condition comparison, earlier set (in-distribution for ",
+    "tag": "H3",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "9 rows",
+    "tag": "SPAN",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Measure",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Value",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Video only",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "90.0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Audio only",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "97.5%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Standard (unweighted) fusion",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "73.4%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Disagreement-aware fusion",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "97.5%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Advantage of disagreement-aware over standard fusion",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "+24.1 pp (95% interval +13.9 to +34.2, 79 clips)",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Correctly named AUDIO on real video + fake audio",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "100%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Correctly named VIDEO on fake video + real audio",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "95%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Wrongly reported as disagreement, real video + real audio",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "5%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Wrongly reported as disagreement, fake video + fake audio",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "30%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "57 of these 80 videos were in the video model's training spl",
+    "tag": "P",
+    "cls": "t-note",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Source: results/fallback_4condition",
+    "tag": "P",
+    "cls": "t-src",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Four-condition comparison with genuine speech from another c",
+    "tag": "H3",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "8 rows",
+    "tag": "SPAN",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Measure",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Value",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Video only",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "76.2%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Audio only",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "72.2%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Standard (unweighted) fusion",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "83.5%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Disagreement-aware fusion",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "98.7%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Correctly named AUDIO on real video + fake audio",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "100%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Correctly named VIDEO on fake video + real audio",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Wrongly reported as disagreement, real video + real audio",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "5%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Wrongly reported as disagreement, fake video + fake audio",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "30%",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "The fake-video clips here come from a different dataset (Dee",
+    "tag": "P",
+    "cls": "t-note",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Source: results/hybrid_4condition",
+    "tag": "P",
+    "cls": "t-src",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Latency per stage",
+    "tag": "H3",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "12 rows",
+    "tag": "SPAN",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Stage",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Mean",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Std",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "1. Face extraction + Xception",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "5.29 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.08 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "1b. Unfamiliar-input check (face)",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.11 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.00 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "1c. Suspicious-moment windows",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.04 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.02 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "2. Audio decode (ffmpeg)",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.03 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.00 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "3. VAD gate (Silero)",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.04 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.00 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "4. wav2vec2 embedding",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.40 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.01 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "5. SVM spoof prediction",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.00 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.00 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "5b. Unfamiliar-input check (speech)",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.00 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.00 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "6. Fusion decision",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.00 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.00 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "7. Llama 3 explanation",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "1.38 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.03 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "8. Faithfulness screen",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.00 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.00 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Total (warm, per clip)",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "7.28 s",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Measured on Apple M2 Pro (mps); cold start 4.1 s once per se",
+    "tag": "P",
+    "cls": "t-note",
+    "size": 13,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Source: results/latency/latency.json",
+    "tag": "P",
+    "cls": "t-src",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Fusion settings and where they come from",
+    "tag": "H3",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "3 rows",
+    "tag": "SPAN",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Setting",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Value",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Source",
+    "tag": "TH",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Disagreement threshold T",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "0.35",
+    "tag": "TD",
+    "cls": "num",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "tuned on the shipped model (Xception multi-method, seed 44) ",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Video weight basis",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "cross-validated: pooled out-of-fold clip accuracy over all 4",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Audio weight basis",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "measured, balanced accuracy at P(fake) >= 0.5 on the full AS",
+    "tag": "TD",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Source: scripts/fusion.py",
+    "tag": "P",
+    "cls": "t-src",
+    "size": 12,
+    "large": false,
+    "ratio": 6.58
+   },
+   {
+    "text": "Generated 2026-09-25T03:33:36+00:00 by scripts/build_numbers",
+    "tag": "P",
+    "cls": "t-src",
+    "size": 12,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "Glossary",
+    "tag": "H2",
+    "cls": "h2",
+    "size": 20,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Deepfake",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "A video or audio clip changed by software to show someone do",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Picture check",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "The part of the tool that looks at the face in each sampled ",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Technical name: video branch",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Voice check",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "The part of the tool that listens to the speech. It only run",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Technical name: audio branch",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Chance of manipulation",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "The tool's estimate, from 0% to 100%, that a part of the cli",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Technical name: P(fake)",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Partly manipulated",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "The picture and voice checks strongly disagree (35 points or",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Technical name: PARTIAL_MANIPULATION (disagreement-aware fus",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Combined score",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "When the two checks agree, the tool combines them, giving sl",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Technical name: accuracy-weighted late fusion",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "No verdict",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "The tool could not check the clip at all, for example when t",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Technical name: INCONCLUSIVE",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Unfamiliar clip",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "The face footage or the speech is unlike anything the tool l",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Technical name: out-of-domain input, measured as a distance ",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Suspicious moments",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "Times in the clip where the picture check's estimate was 50%",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Technical name: anomaly windows",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Written explanation",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "A short summary written for each clip by an AI language mode",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Technical name: Llama 3 8B via Ollama, faithfulness screen",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Standard wording",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "A fixed, pre-written explanation filled in with this clip's ",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Technical name: deterministic template",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Accuracy",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "How often the tool was right in testing. About 83% on people",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "False alarm",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "A genuine clip wrongly flagged as manipulated.",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Technical name: false positive",
+    "tag": "P",
+    "cls": "note",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Training data",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "The example videos and recordings the tool learned from: Fac",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Model",
+    "tag": "H4",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 14.39
+   },
+   {
+    "text": "A trained AI program that does one step. This tool chains si",
+    "tag": "P",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 9.94
+   },
+   {
+    "text": "Clipcheck, the Multimodal Deepfake Detector (CM3070 final pr",
+    "tag": "FOOTER",
+    "cls": "foot glass",
+    "size": 12,
+    "large": false,
+    "ratio": 11.04
+   }
+  ],
+  "landing": [
+   {
+    "text": "Clipcheck",
+    "tag": "SPAN",
+    "cls": "brand-name",
+    "size": 16,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "How it works",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Why it matters",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Under the hood",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Limits",
+    "tag": "BUTTON",
+    "cls": "",
+    "size": 13,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Open Clipcheck",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 10.38
+   },
+   {
+    "text": "Made by a person, or made by a machine?",
+    "tag": "H1",
+    "cls": "sr-only",
+    "size": 30,
+    "large": true,
+    "ratio": 15.99
+   },
+   {
+    "text": "Made by a person,",
+    "tag": "SPAN",
+    "cls": "hw-base",
+    "size": 66.24,
+    "large": true,
+    "ratio": 4.2
+   },
+   {
+    "text": "Made by",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 66.24,
+    "large": true,
+    "ratio": 15.99
+   },
+   {
+    "text": "a person,",
+    "tag": "SPAN",
+    "cls": "tone-genuine",
+    "size": 66.24,
+    "large": true,
+    "ratio": 9.81
+   },
+   {
+    "text": "or by a machine?",
+    "tag": "SPAN",
+    "cls": "hw-base",
+    "size": 66.24,
+    "large": true,
+    "ratio": 4.2
+   },
+   {
+    "text": "or by a",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 66.24,
+    "large": true,
+    "ratio": 15.99
+   },
+   {
+    "text": "machine?",
+    "tag": "SPAN",
+    "cls": "tone-manip",
+    "size": 66.24,
+    "large": true,
+    "ratio": 7.53
+   },
+   {
+    "text": "Clipcheck shows you where the face and the voice part ways.",
+    "tag": "P",
+    "cls": "hero-tag",
+    "size": 16,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "One clip, two separate checks.",
+    "tag": "H2",
+    "cls": "ln-h2",
+    "size": 54,
+    "large": true,
+    "ratio": 15.99
+   },
+   {
+    "text": "Scroll to watch a real check of one of the demo videos unfol",
+    "tag": "P",
+    "cls": "ln-p",
+    "size": 17,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "It checks the face.",
+    "tag": "H3",
+    "cls": "",
+    "size": 46,
+    "large": true,
+    "ratio": 15.99
+   },
+   {
+    "text": "Faces are found in sampled frames, and each one is scored fo",
+    "tag": "P",
+    "cls": "",
+    "size": 17,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "It listens to the voice.",
+    "tag": "H3",
+    "cls": "",
+    "size": 46,
+    "large": true,
+    "ratio": 15.99
+   },
+   {
+    "text": "When there is speech, a separate model scores how synthetic ",
+    "tag": "P",
+    "cls": "",
+    "size": 17,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "It compares the two.",
+    "tag": "H3",
+    "cls": "",
+    "size": 46,
+    "large": true,
+    "ratio": 15.99
+   },
+   {
+    "text": "90 points apart, past the 35-point line. A gap that big is a",
+    "tag": "P",
+    "cls": "",
+    "size": 17,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "It names the part.",
+    "tag": "H3",
+    "cls": "",
+    "size": 46,
+    "large": true,
+    "ratio": 15.99
+   },
+   {
+    "text": "Instead of averaging the two into one number, it says which ",
+    "tag": "P",
+    "cls": "",
+    "size": 17,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Webcam streamer, voice replaced",
+    "tag": "DIV",
+    "cls": "sw-name",
+    "size": 17,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "A real check of a demo video. Known answer: face real, voice",
+    "tag": "DIV",
+    "cls": "sw-known",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "0%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "50%: unsure",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "100%",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 12,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "PictureLeans genuine",
+    "tag": "DIV",
+    "cls": "head",
+    "size": 14,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Leans genuine",
+    "tag": "SPAN",
+    "cls": "lean",
+    "size": 13,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "10%",
+    "tag": "DIV",
+    "cls": "cap-val",
+    "size": 22,
+    "large": true,
+    "ratio": 15.98
+   },
+   {
+    "text": "VoiceLeans manipulated",
+    "tag": "DIV",
+    "cls": "head",
+    "size": 14,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Leans manipulated",
+    "tag": "SPAN",
+    "cls": "lean",
+    "size": 13,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": ">99%",
+    "tag": "DIV",
+    "cls": "cap-val",
+    "size": 22,
+    "large": true,
+    "ratio": 15.98
+   },
+   {
+    "text": "90 points apart",
+    "tag": "SPAN",
+    "cls": "b-label",
+    "size": 13,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "35-point line",
+    "tag": "SPAN",
+    "cls": "r-label",
+    "size": 12,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Partly manipulated: the voice",
+    "tag": "DIV",
+    "cls": "sw-verdict tone-partial on",
+    "size": 28,
+    "large": true,
+    "ratio": 9.28
+   },
+   {
+    "text": "When the face and the voice disagree, the disagreement is th",
+    "tag": "H2",
+    "cls": "ln-h2",
+    "size": 54,
+    "large": true,
+    "ratio": 15.99
+   },
+   {
+    "text": "Move the two scores. Under 35 points apart, the tool combine",
+    "tag": "P",
+    "cls": "ln-p",
+    "size": 17,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Picture score",
+    "tag": "SPAN",
+    "cls": "grow",
+    "size": 14,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "10%",
+    "tag": "SPAN",
+    "cls": "tnum",
+    "size": 14,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Voice score",
+    "tag": "SPAN",
+    "cls": "grow",
+    "size": 14,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": ">99%",
+    "tag": "SPAN",
+    "cls": "tnum",
+    "size": 14,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Starts at the webcam streamer's real scores.",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "Partly manipulated: the voice",
+    "tag": "DIV",
+    "cls": "play-verdict tone-partial",
+    "size": 32,
+    "large": true,
+    "ratio": 9.28
+   },
+   {
+    "text": "The two checks are 90 points apart. At 35 or more, the tool ",
+    "tag": "P",
+    "cls": "play-why",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "partly manipulated",
+    "tag": "BUTTON",
+    "cls": "term",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Averaging the two would give 55%: \"likely manipulated\", with",
+    "tag": "P",
+    "cls": "play-avg",
+    "size": 14,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "One clip, start to finish.",
+    "tag": "H2",
+    "cls": "ln-h2",
+    "size": 54,
+    "large": true,
+    "ratio": 15.99
+   },
+   {
+    "text": "Every step of a real check on one demo video, including the ",
+    "tag": "P",
+    "cls": "ln-p",
+    "size": 17,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "The clip",
+    "tag": "H4",
+    "cls": "",
+    "size": 16,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Business newsreader",
+    "tag": "DIV",
+    "cls": "big",
+    "size": 26,
+    "large": true,
+    "ratio": 15.98
+   },
+   {
+    "text": "A financial news desk. Known answer: the face was replaced; ",
+    "tag": "P",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Picture check",
+    "tag": "H4",
+    "cls": "",
+    "size": 16,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": ">99%",
+    "tag": "DIV",
+    "cls": "big tone-manip",
+    "size": 26,
+    "large": true,
+    "ratio": 7.52
+   },
+   {
+    "text": "chance the face is manipulated, across 16 face frames; most ",
+    "tag": "P",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Voice check",
+    "tag": "H4",
+    "cls": "",
+    "size": 16,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "<1%",
+    "tag": "DIV",
+    "cls": "big tone-genuine",
+    "size": 26,
+    "large": true,
+    "ratio": 9.81
+   },
+   {
+    "text": "chance the voice is synthetic, from 3.7 s of speech in 4.9 s",
+    "tag": "P",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Compared",
+    "tag": "H4",
+    "cls": "",
+    "size": 16,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Partly manipulated: the picture",
+    "tag": "DIV",
+    "cls": "big tone-partial",
+    "size": 26,
+    "large": true,
+    "ratio": 9.28
+   },
+   {
+    "text": "100 points apart, well past the 35-point line, so the tool d",
+    "tag": "P",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Explained",
+    "tag": "H4",
+    "cls": "",
+    "size": 16,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "A mistake, caught",
+    "tag": "DIV",
+    "cls": "big",
+    "size": 26,
+    "large": true,
+    "ratio": 15.98
+   },
+   {
+    "text": "Llama 3 wrote a summary saying both parts were manipulated. ",
+    "tag": "P",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "From a real check on 26 September 2026. Run it again to see ",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.32
+   },
+   {
+    "text": "Run this check yourself",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 10.38
+   },
+   {
+    "text": "Six models, one answer.",
+    "tag": "H2",
+    "cls": "ln-h2",
+    "size": 54,
+    "large": true,
+    "ratio": 15.99
+   },
+   {
+    "text": "Two models for the picture, three for the voice, and a langu",
+    "tag": "P",
+    "cls": "ln-p",
+    "size": 17,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Picture",
+    "tag": "text",
+    "cls": "[object SVGAnimatedString]",
+    "size": 13,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Voice",
+    "tag": "text",
+    "cls": "[object SVGAnimatedString]",
+    "size": 13,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Both",
+    "tag": "text",
+    "cls": "[object SVGAnimatedString]",
+    "size": 13,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "MTCNN",
+    "tag": "text",
+    "cls": "[object SVGAnimatedString]",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "finds the faces",
+    "tag": "text",
+    "cls": "[object SVGAnimatedString]",
+    "size": 12,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Xception",
+    "tag": "text",
+    "cls": "[object SVGAnimatedString]",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "scores each face",
+    "tag": "text",
+    "cls": "[object SVGAnimatedString]",
+    "size": 12,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Silero VAD",
+    "tag": "text",
+    "cls": "[object SVGAnimatedString]",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "finds the speech",
+    "tag": "text",
+    "cls": "[object SVGAnimatedString]",
+    "size": 12,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "wav2vec2",
+    "tag": "text",
+    "cls": "[object SVGAnimatedString]",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "turns speech into numbers",
+    "tag": "text",
+    "cls": "[object SVGAnimatedString]",
+    "size": 12,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "SVM",
+    "tag": "text",
+    "cls": "[object SVGAnimatedString]",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "scores the voice",
+    "tag": "text",
+    "cls": "[object SVGAnimatedString]",
+    "size": 12,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Compare",
+    "tag": "text",
+    "cls": "[object SVGAnimatedString]",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "gap against the 35-point line",
+    "tag": "text",
+    "cls": "[object SVGAnimatedString]",
+    "size": 12,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Llama 3 8B",
+    "tag": "text",
+    "cls": "[object SVGAnimatedString]",
+    "size": 15,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "writes the explanation",
+    "tag": "text",
+    "cls": "[object SVGAnimatedString]",
+    "size": 12,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "For anyone about to press share.",
+    "tag": "H2",
+    "cls": "ln-h2",
+    "size": 54,
+    "large": true,
+    "ratio": 15.99
+   },
+   {
+    "text": "Before you share a clip",
+    "tag": "H3",
+    "cls": "",
+    "size": 19,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "A second opinion on a video before you forward it. If one pa",
+    "tag": "P",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Newsrooms and fact-checkers",
+    "tag": "H3",
+    "cls": "",
+    "size": 19,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "A first pass that says when, not what: the moments worth a s",
+    "tag": "P",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Classrooms",
+    "tag": "H3",
+    "cls": "",
+    "size": 19,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "A way to show that a deepfake can fake one part of a clip an",
+    "tag": "P",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "The research behind it.",
+    "tag": "H2",
+    "cls": "ln-h2",
+    "size": 54,
+    "large": true,
+    "ratio": 15.99
+   },
+   {
+    "text": "Does checking the face and the voice separately, and saying ",
+    "tag": "P",
+    "cls": "q",
+    "size": 23,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Clipcheck is a CM3070 final-year project (BSc Computer Scien",
+    "tag": "P",
+    "cls": "credit",
+    "size": 14,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Picture check alone",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "92.5%",
+    "tag": "SPAN",
+    "cls": "val",
+    "size": 14,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Voice check alone",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "92.1%",
+    "tag": "SPAN",
+    "cls": "val",
+    "size": 14,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Averaging the two checks",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "76.3%",
+    "tag": "SPAN",
+    "cls": "val",
+    "size": 14,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Naming the part when they disagree",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 14,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "94.7%",
+    "tag": "SPAN",
+    "cls": "val",
+    "size": 14,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "18.4 points better than averaging (95% range 7.9 to 28.9).",
+    "tag": "P",
+    "cls": "note",
+    "size": 13,
+    "large": false,
+    "ratio": 7.31
+   },
+   {
+    "text": "See every figure",
+    "tag": "A",
+    "cls": "btn",
+    "size": 14,
+    "large": false,
+    "ratio": 12.92
+   },
+   {
+    "text": "What it can't do.",
+    "tag": "H2",
+    "cls": "ln-h2",
+    "size": 54,
+    "large": true,
+    "ratio": 15.99
+   },
+   {
+    "text": "These are the limits measured in testing.",
+    "tag": "P",
+    "cls": "ln-p",
+    "size": 17,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Three face methods, not all",
+    "tag": "H3",
+    "cls": "",
+    "size": 19,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "The video model was trained on three of the four FaceForensi",
+    "tag": "P",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Right about 83 in 100",
+    "tag": "H3",
+    "cls": "",
+    "size": 19,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Estimated accuracy on people the model has not seen is about",
+    "tag": "P",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Weaker on other footage",
+    "tag": "H3",
+    "cls": "",
+    "size": 19,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "On a different dataset (Celeb-DF-v2) this model's accuracy f",
+    "tag": "P",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "One voice corpus",
+    "tag": "H3",
+    "cls": "",
+    "size": 19,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "The audio classifier was trained on one speech corpus. It fl",
+    "tag": "P",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "It can name the wrong part",
+    "tag": "H3",
+    "cls": "",
+    "size": 19,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "When a clip is unlike the data these models were trained on,",
+    "tag": "P",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "The voice needs speech",
+    "tag": "H3",
+    "cls": "",
+    "size": 19,
+    "large": false,
+    "ratio": 15.98
+   },
+   {
+    "text": "Audio is only scored when speech is detected. A clip with mu",
+    "tag": "P",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Upload your own clip, or pick one of the demo videos with kn",
+    "tag": "P",
+    "cls": "ln-p",
+    "size": 17,
+    "large": false,
+    "ratio": 11.04
+   },
+   {
+    "text": "Try it for yourself",
+    "tag": "SPAN",
+    "cls": "",
+    "size": 15,
+    "large": false,
+    "ratio": 10.38
+   },
+   {
+    "text": "Clipcheck, the Multimodal Deepfake Detector (CM3070 final pr",
+    "tag": "FOOTER",
+    "cls": "foot glass",
+    "size": 12,
+    "large": false,
+    "ratio": 11.04
+   }
+  ]
+ }
+}

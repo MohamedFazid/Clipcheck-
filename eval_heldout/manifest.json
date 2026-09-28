@@ -1,0 +1,818 @@
+{
+  "source": "HELD-OUT self-constructed set: FF++ c23 video drawn ONLY from the test partition of data_splits/split_v2_identity_grouped.json, muxed with ASVspoof 2019 LA eval audio. NOT FakeAVCeleb. Supersedes eval_fallback/ for every claim about the video branch; eval_fallback/ is kept as the in-distribution version.",
+  "description": "Held-out 4-category evaluation set (RVRA, RVFA, FVRA, FVFA), 20 clips each.",
+  "split_manifest": "data_splits/split_v2_identity_grouped.json",
+  "split_sha256": "d34c8e7a759f96d28e629c5f54cea8a23130b67f53f530188ca105b3bc40a4a2",
+  "test_split_real_videos": 22,
+  "test_split_fake_pairs": 22,
+  "methods": [
+    "Deepfakes",
+    "FaceSwap",
+    "NeuralTextures"
+  ],
+  "n_per_category": 20,
+  "seed": 42,
+  "limitations": "Only 22 real test videos exist, so RVRA and RVFA share most of their videos and differ only in audio. FVRA and FVFA use disjoint fakes. Video and audio are unrelated recordings paired artificially.",
+  "clips": [
+    {
+      "id": "RVRA_000",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/953.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_6691900.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_000.mp4"
+    },
+    {
+      "id": "RVRA_001",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/107.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_8797426.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_001.mp4"
+    },
+    {
+      "id": "RVRA_002",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/015.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_8829965.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_002.mp4"
+    },
+    {
+      "id": "RVRA_003",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/257.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_9294309.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_003.mp4"
+    },
+    {
+      "id": "RVRA_004",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/251.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_1517407.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_004.mp4"
+    },
+    {
+      "id": "RVRA_005",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/876.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_7155077.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_005.mp4"
+    },
+    {
+      "id": "RVRA_006",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/109.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_5058525.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_006.mp4"
+    },
+    {
+      "id": "RVRA_007",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/375.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_1109484.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_007.mp4"
+    },
+    {
+      "id": "RVRA_008",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/096.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_8026439.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_008.mp4"
+    },
+    {
+      "id": "RVRA_009",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/321.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_7314361.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_009.mp4"
+    },
+    {
+      "id": "RVRA_010",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/817.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_8124584.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_010.mp4"
+    },
+    {
+      "id": "RVRA_011",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/891.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3218689.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_011.mp4"
+    },
+    {
+      "id": "RVRA_012",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/651.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_5910912.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_012.mp4"
+    },
+    {
+      "id": "RVRA_013",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/192.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_9950863.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_013.mp4"
+    },
+    {
+      "id": "RVRA_014",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/919.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_4640546.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_014.mp4"
+    },
+    {
+      "id": "RVRA_015",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/835.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_5861273.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_015.mp4"
+    },
+    {
+      "id": "RVRA_016",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/420.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_4928377.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_016.mp4"
+    },
+    {
+      "id": "RVRA_017",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/288.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_4150719.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_017.mp4"
+    },
+    {
+      "id": "RVRA_018",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/827.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3792896.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_018.mp4"
+    },
+    {
+      "id": "RVRA_019",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/101.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_5009719.flac",
+      "output_path": "eval_heldout/RVRA/RVRA_019.mp4"
+    },
+    {
+      "id": "RVFA_000",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/919.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_7237847.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_000.mp4"
+    },
+    {
+      "id": "RVFA_001",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/015.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_5859235.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_001.mp4"
+    },
+    {
+      "id": "RVFA_002",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/876.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_9252711.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_002.mp4"
+    },
+    {
+      "id": "RVFA_003",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/192.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_4494304.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_003.mp4"
+    },
+    {
+      "id": "RVFA_004",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/974.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3850629.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_004.mp4"
+    },
+    {
+      "id": "RVFA_005",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/651.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_1601680.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_005.mp4"
+    },
+    {
+      "id": "RVFA_006",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/251.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3745579.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_006.mp4"
+    },
+    {
+      "id": "RVFA_007",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/827.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_1411810.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_007.mp4"
+    },
+    {
+      "id": "RVFA_008",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/288.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_5525327.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_008.mp4"
+    },
+    {
+      "id": "RVFA_009",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/109.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_2907739.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_009.mp4"
+    },
+    {
+      "id": "RVFA_010",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/953.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_2344699.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_010.mp4"
+    },
+    {
+      "id": "RVFA_011",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/101.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_4962372.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_011.mp4"
+    },
+    {
+      "id": "RVFA_012",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/891.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_1302450.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_012.mp4"
+    },
+    {
+      "id": "RVFA_013",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/134.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_5605907.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_013.mp4"
+    },
+    {
+      "id": "RVFA_014",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/420.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_1844477.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_014.mp4"
+    },
+    {
+      "id": "RVFA_015",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/096.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_4731765.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_015.mp4"
+    },
+    {
+      "id": "RVFA_016",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/835.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_4782324.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_016.mp4"
+    },
+    {
+      "id": "RVFA_017",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/321.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_4874220.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_017.mp4"
+    },
+    {
+      "id": "RVFA_018",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/375.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_5169409.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_018.mp4"
+    },
+    {
+      "id": "RVFA_019",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_method": "original",
+      "video_source": "data/original_sequences/youtube/c23/videos/107.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_9865623.flac",
+      "output_path": "eval_heldout/RVFA/RVFA_019.mp4"
+    },
+    {
+      "id": "FVRA_000",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "NeuralTextures",
+      "video_source": "data/manipulated_sequences/NeuralTextures/c23/videos/192_134.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_7233576.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_000.mp4"
+    },
+    {
+      "id": "FVRA_001",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "NeuralTextures",
+      "video_source": "data/manipulated_sequences/NeuralTextures/c23/videos/891_876.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_7318100.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_001.mp4"
+    },
+    {
+      "id": "FVRA_002",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "FaceSwap",
+      "video_source": "data/manipulated_sequences/FaceSwap/c23/videos/974_953.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_2024891.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_002.mp4"
+    },
+    {
+      "id": "FVRA_003",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "Deepfakes",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/107_109.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_5449533.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_003.mp4"
+    },
+    {
+      "id": "FVRA_004",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "Deepfakes",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/420_257.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3596947.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_004.mp4"
+    },
+    {
+      "id": "FVRA_005",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "Deepfakes",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/817_827.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_5681000.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_005.mp4"
+    },
+    {
+      "id": "FVRA_006",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "FaceSwap",
+      "video_source": "data/manipulated_sequences/FaceSwap/c23/videos/420_257.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_2450262.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_006.mp4"
+    },
+    {
+      "id": "FVRA_007",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "Deepfakes",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/257_420.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_5239519.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_007.mp4"
+    },
+    {
+      "id": "FVRA_008",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "NeuralTextures",
+      "video_source": "data/manipulated_sequences/NeuralTextures/c23/videos/096_101.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_1903191.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_008.mp4"
+    },
+    {
+      "id": "FVRA_009",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "FaceSwap",
+      "video_source": "data/manipulated_sequences/FaceSwap/c23/videos/375_251.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3550947.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_009.mp4"
+    },
+    {
+      "id": "FVRA_010",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "NeuralTextures",
+      "video_source": "data/manipulated_sequences/NeuralTextures/c23/videos/101_096.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_2378111.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_010.mp4"
+    },
+    {
+      "id": "FVRA_011",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "NeuralTextures",
+      "video_source": "data/manipulated_sequences/NeuralTextures/c23/videos/288_321.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_7076782.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_011.mp4"
+    },
+    {
+      "id": "FVRA_012",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "Deepfakes",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/096_101.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_9875520.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_012.mp4"
+    },
+    {
+      "id": "FVRA_013",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "FaceSwap",
+      "video_source": "data/manipulated_sequences/FaceSwap/c23/videos/101_096.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_7844892.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_013.mp4"
+    },
+    {
+      "id": "FVRA_014",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "NeuralTextures",
+      "video_source": "data/manipulated_sequences/NeuralTextures/c23/videos/251_375.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_6234427.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_014.mp4"
+    },
+    {
+      "id": "FVRA_015",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "FaceSwap",
+      "video_source": "data/manipulated_sequences/FaceSwap/c23/videos/107_109.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_1280848.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_015.mp4"
+    },
+    {
+      "id": "FVRA_016",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "FaceSwap",
+      "video_source": "data/manipulated_sequences/FaceSwap/c23/videos/288_321.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_7155077.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_016.mp4"
+    },
+    {
+      "id": "FVRA_017",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "Deepfakes",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/919_015.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_8380906.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_017.mp4"
+    },
+    {
+      "id": "FVRA_018",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "FaceSwap",
+      "video_source": "data/manipulated_sequences/FaceSwap/c23/videos/876_891.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_8353060.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_018.mp4"
+    },
+    {
+      "id": "FVRA_019",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_method": "Deepfakes",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/375_251.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3865142.flac",
+      "output_path": "eval_heldout/FVRA/FVRA_019.mp4"
+    },
+    {
+      "id": "FVFA_000",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "FaceSwap",
+      "video_source": "data/manipulated_sequences/FaceSwap/c23/videos/827_817.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_4713226.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_000.mp4"
+    },
+    {
+      "id": "FVFA_001",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "Deepfakes",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/651_835.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_4985878.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_001.mp4"
+    },
+    {
+      "id": "FVFA_002",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "Deepfakes",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/109_107.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3640814.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_002.mp4"
+    },
+    {
+      "id": "FVFA_003",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "Deepfakes",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/321_288.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_6302537.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_003.mp4"
+    },
+    {
+      "id": "FVFA_004",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "NeuralTextures",
+      "video_source": "data/manipulated_sequences/NeuralTextures/c23/videos/827_817.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_9704402.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_004.mp4"
+    },
+    {
+      "id": "FVFA_005",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "NeuralTextures",
+      "video_source": "data/manipulated_sequences/NeuralTextures/c23/videos/134_192.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_8987463.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_005.mp4"
+    },
+    {
+      "id": "FVFA_006",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "FaceSwap",
+      "video_source": "data/manipulated_sequences/FaceSwap/c23/videos/891_876.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_9817776.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_006.mp4"
+    },
+    {
+      "id": "FVFA_007",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "NeuralTextures",
+      "video_source": "data/manipulated_sequences/NeuralTextures/c23/videos/321_288.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_6719072.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_007.mp4"
+    },
+    {
+      "id": "FVFA_008",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "NeuralTextures",
+      "video_source": "data/manipulated_sequences/NeuralTextures/c23/videos/107_109.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_1688647.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_008.mp4"
+    },
+    {
+      "id": "FVFA_009",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "FaceSwap",
+      "video_source": "data/manipulated_sequences/FaceSwap/c23/videos/015_919.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_8600517.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_009.mp4"
+    },
+    {
+      "id": "FVFA_010",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "FaceSwap",
+      "video_source": "data/manipulated_sequences/FaceSwap/c23/videos/251_375.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_6613183.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_010.mp4"
+    },
+    {
+      "id": "FVFA_011",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "FaceSwap",
+      "video_source": "data/manipulated_sequences/FaceSwap/c23/videos/134_192.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_8300751.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_011.mp4"
+    },
+    {
+      "id": "FVFA_012",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "Deepfakes",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/192_134.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_2213279.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_012.mp4"
+    },
+    {
+      "id": "FVFA_013",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "Deepfakes",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/288_321.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_7056668.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_013.mp4"
+    },
+    {
+      "id": "FVFA_014",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "NeuralTextures",
+      "video_source": "data/manipulated_sequences/NeuralTextures/c23/videos/817_827.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3432370.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_014.mp4"
+    },
+    {
+      "id": "FVFA_015",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "Deepfakes",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/835_651.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_5809088.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_015.mp4"
+    },
+    {
+      "id": "FVFA_016",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "NeuralTextures",
+      "video_source": "data/manipulated_sequences/NeuralTextures/c23/videos/375_251.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_5822995.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_016.mp4"
+    },
+    {
+      "id": "FVFA_017",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "FaceSwap",
+      "video_source": "data/manipulated_sequences/FaceSwap/c23/videos/835_651.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3068067.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_017.mp4"
+    },
+    {
+      "id": "FVFA_018",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "NeuralTextures",
+      "video_source": "data/manipulated_sequences/NeuralTextures/c23/videos/257_420.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_1636735.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_018.mp4"
+    },
+    {
+      "id": "FVFA_019",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_method": "Deepfakes",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/134_192.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_4638560.flac",
+      "output_path": "eval_heldout/FVFA/FVFA_019.mp4"
+    }
+  ]
+}

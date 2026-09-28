@@ -1,0 +1,170 @@
+{
+  "tag": "r50_vidsplit",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "split_manifest": "split_v2_identity_grouped.json",
+  "note": "Zero-shot: trained on Deepfakes only; tested on test-split identities.",
+  "per_seed": {
+    "42": {
+      "arch": "resnet50",
+      "Deepfakes": {
+        "n_real_videos": 22,
+        "n_fake_videos": 22,
+        "auc_roc": 1.0,
+        "eer": 0.0,
+        "accuracy": 1.0,
+        "fake_detection_rate": 1.0,
+        "real_specificity": 1.0
+      },
+      "FaceSwap": {
+        "n_real_videos": 22,
+        "n_fake_videos": 22,
+        "auc_roc": 0.17355371900826444,
+        "eer": 0.7954545454545454,
+        "accuracy": 0.5,
+        "fake_detection_rate": 0.0,
+        "real_specificity": 1.0
+      },
+      "NeuralTextures": {
+        "n_real_videos": 22,
+        "n_fake_videos": 22,
+        "auc_roc": 0.7933884297520661,
+        "eer": 0.31818181818181823,
+        "accuracy": 0.5681818181818182,
+        "fake_detection_rate": 0.13636363636363635,
+        "real_specificity": 1.0
+      }
+    },
+    "43": {
+      "arch": "resnet50",
+      "Deepfakes": {
+        "n_real_videos": 22,
+        "n_fake_videos": 22,
+        "auc_roc": 1.0,
+        "eer": 0.0,
+        "accuracy": 1.0,
+        "fake_detection_rate": 1.0,
+        "real_specificity": 1.0
+      },
+      "FaceSwap": {
+        "n_real_videos": 22,
+        "n_fake_videos": 22,
+        "auc_roc": 0.15495867768595042,
+        "eer": 0.7727272727272727,
+        "accuracy": 0.5,
+        "fake_detection_rate": 0.0,
+        "real_specificity": 1.0
+      },
+      "NeuralTextures": {
+        "n_real_videos": 22,
+        "n_fake_videos": 22,
+        "auc_roc": 0.774793388429752,
+        "eer": 0.2727272727272727,
+        "accuracy": 0.5681818181818182,
+        "fake_detection_rate": 0.13636363636363635,
+        "real_specificity": 1.0
+      }
+    },
+    "44": {
+      "arch": "resnet50",
+      "Deepfakes": {
+        "n_real_videos": 22,
+        "n_fake_videos": 22,
+        "auc_roc": 1.0,
+        "eer": 0.0,
+        "accuracy": 0.9772727272727273,
+        "fake_detection_rate": 1.0,
+        "real_specificity": 0.9545454545454546
+      },
+      "FaceSwap": {
+        "n_real_videos": 22,
+        "n_fake_videos": 22,
+        "auc_roc": 0.2458677685950413,
+        "eer": 0.6363636363636364,
+        "accuracy": 0.4772727272727273,
+        "fake_detection_rate": 0.0,
+        "real_specificity": 0.9545454545454546
+      },
+      "NeuralTextures": {
+        "n_real_videos": 22,
+        "n_fake_videos": 22,
+        "auc_roc": 0.7541322314049587,
+        "eer": 0.31818181818181823,
+        "accuracy": 0.5681818181818182,
+        "fake_detection_rate": 0.18181818181818182,
+        "real_specificity": 0.9545454545454546
+      }
+    }
+  },
+  "mean_std": {
+    "Deepfakes": {
+      "auc_roc": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "eer": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "accuracy": {
+        "mean": 0.9924242424242425,
+        "std": 0.013121597027036937
+      },
+      "fake_detection_rate": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "real_specificity": {
+        "mean": 0.9848484848484849,
+        "std": 0.026243194054073875
+      }
+    },
+    "FaceSwap": {
+      "auc_roc": {
+        "mean": 0.19146005509641872,
+        "std": 0.04802700653336402
+      },
+      "eer": {
+        "mean": 0.7348484848484849,
+        "std": 0.08604406584545868
+      },
+      "accuracy": {
+        "mean": 0.49242424242424243,
+        "std": 0.013121597027036937
+      },
+      "fake_detection_rate": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "real_specificity": {
+        "mean": 0.9848484848484849,
+        "std": 0.026243194054073875
+      }
+    },
+    "NeuralTextures": {
+      "auc_roc": {
+        "mean": 0.7741046831955923,
+        "std": 0.019637158993640862
+      },
+      "eer": {
+        "mean": 0.30303030303030304,
+        "std": 0.02624319405407394
+      },
+      "accuracy": {
+        "mean": 0.5681818181818182,
+        "std": 0.0
+      },
+      "fake_detection_rate": {
+        "mean": 0.15151515151515152,
+        "std": 0.026243194054073906
+      },
+      "real_specificity": {
+        "mean": 0.9848484848484849,
+        "std": 0.026243194054073875
+      }
+    }
+  }
+}

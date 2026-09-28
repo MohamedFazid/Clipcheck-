@@ -1,0 +1,15 @@
+{
+  "dataset": "ASVspoof 2019 LA",
+  "subsampled_per_class": null,
+  "full_dataset": true,
+  "n_train": 25380,
+  "n_dev": 24844,
+  "n_eval": 71237,
+  "svm_C": 10.0,
+  "dev_eer": 0.011078466743159952,
+  "eval_eer": 0.039553288374080064,
+  "eval_accuracy": 0.9765009756166038,
+  "eer_threshold": 0.26036575188643424,
+  "encoder": "facebook/wav2vec2-base (frozen)",
+  "seed": 42
+}

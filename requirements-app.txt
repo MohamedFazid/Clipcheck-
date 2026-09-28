@@ -1,0 +1,37 @@
+# Application environment — the FastAPI frontend and video-branch inference.
+#
+# Separate from the base environment because MTCNN (facenet-pytorch) is only
+# installable here. See README.md, "Setup".
+#
+# Install:  /opt/anaconda3/envs/deepfake-detect/bin/python -m pip install -r requirements-app.txt
+#
+# IMPORTANT: do not report evaluation figures produced in this environment.
+# Its PyTorch build differs from the base environment's at the MPS-kernel
+# level, which shifts identical-checkpoint accuracy by ~0.3 percentage points
+# (Chapter 5.2). Reported numbers come from the base environment only.
+
+# ── Core deep learning ───────────────────────────────────────────────────────
+torch==2.12.1
+torchvision==0.27.1
+timm==1.0.27
+
+# ── Face detection (the reason this environment exists) ──────────────────────
+facenet-pytorch==2.5.3       # MTCNN face cropping
+
+# ── Frontend ─────────────────────────────────────────────────────────────────
+fastapi==0.121.2              # server.py / run_server.sh + static/ (vanilla JS/CSS)
+uvicorn==0.38.0
+python-multipart              # required by FastAPI's UploadFile handling
+
+# ── Shared ───────────────────────────────────────────────────────────────────
+numpy==2.5.0
+scikit-learn==1.9.0
+opencv-python==4.13.0.92
+pillow==12.2.0
+transformers==5.15.0         # wav2vec2 for the in-app audio branch
+silero-vad==6.2.1            # in-app VAD gate
+imageio-ffmpeg==0.6.0
+requests==2.34.2             # in-app explanation layer -> Ollama
+
+# NOTE: soundfile is absent here, so scripts/train_audio_svm.py cannot run in
+# this environment. That script is a base-environment tool.

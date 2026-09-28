@@ -1,0 +1,188 @@
+{
+  "name": "cv5_xcep_mm",
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "seed": 42,
+  "pooled_out_of_fold": {
+    "n_videos": 400,
+    "auc": 0.91765,
+    "accuracy": 0.8275,
+    "real_specificity": 0.93,
+    "fake_detection": 0.725,
+    "eer": 0.17,
+    "brier": 0.12331977909700367,
+    "ece10": 0.07801396339156441,
+    "detect_Deepfakes": 0.7794117647058824,
+    "auc_Deepfakes": 0.9411764705882353,
+    "detect_FaceSwap": 0.7727272727272727,
+    "auc_FaceSwap": 0.9413636363636364,
+    "detect_NeuralTextures": 0.6212121212121212,
+    "auc_NeuralTextures": 0.8696969696969696
+  },
+  "ci95_cluster_bootstrap": {
+    "auc": [
+      0.89129875,
+      0.9423281250000001
+    ],
+    "accuracy": [
+      0.7924375,
+      0.8625
+    ],
+    "real_specificity": [
+      0.885,
+      0.97
+    ],
+    "fake_detection": [
+      0.66,
+      0.79
+    ],
+    "eer": [
+      0.1275,
+      0.20249999999999999
+    ],
+    "brier": [
+      0.10277242303599855,
+      0.14561173153092677
+    ],
+    "ece10": [
+      0.057412286287844755,
+      0.11800480076879111
+    ],
+    "detect_Deepfakes": [
+      0.68,
+      0.8767175974710221
+    ],
+    "auc_Deepfakes": [
+      0.9056030058651026,
+      0.9711325861126299
+    ],
+    "detect_FaceSwap": [
+      0.6615384615384615,
+      0.875
+    ],
+    "auc_FaceSwap": [
+      0.9121509254563894,
+      0.9674331974637681
+    ],
+    "detect_NeuralTextures": [
+      0.5,
+      0.7333333333333333
+    ],
+    "auc_NeuralTextures": [
+      0.819930173022599,
+      0.9145004032258064
+    ]
+  },
+  "bootstrap_resamples": 2000,
+  "n_identity_groups": 100,
+  "per_fold": [
+    {
+      "fold": 0,
+      "n_videos": 80,
+      "auc": 0.85,
+      "accuracy": 0.75,
+      "real_specificity": 0.8,
+      "fake_detection": 0.7,
+      "eer": 0.25,
+      "brier": 0.167071524405657,
+      "ece10": 0.13583703188060095,
+      "detect_Deepfakes": 0.6875,
+      "auc_Deepfakes": 0.8562500000000001,
+      "detect_FaceSwap": 0.7142857142857143,
+      "auc_FaceSwap": 0.8732142857142857,
+      "detect_NeuralTextures": 0.7,
+      "auc_NeuralTextures": 0.8075
+    },
+    {
+      "fold": 1,
+      "n_videos": 80,
+      "auc": 0.9518749999999999,
+      "accuracy": 0.875,
+      "real_specificity": 1.0,
+      "fake_detection": 0.75,
+      "eer": 0.09999999999999999,
+      "brier": 0.10005213447432267,
+      "ece10": 0.1298792949342896,
+      "detect_Deepfakes": 0.75,
+      "auc_Deepfakes": 0.98125,
+      "detect_FaceSwap": 0.8888888888888888,
+      "auc_FaceSwap": 0.9916666666666667,
+      "detect_NeuralTextures": 0.6842105263157895,
+      "auc_NeuralTextures": 0.9144736842105263
+    },
+    {
+      "fold": 2,
+      "n_videos": 80,
+      "auc": 0.94375,
+      "accuracy": 0.8375,
+      "real_specificity": 0.925,
+      "fake_detection": 0.75,
+      "eer": 0.1375,
+      "brier": 0.1108001578656141,
+      "ece10": 0.09853136035385433,
+      "detect_Deepfakes": 0.9090909090909091,
+      "auc_Deepfakes": 0.9795454545454546,
+      "detect_FaceSwap": 0.7368421052631579,
+      "auc_FaceSwap": 0.9368421052631579,
+      "detect_NeuralTextures": 0.6,
+      "auc_NeuralTextures": 0.9175
+    },
+    {
+      "fold": 3,
+      "n_videos": 80,
+      "auc": 0.9331250000000001,
+      "accuracy": 0.85,
+      "real_specificity": 0.925,
+      "fake_detection": 0.775,
+      "eer": 0.1375,
+      "brier": 0.10835119977790039,
+      "ece10": 0.0520259683689801,
+      "detect_Deepfakes": 1.0,
+      "auc_Deepfakes": 0.9982142857142857,
+      "detect_FaceSwap": 0.7857142857142857,
+      "auc_FaceSwap": 0.9517857142857142,
+      "detect_NeuralTextures": 0.5,
+      "auc_NeuralTextures": 0.8354166666666667
+    },
+    {
+      "fold": 4,
+      "n_videos": 80,
+      "auc": 0.940625,
+      "accuracy": 0.825,
+      "real_specificity": 1.0,
+      "fake_detection": 0.65,
+      "eer": 0.17500000000000002,
+      "brier": 0.13032387896152425,
+      "ece10": 0.15667425111626587,
+      "detect_Deepfakes": 0.6,
+      "auc_Deepfakes": 0.9383333333333332,
+      "detect_FaceSwap": 0.8,
+      "auc_FaceSwap": 0.975,
+      "detect_NeuralTextures": 0.6,
+      "auc_NeuralTextures": 0.92
+    }
+  ],
+  "fold_spread": {
+    "auc": {
+      "mean": 0.923875,
+      "std": 0.0418409376388723
+    },
+    "accuracy": {
+      "mean": 0.8275,
+      "std": 0.04710360920354193
+    },
+    "real_specificity": {
+      "mean": 0.93,
+      "std": 0.08177713616898061
+    },
+    "fake_detection": {
+      "mean": 0.725,
+      "std": 0.05
+    }
+  }
+}

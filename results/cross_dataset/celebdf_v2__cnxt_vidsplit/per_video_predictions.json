@@ -1,0 +1,3110 @@
+[
+  {
+    "video": "YouTube-real/00170.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.26253680948721014,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00208.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.14325042653654235,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00063.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.7537647111341357,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00024.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0012668457590677916,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00021.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.053433853818205534,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00036.mp4",
+    "y_true_fake": 0,
+    "p_fake": 2.3422355434377094e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00202.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.004686683631007327,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00236.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.04797416149995115,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00197.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.022737017388863023,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00133.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.33801008191985604,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00213.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.354315192202921,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00011.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.2611544117651647,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00095.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.36259236801415684,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00138.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.22795338693831582,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00106.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.15855518476710131,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00194.mp4",
+    "y_true_fake": 0,
+    "p_fake": 1.0368327842513736e-06,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00092.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.5502273950725793,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00227.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.00030502667168548215,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00244.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.37021722743374996,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00119.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.2737794090027819,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00082.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.5401194022051641,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00188.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.00027451965337945696,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00076.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.00014542395575745104,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00047.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.046667932782293066,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00168.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.03999010028092016,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00207.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.10709736358554577,
+    "n_faces": 13
+  },
+  {
+    "video": "YouTube-real/00193.mp4",
+    "y_true_fake": 0,
+    "p_fake": 6.832906304055086e-06,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00061.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.012810365394580003,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00023.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0036801226079205664,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00048.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.25966496537294004,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00250.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.07956168223194027,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00251.mp4",
+    "y_true_fake": 0,
+    "p_fake": 8.01372352270846e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00252.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.00043011737744222953,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00253.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.3083206849725684,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00254.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.07865166158308057,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00255.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0006696469182145392,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00256.mp4",
+    "y_true_fake": 0,
+    "p_fake": 8.845986518224435e-06,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00257.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.029081844283791725,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00258.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0007151425276560985,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00259.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.002237596997304081,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00260.mp4",
+    "y_true_fake": 0,
+    "p_fake": 9.748598478154235e-06,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00261.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.005025823207506619,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00262.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.01914020491158226,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00263.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.12790211376559454,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00264.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0022810276520097263,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00265.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.19391698991944395,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00266.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0012822813836010027,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00267.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0245942642653759,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00268.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.05148432229698301,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00269.mp4",
+    "y_true_fake": 0,
+    "p_fake": 2.4436711367314954e-06,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00270.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.013104710698087274,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00271.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.41507191449054515,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00272.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0039292153401675025,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00273.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.00124211224742794,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00274.mp4",
+    "y_true_fake": 0,
+    "p_fake": 1.3841024029659366e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00275.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.07813066732087463,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00276.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0015898685103366006,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00277.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.1434999129204698,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00278.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.00019795587307385175,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00279.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.09243542062245069,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00280.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.2701421050624049,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00281.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0405039037520055,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00282.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0919434090708819,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00283.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.00018002157949013054,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00284.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.10141364266419259,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00285.mp4",
+    "y_true_fake": 0,
+    "p_fake": 5.234345887146219e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00286.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.33045321427252927,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00287.mp4",
+    "y_true_fake": 0,
+    "p_fake": 9.601195919515249e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00288.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.002414544589964862,
+    "n_faces": 20
+  },
+  {
+    "video": "YouTube-real/00289.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.18020646605250476,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id1_0007.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0003719734254104878,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id2_0008.mp4",
+    "y_true_fake": 0,
+    "p_fake": 4.567660112115845e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id3_0001.mp4",
+    "y_true_fake": 0,
+    "p_fake": 2.9924735126485303e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id6_0005.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.053267342255276164,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id9_0000.mp4",
+    "y_true_fake": 0,
+    "p_fake": 8.818262784870967e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id11_0008.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.2411540138113196,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id16_0011.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.12165876009228213,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id17_0000.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.44178925291635096,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id35_0008.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0028511428003639592,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id39_0005.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.35909105215687304,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id48_0000.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.12743841623232582,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id32_0008.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.004007594884251375,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id56_0009.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.4179872181266546,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id54_0007.mp4",
+    "y_true_fake": 0,
+    "p_fake": 3.8618694452452475e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id37_0005.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.00018251717531256873,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id29_0008.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.08520510481862402,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id43_0006.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.00012087234949831327,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id1_0006.mp4",
+    "y_true_fake": 0,
+    "p_fake": 5.169051274833692e-06,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id51_0001.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0010516866599246555,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id31_0007.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.021331723755292843,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id2_0003.mp4",
+    "y_true_fake": 0,
+    "p_fake": 8.889577576098872e-06,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id21_0009.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.00015299798594696766,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id50_0003.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.001112719375259985,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id21_0006.mp4",
+    "y_true_fake": 0,
+    "p_fake": 8.633609354546934e-06,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id44_0003.mp4",
+    "y_true_fake": 0,
+    "p_fake": 3.023829347625906e-06,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id36_0006.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.4359012019711372,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id36_0008.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.750430809520185,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id1_0008.mp4",
+    "y_true_fake": 0,
+    "p_fake": 1.3281601383141606e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id45_0003.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.169556676841421,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id48_0003.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.008760332854922125,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id23_0001.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0004508890321176295,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id16_0010.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.08760711065524447,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id31_0004.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0016182701075194927,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id35_0000.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.04031080871227459,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id58_0002.mp4",
+    "y_true_fake": 0,
+    "p_fake": 9.800338276022558e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id30_0007.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0040458972772739795,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id12_0005.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.00015585230333954315,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id56_0002.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.10758219423769333,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id33_0005.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.1554921623230257,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id29_0009.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.05433278611128571,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id13_0013.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.44338710387928587,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id28_0009.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.012490017191112202,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id36_0000.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.5562626780942083,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id24_0009.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.10181245927524288,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id39_0004.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.19576392447524996,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id27_0008.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.07831980563496473,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id11_0006.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0006388882990449929,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id19_0007.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.010833878369794547,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id37_0009.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.18793904787344218,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id3_0008.mp4",
+    "y_true_fake": 0,
+    "p_fake": 9.216467261126126e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id46_0000.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.9752298086881638,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id33_0008.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.003104441379957734,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id8_0000.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0010361473232819662,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id16_0007.mp4",
+    "y_true_fake": 0,
+    "p_fake": 4.3202962589816704e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id1_0001.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.007132856619455197,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id32_0002.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.1595137890195474,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id19_0005.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.16893472778247087,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id27_0009.mp4",
+    "y_true_fake": 0,
+    "p_fake": 1.4587430154477943e-06,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id2_0001.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.03273068637936376,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id13_0011.mp4",
+    "y_true_fake": 0,
+    "p_fake": 7.310221224230418e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id49_0004.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.3385895655839704,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id57_0007.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.006651844328735024,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id26_0008.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.002125386110310501,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id2_0004.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0981823434587568,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id36_0001.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.9289326965808868,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id0_0001.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0003328051775724816,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id10_0007.mp4",
+    "y_true_fake": 0,
+    "p_fake": 2.931254785210058e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id17_0002.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.39259582410450095,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id4_0004.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.005108574381324615,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id36_0002.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.3607984574540751,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id53_0003.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.09548373799516412,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id25_0010.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.09471183415475934,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id51_0006.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.04934940957809886,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id22_0000.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.07464910741955251,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id10_0001.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.003705804974223221,
+    "n_faces": 14
+  },
+  {
+    "video": "Celeb-real/id6_0002.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.07889482131497516,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id12_0000.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0469773262033641,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id35_0003.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.00394053448651448,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id3_0002.mp4",
+    "y_true_fake": 0,
+    "p_fake": 4.564847715329279e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id31_0003.mp4",
+    "y_true_fake": 0,
+    "p_fake": 1.6326445006598078e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id52_0002.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.23753227554188924,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id2_0002.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.010876742758344448,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id44_0001.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.5228539369491045,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id8_0009.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.12683651323932993,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id33_0002.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.03691173214706467,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id50_0000.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.39518748752379906,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id40_0003.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.005474485647664551,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id7_0006.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.00013526980525000454,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id53_0007.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.026656354734586784,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id43_0002.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0015284690587577642,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id56_0000.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.011518215210253402,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id13_0004.mp4",
+    "y_true_fake": 0,
+    "p_fake": 1.0091148546109707e-06,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id43_0001.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.02380049505413808,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id20_0008.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.15630890720058233,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id28_0004.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.0026863731464118247,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id22_0009.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.04800640207622564,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id53_0000.mp4",
+    "y_true_fake": 0,
+    "p_fake": 1.1868082754062926e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id50_0006.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.014068884408527538,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id32_0003.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.10793166275179829,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id32_0006.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.45777951255440713,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id57_0003.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.20734935412701816,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id37_0004.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.008135031162601081,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id28_0007.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.11912002134563408,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id52_0001.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.08314588093344355,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id40_0009.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.4472733928821981,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id51_0005.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.03351712227843109,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id34_0006.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.03567140407833733,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-real/id42_0002.mp4",
+    "y_true_fake": 0,
+    "p_fake": 0.018459161592170405,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id1_id0_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 1.4437517523901989e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id1_id3_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.00048333750115716614,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id1_id4_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.04752342218732793,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id1_id9_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.022878369019417734,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id1_id16_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.012410223523147579,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id1_id17_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.5431708547286689,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id2_id0_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.522093930200208,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id2_id3_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.7066320774611086,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id2_id9_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.5883211910411774,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id3_id1_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0025537525375966654,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id3_id2_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 2.6453730441744483e-06,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id3_id4_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.5649767380440608,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id3_id6_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.5704952868291912,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id3_id9_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.13146115711720086,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id3_id16_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0010583046537533392,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id4_id1_0003.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.019078117985554855,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id6_id0_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.42503128774114884,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id6_id1_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.4353384636866394,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id6_id2_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.11540912002587903,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id6_id3_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.24454522850282956,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id6_id16_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.4548103654931765,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id7_id10_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.020621840135208912,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id7_id11_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.3649445242015645,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id7_id13_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.06333099702156915,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id9_id0_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.6870904758106917,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id9_id1_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.47676497463253326,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id9_id2_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0018291328957730003,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id9_id3_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.3626895860987133,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id9_id6_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.4306032140200841,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id9_id16_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.43556093638471793,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id10_id7_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0004802064025398067,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id10_id11_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.15383367913545953,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id10_id12_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.5934436859723065,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id10_id13_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.00036164610480682313,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id10_id7_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.280604188605635,
+    "n_faces": 11
+  },
+  {
+    "video": "Celeb-synthesis/id10_id11_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.03361801415766505,
+    "n_faces": 11
+  },
+  {
+    "video": "Celeb-synthesis/id10_id12_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.8341988650235262,
+    "n_faces": 11
+  },
+  {
+    "video": "Celeb-synthesis/id10_id13_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.24385294995524667,
+    "n_faces": 11
+  },
+  {
+    "video": "Celeb-synthesis/id11_id7_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.000274071686408206,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id16_id0_0011.mp4",
+    "y_true_fake": 1,
+    "p_fake": 8.268330851137761e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id16_id1_0011.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.001766086707385739,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id16_id2_0011.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0007824172340079371,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id16_id3_0011.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.030162722326713264,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id16_id6_0011.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.20356947125401348,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id17_id0_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.048146701816267526,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id17_id1_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.004439920156801236,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id17_id2_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 1.3485949682490173e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id17_id3_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.16739160959696164,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id17_id6_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.2279648581697984,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id17_id9_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.21098271503178695,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id17_id16_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.6101441920851357,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id16_id20_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.5428054128395161,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id17_id23_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.3761954847992456,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id3_id28_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.6476156654936063,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id35_id32_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0037539009564625304,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id30_id26_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.045040881501336116,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id16_id20_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.8646647896617651,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id4_id20_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0019149264030829728,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id26_id3_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.1546830382834287,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id20_id31_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.10909137900962378,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id6_id23_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.28038756814676163,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id9_id23_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0312483312223776,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id32_id33_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.38702698014676573,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id16_id20_0012.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.6050931817590026,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id29_id30_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.02474815983987355,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id3_id20_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.19461398487910628,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id22_id27_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.07842294237989336,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id27_id21_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0017208402442633996,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id29_id35_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.15639263216726249,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id21_id19_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.002498089801867857,
+    "n_faces": 17
+  },
+  {
+    "video": "Celeb-synthesis/id23_id26_0003.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.30130977741761233,
+    "n_faces": 19
+  },
+  {
+    "video": "Celeb-synthesis/id30_id35_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.4750645610038191,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id9_id26_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.01714942481557955,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id33_id32_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.2019907349421146,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id30_id34_0003.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.06538385781022953,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id29_id37_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.18331344326470572,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id35_id31_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.1365268406731957,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id37_id34_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0006152839471781135,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id26_id16_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.033718942887480806,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id17_id23_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.327340291798464,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id6_id20_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.03015990790208889,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id1_id20_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.3730664866510779,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id1_id23_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.06606324473514177,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id37_id35_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0927008287035278,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id4_id23_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.015068196448032723,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id17_id26_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.25993411807576194,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id20_id1_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.4754859974607825,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id0_id26_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.009068098496936728,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id38_id33_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.27162776930490506,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id28_id35_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.5349396297242492,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id23_id35_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.3482160055427812,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id6_id28_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.351522706222022,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id35_id28_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.13525275777783463,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id32_id31_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.1247120940424793,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id38_id34_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.18498713263543323,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id3_id28_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.9698796659708023,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id37_id28_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.6157315992750227,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id1_id20_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.16996423276959832,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id37_id31_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.3995452422714152,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id30_id23_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.006595474644939259,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id28_id26_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0605033487579135,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id2_id28_0003.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.23093054499859136,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id27_id24_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.013641475925305712,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id30_id32_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.00030903490596756455,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id35_id31_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.2594338948962104,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id4_id21_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.011668033820672007,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id37_id21_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.006202056293648184,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id30_id21_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.2043182819904814,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id16_id23_0011.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.03318523631678545,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id9_id20_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.6764642316615209,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id6_id21_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.016967491799186975,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id20_id19_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.1358980576536851,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id28_id4_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0005593405342551705,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id35_id34_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0018625667584274198,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id35_id26_0003.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.04486628244048916,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id22_id28_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.03895145413698629,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id30_id21_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0019374098494154169,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id24_id20_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.05953957987985632,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id4_id20_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.022569763479191353,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id2_id26_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.15266245427774267,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id21_id6_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.035483532082413574,
+    "n_faces": 17
+  },
+  {
+    "video": "Celeb-synthesis/id21_id9_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.04746447427378371,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id22_id21_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.03316668850520728,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id22_id27_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.39103622965776597,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id23_id2_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.007907394861194916,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id23_id3_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.006874583088233521,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id24_id19_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.05282456386448757,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id24_id21_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.20134451279700444,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id24_id26_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.04323532473783871,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id25_id19_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.006139951425666368,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id25_id24_0003.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.12795665269513848,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id27_id21_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.002174039071496736,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id27_id22_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.06667585358518409,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id27_id25_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.2259835841425229,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id28_id3_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0002873889303486976,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id28_id6_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0009016188358145882,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id29_id32_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.35782536962651645,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id29_id37_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.10653779772328562,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id30_id20_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.04949272209960327,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id30_id23_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.14580648983064748,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id32_id33_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.22221911328670102,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id33_id38_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.1168458203166665,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id34_id33_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.010784833709681151,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id35_id31_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.006241446475110024,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id49_id52_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.3613618983072229,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id9_id2_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0004086981077762175,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id7_id11_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.10837403336627176,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id4_id37_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.5079381906165509,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id37_id38_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.04063937896935386,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id29_id30_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.15994596599848593,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id0_id6_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.1058501910250925,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id0_id16_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0003407491938219209,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id31_id33_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.2897689577701385,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id54_id49_0003.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.9418467912822962,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id0_id1_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0866274797852384,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id21_id28_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.15274255839913167,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id33_id29_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.36254076916957273,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id28_id0_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.39614706993452276,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id6_id9_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.06861736841674429,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id9_id0_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.007359868363346322,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id26_id2_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.07833340204067554,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id1_id3_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.1667478457449761,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id4_id6_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.042529380512382885,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id16_id28_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.6224858801870141,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id37_id35_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.11315012579952963,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id19_id20_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.13822521833571955,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id46_id41_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.02807920374822288,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id51_id57_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.002718132095594683,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id29_id37_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.05066068805144823,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id35_id23_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.028490062858963938,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id34_id33_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.09226251443933506,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id1_id3_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.00620331073696434,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id13_id10_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.050042603117685755,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id56_id55_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.04129174741974566,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id25_id28_0010.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.1334700451920071,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id20_id37_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.9998990803956985,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id37_id29_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.3418204474495724,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id56_id54_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.43956820068415253,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id19_id20_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.4640925794548821,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id4_id28_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.5710234184283763,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id53_id58_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.6868357940751594,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id55_id57_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.12694414053330547,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id24_id26_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.09347737361240434,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id20_id0_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.1960856084828265,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id37_id2_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0005042246052369137,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id30_id26_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0030112166263279506,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id16_id2_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.10965776590464885,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id26_id1_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.24481459886592347,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id30_id6_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.017790225129147075,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id44_id41_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.4249667898286134,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id16_id2_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.835075874067843,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id1_id16_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0005130905017267651,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id16_id21_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.3778808389663027,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id4_id0_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0021720906833024856,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id8_id0_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.13380652507767082,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id19_id23_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.5596175535582006,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id37_id3_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.4274116831991705,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id9_id16_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.004640893646956102,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id47_id43_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.37681139428996174,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id16_id3_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.17337832505436382,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id26_id28_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.6396385108935647,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id8_id3_0003.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0876840092078055,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id30_id28_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.027683505552431598,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id27_id23_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.18360920527484267,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id28_id20_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.09259996526452596,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id1_id2_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0011596489864700743,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id46_id39_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0056773802486532075,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id37_id28_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.2192762296530418,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id0_id3_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.002878729139365532,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id4_id1_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.12338841152011355,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id13_id7_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.03475494355661794,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id50_id53_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.6033716733567417,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id50_id56_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.16398247944216565,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id4_id21_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.218119925832616,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id23_id3_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.07464775625539914,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id56_id51_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.017244428109097498,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id30_id3_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0006596227837235346,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id28_id20_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.05779907263859059,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id4_id20_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.001664083090645363,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id54_id58_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.9634893909096718,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id53_id57_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.28651419180187077,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id31_id33_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.02318668486805109,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id0_id21_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.4643185880500823,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id6_id23_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.15234377976375982,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id48_id45_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.04152357895100067,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id46_id45_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.5688966778448957,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id28_id21_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.002699082699655264,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id12_id10_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.09332015708350809,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id54_id56_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.09218907598406076,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id39_id47_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.823494340479374,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id9_id3_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0002416817597577392,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id35_id16_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.08001065785365427,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id21_id2_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.11609202530999027,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id12_id10_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.06561337185175944,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id10_id13_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.49643974425503073,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id20_id31_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.00017693910228899767,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id0_id16_0003.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.15768852362525648,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id0_id16_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.05704939397314775,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id2_id16_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.33268278160467163,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id13_id7_0012.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.000989113730565805,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id37_id1_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.21863826338376385,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id30_id28_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.16322939707242767,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id53_id52_0003.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.2020888309511065,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id54_id56_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.3546955566140241,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id3_id28_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.17465039182243344,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id37_id4_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0536001953112077,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id28_id9_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.09928336620059781,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id4_id2_0003.mp4",
+    "y_true_fake": 1,
+    "p_fake": 2.5382600964007906e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id25_id21_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0029829111608023597,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id17_id3_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.016726328082097553,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id2_id1_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.05781158993231657,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id3_id9_0003.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.1757643589714462,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id16_id6_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.3751286366739805,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id8_id6_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.6674563933862373,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id17_id16_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.04491016128914112,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id4_id26_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.00792624671428257,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id44_id45_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.10378064626884224,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id0_id1_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.08999663563831746,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id57_id51_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.3589882171134377,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id34_id32_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.3039001790439215,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id32_id31_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.48920326828956606,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id48_id41_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.06515955603645125,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id4_id0_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.00022424340671847176,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id21_id19_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.475987466488732,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id45_id39_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.32685728105716405,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id31_id30_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.017058804742919164,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id27_id19_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0007448959779139841,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id23_id16_0003.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.009075806312275267,
+    "n_faces": 19
+  },
+  {
+    "video": "Celeb-synthesis/id58_id57_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.28108187779871513,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id17_id2_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.00021998424373919078,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id28_id3_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0020418699943547834,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id23_id35_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.6083922540303319,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id4_id0_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.003788935467127885,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id17_id31_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.27906334034305474,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id48_id47_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.31197870756150226,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id50_id49_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.5802628366276622,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id20_id1_0003.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.05826530701378942,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id16_id3_0010.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.1026217124768209,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id23_id19_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.24116808590551955,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id1_id3_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.13698567916035245,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id43_id40_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.1390395879163407,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id4_id6_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.06185800229759479,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id10_id7_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.3863547261134954,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id13_id10_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.06476498939427984,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id12_id7_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.30491657205820955,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id6_id2_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.03522393866686287,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id2_id0_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.4559340247687942,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id2_id6_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.514716497855261,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id30_id28_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0016435834669209725,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id52_id50_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.07707838204999007,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id49_id52_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.35763021677266804,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id51_id50_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.34716059077181854,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id21_id3_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.041659745300256644,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id31_id16_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.02986078484391328,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id25_id28_0003.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.23924774710048952,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id21_id20_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.070348450362917,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id10_id7_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0037085819365643147,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id38_id30_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.19261477996478787,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id35_id30_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0022912839519904082,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id20_id9_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 1.158410994150927e-06,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id25_id23_0010.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.037173179499154684,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id17_id21_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.022243847243407798,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id45_id47_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0035376621808836718,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id1_id3_0003.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0013049015209844583,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id27_id26_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0005673935238064587,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id44_id42_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.2964778798072075,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id57_id53_0006.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.41689087915219714,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id43_id39_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.03857582984783221,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id35_id16_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.07440560827817536,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id42_id40_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.27859538323100425,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id21_id2_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.053664044509349654,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id37_id21_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 2.5068480695722428e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id29_id38_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.8499256420880557,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id39_id44_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.8895218191784806,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id9_id6_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.32225755478721113,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id0_id1_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.11188190195575771,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id31_id2_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.1984318607886962,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id38_id34_0003.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.06934236672561837,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id56_id57_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.46026229093731674,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id52_id58_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.8239623606204987,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id28_id4_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.15075350065526436,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id22_id26_0005.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0026720279474375273,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id4_id30_0000.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.06621518920583185,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id29_id32_0003.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.07210811038967221,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id35_id20_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.03228616385949863,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id1_id2_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 2.9611379439131724e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id30_id3_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.013559118225106203,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id22_id25_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.2910900159415178,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id39_id44_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.9575986802577973,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id34_id29_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.16938954028664738,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id21_id28_0009.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.24075034521301858,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id30_id4_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.0014962545765229152,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id25_id19_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.25910341863755093,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id21_id4_0002.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.01993773317526575,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id17_id28_0001.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.026859870188962985,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id6_id1_0007.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.1718219026141014,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id9_id2_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.022820924255938735,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id8_id5_0008.mp4",
+    "y_true_fake": 1,
+    "p_fake": 3.787080764965367e-05,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id37_id3_0004.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.07614585930750764,
+    "n_faces": 20
+  },
+  {
+    "video": "Celeb-synthesis/id17_id2_0003.mp4",
+    "y_true_fake": 1,
+    "p_fake": 0.005739059988741246,
+    "n_faces": 20
+  }
+]

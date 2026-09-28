@@ -1,0 +1,117 @@
+{
+  "clip": "composite_real_video_synthetic_speech.mp4",
+  "video_model": {
+    "shipped": true,
+    "arch": "legacy_xception",
+    "name": "Xception",
+    "tag": "mm_xcep_vidsplit",
+    "seed": 44,
+    "trained_on": "multi-method (Deepfakes + FaceSwap + NeuralTextures)",
+    "checkpoint": "fdd60748dc1c",
+    "accuracy_source": "cross-validated: pooled out-of-fold clip accuracy over all 400 videos, 5 identity-grouped folds (results/cv/cv5_xcep_mm/cv_summary.json), 95% interval 79.2% to 86.2%. Chosen over the 96.2% figure from the 44-video test split because the PPR's weighting basis (Large, Lines and Bagnall, 2019) is cross-validated accuracy and the small split is optimistic.",
+    "status": "fine-tuned on FaceForensics++ c23, multi-method (Deepfakes + FaceSwap + NeuralTextures); checkpoint fdd60748dc1c"
+  },
+  "runs": 3,
+  "warmup_discarded": 1,
+  "hardware": {
+    "platform": "macOS-15.3.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "processor": "arm",
+    "python": "3.12.4",
+    "torch": "2.12.1",
+    "torch_device": "mps",
+    "cpu": "Apple M2 Pro"
+  },
+  "cold_start_s": {
+    "video_models_mtcnn_legacy_xception": 1.4230894999927841,
+    "audio_svm": 0.0030996249988675117,
+    "wav2vec2": 2.371612292015925,
+    "silero_vad": 0.04029662499669939
+  },
+  "cold_start_total_s": 3.838098042004276,
+  "stages": [
+    {
+      "stage": "1. Face extraction + Xception",
+      "status": "measured",
+      "note": "MTCNN crop + Xception scoring, up to 20 frames",
+      "mean_s": 5.946490624997144,
+      "std_s": 0.0851305636684534,
+      "min_s": 5.848218250030186,
+      "max_s": 5.997656124993227,
+      "n": 3
+    },
+    {
+      "stage": "2. Audio decode (ffmpeg)",
+      "status": "measured",
+      "note": "video -> mono 16 kHz waveform",
+      "mean_s": 0.09012579134044547,
+      "std_s": 0.06807281187467992,
+      "min_s": 0.03932179103139788,
+      "max_s": 0.1674712499952875,
+      "n": 3
+    },
+    {
+      "stage": "3. VAD gate (Silero)",
+      "status": "measured",
+      "note": "speech / non-speech decision",
+      "mean_s": 0.03882683299404258,
+      "std_s": 0.0020464449425037627,
+      "min_s": 0.03760758298449218,
+      "max_s": 0.041189457988366485,
+      "n": 3
+    },
+    {
+      "stage": "4. wav2vec2 embedding",
+      "status": "measured",
+      "note": "768-d mean-pooled SSL embedding",
+      "mean_s": 0.7089376253231118,
+      "std_s": 0.43011954830989046,
+      "min_s": 0.4383583749877289,
+      "max_s": 1.2049112920067273,
+      "n": 3
+    },
+    {
+      "stage": "5. SVM spoof prediction",
+      "status": "measured",
+      "note": "RBF SVM on the embedding (ASVspoof 2019 LA)",
+      "mean_s": 0.006896694346020619,
+      "std_s": 0.0068757529086329715,
+      "min_s": 0.001507583016064018,
+      "max_s": 0.014640417008195072,
+      "n": 3
+    },
+    {
+      "stage": "6. Fusion decision",
+      "status": "measured",
+      "note": "disagreement check + weighting, on the clip's real scores",
+      "mean_s": 3.51799923616151e-05,
+      "std_s": 1.8476234830397424e-05,
+      "min_s": 1.5790981706231833e-05,
+      "max_s": 5.258299643173814e-05,
+      "n": 3
+    },
+    {
+      "stage": "7. Llama 3 explanation",
+      "status": "measured",
+      "note": "constrained generation via local Ollama",
+      "mean_s": 2.225598736006456,
+      "std_s": 0.05556892637103912,
+      "min_s": 2.1624048750381917,
+      "max_s": 2.2668293329770677,
+      "n": 3
+    },
+    {
+      "stage": "8. Faithfulness screen",
+      "status": "measured",
+      "note": "automatic check of the generated explanation",
+      "mean_s": 0.0006887359971490999,
+      "std_s": 5.228528919140378e-05,
+      "min_s": 0.0006491249660030007,
+      "max_s": 0.0007480000494979322,
+      "n": 3
+    }
+  ],
+  "measured_total_warm_s": 9.017600220996732,
+  "complete_pipeline": true,
+  "pending_stages": []
+}

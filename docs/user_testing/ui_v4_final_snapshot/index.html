@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="dark" />
+<title>Clipcheck, the multimodal deepfake detector</title>
+<link rel="stylesheet" href="/static/style.css" />
+<link rel="icon" type="image/svg+xml" href="/static/clipcheck-mark.svg" />
+</head>
+<body>
+<!-- Interface v4 ("Clipcheck"), 2026-09-26: redesigned from scratch after a design review (smoked glass, level meters, demo videos as
+     channel strips, the split-face mark); docs/user_testing/findings.md, C28 onward. NOT user-tested. Earlier interfaces are frozen and
+     runnable: v1 (before user testing) in docs/user_testing/ui_v1_snapshot/ (./run_v1_interface.sh, port 8001) and v2 (the version round 2
+     tested) in docs/user_testing/ui_v2_snapshot/ (./run_v2_interface.sh, port 8002). -->
+<div class="wall" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div>
+<!-- Home sits on its own in the top-left corner (27 Sep), level with the menu bar. -->
+<a class="home-btn" href="#/welcome" aria-label="Back to the Clipcheck home page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>Home</span></a>
+<div class="app">
+  <header class="bar glass">
+    <div class="bar-left"><a class="brand" href="#/welcome" aria-label="Clipcheck home"><span id="brand-mark"></span><span class="brand-name">Clipcheck</span></a></div>
+    <nav class="seg" id="nav" aria-label="Main">
+      <a data-nav="check" href="#/check"><span class="long">Check a video</span><span class="short">Check</span></a>
+      <a data-nav="history" href="#/history">History</a>
+      <a data-nav="accuracy" href="#/accuracy">Accuracy</a>
+      <span class="thumb" aria-hidden="true"></span>
+    </nav>
+  </header>
+  <main class="stage" id="stage"></main>
+  <footer class="foot glass">Clipcheck, the Multimodal Deepfake Detector (CM3070 final project).<span id="testing-flag" hidden>Testing mode: neutral demo names.</span></footer>
+</div>
+<div class="pop glass" id="pop" role="dialog" aria-live="polite" hidden></div>
+<button type="button" class="notify glass" id="notify" hidden></button>
+<input type="file" id="file-input" accept=".mp4,.mov,.avi,.mkv,video/*" hidden />
+<script src="/static/app.js"></script>
+</body>
+</html>

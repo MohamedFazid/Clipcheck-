@@ -1,0 +1,807 @@
+{
+  "source": "HYBRID: RVRA/RVFA/FVFA self-constructed (FF++ + ASVspoof 2019 LA, see build_fallback_eval_set.py), FVRA genuinely paired from DeepfakeTIMIT (Idiap/Zenodo, Korshunov and Marcel). NOT a single-provenance dataset -- check each clip's own \"source\" field. NOT FakeAVCeleb.",
+  "n_per_category": 20,
+  "seed": 42,
+  "clips": [
+    {
+      "id": "RVRA_000",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/878.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_9070898.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_000.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVRA_001",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/153.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3411231.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_001.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVRA_002",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/033.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3609940.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_002.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVRA_003",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/980.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_8647959.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_003.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVRA_004",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/381.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_9197189.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_004.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVRA_005",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/324.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_9301504.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_005.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVRA_006",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/288.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_9163737.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_006.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVRA_007",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/192.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_9391307.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_007.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVRA_008",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/974.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_7093974.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_008.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVRA_009",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/147.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_6453309.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_009.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVRA_010",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/924.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_2082015.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_010.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVRA_011",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/716.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_4396656.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_011.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVRA_012",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/109.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_4306773.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_012.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVRA_013",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/819.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_1354185.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_013.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVRA_014",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/611.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_6982823.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_014.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVRA_015",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/036.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_9366327.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_015.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVRA_016",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/035.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3783078.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_016.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVRA_017",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/112.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_1930201.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_017.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVRA_018",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/272.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_2751672.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_018.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVRA_019",
+      "category": "RVRA",
+      "video_label": "real",
+      "audio_label": "bonafide",
+      "video_source": "data/original_sequences/youtube/c23/videos/292.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_9269932.flac",
+      "output_path": "eval_fallback/RVRA/RVRA_019.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_000",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/945.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_8149669.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_000.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_001",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/611.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_1532802.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_001.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_002",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/479.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_8999438.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_002.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_003",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/392.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_2356999.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_003.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_004",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/221.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_6914317.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_004.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_005",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/272.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_7789769.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_005.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_006",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/988.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_4431352.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_006.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_007",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/470.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_2944431.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_007.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_008",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/147.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_4578490.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_008.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_009",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/112.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_6671910.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_009.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_010",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/565.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_8289218.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_010.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_011",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/128.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_1063217.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_011.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_012",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/522.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3841287.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_012.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_013",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/481.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_2086747.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_013.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_014",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/830.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_9283613.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_014.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_015",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/361.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_6961900.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_015.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_016",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/054.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_5478215.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_016.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_017",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/966.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3436959.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_017.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_018",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/642.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_6317123.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_018.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "RVFA_019",
+      "category": "RVFA",
+      "video_label": "real",
+      "audio_label": "spoof",
+      "video_source": "data/original_sequences/youtube/c23/videos/706.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_2775574.flac",
+      "output_path": "eval_fallback/RVFA/RVFA_019.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_000",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/289_228.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_1183934.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_000.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_001",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/036_035.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_1855789.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_001.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_002",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/441_439.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_9948196.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_002.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_003",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/589_565.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_7537750.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_003.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_004",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/375_251.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3144175.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_004.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_005",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/071_054.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3223844.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_005.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_006",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/271_264.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3107252.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_006.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_007",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/779_794.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_7385973.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_007.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_008",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/953_974.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_7550242.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_008.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_009",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/896_128.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_9203729.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_009.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_010",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/665_679.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_7069104.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_010.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_011",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/588_556.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3965519.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_011.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_012",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/882_952.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_3758619.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_012.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_013",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/642_635.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_6293621.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_013.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_014",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/200_189.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_6349685.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_014.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_015",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/361_448.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_5796286.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_015.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_016",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/192_134.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_6099155.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_016.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_017",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/337_522.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_6586532.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_017.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_018",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/981_985.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_6896244.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_018.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVFA_019",
+      "category": "FVFA",
+      "video_label": "fake",
+      "audio_label": "spoof",
+      "video_source": "data/manipulated_sequences/Deepfakes/c23/videos/760_611.mp4",
+      "audio_source": "$ASVSPOOF2019_LA_ROOT/ASVspoof2019_LA_eval/flac/LA_E_9588892.flac",
+      "output_path": "eval_fallback/FVFA/FVFA_019.mp4",
+      "source": "self-constructed fallback (FF++ video muxed with ASVspoof 2019 LA audio) -- separately-sourced files combined"
+    },
+    {
+      "id": "FVRA_000",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/fdrd1/sx194-video-fcft0.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/fdrd1/sx194-video-fcft0.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/fdrd1/sx194-video-fcft0.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    },
+    {
+      "id": "FVRA_001",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/faks0/si1573-video-fedw0.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/faks0/si1573-video-fedw0.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/faks0/si1573-video-fedw0.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    },
+    {
+      "id": "FVRA_002",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/mccs0/sa1-video-mmdm2.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/mccs0/sa1-video-mmdm2.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/mccs0/sa1-video-mmdm2.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    },
+    {
+      "id": "FVRA_003",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/fkms0/sx140-video-fjem0.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/fkms0/sx140-video-fjem0.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/fkms0/sx140-video-fjem0.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    },
+    {
+      "id": "FVRA_004",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/fjwb0/si992-video-fjas0.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/fjwb0/si992-video-fjas0.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/fjwb0/si992-video-fjas0.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    },
+    {
+      "id": "FVRA_005",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/felc0/sa2-video-fdac1.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/felc0/sa2-video-fdac1.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/felc0/sa2-video-fdac1.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    },
+    {
+      "id": "FVRA_006",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/fdrd1/si1544-video-fcft0.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/fdrd1/si1544-video-fcft0.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/fdrd1/si1544-video-fcft0.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    },
+    {
+      "id": "FVRA_007",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/mrgg0/sx389-video-msjs1.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/mrgg0/sx389-video-msjs1.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/mrgg0/sx389-video-msjs1.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    },
+    {
+      "id": "FVRA_008",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/fdac1/si844-video-felc0.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/fdac1/si844-video-felc0.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/fdac1/si844-video-felc0.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    },
+    {
+      "id": "FVRA_009",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/mstk0/si1024-video-mrjo0.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/mstk0/si1024-video-mrjo0.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/mstk0/si1024-video-mrjo0.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    },
+    {
+      "id": "FVRA_010",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/mjsw0/sx20-video-mmdb1.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/mjsw0/sx20-video-mmdb1.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/mjsw0/sx20-video-mmdb1.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    },
+    {
+      "id": "FVRA_011",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/faks0/sx223-video-fedw0.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/faks0/sx223-video-fedw0.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/faks0/sx223-video-fedw0.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    },
+    {
+      "id": "FVRA_012",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/faks0/sx133-video-fedw0.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/faks0/sx133-video-fedw0.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/faks0/sx133-video-fedw0.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    },
+    {
+      "id": "FVRA_013",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/fdac1/sx304-video-felc0.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/fdac1/sx304-video-felc0.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/fdac1/sx304-video-felc0.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    },
+    {
+      "id": "FVRA_014",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/fjwb0/sa2-video-fjas0.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/fjwb0/sa2-video-fjas0.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/fjwb0/sa2-video-fjas0.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    },
+    {
+      "id": "FVRA_015",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/fjwb0/sx95-video-fjas0.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/fjwb0/sx95-video-fjas0.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/fjwb0/sx95-video-fjas0.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    },
+    {
+      "id": "FVRA_016",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/mpgl0/sx289-video-mwbt0.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/mpgl0/sx289-video-mwbt0.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/mpgl0/sx289-video-mwbt0.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    },
+    {
+      "id": "FVRA_017",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/mstk0/sx34-video-mrjo0.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/mstk0/sx34-video-mrjo0.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/mstk0/sx34-video-mrjo0.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    },
+    {
+      "id": "FVRA_018",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/faks0/si2203-video-fedw0.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/faks0/si2203-video-fedw0.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/faks0/si2203-video-fedw0.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    },
+    {
+      "id": "FVRA_019",
+      "category": "FVRA",
+      "video_label": "fake",
+      "audio_label": "bonafide",
+      "video_source": "external_datasets/DeepfakeTIMIT/higher_quality/mrjo0/sx194-video-mstk0.avi",
+      "audio_source": "external_datasets/DeepfakeTIMIT/higher_quality/mrjo0/sx194-video-mstk0.avi",
+      "output_path": "external_datasets/DeepfakeTIMIT/higher_quality/mrjo0/sx194-video-mstk0.avi",
+      "source": "DeepfakeTIMIT (higher_quality, Idiap/Zenodo) -- genuinely paired, original unaltered audio kept when face was swapped"
+    }
+  ]
+}

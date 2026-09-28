@@ -1,0 +1,67 @@
+{
+  "protocol": "Identical balanced subsample of ASVspoof 2019 LA for every encoder; same decoder, same SVM back end (StandardScaler + RBF SVC), C selected on dev EER, eval scored once. Subsample figures: NOT comparable with the full-dataset numbers in results/audio_branch/metrics.json.",
+  "seed": 42,
+  "per_class_train_eval": 750,
+  "dev_per_class": 250,
+  "n_train": 1500,
+  "n_dev": 500,
+  "n_eval": 1500,
+  "encoders": {
+    "wav2vec2-base": {
+      "selected_C": 10.0,
+      "dev_eer_by_C": {
+        "0.1": 0.08999999999999998,
+        "1.0": 0.04400000000000002,
+        "10.0": 0.02400000000000001
+      },
+      "dev_eer": 0.02400000000000001,
+      "eval_eer": 0.066,
+      "eval_auc_roc": 0.9851857777777777,
+      "eval_accuracy_at_0.5": 0.9333333333333333,
+      "eval_balanced_accuracy": 0.9333333333333333,
+      "eval_f1_spoof": 0.9333333333333333,
+      "bona_fide_false_alarm_rate": 0.06666666666666667,
+      "spoof_detection_rate": 0.9333333333333333,
+      "model_id": "facebook/wav2vec2-base",
+      "embedding_dim": 768,
+      "embed_seconds_per_clip": 0.07851843765803745,
+      "unseen_corpus_genuine_speech": {
+        "corpus": "DeepfakeTIMIT original audio (genuine speech)",
+        "n_clips": 60,
+        "false_alarm_rate_at_0.5": 1.0,
+        "median_p_spoof": 0.9199447944670531
+      }
+    },
+    "wavlm-base": {
+      "selected_C": 10.0,
+      "dev_eer_by_C": {
+        "0.1": 0.09799999999999999,
+        "1.0": 0.05600000000000002,
+        "10.0": 0.05400000000000002
+      },
+      "dev_eer": 0.05400000000000002,
+      "eval_eer": 0.07199999999999998,
+      "eval_auc_roc": 0.9767324444444444,
+      "eval_accuracy_at_0.5": 0.9186666666666666,
+      "eval_balanced_accuracy": 0.9186666666666667,
+      "eval_f1_spoof": 0.9200524246395806,
+      "bona_fide_false_alarm_rate": 0.09866666666666667,
+      "spoof_detection_rate": 0.936,
+      "model_id": "microsoft/wavlm-base",
+      "embedding_dim": 768,
+      "embed_seconds_per_clip": 0.0856497745513916,
+      "unseen_corpus_genuine_speech": {
+        "corpus": "DeepfakeTIMIT original audio (genuine speech)",
+        "n_clips": 60,
+        "false_alarm_rate_at_0.5": 1.0,
+        "median_p_spoof": 0.98091886894431
+      }
+    }
+  },
+  "verdict": {
+    "shipped": "wav2vec2-base",
+    "alternative": "wavlm-base",
+    "eer_difference_pp": 0.5999999999999978,
+    "interpretation": "wavlm-base is 0.60 pp worse than the shipped wav2vec2-base on 1500 held-out clips. One misclassified clip is about 0.07 pp, so a difference below roughly 0.13 pp is within the noise of this subsample and should not be called a win either way."
+  }
+}

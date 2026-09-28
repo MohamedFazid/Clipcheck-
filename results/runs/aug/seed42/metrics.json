@@ -1,0 +1,27 @@
+{
+  "seed": 42,
+  "tag": "aug",
+  "model_path": "models/runs/aug/seed42.pth",
+  "test_crops": 758,
+  "f1": 0.9807938540332907,
+  "auc_roc": 0.9984596297535407,
+  "eer": 0.023774673803947807,
+  "eer_threshold": 0.403586745262146,
+  "precision": 0.9845758354755784,
+  "recall": 0.9770408163265306,
+  "accuracy": 0.9802110817941952,
+  "confusion_matrix": [
+    [
+      383,
+      9
+    ],
+    [
+      6,
+      360
+    ]
+  ],
+  "class_names": [
+    "fake",
+    "real"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "seed": 42,
+  "tag": "reg_vidsplit",
+  "epochs_requested": 10,
+  "epochs_run": 10,
+  "stopped_early_at": null,
+  "augmentation": true,
+  "dropout": 0.3,
+  "label_smoothing": 0.1,
+  "early_stopping_patience": 3,
+  "checkpoint_criterion": "val_loss",
+  "best_val_acc": 0.8980978260869565,
+  "best_val_loss": 0.38631146951862005,
+  "split_seed": 42,
+  "batch_size": 32,
+  "lr": 0.0001
+}

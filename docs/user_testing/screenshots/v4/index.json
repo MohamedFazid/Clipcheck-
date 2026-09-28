@@ -1,0 +1,93 @@
+{
+  "version": "v4 + landing page",
+  "captured_at": "2026-09-27T05:57:11+08:00",
+  "reduced_motion": true,
+  "console_errors": [],
+  "screens": [
+    {
+      "file": "00_landing_hero_desktop.png",
+      "url": "",
+      "shows": "landing page, first screen"
+    },
+    {
+      "file": "01_check_desktop.png",
+      "url": "#/check",
+      "shows": "start page: upload and demo videos"
+    },
+    {
+      "file": "02_result_real_real_desktop.png",
+      "url": "#/result/c27cf927f5f6430ca6dc3bc808064ab9",
+      "shows": "result: real_real"
+    },
+    {
+      "file": "02_result_partial_voice_desktop.png",
+      "url": "#/result/fe7a670f16cd4bc993cb036ad5fd2496",
+      "shows": "result: partial_voice"
+    },
+    {
+      "file": "02_result_partial_picture_desktop.png",
+      "url": "#/result/5aeaaed6678f4150a6fe05ffc2861708",
+      "shows": "result: partial_picture"
+    },
+    {
+      "file": "02_result_fake_timing_desktop.png",
+      "url": "#/result/df7cc31677304fe0a279ec51237bdf9d",
+      "shows": "result: fake_timing"
+    },
+    {
+      "file": "02_result_unfamiliar_desktop.png",
+      "url": "#/result/56cf1896a388457da45de36da0da72a6",
+      "shows": "result: unfamiliar"
+    },
+    {
+      "file": "02_result_no_verdict_desktop.png",
+      "url": "#/result/18964047696c4081b457cfad37ab41d5",
+      "shows": "result: no_verdict"
+    },
+    {
+      "file": "03_details_findings_desktop.png",
+      "url": "#/result/5aeaaed6678f4150a6fe05ffc2861708",
+      "shows": "Details sheet: findings"
+    },
+    {
+      "file": "03_details_technical_desktop.png",
+      "url": "#/result/5aeaaed6678f4150a6fe05ffc2861708",
+      "shows": "Details sheet: technical"
+    },
+    {
+      "file": "03_details_limits_desktop.png",
+      "url": "#/result/5aeaaed6678f4150a6fe05ffc2861708",
+      "shows": "Details sheet: limits"
+    },
+    {
+      "file": "03_details_glossary_desktop.png",
+      "url": "#/result/5aeaaed6678f4150a6fe05ffc2861708",
+      "shows": "Details sheet: glossary"
+    },
+    {
+      "file": "04_history_desktop.png",
+      "url": "#/history",
+      "shows": "History"
+    },
+    {
+      "file": "05_accuracy_desktop.png",
+      "url": "#/accuracy",
+      "shows": "Accuracy page, first screen"
+    },
+    {
+      "file": "06_analysing_desktop.png",
+      "url": "#/analysing",
+      "shows": "analysing, real progress"
+    },
+    {
+      "file": "07_result_partial_picture_mobile.png",
+      "url": "#/result/5aeaaed6678f4150a6fe05ffc2861708",
+      "shows": "result on a phone"
+    },
+    {
+      "file": "08_check_mobile.png",
+      "url": "#/check",
+      "shows": "start page on a phone"
+    }
+  ]
+}

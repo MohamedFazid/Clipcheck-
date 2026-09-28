@@ -1,0 +1,41 @@
+{
+  "seed": 44,
+  "tag": "mm_xcep_vidsplit",
+  "arch": "legacy_xception",
+  "frames_dir": "frames_multi",
+  "model_path": "models/runs/mm_xcep_vidsplit/seed44.pth",
+  "test_crops": 722,
+  "n_test_videos": 44,
+  "f1": 0.896969696969697,
+  "auc_roc": 0.9753225074424794,
+  "eer": 0.0872673984784264,
+  "eer_threshold": 0.3011767566204071,
+  "precision": 0.9337539432176656,
+  "recall": 0.8629737609329446,
+  "accuracy": 0.9058171745152355,
+  "confusion_matrix": [
+    [
+      296,
+      47
+    ],
+    [
+      21,
+      358
+    ]
+  ],
+  "class_names": [
+    "fake",
+    "real"
+  ],
+  "video_level": {
+    "note": "Per-video mean-aggregated P(fake), matching what the deployed pipeline reports (one score per clip), evaluated on 44 independent held-out videos rather than 722 correlated frame crops.",
+    "n_videos": 44,
+    "accuracy": 1.0,
+    "f1": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "auc_roc": 1.0,
+    "eer": 0.0,
+    "eer_threshold": 0.569438636302948
+  }
+}

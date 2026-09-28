@@ -1,0 +1,26 @@
+{
+ "n_cases": 50,
+ "dimensions": {
+  "factual_grounding": {
+   "rater1_mean": 1.7,
+   "rater2_mean": 1.5,
+   "exact_agreement": 0.8,
+   "weighted_kappa": 0.6296296296296297,
+   "full_disagreements": []
+  },
+  "score_accuracy": {
+   "rater1_mean": 1.46,
+   "rater2_mean": 1.36,
+   "exact_agreement": 0.82,
+   "weighted_kappa": 0.8062015503875969,
+   "full_disagreements": []
+  },
+  "absence_of_hallucination": {
+   "rater1_mean": 1.72,
+   "rater2_mean": 1.72,
+   "exact_agreement": 0.96,
+   "weighted_kappa": 0.9289772727272727,
+   "full_disagreements": []
+  }
+ }
+}

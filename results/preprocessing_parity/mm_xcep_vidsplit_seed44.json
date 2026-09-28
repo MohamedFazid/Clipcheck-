@@ -1,0 +1,785 @@
+{
+  "tag": "mm_xcep_vidsplit",
+  "seed": 44,
+  "arch": "legacy_xception",
+  "n_videos": 88,
+  "dropped_no_face": 0,
+  "path_A_stored_jpeg": {
+    "auc_all": 0.9855371900826447,
+    "accuracy_all": 0.9090909090909091,
+    "mean_p_real": 0.07452655095885757,
+    "Deepfakes": {
+      "auc": 1.0,
+      "fake_detected": 0.8636363636363636
+    },
+    "FaceSwap": {
+      "auc": 0.9979338842975207,
+      "fake_detected": 0.9090909090909091
+    },
+    "NeuralTextures": {
+      "auc": 0.9586776859504134,
+      "fake_detected": 0.8636363636363636
+    }
+  },
+  "path_B_app_in_memory": {
+    "auc_all": 0.9889807162534435,
+    "accuracy_all": 0.9431818181818182,
+    "mean_p_real": 0.14543895371515705,
+    "Deepfakes": {
+      "auc": 0.9958677685950413,
+      "fake_detected": 1.0
+    },
+    "FaceSwap": {
+      "auc": 0.9876033057851239,
+      "fake_detected": 0.9090909090909091
+    },
+    "NeuralTextures": {
+      "auc": 0.9834710743801653,
+      "fake_detected": 0.9545454545454546
+    }
+  },
+  "path_C_app_crops_jpeg": {
+    "auc_all": 0.9882920110192838,
+    "accuracy_all": 0.8977272727272727,
+    "mean_p_real": 0.04631928700123495,
+    "Deepfakes": {
+      "auc": 1.0,
+      "fake_detected": 0.8636363636363636
+    },
+    "FaceSwap": {
+      "auc": 0.9979338842975207,
+      "fake_detected": 0.9090909090909091
+    },
+    "NeuralTextures": {
+      "auc": 0.9669421487603306,
+      "fake_detected": 0.8181818181818182
+    }
+  },
+  "compare": {
+    "A_vs_B_total_difference": {
+      "mean_abs_diff": 0.09781416329403955,
+      "max_abs_diff": 0.7085641331418759,
+      "pearson_r": 0.9299676830882895,
+      "decision_flips_at_0.5": 7
+    },
+    "B_vs_C_jpeg_only": {
+      "mean_abs_diff": 0.1053830085370917,
+      "max_abs_diff": 0.7290838267217623,
+      "pearson_r": 0.9173581097073062,
+      "decision_flips_at_0.5": 8
+    },
+    "A_vs_C_sampling_only": {
+      "mean_abs_diff": 0.052237308204279034,
+      "max_abs_diff": 0.29416327777329243,
+      "pearson_r": 0.9791407085768107,
+      "decision_flips_at_0.5": 1
+    }
+  },
+  "app_crops_per_video_mean": 20.0,
+  "per_video": [
+    {
+      "kind": "real",
+      "video": "015",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.3354735248668779,
+      "B_app_in_memory": 0.29723751705460016,
+      "C_app_crops_jpeg": 0.18230090941560775
+    },
+    {
+      "kind": "real",
+      "video": "096",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.01563023643933882,
+      "B_app_in_memory": 0.20301622951638193,
+      "C_app_crops_jpeg": 0.16159838724602196
+    },
+    {
+      "kind": "real",
+      "video": "101",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.0054182699086974635,
+      "B_app_in_memory": 0.08475449619218126,
+      "C_app_crops_jpeg": 0.0013734014845795174
+    },
+    {
+      "kind": "real",
+      "video": "107",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.20725615177355433,
+      "B_app_in_memory": 0.3257582841994008,
+      "C_app_crops_jpeg": 0.05840800822538768
+    },
+    {
+      "kind": "real",
+      "video": "109",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.00601065711331709,
+      "B_app_in_memory": 0.0029794954999943003,
+      "C_app_crops_jpeg": 0.003659564586087072
+    },
+    {
+      "kind": "real",
+      "video": "134",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.10468618028486769,
+      "B_app_in_memory": 0.39733685775427147,
+      "C_app_crops_jpeg": 0.08334957243839654
+    },
+    {
+      "kind": "real",
+      "video": "192",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 7.944101646444324e-05,
+      "B_app_in_memory": 0.0021287503604298765,
+      "C_app_crops_jpeg": 5.515621313634256e-05
+    },
+    {
+      "kind": "real",
+      "video": "251",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 4.621511864399963e-05,
+      "B_app_in_memory": 0.02548730828243606,
+      "C_app_crops_jpeg": 8.614700631710548e-05
+    },
+    {
+      "kind": "real",
+      "video": "257",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.10912701962975764,
+      "B_app_in_memory": 0.2374574806865894,
+      "C_app_crops_jpeg": 0.0823738832766594
+    },
+    {
+      "kind": "real",
+      "video": "288",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.060535274734403094,
+      "B_app_in_memory": 0.018748571053038177,
+      "C_app_crops_jpeg": 0.007108214586759231
+    },
+    {
+      "kind": "real",
+      "video": "321",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.050764285574369634,
+      "B_app_in_memory": 0.009984473272788818,
+      "C_app_crops_jpeg": 0.0007902364303816967
+    },
+    {
+      "kind": "real",
+      "video": "375",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.014294782009528717,
+      "B_app_in_memory": 0.34075331681560783,
+      "C_app_crops_jpeg": 0.0676090230564114
+    },
+    {
+      "kind": "real",
+      "video": "420",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.15606894968726312,
+      "B_app_in_memory": 0.005685056830577651,
+      "C_app_crops_jpeg": 0.04982360838312161
+    },
+    {
+      "kind": "real",
+      "video": "651",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.0009481200132768208,
+      "B_app_in_memory": 0.05154583460316644,
+      "C_app_crops_jpeg": 0.0013034194491410745
+    },
+    {
+      "kind": "real",
+      "video": "817",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.000205472427881302,
+      "B_app_in_memory": 0.0036331273121213313,
+      "C_app_crops_jpeg": 0.0005770051367186113
+    },
+    {
+      "kind": "real",
+      "video": "827",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.09564088612376183,
+      "B_app_in_memory": 0.00019778959573386602,
+      "C_app_crops_jpeg": 2.4534523080177452e-05
+    },
+    {
+      "kind": "real",
+      "video": "835",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.10867426779279615,
+      "B_app_in_memory": 0.5533427430083975,
+      "C_app_crops_jpeg": 0.03927151032257825
+    },
+    {
+      "kind": "real",
+      "video": "876",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.005830050619393164,
+      "B_app_in_memory": 0.0112221673829481,
+      "C_app_crops_jpeg": 0.0011000635244272417
+    },
+    {
+      "kind": "real",
+      "video": "891",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.2155755365616642,
+      "B_app_in_memory": 0.5216193587519229,
+      "C_app_crops_jpeg": 0.23835376397764776
+    },
+    {
+      "kind": "real",
+      "video": "919",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.07524013384227146,
+      "B_app_in_memory": 0.07385944278987608,
+      "C_app_crops_jpeg": 0.020834110441569464
+    },
+    {
+      "kind": "real",
+      "video": "953",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.06411883410792144,
+      "B_app_in_memory": 0.03274583775655628,
+      "C_app_crops_jpeg": 0.018916036382552192
+    },
+    {
+      "kind": "real",
+      "video": "974",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.007959831448816273,
+      "B_app_in_memory": 0.00016284301443434402,
+      "C_app_crops_jpeg": 0.00010775792058685952
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "015_919",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.4530932829870532,
+      "B_app_in_memory": 0.5028086298290873,
+      "C_app_crops_jpeg": 0.38232234479801264
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "096_101",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9824944594327141,
+      "B_app_in_memory": 0.9877967596054077,
+      "C_app_crops_jpeg": 0.9709108918905258
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "101_096",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9993985613187154,
+      "B_app_in_memory": 0.9995624125003815,
+      "C_app_crops_jpeg": 0.9994763761758805
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "107_109",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.4880275457652043,
+      "B_app_in_memory": 0.562785329669714,
+      "C_app_crops_jpeg": 0.28467105112504215
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "109_107",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9994145582119623,
+      "B_app_in_memory": 0.9999938011169434,
+      "C_app_crops_jpeg": 0.9996335238218308
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "134_192",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.4620856477025275,
+      "B_app_in_memory": 0.8446112586185336,
+      "C_app_crops_jpeg": 0.40978954381425864
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "192_134",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9711759150028229,
+      "B_app_in_memory": 0.9979822129011154,
+      "C_app_crops_jpeg": 0.9767465412616729
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "251_375",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9997632205486298,
+      "B_app_in_memory": 0.9999791443347931,
+      "C_app_crops_jpeg": 0.9997302085161209
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "257_420",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9789463529984156,
+      "B_app_in_memory": 0.9993796914815902,
+      "C_app_crops_jpeg": 0.9974751353263855
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "288_321",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9454596963795748,
+      "B_app_in_memory": 0.9922754257917404,
+      "C_app_crops_jpeg": 0.988944610953331
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "321_288",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9994735795518627,
+      "B_app_in_memory": 0.9995725363492965,
+      "C_app_crops_jpeg": 0.9991027027368545
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "375_251",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.8810023744901021,
+      "B_app_in_memory": 0.9991572320461273,
+      "C_app_crops_jpeg": 0.9454816356301308
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "420_257",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.7919831452270348,
+      "B_app_in_memory": 0.7078198505565524,
+      "C_app_crops_jpeg": 0.919859167933464
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "651_835",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9922410733997822,
+      "B_app_in_memory": 0.9995722055435181,
+      "C_app_crops_jpeg": 0.9897172093391419
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "817_827",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9688859326498849,
+      "B_app_in_memory": 0.9997842907905579,
+      "C_app_crops_jpeg": 0.9773199409246445
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "827_817",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.723690980876034,
+      "B_app_in_memory": 0.8034325402230025,
+      "C_app_crops_jpeg": 0.6221755681559443
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "835_651",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9984716342555152,
+      "B_app_in_memory": 0.9999614596366883,
+      "C_app_crops_jpeg": 0.9995907098054886
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "876_891",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9999502463774248,
+      "B_app_in_memory": 0.9999886512756347,
+      "C_app_crops_jpeg": 0.9999280869960785
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "891_876",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.6217080093920231,
+      "B_app_in_memory": 0.8391903152689337,
+      "C_app_crops_jpeg": 0.5133446569787339
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "919_015",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9976655277940962,
+      "B_app_in_memory": 0.9993544727563858,
+      "C_app_crops_jpeg": 0.994428476691246
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "953_974",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9964162349700928,
+      "B_app_in_memory": 0.9996511071920395,
+      "C_app_crops_jpeg": 0.9814239233732224
+    },
+    {
+      "kind": "Deepfakes",
+      "video": "974_953",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.7843406098679855,
+      "B_app_in_memory": 0.9584273219108581,
+      "C_app_crops_jpeg": 0.5287266974104569
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "015_919",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9914821664492289,
+      "B_app_in_memory": 0.9990168392658234,
+      "C_app_crops_jpeg": 0.9940346240997314
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "096_101",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9987905411159291,
+      "B_app_in_memory": 0.9997181683778763,
+      "C_app_crops_jpeg": 0.9989560008049011
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "101_096",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9812473444377675,
+      "B_app_in_memory": 0.9955747842788696,
+      "C_app_crops_jpeg": 0.978061118721962
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "107_109",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9552807956933975,
+      "B_app_in_memory": 0.9894612789154053,
+      "C_app_crops_jpeg": 0.9603419125080108
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "109_107",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.4637434094911441,
+      "B_app_in_memory": 0.4992821231950074,
+      "C_app_crops_jpeg": 0.26661769491620363
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "134_192",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9117144256830215,
+      "B_app_in_memory": 0.9334010537713766,
+      "C_app_crops_jpeg": 0.882961880415678
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "192_134",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.8120903683826327,
+      "B_app_in_memory": 0.9408049762248993,
+      "C_app_crops_jpeg": 0.8110640502534807
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "251_375",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9649553384099688,
+      "B_app_in_memory": 0.9999080628156662,
+      "C_app_crops_jpeg": 0.9991904944181442
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "257_420",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9700827747583389,
+      "B_app_in_memory": 0.9991098999977112,
+      "C_app_crops_jpeg": 0.997651356458664
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "288_321",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.950154872103171,
+      "B_app_in_memory": 0.9760461956262588,
+      "C_app_crops_jpeg": 0.9455087721347809
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "321_288",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9999480437148701,
+      "B_app_in_memory": 0.9999667018651962,
+      "C_app_crops_jpeg": 0.9999111115932464
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "375_251",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.6176479676671859,
+      "B_app_in_memory": 0.8464630778878928,
+      "C_app_crops_jpeg": 0.728947351872921
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "420_257",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.6521632760142286,
+      "B_app_in_memory": 0.7789982739370316,
+      "C_app_crops_jpeg": 0.8186302862595767
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "651_835",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.24744234382524155,
+      "B_app_in_memory": 0.3260803039185703,
+      "C_app_crops_jpeg": 0.1926599362574052
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "817_827",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9993860938332297,
+      "B_app_in_memory": 0.9988787144422531,
+      "C_app_crops_jpeg": 0.9991617947816849
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "827_817",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9933812293139371,
+      "B_app_in_memory": 0.9705460965633392,
+      "C_app_crops_jpeg": 0.9549833737313748
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "835_651",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.8692001514136791,
+      "B_app_in_memory": 0.9931842386722565,
+      "C_app_crops_jpeg": 0.9167336463928223
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "876_891",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.6022733889520169,
+      "B_app_in_memory": 0.9863933324813843,
+      "C_app_crops_jpeg": 0.7359589422121644
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "891_876",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.995495057106018,
+      "B_app_in_memory": 0.9996516525745391,
+      "C_app_crops_jpeg": 0.9951289892196655
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "919_015",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9975727876027425,
+      "B_app_in_memory": 0.9977617412805557,
+      "C_app_crops_jpeg": 0.9932919532060623
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "953_974",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.8961017555915393,
+      "B_app_in_memory": 0.9800634264945984,
+      "C_app_crops_jpeg": 0.9670670911669731
+    },
+    {
+      "kind": "FaceSwap",
+      "video": "974_953",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.7142688225095088,
+      "B_app_in_memory": 0.9196213200688362,
+      "C_app_crops_jpeg": 0.6294993354007602
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "015_919",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9999576489130656,
+      "B_app_in_memory": 0.9999846458435059,
+      "C_app_crops_jpeg": 0.9991274178028107
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "096_101",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9974497311255511,
+      "B_app_in_memory": 0.9996416479349136,
+      "C_app_crops_jpeg": 0.9816547006368637
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "101_096",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.002710430470709552,
+      "B_app_in_memory": 0.08904058284961139,
+      "C_app_crops_jpeg": 0.006817002727348154
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "107_109",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9955490430196127,
+      "B_app_in_memory": 0.9999837517738343,
+      "C_app_crops_jpeg": 0.9982321739196778
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "109_107",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.6650827446331581,
+      "B_app_in_memory": 0.9803612023591995,
+      "C_app_crops_jpeg": 0.8844916358590126
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "134_192",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.8629496663808822,
+      "B_app_in_memory": 0.9520612835884095,
+      "C_app_crops_jpeg": 0.8668645933270455
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "192_134",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.25947074173600415,
+      "B_app_in_memory": 0.8073627755045891,
+      "C_app_crops_jpeg": 0.13305872140590508
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "251_375",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.25637998660957756,
+      "B_app_in_memory": 0.9649441197514534,
+      "C_app_crops_jpeg": 0.23586029302969108
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "257_420",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.7976409218506888,
+      "B_app_in_memory": 0.9144300609827042,
+      "C_app_crops_jpeg": 0.8860867634415627
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "288_321",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9958936328237707,
+      "B_app_in_memory": 0.9997887462377548,
+      "C_app_crops_jpeg": 0.9846758544445038
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "321_288",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.8389666486870159,
+      "B_app_in_memory": 0.8827804569154978,
+      "C_app_crops_jpeg": 0.5448033709137234
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "375_251",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9970631216253553,
+      "B_app_in_memory": 0.9998858481645584,
+      "C_app_crops_jpeg": 0.992991852760315
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "420_257",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.7381197812656561,
+      "B_app_in_memory": 0.8767701894044876,
+      "C_app_crops_jpeg": 0.9039159007836133
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "651_835",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.8714342937746551,
+      "B_app_in_memory": 0.9959118664264679,
+      "C_app_crops_jpeg": 0.8918651534011588
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "817_827",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.7303339236161925,
+      "B_app_in_memory": 0.8845125596504658,
+      "C_app_crops_jpeg": 0.761180741339922
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "827_817",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9997895143248818,
+      "B_app_in_memory": 0.9999480068683624,
+      "C_app_crops_jpeg": 0.9997319936752319
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "835_651",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9930474422872066,
+      "B_app_in_memory": 0.9999444276094437,
+      "C_app_crops_jpeg": 0.9964226871728897
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "876_891",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.7493035381659865,
+      "B_app_in_memory": 0.9865882635116577,
+      "C_app_crops_jpeg": 0.7171442314051092
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "891_876",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.9250928103923798,
+      "B_app_in_memory": 0.9646337687969208,
+      "C_app_crops_jpeg": 0.9633772909641266
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "919_015",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.7308961824203531,
+      "B_app_in_memory": 0.83406673502177,
+      "C_app_crops_jpeg": 0.6525049699936062
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "953_974",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.5355872213124082,
+      "B_app_in_memory": 0.9108490588143467,
+      "C_app_crops_jpeg": 0.37959642918722236
+    },
+    {
+      "kind": "NeuralTextures",
+      "video": "974_953",
+      "n_app_crops": 20,
+      "A_stored_jpeg": 0.5764247739839797,
+      "B_app_in_memory": 0.7848856269731186,
+      "C_app_crops_jpeg": 0.6785954389168183
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "arch": "legacy_xception",
+  "frames_dir": "frames_multi",
+  "fold": 1,
+  "seed": 42,
+  "tag": "cv5_xcep_f1",
+  "epochs_requested": 10,
+  "epochs_run": 10,
+  "stopped_early_at": null,
+  "augmentation": true,
+  "dropout": 0.0,
+  "label_smoothing": 0.0,
+  "early_stopping_patience": 0,
+  "checkpoint_criterion": "val_acc",
+  "best_val_acc": 0.7738853503184714,
+  "best_val_loss": 0.6498560814186931,
+  "split_seed": 42,
+  "batch_size": 32,
+  "lr": 0.0001
+}

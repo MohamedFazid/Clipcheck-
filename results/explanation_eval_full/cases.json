@@ -1,0 +1,1980 @@
+{
+  "generated": "2026-09-22",
+  "n_cases": 50,
+  "protocol": "full (evaluation-set sample)",
+  "results_file": "results/fallback_eval_shipped/fallback_4condition_results.json",
+  "sample_seed": 42,
+  "faithfulness_screen_rejections": 24,
+  "records": [
+    {
+      "case_id": "eval-01",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0003,
+      "p_audio": null,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVRA_014",
+        "category": "RVRA",
+        "video_label": "real",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/RVRA/RVRA_014.mp4",
+      "structured_input": {
+        "verdict": "REAL",
+        "video_score": "0.000",
+        "audio_score": "not evaluated",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "was not evaluated",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered real. The video branch suggests that the video is genuine, with a very low likelihood of manipulation. The audio branch was not evaluated, so the verdict is based solely on the video branch.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-02",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0798,
+      "p_audio": 0.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVRA_003",
+        "category": "RVRA",
+        "video_label": "real",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/RVRA/RVRA_003.mp4",
+      "structured_input": {
+        "verdict": "REAL",
+        "video_score": "0.080",
+        "audio_score": "0.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "0:02 to 0:02 (peak 0.70)",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered real, and the model estimates that the likelihood of manipulation is low. The video branch suggests that the video is genuine, and the audio branch also suggests that the audio is genuine. There is no indication that the video and audio are manipulated in different ways.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": [
+        {
+          "start": 2.56,
+          "end": 2.88,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "medium",
+          "peak_score": 0.696
+        }
+      ]
+    },
+    {
+      "case_id": "eval-03",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0254,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVFA_015",
+        "category": "RVFA",
+        "video_label": "real",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/RVFA/RVFA_015.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.025",
+        "audio_score": "1.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The analysis suggests that the video is partially manipulated. The video branch leans genuine, indicating that the video itself is likely authentic. However, the audio branch leans fake, suggesting that the audio may have been manipulated. Since the branches disagree, it's possible that only part of the content is manipulated, and the audio is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The analysis suggests that the video is partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-04",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVFA_011",
+        "category": "RVFA",
+        "video_label": "real",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/RVFA/RVFA_011.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.000",
+        "audio_score": "1.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The video has been partially manipulated. The video branch suggests it's genuine, but the audio branch indicates it's likely fake. The two branches disagree, and the audio modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The video has been partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-05",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.2429,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVFA_008",
+        "category": "RVFA",
+        "video_label": "real",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/RVFA/RVFA_008.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.243",
+        "audio_score": "1.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "0:00 to 0:01 (peak 0.77), 0:02 to 0:03 (peak 0.99)",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The video has been partially manipulated. The video branch leans towards being genuine, but the audio branch suggests it's fake. The two branches disagree, and the audio modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The video has been partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": [
+        {
+          "start": 0.67,
+          "end": 1.0,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.77
+        },
+        {
+          "start": 2.67,
+          "end": 3.0,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.99
+        }
+      ]
+    },
+    {
+      "case_id": "eval-06",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0009,
+      "p_audio": 0.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVRA_017",
+        "category": "RVRA",
+        "video_label": "real",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/RVRA/RVRA_017.mp4",
+      "structured_input": {
+        "verdict": "REAL",
+        "video_score": "0.001",
+        "audio_score": "0.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered real, and both the video and audio branches suggest it is genuine. The model estimates that the likelihood of the video being manipulated is very low, with scores of 0.001 for both the video and audio branches.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-07",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0013,
+      "p_audio": 0.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVRA_013",
+        "category": "RVRA",
+        "video_label": "real",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/RVRA/RVRA_013.mp4",
+      "structured_input": {
+        "verdict": "REAL",
+        "video_score": "0.001",
+        "audio_score": "0.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered real, and both the video and audio branches suggest it is genuine. The model estimates that the likelihood of the video being manipulated is very low, with scores of 0.001 for both the video and audio branches.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-08",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.1573,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVFA_009",
+        "category": "FVFA",
+        "video_label": "fake",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/FVFA/FVFA_009.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.157",
+        "audio_score": "1.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "0:00 to 0:01 (peak 0.80), 0:01 to 0:01 (peak 0.62)",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The video has been partially manipulated. The video branch leans towards being genuine, but the audio branch suggests it's fake. The two branches disagree, and the audio modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The video has been partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": [
+        {
+          "start": 0.96,
+          "end": 1.28,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.797
+        },
+        {
+          "start": 1.6,
+          "end": 1.92,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "medium",
+          "peak_score": 0.617
+        }
+      ]
+    },
+    {
+      "case_id": "eval-09",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0251,
+      "p_audio": 0.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVRA_011",
+        "category": "RVRA",
+        "video_label": "real",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/RVRA/RVRA_011.mp4",
+      "structured_input": {
+        "verdict": "REAL",
+        "video_score": "0.025",
+        "audio_score": "0.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered real, and both the video and audio branches suggest it is genuine. The video branch has a low probability of being manipulated, at 0.025, which leans towards being genuine. The audio branch also has a very low probability of being manipulated, at 0.000, which further supports the video being genuine.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-10",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.9828,
+      "p_audio": 0.116,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVRA_014",
+        "category": "FVRA",
+        "video_label": "fake",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/FVRA/FVRA_014.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.983",
+        "audio_score": "0.116",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "0:00 to 0:02 (peak 1.00)",
+        "disagreement": "yes",
+        "implicated_modality": "video"
+      },
+      "explanation": "The video is partially manipulated. The video branch suggests that the video is likely fake, with a score of 0.983. The audio branch, on the other hand, leans towards being genuine, with a score of 0.116. The branches disagree, and the video modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": [
+        {
+          "start": 0.0,
+          "end": 2.0,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 1.0
+        }
+      ]
+    },
+    {
+      "case_id": "eval-11",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0,
+      "p_audio": 0.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVRA_004",
+        "category": "RVRA",
+        "video_label": "real",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/RVRA/RVRA_004.mp4",
+      "structured_input": {
+        "verdict": "REAL",
+        "video_score": "0.000",
+        "audio_score": "0.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered real, and both the video and audio branches suggest it is genuine. The model didn't detect any unusual timing patterns or anomalies in the video. Overall, the analysis indicates that the video is not manipulated.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-12",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.9974,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVFA_018",
+        "category": "FVFA",
+        "video_label": "fake",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/FVFA/FVFA_018.mp4",
+      "structured_input": {
+        "verdict": "FAKE",
+        "video_score": "0.997",
+        "audio_score": "1.000",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "0:00 to 0:03 (peak 1.00)",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered fake, with a high likelihood of manipulation estimated by the model. The video branch leans fake, with a score of 0.997, indicating a strong indication of manipulation. The audio branch also leans fake, with a score of 1.000. There is no disagreement between the video and audio branches, and no modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": [
+        {
+          "start": 0.0,
+          "end": 3.84,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 1.0
+        }
+      ]
+    },
+    {
+      "case_id": "eval-13",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.8829,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVFA_011",
+        "category": "FVFA",
+        "video_label": "fake",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/FVFA/FVFA_011.mp4",
+      "structured_input": {
+        "verdict": "FAKE",
+        "video_score": "0.883",
+        "audio_score": "1.000",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "0:00 to 0:01 (peak 1.00), 0:01 to 0:02 (peak 0.97), 0:02 to 0:06 (peak 1.00)",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered fake, with a high likelihood of manipulation. The video branch suggests that the video is likely manipulated, with a score of 0.883. The audio branch also suggests that the audio is likely manipulated, with a score of 1.000. There is no disagreement between the video and audio branches, and no modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": [
+        {
+          "start": 0.0,
+          "end": 1.28,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 1.0
+        },
+        {
+          "start": 1.92,
+          "end": 2.24,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.971
+        },
+        {
+          "start": 2.56,
+          "end": 6.4,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.999
+        }
+      ]
+    },
+    {
+      "case_id": "eval-14",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0701,
+      "p_audio": 0.9677,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVFA_007",
+        "category": "RVFA",
+        "video_label": "real",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/RVFA/RVFA_007.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.070",
+        "audio_score": "0.968",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "0:02 to 0:02 (peak 0.70)",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The video has been partially manipulated. The video branch suggests that the video is genuine, but the audio branch indicates that the audio is likely fake. The two branches disagree, and the audio modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The video has been partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": [
+        {
+          "start": 2.56,
+          "end": 2.88,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "medium",
+          "peak_score": 0.699
+        }
+      ]
+    },
+    {
+      "case_id": "eval-15",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0009,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVFA_009",
+        "category": "RVFA",
+        "video_label": "real",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/RVFA/RVFA_009.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.001",
+        "audio_score": "1.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The analysis suggests that the video is partially manipulated. The video branch leans genuine, indicating that the video itself is likely authentic. However, the audio branch leans fake, suggesting that the audio may have been manipulated. Since the branches disagree, it's possible that only part of the content is manipulated, and the audio is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The analysis suggests that the video is partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-16",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.9106,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVFA_004",
+        "category": "FVFA",
+        "video_label": "fake",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/FVFA/FVFA_004.mp4",
+      "structured_input": {
+        "verdict": "FAKE",
+        "video_score": "0.911",
+        "audio_score": "1.000",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "0:00 to 0:00 (peak 0.99), 0:01 to 0:02 (peak 1.00)",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered fake, with a high likelihood of manipulation. The video branch leans fake, with a score of 0.911, indicating a strong indication of manipulation. The audio branch also leans fake, with a score of 1.000. There is no disagreement between the video and audio branches, and no modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": [
+        {
+          "start": 0.0,
+          "end": 0.96,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.992
+        },
+        {
+          "start": 1.28,
+          "end": 2.56,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 1.0
+        }
+      ]
+    },
+    {
+      "case_id": "eval-17",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.9814,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVFA_008",
+        "category": "FVFA",
+        "video_label": "fake",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/FVFA/FVFA_008.mp4",
+      "structured_input": {
+        "verdict": "FAKE",
+        "video_score": "0.981",
+        "audio_score": "1.000",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "0:00 to 0:06 (peak 1.00)",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered fake, with a high likelihood of manipulation estimated by the model. The video branch leans towards being fake, with a score of 0.981, indicating a strong indication of manipulation. The audio branch also leans towards being fake, with a score of 1.000. There is no disagreement between the video and audio branches, and no modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": [
+        {
+          "start": 0.0,
+          "end": 6.4,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 1.0
+        }
+      ]
+    },
+    {
+      "case_id": "eval-18",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.8063,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVFA_017",
+        "category": "FVFA",
+        "video_label": "fake",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/FVFA/FVFA_017.mp4",
+      "structured_input": {
+        "verdict": "FAKE",
+        "video_score": "0.806",
+        "audio_score": "1.000",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "0:00 to 0:01 (peak 0.99)",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered fake, with a high likelihood of manipulation estimated by the model. The video branch leans towards being fake, with a score of 0.806, indicating a strong indication of manipulation. The audio branch also leans towards being fake, with a score of 1.000, further supporting the overall verdict.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": [
+        {
+          "start": 0.32,
+          "end": 1.28,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.993
+        }
+      ]
+    },
+    {
+      "case_id": "eval-19",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0042,
+      "p_audio": 0.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVRA_012",
+        "category": "RVRA",
+        "video_label": "real",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/RVRA/RVRA_012.mp4",
+      "structured_input": {
+        "verdict": "REAL",
+        "video_score": "0.004",
+        "audio_score": "0.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered real, and both the video and audio branches suggest it is genuine. The video branch has a low probability of being manipulated, at 0.004, and the audio branch has an even lower probability, at 0.000. There are no time windows where the likelihood of manipulation is elevated, and the audio and video branches agree on the verdict.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-20",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.994,
+      "p_audio": 0.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVRA_005",
+        "category": "FVRA",
+        "video_label": "fake",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/FVRA/FVRA_005.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.994",
+        "audio_score": "0.000",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "0:00 to 0:05 (peak 1.00)",
+        "disagreement": "yes",
+        "implicated_modality": "video"
+      },
+      "explanation": "The video has been partially manipulated. The video branch suggests that the video is likely fake, with a high probability of 0.994. There is a peak in the likelihood of manipulation between 0:00 and 0:05. The audio branch, on the other hand, indicates that the audio is genuine, with a low probability of 0.000. The video and audio branches disagree, suggesting that only part of the content may be manipulated. The video modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "text says both branches are manipulated but the input says the audio leans genuine: \"The video and audio branches disagree, suggesting that only part of the content may be manipulated.\""
+          }
+        ]
+      },
+      "anomalies": [
+        {
+          "start": 0.0,
+          "end": 5.76,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 1.0
+        }
+      ]
+    },
+    {
+      "case_id": "eval-21",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.887,
+      "p_audio": 0.0193,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVRA_001",
+        "category": "FVRA",
+        "video_label": "fake",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/FVRA/FVRA_001.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.887",
+        "audio_score": "0.019",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "0:00 to 0:02 (peak 1.00)",
+        "disagreement": "yes",
+        "implicated_modality": "video"
+      },
+      "explanation": "The video is partially manipulated. The video branch suggests that the video is likely fake, with a score of 0.887. The audio branch, on the other hand, leans towards being genuine, with a score of 0.019. The branches disagree, with the video modality flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": [
+        {
+          "start": 0.0,
+          "end": 2.88,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.999
+        }
+      ]
+    },
+    {
+      "case_id": "eval-22",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.4376,
+      "p_audio": 0.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVRA_004",
+        "category": "FVRA",
+        "video_label": "fake",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/FVRA/FVRA_004.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.438",
+        "audio_score": "0.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "0:00 to 0:00 (peak 0.87), 0:00 to 0:01 (peak 0.76), 0:01 to 0:02 (peak 0.94), 0:02 to 0:03 (peak 0.96), and 2 more window(s) not shown",
+        "disagreement": "yes",
+        "implicated_modality": "video"
+      },
+      "explanation": "The video has been partially manipulated. The video branch suggests that the video is genuine, but the audio branch also leans towards being genuine. The two branches disagree, and the video modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The video has been partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": [
+        {
+          "start": 0.0,
+          "end": 0.33,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.867
+        },
+        {
+          "start": 0.67,
+          "end": 1.33,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.759
+        },
+        {
+          "start": 1.67,
+          "end": 2.0,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.945
+        },
+        {
+          "start": 2.33,
+          "end": 3.33,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.958
+        },
+        {
+          "start": 4.0,
+          "end": 4.33,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.87
+        },
+        {
+          "start": 4.67,
+          "end": 5.0,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.857
+        }
+      ]
+    },
+    {
+      "case_id": "eval-23",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0001,
+      "p_audio": 0.9604,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVFA_014",
+        "category": "RVFA",
+        "video_label": "real",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/RVFA/RVFA_014.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.000",
+        "audio_score": "0.960",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The video has been partially manipulated. The video branch suggests it's genuine, but the audio branch indicates it's likely fake. The two branches disagree, and the audio modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The video has been partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-24",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0146,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVFA_006",
+        "category": "RVFA",
+        "video_label": "real",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/RVFA/RVFA_006.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.015",
+        "audio_score": "1.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The analysis suggests that the video is partially manipulated. The video branch leans towards being genuine, but the audio branch strongly suggests that it's manipulated. The two branches disagree, and the audio modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The analysis suggests that the video is partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-25",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.1833,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVFA_019",
+        "category": "FVFA",
+        "video_label": "fake",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/FVFA/FVFA_019.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.183",
+        "audio_score": "1.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "0:01 to 0:02 (peak 0.52)",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The video has been partially manipulated. The video branch suggests that the video is genuine, but the audio branch indicates that the audio is likely fake. The two branches disagree, and the audio modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The video has been partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": [
+        {
+          "start": 1.67,
+          "end": 2.0,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "medium",
+          "peak_score": 0.52
+        }
+      ]
+    },
+    {
+      "case_id": "eval-26",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.4923,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVFA_015",
+        "category": "FVFA",
+        "video_label": "fake",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/FVFA/FVFA_015.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.492",
+        "audio_score": "1.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "0:00 to 0:00 (peak 0.98), 0:02 to 0:03 (peak 0.96)",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The video has been partially manipulated. The video branch leans genuine, but the audio branch leans fake, suggesting that the audio content is more likely manipulated. The video and audio branches disagree, which flags the audio modality as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The video has been partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": [
+        {
+          "start": 0.33,
+          "end": 0.67,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.979
+        },
+        {
+          "start": 2.33,
+          "end": 3.67,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.96
+        }
+      ]
+    },
+    {
+      "case_id": "eval-27",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.1697,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVFA_017",
+        "category": "RVFA",
+        "video_label": "real",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/RVFA/RVFA_017.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.170",
+        "audio_score": "1.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "0:01 to 0:02 (peak 0.70)",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The video has been partially manipulated. The video branch suggests that the video is genuine, but the audio branch indicates that the audio is likely fake. The two branches disagree, and the audio modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The video has been partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": [
+        {
+          "start": 1.6,
+          "end": 2.56,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.704
+        }
+      ]
+    },
+    {
+      "case_id": "eval-28",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.9985,
+      "p_audio": 0.965,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVFA_014",
+        "category": "FVFA",
+        "video_label": "fake",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/FVFA/FVFA_014.mp4",
+      "structured_input": {
+        "verdict": "FAKE",
+        "video_score": "0.999",
+        "audio_score": "0.965",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "0:00 to 0:05 (peak 1.00)",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered fake, with a high likelihood of manipulation. The video branch suggests a strong indication of manipulation, with a score of 0.999. The audio branch also leans towards manipulation, with a score of 0.965. There is no disagreement between the video and audio branches, and no modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": [
+        {
+          "start": 0.0,
+          "end": 5.12,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 1.0
+        }
+      ]
+    },
+    {
+      "case_id": "eval-29",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.2376,
+      "p_audio": 0.0026,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVRA_011",
+        "category": "FVRA",
+        "video_label": "fake",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/FVRA/FVRA_011.mp4",
+      "structured_input": {
+        "verdict": "REAL",
+        "video_score": "0.238",
+        "audio_score": "0.003",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "0:00 to 0:00 (peak 0.88), 0:04 to 0:04 (peak 0.63), 0:04 to 0:05 (peak 0.52)",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered real, and both the video and audio branches suggest it is genuine. The video branch leans towards being genuine, with a score of 0.238, and the audio branch also leans towards being genuine, with a score of 0.003. There are some anomalies in the video timing, with elevated likelihood scores at 0:00 to 0:00, 0:04 to 0:04, and 0:04 to 0:05, but these do not suggest manipulation.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": [
+        {
+          "start": 0.0,
+          "end": 0.33,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.882
+        },
+        {
+          "start": 4.0,
+          "end": 4.33,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "medium",
+          "peak_score": 0.63
+        },
+        {
+          "start": 4.67,
+          "end": 5.0,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "medium",
+          "peak_score": 0.523
+        }
+      ]
+    },
+    {
+      "case_id": "eval-30",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0111,
+      "p_audio": 0.0105,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVRA_000",
+        "category": "RVRA",
+        "video_label": "real",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/RVRA/RVRA_000.mp4",
+      "structured_input": {
+        "verdict": "REAL",
+        "video_score": "0.011",
+        "audio_score": "0.011",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered real, and both the video and audio branches suggest it is genuine, with a low likelihood of manipulation. There are no unusual timing patterns detected in the video, and the audio analysis also points to a genuine video.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-31",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.9999,
+      "p_audio": 0.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVRA_008",
+        "category": "FVRA",
+        "video_label": "fake",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/FVRA/FVRA_008.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "1.000",
+        "audio_score": "0.000",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "0:00 to 0:03 (peak 1.00)",
+        "disagreement": "yes",
+        "implicated_modality": "video"
+      },
+      "explanation": "The video is partially manipulated. The video branch suggests that the video is fake, with a high likelihood of 1.000. The audio branch, on the other hand, indicates that the audio is genuine, with a low likelihood of 0.000. The branches disagree, with the video modality flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": [
+        {
+          "start": 0.0,
+          "end": 3.0,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 1.0
+        }
+      ]
+    },
+    {
+      "case_id": "eval-32",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0003,
+      "p_audio": 0.0006,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVRA_010",
+        "category": "RVRA",
+        "video_label": "real",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/RVRA/RVRA_010.mp4",
+      "structured_input": {
+        "verdict": "REAL",
+        "video_score": "0.000",
+        "audio_score": "0.001",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered real, and both the video and audio branches suggest it is genuine. The video and audio branches both lean towards the video being unmanipulated, with very low probabilities of it being fake. There are no time windows where the likelihood of manipulation is elevated, and the branches do not disagree.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-33",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.3721,
+      "p_audio": 0.0005,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVRA_018",
+        "category": "FVRA",
+        "video_label": "fake",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/FVRA/FVRA_018.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.372",
+        "audio_score": "0.001",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "0:00 to 0:01 (peak 1.00), 0:02 to 0:02 (peak 0.94)",
+        "disagreement": "yes",
+        "implicated_modality": "video"
+      },
+      "explanation": "The video has been partially manipulated. The video branch suggests that the video is genuine, but the audio branch also leans towards being genuine. The two branches disagree, and the video modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The video has been partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": [
+        {
+          "start": 0.33,
+          "end": 1.33,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.999
+        },
+        {
+          "start": 2.0,
+          "end": 2.33,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.945
+        }
+      ]
+    },
+    {
+      "case_id": "eval-34",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.9622,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVFA_006",
+        "category": "FVFA",
+        "video_label": "fake",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/FVFA/FVFA_006.mp4",
+      "structured_input": {
+        "verdict": "FAKE",
+        "video_score": "0.962",
+        "audio_score": "1.000",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "0:00 to 0:04 (peak 1.00), 0:04 to 0:06 (peak 1.00)",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is likely fake, with a high probability of manipulation estimated by the model. The video branch leans towards being fake, with a score of 0.962, and the audio branch also leans towards being fake, with a score of 1.000. There is no disagreement between the video and audio branches, and no modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": [
+        {
+          "start": 0.0,
+          "end": 4.33,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 1.0
+        },
+        {
+          "start": 4.67,
+          "end": 6.67,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.999
+        }
+      ]
+    },
+    {
+      "case_id": "eval-35",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0004,
+      "p_audio": 0.952,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVFA_001",
+        "category": "RVFA",
+        "video_label": "real",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/RVFA/RVFA_001.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.000",
+        "audio_score": "0.952",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The video has been partially manipulated. The video branch suggests it's genuine, but the audio branch indicates it's likely fake. The two branches disagree, and the audio modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The video has been partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-36",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.9941,
+      "p_audio": 0.1093,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVRA_012",
+        "category": "FVRA",
+        "video_label": "fake",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/FVRA/FVRA_012.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.994",
+        "audio_score": "0.109",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "0:00 to 0:04 (peak 1.00)",
+        "disagreement": "yes",
+        "implicated_modality": "video"
+      },
+      "explanation": "The video has been partially manipulated. The video branch suggests that the video is likely fake, with a high probability of 0.994. The audio branch, on the other hand, indicates that the audio is genuine, with a probability of 0.109. The video and audio branches disagree, suggesting that only part of the content may be manipulated. The video modality is flagged as more likely manipulated, with an elevated likelihood occurring from 0:00 to 0:04.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "text says both branches are manipulated but the input says the audio leans genuine: \"The video and audio branches disagree, suggesting that only part of the content may be manipulated.\""
+          }
+        ]
+      },
+      "anomalies": [
+        {
+          "start": 0.0,
+          "end": 4.48,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 1.0
+        }
+      ]
+    },
+    {
+      "case_id": "eval-37",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.2809,
+      "p_audio": 0.0256,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVRA_009",
+        "category": "RVRA",
+        "video_label": "real",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/RVRA/RVRA_009.mp4",
+      "structured_input": {
+        "verdict": "REAL",
+        "video_score": "0.281",
+        "audio_score": "0.026",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "0:00 to 0:01 (peak 0.77), 0:02 to 0:03 (peak 0.99), 0:03 to 0:04 (peak 0.96), 0:04 to 0:04 (peak 0.73)",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The overall verdict is that the video is real. The video branch suggests it's genuine, with a score of 0.281, which leans towards being genuine. There's also a peak in the video anomaly timing from 0:00 to 0:04, with peaks at 0:00, 0:02, and 0:03. The audio branch also suggests it's genuine, with a score of 0.026.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": [
+        {
+          "start": 0.67,
+          "end": 1.0,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.77
+        },
+        {
+          "start": 2.67,
+          "end": 3.0,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.99
+        },
+        {
+          "start": 3.67,
+          "end": 4.0,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.965
+        },
+        {
+          "start": 4.33,
+          "end": 4.67,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.727
+        }
+      ]
+    },
+    {
+      "case_id": "eval-38",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.9872,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVFA_013",
+        "category": "FVFA",
+        "video_label": "fake",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/FVFA/FVFA_013.mp4",
+      "structured_input": {
+        "verdict": "FAKE",
+        "video_score": "0.987",
+        "audio_score": "1.000",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "0:00 to 0:01 (peak 1.00)",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered fake, with a high likelihood of manipulation. The video branch suggests a strong indication of manipulation, with a score of 0.987. The audio branch also leans towards manipulation, with a score of 1.000. There is no disagreement between the video and audio branches, and no modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": [
+        {
+          "start": 0.0,
+          "end": 1.6,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 1.0
+        }
+      ]
+    },
+    {
+      "case_id": "eval-39",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.1671,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVFA_000",
+        "category": "FVFA",
+        "video_label": "fake",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/FVFA/FVFA_000.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.167",
+        "audio_score": "1.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "0:00 to 0:01 (peak 0.99)",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The video has been partially manipulated. The video branch suggests that the video is genuine, but the audio branch indicates that the audio is likely fake. The two branches disagree, and the audio modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The video has been partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": [
+        {
+          "start": 0.96,
+          "end": 1.28,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.986
+        }
+      ]
+    },
+    {
+      "case_id": "eval-40",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.012,
+      "p_audio": 0.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVRA_006",
+        "category": "RVRA",
+        "video_label": "real",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/RVRA/RVRA_006.mp4",
+      "structured_input": {
+        "verdict": "REAL",
+        "video_score": "0.012",
+        "audio_score": "0.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered real, and both the video and audio branches suggest it is genuine. The video branch has a low probability of being manipulated, and the audio branch has an even lower probability. There are no signs of manipulation in the timing of the video, and the overall verdict is that the video is not manipulated.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-41",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0422,
+      "p_audio": 0.0011,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVRA_005",
+        "category": "RVRA",
+        "video_label": "real",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/RVRA/RVRA_005.mp4",
+      "structured_input": {
+        "verdict": "REAL",
+        "video_score": "0.042",
+        "audio_score": "0.001",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered real, and both the video and audio branches suggest it is genuine. The video branch has a low probability of being manipulated, at 0.042, and the audio branch has an even lower probability, at 0.001. There are no time windows where the likelihood of manipulation is elevated, and the audio and video branches agree on the verdict.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-42",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0001,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVFA_004",
+        "category": "RVFA",
+        "video_label": "real",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/RVFA/RVFA_004.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.000",
+        "audio_score": "1.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The video has been partially manipulated. The video branch suggests it's genuine, but the audio branch indicates it's likely fake. The two branches disagree, and the audio modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The video has been partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-43",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.9995,
+      "p_audio": 0.0007,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVRA_000",
+        "category": "FVRA",
+        "video_label": "fake",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/FVRA/FVRA_000.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "1.000",
+        "audio_score": "0.001",
+        "video_assessment": "leans FAKE (manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "0:00 to 0:05 (peak 1.00)",
+        "disagreement": "yes",
+        "implicated_modality": "video"
+      },
+      "explanation": "The video is partially manipulated. The video branch suggests that the video is fake, with a high likelihood of 1.000. The audio branch, on the other hand, indicates that the audio is genuine, with a low likelihood of 0.001. The two branches disagree, with the video modality flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": [
+        {
+          "start": 0.0,
+          "end": 5.12,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 1.0
+        }
+      ]
+    },
+    {
+      "case_id": "eval-44",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0014,
+      "p_audio": 0.9397,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVFA_002",
+        "category": "RVFA",
+        "video_label": "real",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/RVFA/RVFA_002.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.001",
+        "audio_score": "0.940",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The video has been partially manipulated. The video branch suggests it's genuine, but the audio branch indicates it's likely fake. The two branches disagree, and the audio modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The video has been partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-45",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0001,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVFA_016",
+        "category": "RVFA",
+        "video_label": "real",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/RVFA/RVFA_016.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.000",
+        "audio_score": "1.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The video has been partially manipulated. The video branch suggests it's genuine, but the audio branch indicates it's likely fake. The two branches disagree, and the audio modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The video has been partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-46",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0003,
+      "p_audio": 0.3318,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVRA_016",
+        "category": "RVRA",
+        "video_label": "real",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/RVRA/RVRA_016.mp4",
+      "structured_input": {
+        "verdict": "REAL",
+        "video_score": "0.000",
+        "audio_score": "0.332",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The overall verdict is that the video is real. The video branch suggests that the video is genuine, with a low probability of manipulation. The audio branch also leans towards being genuine, with a moderate probability of manipulation. The two branches agree, and no modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": true,
+        "violations": []
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-47",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.2481,
+      "p_audio": 0.0019,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVRA_002",
+        "category": "RVRA",
+        "video_label": "real",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/RVRA/RVRA_002.mp4",
+      "structured_input": {
+        "verdict": "REAL",
+        "video_score": "0.248",
+        "audio_score": "0.002",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans GENUINE (not manipulated)",
+        "video_anomaly_timing": "0:01 to 0:01 (peak 0.81), 0:03 to 0:04 (peak 0.99)",
+        "disagreement": "no",
+        "implicated_modality": "none"
+      },
+      "explanation": "The video is considered real, with a high likelihood of being genuine. The video and audio branches both lean towards genuineness, with scores of 0.248 and 0.002, respectively. There are no elevated-likelihood windows detected in the video, but there are some brief periods where the likelihood of manipulation is higher, specifically from 0:01 to 0:01 and from 0:03 to 0:04.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"There are no elevated-likelihood windows detected in the video, but there are some brief periods where the likelihood of manipulation is higher, specifically from 0:01 to 0:01 and from 0:03 to 0:04.\""
+          }
+        ]
+      },
+      "anomalies": [
+        {
+          "start": 1.28,
+          "end": 1.6,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.81
+        },
+        {
+          "start": 3.2,
+          "end": 4.16,
+          "label": "Elevated visual manipulation likelihood",
+          "severity": "high",
+          "peak_score": 0.987
+        }
+      ]
+    },
+    {
+      "case_id": "eval-48",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0178,
+      "p_audio": 1.0,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "FVFA_005",
+        "category": "FVFA",
+        "video_label": "fake",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/FVFA/FVFA_005.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.018",
+        "audio_score": "1.000",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The analysis suggests that the video is partially manipulated. The video branch leans towards being genuine, but the audio branch is highly likely to be manipulated. The two branches disagree, and the audio modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The analysis suggests that the video is partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-49",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0001,
+      "p_audio": 0.5392,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVRA_007",
+        "category": "RVRA",
+        "video_label": "real",
+        "audio_label": "bonafide"
+      },
+      "output_path": "eval_fallback/RVRA/RVRA_007.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.000",
+        "audio_score": "0.539",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The video has been partially manipulated. The video branch suggests it's genuine, but the audio branch indicates it's likely fake. The two branches disagree, and the audio modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The video has been partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": []
+    },
+    {
+      "case_id": "eval-50",
+      "source": "evaluation set (real pipeline scores), results file fallback_4condition_results.json, sample seed 42",
+      "p_video": 0.0026,
+      "p_audio": 0.9599,
+      "note": "evaluation-set clip (clip id withheld: it encodes the ground-truth category)",
+      "meta": {
+        "clip_id": "RVFA_012",
+        "category": "RVFA",
+        "video_label": "real",
+        "audio_label": "spoof"
+      },
+      "output_path": "eval_fallback/RVFA/RVFA_012.mp4",
+      "structured_input": {
+        "verdict": "PARTIAL_MANIPULATION",
+        "video_score": "0.003",
+        "audio_score": "0.960",
+        "video_assessment": "leans GENUINE (not manipulated)",
+        "audio_assessment": "leans FAKE (manipulated)",
+        "video_anomaly_timing": "no elevated-likelihood windows detected",
+        "disagreement": "yes",
+        "implicated_modality": "audio"
+      },
+      "explanation": "The video has been partially manipulated. The video branch suggests that the video is genuine, but the audio branch indicates that the audio is likely manipulated. The two branches disagree, and the audio modality is flagged as more likely manipulated.",
+      "faithfulness_screen": {
+        "passed": false,
+        "violations": [
+          {
+            "type": "direction",
+            "detail": "video leans genuine but the text says fake: \"The video has been partially manipulated.\""
+          }
+        ]
+      },
+      "anomalies": []
+    }
+  ],
+  "screen_note": "Re-screened 2026-09-22 after explain_checks.py was fixed: a negation-detection gap made the disagreement check and the per-branch direction check false-positive on several genuinely faithful sentences (\"no indication that ... disagree\", \"unmanipulated\", \"the likelihood ... is very low\"). 7 of 8 originally-flagged REAL-verdict cases were false positives from this gap, now fixed (docs/EXPERIMENTS.md T1 addendum). The explanation TEXT shown to raters is unchanged."
+}

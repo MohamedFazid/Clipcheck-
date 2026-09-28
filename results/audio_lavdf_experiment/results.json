@@ -1,0 +1,77 @@
+{
+ "C": 10.0,
+ "n_lavdf_dev_bonafide": 400,
+ "n_lavdf_dev_spoof": 400,
+ "n_lavdf_test": 200,
+ "variants": {
+  "S0": {
+   "n_train": 25380,
+   "n_train_bonafide": 2580,
+   "n_train_spoof": 22800,
+   "lavdf_test": {
+    "genuine_clips": 100,
+    "genuine_flagged_fake": 1.0,
+    "faked_clips": 100,
+    "faked_flagged_fake": 1.0,
+    "balanced_accuracy": 0.5,
+    "auc": 0.5222,
+    "eer": 0.485,
+    "mean_p_genuine": 0.9918724041257626,
+    "mean_p_faked": 0.993986856596029
+   },
+   "asvspoof_eval": {
+    "eer": 0.03956111530498396,
+    "accuracy": 0.9707455395370383,
+    "balanced_accuracy": 0.9568599766424375
+   }
+  },
+  "B2": {
+   "n_train": 25780,
+   "n_train_bonafide": 2980,
+   "n_train_spoof": 22800,
+   "lavdf_test": {
+    "genuine_clips": 100,
+    "genuine_flagged_fake": 0.04,
+    "faked_clips": 100,
+    "faked_flagged_fake": 0.04,
+    "balanced_accuracy": 0.5,
+    "auc": 0.47774999999999995,
+    "eer": 0.555,
+    "mean_p_genuine": 0.04477989773459121,
+    "mean_p_faked": 0.05467615459194059
+   },
+   "asvspoof_eval": {
+    "eer": 0.04065284819089143,
+    "accuracy": 0.9684714404031612,
+    "balanced_accuracy": 0.9568552485589561
+   }
+  },
+  "B1": {
+   "n_train": 26180,
+   "n_train_bonafide": 2980,
+   "n_train_spoof": 23200,
+   "lavdf_test": {
+    "genuine_clips": 100,
+    "genuine_flagged_fake": 0.29,
+    "faked_clips": 100,
+    "faked_flagged_fake": 0.87,
+    "balanced_accuracy": 0.79,
+    "auc": 0.8983999999999999,
+    "eer": 0.16499999999999998,
+    "mean_p_genuine": 0.2870716767236399,
+    "mean_p_faked": 0.8520043216530095
+   },
+   "asvspoof_eval": {
+    "eer": 0.04774128501838587,
+    "accuracy": 0.9627721549194941,
+    "balanced_accuracy": 0.9468801087218699
+   }
+  }
+ },
+ "decision": {
+  "rule": "B2 cuts genuine false alarms on LAV-DF test to <50% and ASVspoof EER stays within 1.0 pp of S0",
+  "b2_genuine_false_alarm": 0.04,
+  "asvspoof_eer_change_pp": 0.10917328859074704,
+  "met": true
+ }
+}

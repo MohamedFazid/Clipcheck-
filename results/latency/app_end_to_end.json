@@ -1,0 +1,149 @@
+{
+  "measured_at": "2026-09-25T11:28:30+08:00",
+  "base": "http://localhost:8000",
+  "runs_per_clip": 3,
+  "warmup_passes": 1,
+  "poll_interval_s": 0.1,
+  "clips": [
+    {
+      "clip": "RVRA_000.mp4",
+      "title": "Genuine face and genuine voice",
+      "duration_s": 3.4,
+      "verdict": "REAL",
+      "explanation_source": "llama3",
+      "moments": 0,
+      "faces": 11,
+      "mean_s": 4.323,
+      "min_s": 4.308,
+      "max_s": 4.331,
+      "runs_s": [
+        4.331,
+        4.308,
+        4.329
+      ]
+    },
+    {
+      "clip": "RVFA_000.mp4",
+      "title": "Genuine face, synthetic voice",
+      "duration_s": 2.5,
+      "verdict": "PARTIAL_MANIPULATION",
+      "explanation_source": "template",
+      "moments": 1,
+      "faces": 8,
+      "mean_s": 4.528,
+      "min_s": 4.455,
+      "max_s": 4.58,
+      "runs_s": [
+        4.455,
+        4.58,
+        4.548
+      ]
+    },
+    {
+      "clip": "FVRA_000.mp4",
+      "title": "Face replaced, genuine voice",
+      "duration_s": 4.96,
+      "verdict": "PARTIAL_MANIPULATION",
+      "explanation_source": "template",
+      "moments": 1,
+      "faces": 16,
+      "mean_s": 5.245,
+      "min_s": 5.06,
+      "max_s": 5.547,
+      "runs_s": [
+        5.129,
+        5.06,
+        5.547
+      ]
+    },
+    {
+      "clip": "FVFA_002.mp4",
+      "title": "Face replaced and synthetic voice",
+      "duration_s": 2.97,
+      "verdict": "FAKE",
+      "explanation_source": "llama3",
+      "moments": 1,
+      "faces": 9,
+      "mean_s": 3.138,
+      "min_s": 3.047,
+      "max_s": 3.299,
+      "runs_s": [
+        3.299,
+        3.068,
+        3.047
+      ]
+    },
+    {
+      "clip": "183_253.mp4",
+      "title": "Face replaced, no sound",
+      "duration_s": 13.0,
+      "verdict": "FAKE",
+      "explanation_source": "llama3",
+      "moments": 2,
+      "faces": 20,
+      "mean_s": 7.979,
+      "min_s": 7.964,
+      "max_s": 7.989,
+      "runs_s": [
+        7.964,
+        7.984,
+        7.989
+      ]
+    },
+    {
+      "clip": "183.mp4",
+      "title": "Unaltered face, no sound",
+      "duration_s": 13.0,
+      "verdict": "REAL",
+      "explanation_source": "llama3",
+      "moments": 0,
+      "faces": 20,
+      "mean_s": 7.47,
+      "min_s": 7.329,
+      "max_s": 7.629,
+      "runs_s": [
+        7.451,
+        7.329,
+        7.629
+      ]
+    },
+    {
+      "clip": "LAVDF_RVRA_000.mp4",
+      "title": "Unfamiliar footage: genuine face and genuine voice",
+      "duration_s": 7.23,
+      "verdict": "FAKE",
+      "explanation_source": "llama3",
+      "moments": 3,
+      "faces": 20,
+      "mean_s": 3.603,
+      "min_s": 3.46,
+      "max_s": 3.883,
+      "runs_s": [
+        3.883,
+        3.46,
+        3.466
+      ]
+    },
+    {
+      "clip": "noface_silent.mp4",
+      "title": "Test pattern, no face and no sound",
+      "duration_s": 6.0,
+      "verdict": "INCONCLUSIVE",
+      "explanation_source": "template",
+      "moments": 0,
+      "faces": null,
+      "mean_s": 1.284,
+      "min_s": 1.283,
+      "max_s": 1.285,
+      "runs_s": [
+        1.285,
+        1.283,
+        1.284
+      ]
+    }
+  ],
+  "mean_over_clips_s": 4.696,
+  "median_over_clips_s": 4.425,
+  "max_clip_mean_s": 7.979,
+  "mean_over_clips_with_a_face_s": 5.184
+}

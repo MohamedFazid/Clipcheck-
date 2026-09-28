@@ -1,0 +1,366 @@
+<title>Deepfake Checker MVP Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --ground: #f5f6f4;
+  --paper: #ffffff;
+  --ink: #1b2126;
+  --ink-2: #4a545c;
+  --rule: #d9ddd9;
+  --accent: #1f5f73;
+  --accent-soft: #e3eef1;
+  --genuine: #1f7a46; --genuine-bg: #e4f3ea;
+  --manip: #b3261e;   --manip-bg: #fbe7e5;
+  --partial: #9a5b00; --partial-bg: #fcf0dc;
+  --none: #56606a;    --none-bg: #eceeef;
+  --caution: #8a4b00; --caution-bg: #fff4e0;
+  --code-bg: #eef1ef;
+  --sans: "IBM Plex Sans", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ground: #12161a; --paper: #192026; --ink: #e6ebee; --ink-2: #a9b4bc; --rule: #2c353d;
+    --accent: #7cc2d6; --accent-soft: #1d3139;
+    --genuine: #6fd49a; --genuine-bg: #16301f; --manip: #ff8f86; --manip-bg: #3a1a18;
+    --partial: #f2b75c; --partial-bg: #35280f; --none: #b3bdc5; --none-bg: #252d33;
+    --caution: #ffc46b; --caution-bg: #33260f; --code-bg: #212a31;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #12161a; --paper: #192026; --ink: #e6ebee; --ink-2: #a9b4bc; --rule: #2c353d;
+  --accent: #7cc2d6; --accent-soft: #1d3139;
+  --genuine: #6fd49a; --genuine-bg: #16301f; --manip: #ff8f86; --manip-bg: #3a1a18;
+  --partial: #f2b75c; --partial-bg: #35280f; --none: #b3bdc5; --none-bg: #252d33;
+  --caution: #ffc46b; --caution-bg: #33260f; --code-bg: #212a31;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--ground); color: var(--ink); font: 16px/1.6 var(--sans); padding-inline: 16px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 40px 80px; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; }
+nav.toc { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); align-self: start; font-size: 14px; }
+nav.toc p { font: 500 12px/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); margin: 0 0 10px; }
+nav.toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+nav.toc a { color: var(--ink-2); text-decoration: none; }
+nav.toc a:hover, nav.toc a:focus-visible { color: var(--accent); text-decoration: underline; }
+main { min-width: 0; }
+header.top { border-bottom: 2px solid var(--ink); padding-bottom: 20px; margin-bottom: 8px; }
+.eyebrow { font: 500 12px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0 0 8px; }
+h1 { font-size: clamp(30px, 4.4vw, 42px); line-height: 1.12; margin: 0 0 12px; font-weight: 600; text-wrap: balance; letter-spacing: -.01em; }
+.lede { font-size: 19px; color: var(--ink-2); max-width: 64ch; margin: 0; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 16px; font-size: 14px; color: var(--ink-2); }
+.meta b { color: var(--ink); font-weight: 500; }
+section { padding-top: 36px; }
+h2 { font-size: 24px; line-height: 1.25; margin: 0 0 12px; font-weight: 600; text-wrap: balance; display: flex; gap: 12px; align-items: baseline; }
+h2 .n { font: 500 13px/1 var(--mono); color: var(--accent); }
+h3 { font-size: 18px; margin: 24px 0 8px; font-weight: 600; }
+p, li { max-width: 70ch; }
+ul, ol { padding-left: 22px; }
+li + li { margin-top: 4px; }
+code, .field { font-family: var(--mono); font-size: .86em; background: var(--code-bg); padding: 1px 5px; border-radius: 4px; }
+.must { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 14px 18px; margin: 16px 0; border-radius: 0 6px 6px 0; }
+.must p { margin: 0; }
+.must p + p { margin-top: 6px; }
+.quote-req { font-size: 18px; font-weight: 500; }
+.table-scroll { overflow-x: auto; margin: 12px 0 8px; border: 1px solid var(--rule); border-radius: 8px; background: var(--paper); }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--rule); }
+th { font: 500 12px/1.4 var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--ink-2); background: var(--ground); }
+tr:last-child td { border-bottom: 0; }
+td.term { font-weight: 600; white-space: nowrap; }
+.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.chip { display: inline-block; font: 500 12px/1.5 var(--mono); padding: 2px 8px; border-radius: 99px; white-space: nowrap; }
+.chip.genuine { color: var(--genuine); background: var(--genuine-bg); }
+.chip.manip { color: var(--manip); background: var(--manip-bg); }
+.chip.partial { color: var(--partial); background: var(--partial-bg); }
+.chip.none { color: var(--none); background: var(--none-bg); }
+.chip.caution { color: var(--caution); background: var(--caution-bg); }
+.copy { display: block; font-weight: 600; }
+.copy-sub { display: block; color: var(--ink-2); font-size: 14px; margin-top: 2px; }
+.screens { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 16px 0; }
+.screen { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 16px; }
+.screen h4 { margin: 0 0 6px; font-size: 16px; }
+.screen .tag { font: 500 11px/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.screen ul { margin: 8px 0 0; font-size: 14.5px; }
+figure { margin: 16px 0; }
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; align-items: start; }
+.shots img { width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 6px; display: block; }
+.shots figure.phone img { max-width: 240px; }
+figcaption { font-size: 13.5px; color: var(--ink-2); margin-top: 6px; }
+.mock { background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 18px; margin: 16px 0; display: grid; gap: 12px; font-size: 15px; }
+.mock .row { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 12px; align-items: start; }
+.mock .slot { font: 500 12px/1.5 var(--mono); color: var(--ink-2); text-transform: uppercase; letter-spacing: .05em; padding-top: 2px; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.box { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 14px 16px; }
+.box h4 { margin: 0 0 6px; font-size: 15px; }
+.box ul { margin: 0; font-size: 14.5px; }
+.no { color: var(--manip); font-weight: 600; }
+.yes { color: var(--genuine); font-weight: 600; }
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--ink-2); }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (max-width: 860px) {
+  .wrap { grid-template-columns: minmax(0, 1fr); gap: 16px; padding-block: 24px 64px; }
+  nav.toc { position: static; border: 1px solid var(--rule); border-radius: 8px; padding: 12px 14px; background: var(--paper); }
+  nav.toc ol { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .mock .row { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}
+</style>
+
+<div class="wrap">
+<nav class="toc" aria-label="Contents">
+  <p>Contents</p>
+  <ol>
+    <li><a href="#product">The product</a></li>
+    <li><a href="#people">Who it is for</a></li>
+    <li><a href="#principles">Design principles</a></li>
+    <li><a href="#today">What exists today</a></li>
+    <li><a href="#screens">MVP screens</a></li>
+    <li><a href="#result">The result screen</a></li>
+    <li><a href="#states">Result states and wording</a></li>
+    <li><a href="#learnmore">Learn more section</a></li>
+    <li><a href="#legend">Legend of terms</a></li>
+    <li><a href="#data">Data available</a></li>
+    <li><a href="#rules">Honesty rules</a></li>
+    <li><a href="#access">Accessibility</a></li>
+    <li><a href="#scope">Out of scope</a></li>
+    <li><a href="#deliver">Deliverables</a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="top">
+  <p class="eyebrow">Design brief · minimum viable product</p>
+  <h1>A deepfake checker that anyone can read</h1>
+  <p class="lede">A working prototype already tells you whether a video clip looks manipulated, and whether the problem is in the picture or in the voice. It was built by and for engineers. This brief asks you to redesign it so that a journalist with no technical background can use it, understand it, and know when not to trust it.</p>
+  <div class="meta">
+    <span><b>Project</b> Multimodal Deepfake Detection Using Audio-Visual Authenticity Analysis (University of London, CM3070 final project)</span>
+    <span><b>Brief date</b> 24 September 2026</span>
+    <span><b>Project deadline</b> Monday 28 September 2026</span>
+  </div>
+</header>
+
+<section id="product">
+  <h2><span class="n">01</span>The product in one paragraph</h2>
+  <p>You upload a short video (or pick an example). About 9 seconds later the tool gives a verdict. It checks the <b>picture</b> (the face) and the <b>voice</b> (the speech) separately and gives each a chance of manipulation. Most detectors blend these into one answer. This one does something different: when the two checks strongly disagree, it does not average them. It says the clip may be <b>only partly</b> manipulated and names the part that looks wrong, for example "the voice looks synthetic but the face looks genuine". It then writes a short explanation in plain English and lists its own limits.</p>
+  <div class="must">
+    <p class="quote-req">"Explanation should be in layman terms, and technical terminology should be defined with a legend in a Learn more section, along with more details of the findings. Make it user friendly."</p>
+    <p>Requirement from the developer. It is the centre of this brief: the main screen speaks plain English, and everything technical moves into a <b>Learn more</b> section, where every term is defined in a legend.</p>
+  </div>
+</section>
+
+<section id="people">
+  <h2><span class="n">02</span>Who it is for</h2>
+  <p>Professionals who need to decide whether to trust a clip, <b>without</b> machine-learning knowledge:</p>
+  <div class="two">
+    <div class="box"><h4>Journalist</h4><ul><li>Sent a clip before publication; needs a quick, defensible read.</li><li>Asks "can I run this?" and "what exactly looks wrong?"</li></ul></div>
+    <div class="box"><h4>Content moderator</h4><ul><li>Reviewing a flagged upload among many.</li><li>Needs the verdict at a glance, and needs to know when the tool itself is unsure.</li></ul></div>
+    <div class="box"><h4>Fact-checker</h4><ul><li>Investigating a viral video.</li><li>Needs details to cite: which part, how strongly, when in the clip.</li></ul></div>
+  </div>
+  <p>Main device: a laptop (the tool runs locally). A phone layout is still needed; see <a href="#access">Accessibility</a>.</p>
+</section>
+
+<section id="principles">
+  <h2><span class="n">03</span>Design principles</h2>
+  <ol>
+    <li><b>Verdict first.</b> The answer and its one-sentence reason are the first thing on a result screen. The video player is secondary. (The developer's choice.)</li>
+    <li><b>Plain words on the main screen; technical words in Learn more.</b> Every technical term that appears anywhere is defined in the legend.</li>
+    <li><b>One vocabulary.</b> The same verdict uses the same words everywhere: list, banner, explanation, export.</li>
+    <li><b>Every number says what it is.</b> Never a bare "93%". Write "93% chance the picture is manipulated".</li>
+    <li><b>Doubt is as visible as the verdict.</b> When the tool has reason to doubt itself, the warning must be at least as prominent as the verdict. It must never be a small line inside a confident banner.</li>
+    <li><b>Never overstate.</b> The tool gives likelihoods, not proof. See the <a href="#rules">honesty rules</a>.</li>
+    <li><b>Dark theme, polished.</b> The developer's chosen direction. A light theme is optional.</li>
+  </ol>
+</section>
+
+<section id="today">
+  <h2><span class="n">04</span>What exists today (v1), and what is wrong with it</h2>
+  <p>A review of the current interface against Nielsen's ten usability heuristics (24 September) found 14 problems, 7 of them major. The main ones:</p>
+  <ul>
+    <li><b>Too technical.</b> The main screen shows a checkpoint code (<code>fdd60748dc1c</code>), "SVM (RBF)", "EER", "Spoof score" and "Lip-sync / AV-delta".</li>
+    <li><b>Four words for one verdict.</b> FAKE, SYNTHETIC, "Synthetic media detected" and "considered fake" all appear for the same result.</li>
+    <li><b>Unlabelled numbers.</b> "Authentic media 1%" reads as "1% authentic". It actually means a 1% chance of manipulation.</li>
+    <li><b>The verdict is hidden.</b> The video fills the top 57% of a laptop screen, and the written explanation is below the fold on every result.</li>
+    <li><b>The warning is too quiet.</b> On a clip unlike anything the tool was trained on, the "may be wrong" warning is one small amber line inside a confident red "93%" banner, and that verdict is in fact wrong.</li>
+    <li><b>Empty, unfinished first screen.</b> It shows a smiley, "No video loaded", and example clips hidden behind a faint 10 px label.</li>
+    <li><b>Hard to read.</b> 8 of 13 measured text styles fail the WCAG 4.5:1 contrast minimum, 65% of text is under 12 px, and there is no phone layout.</li>
+  </ul>
+  <div class="shots">
+    <figure><img src="img/v1_empty.jpg" alt="Current first screen: dark, mostly empty, a list of past clips on the left and a large empty video area" loading="lazy"><figcaption>v1, first screen: no guidance, and the examples are hidden.</figcaption></figure>
+    <figure><img src="img/v1_real.jpg" alt="Current result for a genuine clip: large video on top, a green banner reading Authentic media with an unlabelled 1% at the right" loading="lazy"><figcaption>v1, genuine clip: the "1%" has no label, and the explanation is off-screen.</figcaption></figure>
+    <figure><img src="img/v1_unfamiliar.jpg" alt="Current result for an unfamiliar clip: red Synthetic media detected banner at 93% with a small amber caution line" loading="lazy"><figcaption>v1, unfamiliar clip: the caution line is small and the verdict is wrong.</figcaption></figure>
+    <figure class="phone"><img src="img/v1_mobile.jpg" alt="Current phone layout: sidebar takes the whole top, verdict squeezed into a narrow column" loading="lazy"><figcaption>v1 on a phone: no responsive layout.</figcaption></figure>
+  </div>
+  <p><b>Keep these, they work:</b> real progress while analysing; a panel listing the tool's limits next to every result; a "No verdict" state that says why; "not available" instead of a fake 0%; a badge saying who wrote the explanation; marks on the progress bar at the suspicious moments.</p>
+</section>
+
+<section id="screens">
+  <h2><span class="n">05</span>MVP screens</h2>
+  <div class="screens">
+    <div class="screen"><span class="tag">A · Start</span><h4>Check a video</h4><ul><li>Upload by drag and drop or file picker (MP4, MOV, AVI, MKV; up to 200 MB and 120 seconds).</li><li>"Try an example" list, visible by default, with plain names ("Newsreader, voice replaced").</li><li>Recent checks.</li><li>One line saying what the tool does and does not do.</li></ul></div>
+    <div class="screen"><span class="tag">B · Checking</span><h4>Analysing</h4><ul><li>Real progress from the server, shown as plain steps: finding faces, checking the face, listening for speech, checking the voice, comparing, writing the explanation.</li><li>About 9 seconds is typical.</li></ul></div>
+    <div class="screen"><span class="tag">C · Result</span><h4>The verdict</h4><ul><li>The core screen; see <a href="#result">section 06</a>.</li><li>Verdict, reason, explanation, the two part-checks, when in the clip, any warning, what to do next.</li></ul></div>
+    <div class="screen"><span class="tag">D · Learn more</span><h4>Details and legend</h4><ul><li>Expands on the result screen (or opens as a panel).</li><li>Legend of every term, full findings for this clip, technical names, how accurate the tool is. See <a href="#learnmore">section 08</a>.</li></ul></div>
+    <div class="screen"><span class="tag">E · Accuracy</span><h4>How accurate is this tool?</h4><ul><li>A plain summary first (for example "right about 83 times in 100 on people it has not seen before").</li><li>The existing research tables stay below, for experts.</li></ul></div>
+    <div class="screen"><span class="tag">F · History</span><h4>Past checks</h4><ul><li>List of checked clips with their verdicts.</li><li>Save a result as PDF; copy the raw data.</li><li>Ask before removing a result (today it vanishes at once).</li></ul></div>
+  </div>
+</section>
+
+<section id="result">
+  <h2><span class="n">06</span>The result screen, top to bottom</h2>
+  <p>A content order, not a layout. Where each slot goes is your call, as long as slots 1 to 3 are visible without scrolling on a 1440 × 900 laptop screen.</p>
+  <div class="mock" role="list">
+    <div class="row" role="listitem"><span class="slot">1 · Verdict</span><span>Headline and one-line reason in plain words (see <a href="#states">section 07</a>). The one colour-coded element on the screen.</span></div>
+    <div class="row" role="listitem"><span class="slot">2 · Warning</span><span>Only when the clip is unfamiliar to the tool. As prominent as the verdict: "This clip is unlike the videos the tool learned from, so this result may be wrong."</span></div>
+    <div class="row" role="listitem"><span class="slot">3 · Explanation</span><span>2 to 4 sentences in plain English, generated for this clip, with a small note of who wrote it ("Written by the AI model and checked" or "Standard wording").</span></div>
+    <div class="row" role="listitem"><span class="slot">4 · Two part-checks</span><span><b>Picture</b> and <b>Voice</b>, each with its chance of manipulation in words and number ("Leans manipulated · 99%"), or "Not checked: no face found" / "Not checked: no speech found".</span></div>
+    <div class="row" role="listitem"><span class="slot">5 · When in the clip</span><span>The video with marks at the suspicious moments, plus a list ("0:00 to 0:05"). Click a moment to jump there. The tool says <i>when</i>, never <i>what</i> (see the rules).</span></div>
+    <div class="row" role="listitem"><span class="slot">6 · What to do next</span><span>Short guidance: "Use this as one input; check the source; look again at the marked moments."</span></div>
+    <div class="row" role="listitem"><span class="slot">7 · Learn more</span><span>Collapsed by default, one click away: legend, full findings, technical details, accuracy and limits.</span></div>
+    <div class="row" role="listitem"><span class="slot">8 · Save</span><span>Save as PDF, copy data. Disabled until there is a result.</span></div>
+  </div>
+</section>
+
+<section id="states">
+  <h2><span class="n">07</span>Result states and proposed wording</h2>
+  <p>Every result is exactly one of these states. The wording is a proposal; refine it, but keep the meaning. "Picture" and "voice" are the plain names for what the system calls the video and audio branches.</p>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>State (system name)</th><th>When</th><th>Headline and reason (proposed)</th><th>Tone</th></tr></thead>
+    <tbody>
+      <tr><td><code>REAL</code></td><td>The checks agree and the combined chance is below 50%</td><td><span class="copy">Likely genuine</span><span class="copy-sub">The picture and voice checks agree, and together they point to a genuine clip.</span></td><td><span class="chip genuine">genuine</span></td></tr>
+      <tr><td><code>FAKE</code></td><td>The checks agree and the combined chance is 50% or more</td><td><span class="copy">Likely manipulated</span><span class="copy-sub">The picture and voice checks agree, and together they point to manipulation.</span></td><td><span class="chip manip">manipulated</span></td></tr>
+      <tr><td><code>PARTIAL_MANIPULATION</code>, picture named</td><td>The two checks differ by 35 points or more, and the picture scored higher</td><td><span class="copy">Partly manipulated: the picture</span><span class="copy-sub">The face looks manipulated but the voice looks genuine, so only part of this clip may be fake.</span></td><td><span class="chip partial">partial</span></td></tr>
+      <tr><td><code>PARTIAL_MANIPULATION</code>, voice named</td><td>The two checks differ by 35 points or more, and the voice scored higher</td><td><span class="copy">Partly manipulated: the voice</span><span class="copy-sub">The voice sounds synthetic but the face looks genuine, so only part of this clip may be fake.</span></td><td><span class="chip partial">partial</span></td></tr>
+      <tr><td><code>PARTIAL_MANIPULATION</code>, both below 50%</td><td>The checks differ by 35 points or more, but neither reaches 50% (rare; for example 44% against 0%)</td><td><span class="copy">The checks disagree</span><span class="copy-sub">The picture looks more suspicious than the voice, although neither is clearly manipulated.</span></td><td><span class="chip partial">partial</span></td></tr>
+      <tr><td>One part only</td><td>No speech was found, or no face was found</td><td><span class="copy">Likely genuine / Likely manipulated</span><span class="copy-sub">Only the picture was checked, because no speech was found (or the reverse).</span></td><td>as REAL or FAKE</td></tr>
+      <tr><td><code>INCONCLUSIVE</code></td><td>No face and no speech</td><td><span class="copy">No verdict</span><span class="copy-sub">The tool could not check this clip: no face was found and there is no speech.</span></td><td><span class="chip none">no verdict</span></td></tr>
+      <tr><td>Unfamiliar input (added to any state)</td><td>The face footage or the speech is unlike the tool's training data</td><td><span class="copy">This result may be wrong</span><span class="copy-sub">This clip is unlike the videos the tool learned from. Treat the verdict with caution.</span></td><td><span class="chip caution">caution</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><b>Showing a chance in words:</b> below 50% "leans genuine", 50% or more "leans manipulated", with a note that near 50% means the tool is unsure. These match the system's own cut-off. Do not invent other bands such as "high" or "low": the system has no evidence for them.</p>
+</section>
+
+<section id="learnmore">
+  <h2><span class="n">08</span>The Learn more section</h2>
+  <p>This section holds everything a curious or expert reader needs. The main screen stays simple. It has four parts:</p>
+  <div class="two">
+    <div class="box"><h4>1 · Legend</h4><ul><li>Every term used anywhere in the tool, with a plain definition (<a href="#legend">section 09</a>).</li><li>Terms in the main text can link or show a tooltip that opens their legend entry.</li></ul></div>
+    <div class="box"><h4>2 · Findings for this clip</h4><ul><li>Picture check: chance of manipulation, how many face frames were checked, a sample face crop, the per-frame chart.</li><li>Voice check: chance of manipulation, seconds of speech found, waveform.</li><li>How far apart the two checks were, and the 35-point line for "partly manipulated".</li><li>Each suspicious moment, with its start, end and peak.</li><li>Familiarity: was each part within what the tool knows? In words, with the measured value available.</li><li>The explanation: who wrote it, and whether it passed the automatic check.</li></ul></div>
+    <div class="box"><h4>3 · Technical details</h4><ul><li>The model behind each step (Xception, MTCNN, Silero VAD, wav2vec2, SVM, Llama 3 8B), each with a one-line plain description.</li><li>The model version code and the training data names.</li><li>These stay visible here: the developer wants the technical detail available, just not on the main screen.</li></ul></div>
+    <div class="box"><h4>4 · How accurate is this, and its limits</h4><ul><li>About 83% accuracy (95% range 79% to 86%) on people the tool has not seen, from 400 test videos.</li><li>On a different video collection (Celeb-DF) accuracy fell to 59%, and 29% of genuine videos were wrongly flagged.</li><li>A genuine voice recorded somewhere unfamiliar can be wrongly called synthetic: in one test, all 100 genuine clips from another collection were flagged.</li><li>Covers three common face-manipulation methods, not every method.</li></ul></div>
+  </div>
+</section>
+
+<section id="legend">
+  <h2><span class="n">09</span>Legend of terms (draft content)</h2>
+  <p>Draft definitions to design with. They are accurate to the system; shorten the wording if you need to, but keep the facts.</p>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Term</th><th>Plain definition</th></tr></thead>
+    <tbody>
+      <tr><td class="term">Deepfake</td><td>A video or audio clip changed by software to show someone doing or saying something they did not.</td></tr>
+      <tr><td class="term">Manipulated</td><td>Changed after recording, for example a face swapped, a mouth re-animated or a voice replaced.</td></tr>
+      <tr><td class="term">Picture check</td><td>The part of the tool that looks at the face in each sampled frame. (Technical name: video branch.)</td></tr>
+      <tr><td class="term">Voice check</td><td>The part of the tool that listens to the speech. (Technical name: audio branch.)</td></tr>
+      <tr><td class="term">Chance of manipulation</td><td>The tool's estimate, from 0% to 100%, that a part of the clip was manipulated. It is an estimate, not proof. Near 50% means the tool is unsure. (Technical: P(fake).)</td></tr>
+      <tr><td class="term">Partly manipulated</td><td>The picture and voice checks strongly disagree (35 points or more apart), so only one part may have been changed. The tool names the part that looks more manipulated instead of averaging.</td></tr>
+      <tr><td class="term">Combined score</td><td>When the two checks agree, the tool combines them, giving slightly more weight to the check that was more accurate in testing (voice 54%, picture 46%).</td></tr>
+      <tr><td class="term">No verdict</td><td>The tool could not check the clip at all, for example when there is no face and no speech.</td></tr>
+      <tr><td class="term">Unfamiliar clip</td><td>The face footage or the speech is unlike anything the tool learned from, so its answer is less reliable. The warning does not change the verdict. (Technical: out-of-domain input, measured as a distance from the training data.)</td></tr>
+      <tr><td class="term">Suspicious moments</td><td>Times in the clip where the picture check's estimate was high. The tool can say <i>when</i>, not <i>what</i> looks wrong.</td></tr>
+      <tr><td class="term">Face swap</td><td>One person's face replaced with another's.</td></tr>
+      <tr><td class="term">Lip-sync</td><td>The mouth re-animated to match different words. This tool does not measure lip-sync directly.</td></tr>
+      <tr><td class="term">Voice cloning / synthetic speech</td><td>Speech generated by software to imitate a person or to sound human.</td></tr>
+      <tr><td class="term">Written explanation</td><td>A short summary generated for each clip by an AI language model (Llama 3) from the results only. An automatic check compares it with the results; if it says anything the results do not support, the tool shows standard wording instead.</td></tr>
+      <tr><td class="term">Accuracy</td><td>How often the tool was right in testing. About 83% on people it had not seen, meaning roughly 17 in 100 test videos were judged wrongly.</td></tr>
+      <tr><td class="term">95% range</td><td>The range the true accuracy probably lies in, given the size of the test (79% to 86%). (Technical: confidence interval.)</td></tr>
+      <tr><td class="term">False alarm</td><td>A genuine clip wrongly flagged as manipulated.</td></tr>
+      <tr><td class="term">Training data</td><td>The example videos and recordings the tool learned from: FaceForensics++ (faces) and ASVspoof 2019 (voices).</td></tr>
+      <tr><td class="term">Model</td><td>A trained AI program that does one step. This tool chains six: <b>MTCNN</b> finds faces; <b>Xception</b> judges each face; <b>Silero VAD</b> finds speech; <b>wav2vec2</b> turns speech into numbers; an <b>SVM</b> judges those numbers; <b>Llama 3 8B</b> writes the explanation.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="data">
+  <h2><span class="n">10</span>Data available for every result</h2>
+  <p>What the server already returns, so the design can rely on it. Nothing here needs new analysis.</p>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Field</th><th>Meaning</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td><span class="field">verdict</span></td><td>One of REAL, FAKE, PARTIAL_MANIPULATION, INCONCLUSIVE</td><td>PARTIAL_MANIPULATION</td></tr>
+      <tr><td><span class="field">video.p_fake</span></td><td>Picture check, chance of manipulation (0 to 1), or none</td><td class="num">0.9995</td></tr>
+      <tr><td><span class="field">audio.p_audio_fake</span></td><td>Voice check, chance of manipulation, or none (with <span class="field">audio.gated</span> when no speech)</td><td class="num">0.0007</td></tr>
+      <tr><td><span class="field">fusion.gap</span>, <span class="field">threshold_T</span></td><td>How far apart the checks were, and the 0.35 line</td><td class="num">0.9988 / 0.35</td></tr>
+      <tr><td><span class="field">fusion.implicated_modality</span></td><td>The part named when partly manipulated</td><td>video</td></tr>
+      <tr><td><span class="field">anomalies[]</span></td><td>Suspicious moments: start, end (seconds), peak</td><td class="num">0.00 to 5.12 s</td></tr>
+      <tr><td><span class="field">video.per_frame[]</span></td><td>Chance per checked face frame (up to 20)</td><td class="num">16 frames</td></tr>
+      <tr><td><span class="field">video.sample_face_png_b64</span></td><td>One cropped face image</td><td>224 × 224 image</td></tr>
+      <tr><td><span class="field">audio.speech_seconds</span>, <span class="field">waveform[]</span></td><td>Seconds of speech found; waveform for drawing</td><td class="num">3.7 s of 4.9 s</td></tr>
+      <tr><td><span class="field">video.ood</span>, <span class="field">audio.ood</span></td><td>Unfamiliar flag, measured distance and limit</td><td class="num">55.3 of limit 99.9</td></tr>
+      <tr><td><span class="field">explanation.text</span>, <span class="field">source</span>, <span class="field">fallback_reason</span></td><td>The explanation, who wrote it (AI model or template), why the template was used</td><td>template</td></tr>
+      <tr><td><span class="field">/api/limitations</span>, <span class="field">/api/evaluation</span></td><td>The limits text and the accuracy tables</td><td>(lists)</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="rules">
+  <h2><span class="n">11</span>Honesty rules (non-negotiable)</h2>
+  <p>This is a forensic tool: a wrong impression can harm a real person. These rules come from the project's evaluation and are tested in its code.</p>
+  <div class="two">
+    <div class="box"><h4><span class="yes">Always</span></h4><ul><li>Say "likely", "chance of", "estimate".</li><li>Show the unfamiliar-clip warning whenever it is raised, at least as prominently as the verdict.</li><li>Show "Not checked" or "No verdict" when a part was not checked, never 0%.</li><li>Show who wrote the explanation.</li><li>Keep the limits one click from every result.</li></ul></div>
+    <div class="box"><h4><span class="no">Never</span></h4><ul><li>Say "fake", "real", "proven" or "confirmed" as a certainty.</li><li>Say <i>what</i> looks wrong at a moment ("the eyes blink oddly"). The tool only knows <i>when</i>; anything else would be invented.</li><li>Name a manipulation method for a clip ("face swap detected"). The tool does not identify methods.</li><li>Hide or soften the warning for a cleaner look.</li><li>Use colour alone to carry the verdict.</li></ul></div>
+  </div>
+</section>
+
+<section id="access">
+  <h2><span class="n">12</span>Accessibility and layout requirements</h2>
+  <ul>
+    <li>Text contrast of at least 4.5:1 (WCAG 2.1 AA) in the dark theme, including labels and captions.</li>
+    <li>Body text at least 15 px; nothing below 13 px.</li>
+    <li>The verdict readable without colour: an icon plus words.</li>
+    <li>Keyboard operable, with visible focus; the player and the moments list reachable by keyboard.</li>
+    <li>Layouts at 1440 px (laptop) and 390 px (phone). On a phone, one column, the verdict first, the example list collapsed.</li>
+    <li>It runs offline on the user's machine: fonts and icons must be bundled, not loaded from the internet.</li>
+  </ul>
+</section>
+
+<section id="scope">
+  <h2><span class="n">13</span>Out of scope for the MVP</h2>
+  <ul>
+    <li>Accounts, sign-in, sharing links, cloud hosting.</li>
+    <li>Checking more than one clip at once, or live streams.</li>
+    <li>Any new detection ability, for example naming the manipulation method, describing what looks wrong, or lip-sync scoring.</li>
+    <li>Changes to the verdict logic, the numbers, or the 35-point line.</li>
+  </ul>
+</section>
+
+<section id="deliverables">
+  <h2 id="deliver"><span class="n">14</span>Deliverables and timing</h2>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Deliverable</th><th>Detail</th><th>Needed by</th></tr></thead>
+    <tbody>
+      <tr><td>Result screen, all states</td><td>The 8 states in section 07, desktop and phone, dark theme</td><td class="num">Fri 25 Sep, evening</td></tr>
+      <tr><td>Start, analysing and Learn more</td><td>Including the legend layout and the tooltip or link pattern for terms</td><td class="num">Fri 25 Sep, evening</td></tr>
+      <tr><td>Accuracy page and History</td><td>A plain summary above the existing tables; ask before removing a result</td><td class="num">Sat 26 Sep, morning</td></tr>
+      <tr><td>Style tokens</td><td>Colours with contrast values, type scale, spacing, the verdict colour set</td><td class="num">with the first screens</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><b>What happens next:</b> the developer builds the design in the existing HTML, CSS and JavaScript (no framework). A second round of user testing runs on the new design on Saturday 26 September, with the same tasks and the same usability questionnaire as round 1, so the two versions can be compared. Round 1 findings on the current interface will be shared as soon as they exist.</p>
+  <p><b>How success is judged:</b> a first-time user can say, without help, (1) what the verdict is, (2) which part is suspect, (3) what a percentage means, and (4) when not to trust the result.</p>
+</section>
+
+<footer>
+  Every number in this brief comes from the project's own evaluation records (24 September 2026). The screenshots show the current interface, v1, which stays unchanged until user-testing round 1 is complete.
+</footer>
+</main>
+</div>

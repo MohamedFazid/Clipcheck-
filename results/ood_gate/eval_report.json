@@ -1,0 +1,247 @@
+{
+ "audio_gate": {
+  "kind": "pooled",
+  "threshold": 43.130489349365234
+ },
+ "video_gate": {
+  "kind": "pooled",
+  "threshold": 99.94376373291016
+ },
+ "sets": {
+  "heldout": {
+   "n_clips": 80,
+   "video_withheld": "2/80",
+   "audio_withheld": "3/76",
+   "video_auc_all": 0.980625,
+   "video_auc_kept": 0.9835526315789473,
+   "audio_auc_all": 1.0,
+   "audio_auc_kept": 1.0,
+   "ungated": {
+    "n": 80,
+    "verdicts": {
+     "REAL": 22,
+     "PARTIAL_MANIPULATION": 39,
+     "FAKE": 19
+    },
+    "coverage": 1.0,
+    "accuracy_all_clips": 0.925,
+    "accuracy_on_answered": 0.925,
+    "confident_wrong": 6,
+    "RVFA_names_audio": 0.9,
+    "FVRA_names_video": 0.75
+   },
+   "gated": {
+    "n": 80,
+    "verdicts": {
+     "REAL": 24,
+     "PARTIAL_MANIPULATION": 36,
+     "FAKE": 20
+    },
+    "coverage": 1.0,
+    "accuracy_all_clips": 0.9,
+    "accuracy_on_answered": 0.9,
+    "confident_wrong": 8,
+    "RVFA_names_audio": 0.75,
+    "FVRA_names_video": 0.75
+   }
+  },
+  "fallback": {
+   "n_clips": 80,
+   "video_withheld": "1/80",
+   "audio_withheld": "3/79",
+   "video_auc_all": 0.983125,
+   "video_auc_kept": 0.9826923076923078,
+   "audio_auc_all": 0.9974358974358974,
+   "audio_auc_kept": 0.9972279972279973,
+   "ungated": {
+    "n": 80,
+    "verdicts": {
+     "REAL": 20,
+     "PARTIAL_MANIPULATION": 46,
+     "FAKE": 14
+    },
+    "coverage": 1.0,
+    "accuracy_all_clips": 0.975,
+    "accuracy_on_answered": 0.975,
+    "confident_wrong": 2,
+    "RVFA_names_audio": 1.0,
+    "FVRA_names_video": 0.95
+   },
+   "gated": {
+    "n": 80,
+    "verdicts": {
+     "REAL": 21,
+     "PARTIAL_MANIPULATION": 45,
+     "FAKE": 14
+    },
+    "coverage": 1.0,
+    "accuracy_all_clips": 0.9625,
+    "accuracy_on_answered": 0.9625,
+    "confident_wrong": 3,
+    "RVFA_names_audio": 0.95,
+    "FVRA_names_video": 0.95
+   }
+  },
+  "lavdf": {
+   "n_clips": 200,
+   "video_withheld": "109/200",
+   "audio_withheld": "185/200",
+   "video_auc_all": 0.3769,
+   "video_auc_kept": 0.39460784313725494,
+   "audio_auc_all": 0.5221,
+   "audio_auc_kept": 0.5535714285714286,
+   "ungated": {
+    "n": 200,
+    "verdicts": {
+     "FAKE": 116,
+     "PARTIAL_MANIPULATION": 84
+    },
+    "coverage": 1.0,
+    "accuracy_all_clips": 0.75,
+    "accuracy_on_answered": 0.75,
+    "confident_wrong": 50,
+    "RVFA_names_audio": 0.42,
+    "FVRA_names_video": 0.0
+   },
+   "gated": {
+    "n": 200,
+    "verdicts": {
+     "FAKE": 82,
+     "INCONCLUSIVE": 95,
+     "REAL": 22,
+     "PARTIAL_MANIPULATION": 1
+    },
+    "coverage": 0.525,
+    "accuracy_all_clips": 0.285,
+    "accuracy_on_answered": 0.5428571428571428,
+    "confident_wrong": 48,
+    "RVFA_names_audio": 0.0,
+    "FVRA_names_video": 0.0
+   }
+  },
+  "lavdf_dev": {
+   "n_clips": 200,
+   "video_withheld": "63/200",
+   "audio_withheld": "176/200",
+   "video_auc_all": 0.46210000000000007,
+   "video_auc_kept": 0.4733247972684593,
+   "audio_auc_all": 0.65,
+   "audio_auc_kept": 0.8571428571428571,
+   "ungated": {
+    "n": 200,
+    "verdicts": {
+     "PARTIAL_MANIPULATION": 113,
+     "FAKE": 87
+    },
+    "coverage": 1.0,
+    "accuracy_all_clips": 0.75,
+    "accuracy_on_answered": 0.75,
+    "confident_wrong": 50,
+    "RVFA_names_audio": 0.72,
+    "FVRA_names_video": 0.0
+   },
+   "gated": {
+    "n": 200,
+    "verdicts": {
+     "FAKE": 76,
+     "REAL": 58,
+     "INCONCLUSIVE": 53,
+     "PARTIAL_MANIPULATION": 13
+    },
+    "coverage": 0.735,
+    "accuracy_all_clips": 0.365,
+    "accuracy_on_answered": 0.4965986394557823,
+    "confident_wrong": 74,
+    "RVFA_names_audio": 0.06,
+    "FVRA_names_video": 0.0
+   }
+  },
+  "timit": {
+   "n_clips": 20,
+   "video_withheld": "0/20",
+   "audio_withheld": "20/20",
+   "video_auc_all": null,
+   "video_auc_kept": null,
+   "audio_auc_all": null,
+   "audio_auc_kept": null,
+   "ungated": {
+    "n": 20,
+    "verdicts": {
+     "PARTIAL_MANIPULATION": 16,
+     "FAKE": 4
+    },
+    "coverage": 1.0,
+    "accuracy_all_clips": 1.0,
+    "accuracy_on_answered": 1.0,
+    "confident_wrong": 0,
+    "FVRA_names_video": 0.0
+   },
+   "gated": {
+    "n": 20,
+    "verdicts": {
+     "REAL": 14,
+     "FAKE": 6
+    },
+    "coverage": 1.0,
+    "accuracy_all_clips": 0.3,
+    "accuracy_on_answered": 0.3,
+    "confident_wrong": 14,
+    "FVRA_names_video": 0.0
+   }
+  },
+  "celebdf": {
+   "n_clips": 100,
+   "video_withheld": "12/100",
+   "audio_withheld": "0/0",
+   "video_auc_all": 0.6384,
+   "video_auc_kept": 0.6697722567287785,
+   "audio_auc_all": null,
+   "audio_auc_kept": null,
+   "ungated": {
+    "n": 100,
+    "verdicts": {
+     "REAL": 59,
+     "FAKE": 41
+    },
+    "coverage": 1.0,
+    "accuracy_all_clips": 0.61,
+    "accuracy_on_answered": 0.61,
+    "confident_wrong": 39
+   },
+   "gated": {
+    "n": 100,
+    "verdicts": {
+     "REAL": 52,
+     "FAKE": 36,
+     "INCONCLUSIVE": 12
+    },
+    "coverage": 0.88,
+    "accuracy_all_clips": 0.56,
+    "accuracy_on_answered": 0.6363636363636364,
+    "confident_wrong": 32
+   }
+  },
+  "veo": {
+   "n_clips": 5,
+   "video_withheld": "0/5",
+   "audio_withheld": "3/3",
+   "video_auc_all": null,
+   "video_auc_kept": null,
+   "audio_auc_all": null,
+   "audio_auc_kept": null
+  }
+ },
+ "criteria": {
+  "a_in_domain_abstention_video": 0.01875,
+  "a_video_passes": true,
+  "a_in_domain_abstention_audio": 0.03870967741935484,
+  "a_audio_passes": true,
+  "b_heldout_accuracy_drop_pp": 2.500000000000002,
+  "b_passes": false,
+  "c_lavdf_confident_wrong": [
+   50,
+   48
+  ],
+  "c_passes": true
+ }
+}

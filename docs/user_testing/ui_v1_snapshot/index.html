@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Multimodal Deepfake Detector</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span class="brand-name">Multimodal Deepfake Detector</span></div>
+  <nav class="topnav">
+    <button class="nav-btn active" data-view="analyze">Analyze</button>
+    <button class="nav-btn" data-view="history">History</button>
+    <button class="nav-btn" data-view="evaluation">Evaluation</button>
+  </nav>
+</div>
+
+<div class="appbody">
+
+  <!-- ── Sidebar ─────────────────────────────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="sidebar-section-label">Queue</div>
+    <div class="upload-row">
+      <label class="upload-btn">
+        + Upload video
+        <input type="file" id="file-input" accept=".mp4,.mov,.avi,.mkv" hidden />
+      </label>
+      <div id="upload-notice" class="upload-notice" role="alert" hidden></div>
+    </div>
+    <div id="queue-list" class="queue-list"></div>
+
+    <button class="sidebar-section-label demo-toggle" id="demo-toggle">
+      Demo clips <span id="demo-chevron">&#9656;</span>
+    </button>
+    <div id="demo-list" class="queue-list demo-list" hidden></div>
+
+    <div class="sidebar-footer" id="model-info"></div>
+  </aside>
+
+  <!-- ── Main: Analyze view ─────────────────────────────────────────────── -->
+  <main class="view" id="view-analyze">
+
+    <section class="player-wrap">
+      <div class="player" id="player">
+        <video id="video-el" playsinline></video>
+        <div class="empty-state" id="empty-state">
+          <div class="empty-grid"></div>
+          <div class="empty-person">&#9787;</div>
+          <div class="empty-text">No video loaded</div>
+        </div>
+        <div class="verdict-stamp" id="verdict-stamp" hidden></div>
+        <div class="timecode-overlay" id="timecode-overlay" hidden>0:00 / 0:00</div>
+        <div class="analyzing-backdrop" id="analyzing-backdrop" hidden></div>
+        <div class="scan-line" id="scan-line" hidden></div>
+        <div class="analyzing-content" id="analyzing-content" hidden>
+          <div class="analyzing-ring"></div>
+          <div class="analyzing-text" id="analyzing-text">Analysing 0%</div>
+        </div>
+      </div>
+
+      <div class="controls" id="controls">
+        <div class="progress-track" id="progress-track">
+          <div class="progress-fill" id="progress-fill"></div>
+          <div class="anomaly-ticks" id="anomaly-ticks"></div>
+        </div>
+        <div class="control-row">
+          <div class="control-row-left">
+            <button class="ctrl-btn" id="btn-back10" title="Back 10s">&#171;</button>
+            <button class="ctrl-btn ctrl-btn-play" id="btn-play" title="Play/Pause">&#9658;</button>
+            <button class="ctrl-btn" id="btn-fwd10" title="Forward 10s">&#187;</button>
+            <span class="time-display" id="time-display">0:00 / 0:00</span>
+          </div>
+          <div class="control-row-right">
+            <input type="range" id="volume" class="volume-slider" min="0" max="1" step="0.05" value="1" title="Volume" />
+            <button class="ctrl-btn" id="btn-download" title="Download">&#8681;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual / Audio / Report all live inside this one scrollable panel. -->
+    <section class="analysis-panel">
+      <div id="overview-loading" class="skeleton" hidden></div>
+      <div id="overview-body"></div>
+
+      <div class="section-divider">Visual</div>
+      <div id="visual-body"></div>
+
+      <div class="section-divider">Audio</div>
+      <div id="audio-body"></div>
+
+      <div class="section-divider">Report</div>
+      <div id="report-body"></div>
+      <div class="report-actions">
+        <button class="pill-btn" id="btn-copy-json">Copy JSON</button>
+        <button class="pill-btn" id="btn-export-pdf">Export PDF</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── History view ────────────────────────────────────────────────────── -->
+  <main class="view" id="view-history" hidden>
+    <h2 class="view-title">History</h2>
+    <table class="history-table">
+      <thead><tr><th>File</th><th>Verdict</th><th>Duration</th><th>Analyzed</th></tr></thead>
+      <tbody id="history-body"></tbody>
+    </table>
+  </main>
+
+  <!-- ── Evaluation view: results behind the app, read from results/numbers.json ── -->
+  <main class="view view-scroll" id="view-evaluation" hidden>
+    <h2 class="view-title">Evaluation</h2>
+    <div id="evaluation-body" class="eval-body"><p class="muted">Loading&hellip;</p></div>
+  </main>
+
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "source": "Dataset source: HELD-OUT self-constructed set: FF++ c23 video drawn ONLY from the test partition of data_splits/split_v2_identity_grouped.json, muxed with ASVspoof 2019 LA eval audio. NOT FakeAVCeleb. Supersedes eval_fallback/ for every claim about the video branch; eval_fallback/ is kept as the in-distribution version.. Never report this as a FakeAVCeleb result unless the manifest's own source field says so.",
+  "method": "Grid search over |p_video - p_audio| >= T as the disagreement predictor, F1 against ground truth (RVFA/FVRA = should disagree, RVRA/FVFA = should not).",
+  "candidates": [
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6
+  ],
+  "best_T": 0.35,
+  "best_F1": 0.9091,
+  "best_precision": 0.8974,
+  "best_recall": 0.9211,
+  "confusion": {
+    "TP": 35,
+    "FP": 4,
+    "FN": 3,
+    "TN": 34
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "version": "v1",
+  "captured_at": "2026-09-24T18:31:10+08:00",
+  "screens": [
+    {
+      "file": "01_empty_desktop.png",
+      "state": "empty",
+      "viewport": "desktop",
+      "shows": "first screen, nothing selected (task 1)",
+      "verdict": null
+    },
+    {
+      "file": "02_real_real_desktop.png",
+      "state": "real_real",
+      "viewport": "desktop",
+      "shows": "clear REAL result (task 2)",
+      "verdict": "REAL"
+    },
+    {
+      "file": "02_real_real_desktop_explanation.png",
+      "state": "real_real (scrolled to explanation)",
+      "viewport": "desktop",
+      "shows": "clear REAL result (task 2)",
+      "verdict": "REAL"
+    },
+    {
+      "file": "03_partial_video_desktop.png",
+      "state": "partial_video",
+      "viewport": "desktop",
+      "shows": "PARTIAL_MANIPULATION naming the video (tasks 3 and 4)",
+      "verdict": "PARTIAL_MANIPULATION"
+    },
+    {
+      "file": "03_partial_video_desktop_explanation.png",
+      "state": "partial_video (scrolled to explanation)",
+      "viewport": "desktop",
+      "shows": "PARTIAL_MANIPULATION naming the video (tasks 3 and 4)",
+      "verdict": "PARTIAL_MANIPULATION"
+    },
+    {
+      "file": "04_fake_timing_desktop.png",
+      "state": "fake_timing",
+      "viewport": "desktop",
+      "shows": "FAKE with timing in the explanation (task 5)",
+      "verdict": "FAKE"
+    },
+    {
+      "file": "04_fake_timing_desktop_explanation.png",
+      "state": "fake_timing (scrolled to explanation)",
+      "viewport": "desktop",
+      "shows": "FAKE with timing in the explanation (task 5)",
+      "verdict": "FAKE"
+    },
+    {
+      "file": "05_inconclusive_desktop.png",
+      "state": "inconclusive",
+      "viewport": "desktop",
+      "shows": "INCONCLUSIVE for a no-face silent upload (task 6)",
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "file": "05_inconclusive_desktop_explanation.png",
+      "state": "inconclusive (scrolled to explanation)",
+      "viewport": "desktop",
+      "shows": "INCONCLUSIVE for a no-face silent upload (task 6)",
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "file": "06_unfamiliar_desktop.png",
+      "state": "unfamiliar",
+      "viewport": "desktop",
+      "shows": "unfamiliar-input caution on a wrong verdict (task 7)",
+      "verdict": "FAKE"
+    },
+    {
+      "file": "06_unfamiliar_desktop_explanation.png",
+      "state": "unfamiliar (scrolled to explanation)",
+      "viewport": "desktop",
+      "shows": "unfamiliar-input caution on a wrong verdict (task 7)",
+      "verdict": "FAKE"
+    },
+    {
+      "file": "07_evaluation_desktop.png",
+      "state": "evaluation",
+      "viewport": "desktop",
+      "shows": "Evaluation tab (task 8)",
+      "verdict": null
+    },
+    {
+      "file": "01_empty_mobile.png",
+      "state": "empty",
+      "viewport": "mobile",
+      "shows": "first screen, nothing selected (task 1)",
+      "verdict": null
+    },
+    {
+      "file": "02_real_real_mobile.png",
+      "state": "real_real",
+      "viewport": "mobile",
+      "shows": "clear REAL result (task 2)",
+      "verdict": "REAL"
+    },
+    {
+      "file": "02_real_real_mobile_explanation.png",
+      "state": "real_real (scrolled to explanation)",
+      "viewport": "mobile",
+      "shows": "clear REAL result (task 2)",
+      "verdict": "REAL"
+    },
+    {
+      "file": "03_partial_video_mobile.png",
+      "state": "partial_video",
+      "viewport": "mobile",
+      "shows": "PARTIAL_MANIPULATION naming the video (tasks 3 and 4)",
+      "verdict": "PARTIAL_MANIPULATION"
+    },
+    {
+      "file": "03_partial_video_mobile_explanation.png",
+      "state": "partial_video (scrolled to explanation)",
+      "viewport": "mobile",
+      "shows": "PARTIAL_MANIPULATION naming the video (tasks 3 and 4)",
+      "verdict": "PARTIAL_MANIPULATION"
+    },
+    {
+      "file": "04_fake_timing_mobile.png",
+      "state": "fake_timing",
+      "viewport": "mobile",
+      "shows": "FAKE with timing in the explanation (task 5)",
+      "verdict": "FAKE"
+    },
+    {
+      "file": "04_fake_timing_mobile_explanation.png",
+      "state": "fake_timing (scrolled to explanation)",
+      "viewport": "mobile",
+      "shows": "FAKE with timing in the explanation (task 5)",
+      "verdict": "FAKE"
+    },
+    {
+      "file": "05_inconclusive_mobile.png",
+      "state": "inconclusive",
+      "viewport": "mobile",
+      "shows": "INCONCLUSIVE for a no-face silent upload (task 6)",
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "file": "05_inconclusive_mobile_explanation.png",
+      "state": "inconclusive (scrolled to explanation)",
+      "viewport": "mobile",
+      "shows": "INCONCLUSIVE for a no-face silent upload (task 6)",
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "file": "06_unfamiliar_mobile.png",
+      "state": "unfamiliar",
+      "viewport": "mobile",
+      "shows": "unfamiliar-input caution on a wrong verdict (task 7)",
+      "verdict": "FAKE"
+    },
+    {
+      "file": "06_unfamiliar_mobile_explanation.png",
+      "state": "unfamiliar (scrolled to explanation)",
+      "viewport": "mobile",
+      "shows": "unfamiliar-input caution on a wrong verdict (task 7)",
+      "verdict": "FAKE"
+    },
+    {
+      "file": "07_evaluation_mobile.png",
+      "state": "evaluation",
+      "viewport": "mobile",
+      "shows": "Evaluation tab (task 8)",
+      "verdict": null
+    }
+  ]
+}

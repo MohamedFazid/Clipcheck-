@@ -1,0 +1,844 @@
+{
+  "generated_at": "2026-09-25T20:14:19+08:00",
+  "files": [
+    "survey_P1_round1.csv",
+    "survey_P2_round1.csv",
+    "survey_P3_round1.csv",
+    "survey_P4_round1.csv",
+    "survey_P5_round2.csv",
+    "survey_P6_round2.csv",
+    "survey_P7_round2.csv",
+    "survey_P8_round2.csv"
+  ],
+  "rounds": {
+    "1": {
+      "n": 4,
+      "participants": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "forms": {
+        "P1": "short",
+        "P2": "short",
+        "P3": "short",
+        "P4": "short"
+      },
+      "sus": {
+        "P1": 60.0,
+        "P2": 60.0,
+        "P3": 60.0,
+        "P4": 47.5
+      },
+      "sus_median": 60.0,
+      "sus_mean": 56.9,
+      "tasks": {
+        "T1": {
+          "outcomes": {
+            "not recorded": 4
+          },
+          "ease_median_1_to_7": null,
+          "ease_values": [],
+          "understood_purpose": {
+            "not recorded": 4
+          },
+          "notes": {
+            "P1": "",
+            "P2": "",
+            "P3": "",
+            "P4": ""
+          }
+        },
+        "T2": {
+          "outcomes": {
+            "done with a hint": 3,
+            "done unaided": 1
+          },
+          "ease_median_1_to_7": 6.0,
+          "ease_values": [
+            6,
+            6,
+            6,
+            7
+          ],
+          "found_verdict": {
+            "yes": 4
+          },
+          "notes": {
+            "P1": "its easy to upload as there is an upload button right there\n",
+            "P2": "found the button easily \n",
+            "P3": "found the button easily \n",
+            "P4": "button made it obvious to do\n"
+          }
+        },
+        "T3": {
+          "outcomes": {
+            "done unaided": 3,
+            "done with a hint": 1
+          },
+          "ease_median_1_to_7": 4.0,
+          "ease_values": [
+            3,
+            6,
+            4,
+            4
+          ],
+          "named_part": {
+            "could not say": 1,
+            "the video": 3
+          },
+          "would_publish": {
+            "unsure": 3,
+            "yes": 1
+          },
+          "notes": {
+            "P1": "the partial fake video should come with a conclusive decision if it is real or fake not in between",
+            "P2": "it did it by itself and it is quite accurate",
+            "P3": "it did it by itself and it is quite accurate",
+            "P4": "it did it by itself but reading the tols was abit complicated as i am unfamilliar with the terminology"
+          }
+        },
+        "T4": {
+          "outcomes": {
+            "not recorded": 4
+          },
+          "ease_median_1_to_7": null,
+          "ease_values": [],
+          "score_reading": {
+            "not recorded": 4
+          },
+          "notes": {
+            "P1": "",
+            "P2": "",
+            "P3": "",
+            "P4": ""
+          }
+        },
+        "T5": {
+          "outcomes": {
+            "not recorded": 4
+          },
+          "ease_median_1_to_7": null,
+          "ease_values": [],
+          "found_time": {
+            "not recorded": 4
+          },
+          "noticed_badge": {
+            "not recorded": 4
+          },
+          "wanted_what": {
+            "not recorded": 4
+          },
+          "notes": {
+            "P1": "",
+            "P2": "",
+            "P3": "",
+            "P4": ""
+          }
+        },
+        "T6": {
+          "outcomes": {
+            "not recorded": 4
+          },
+          "ease_median_1_to_7": null,
+          "ease_values": [],
+          "uploaded_unaided": {
+            "not recorded": 4
+          },
+          "inconclusive_reading": {
+            "not recorded": 4
+          },
+          "notes": {
+            "P1": "",
+            "P2": "",
+            "P3": "",
+            "P4": ""
+          }
+        },
+        "T7": {
+          "outcomes": {
+            "done with a hint": 2,
+            "done unaided": 2
+          },
+          "ease_median_1_to_7": 6.0,
+          "ease_values": [
+            4,
+            6,
+            6,
+            6
+          ],
+          "saw_warning": {
+            "yes, after a hint": 2,
+            "yes, unprompted": 2
+          },
+          "lowered_trust": {
+            "partly": 1,
+            "yes": 3
+          },
+          "notes": {
+            "P1": "it doesnt explain enough which part is fake ",
+            "P2": "its good but could be better with answering why it is fake more better",
+            "P3": "its good but could be better with answering why it is fake more better",
+            "P4": "its good but could explain in layman terms"
+          }
+        },
+        "T8": {
+          "outcomes": {
+            "not done": 1,
+            "done unaided": 2,
+            "done with a hint": 1
+          },
+          "ease_median_1_to_7": 1.0,
+          "ease_values": [
+            1,
+            1,
+            1,
+            3
+          ],
+          "found_limits": {
+            "neither": 1,
+            "both": 3
+          },
+          "notes": {
+            "P1": "its not clear where it is how to find it ",
+            "P2": "there is too many things in the evaluation tab and is it really needed for this application?",
+            "P3": "there is too many things in the evaluation tab and to many things in the results panel.",
+            "P4": "there is too many things in the evaluation tab and to many things in the results panel."
+          }
+        },
+        "T9": {
+          "outcomes": {
+            "not recorded": 4
+          },
+          "ease_median_1_to_7": null,
+          "ease_values": [],
+          "found_record": {
+            "not recorded": 4
+          },
+          "notes": {
+            "P1": "",
+            "P2": "",
+            "P3": "",
+            "P4": ""
+          }
+        }
+      },
+      "project": {
+        "Q1": {
+          "median": null,
+          "values": {}
+        },
+        "Q2": {
+          "median": null,
+          "values": {}
+        },
+        "Q3": {
+          "median": null,
+          "values": {}
+        },
+        "Q4": {
+          "median": null,
+          "values": {}
+        },
+        "Q5": {
+          "median": null,
+          "values": {}
+        },
+        "Q6": {
+          "median": null,
+          "values": {}
+        }
+      },
+      "features": {
+        "F_verdict": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        },
+        "F_partial": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        },
+        "F_scores": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        },
+        "F_explanation": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        },
+        "F_timing": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        },
+        "F_warning": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        },
+        "F_limits": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        },
+        "F_evaluation": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        },
+        "F_models": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        },
+        "F_record": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        }
+      },
+      "open": {
+        "O1": {
+          "P1": "the information panel is kind of too complecated i would like it to have lesser info and mostly the important information",
+          "P2": "i dont understand why the evaluation panel is needed",
+          "P3": "too many information in the panels for a first time user",
+          "P4": "the terminology and the results are prsented"
+        },
+        "O2": {
+          "P1": "maybe make the info panel better where is show the results",
+          "P2": "the evaluation panel",
+          "P3": "the evaluation panel and the results panel",
+          "P4": "the explanation panel"
+        },
+        "O3": {
+          "P1": "",
+          "P2": "",
+          "P3": "",
+          "P4": ""
+        },
+        "O4": {
+          "P1": "",
+          "P2": "",
+          "P3": "",
+          "P4": ""
+        },
+        "O5": {
+          "P1": "",
+          "P2": "",
+          "P3": "",
+          "P4": ""
+        }
+      },
+      "facilitator": {
+        "top_problem": {
+          "P1": "the information panel being over complicated",
+          "P2": "the evaluation panel being over complicated",
+          "P3": "the evaluation panel being over complicated and the results panel",
+          "P4": "the evaluation panel being over complicated and the results panel"
+        },
+        "surprise": {
+          "P1": "",
+          "P2": "",
+          "P3": "",
+          "P4": ""
+        },
+        "debrief": {
+          "P1": "they understood why it was there but they said it could have been done better",
+          "P2": "they understood why it was there but they said it could have been done better",
+          "P3": "they understood why it was there but they said it could have been done better",
+          "P4": "they understood why it was there but they said it could have been done better"
+        },
+        "differed": {
+          "P1": "no",
+          "P2": "no",
+          "P3": "no",
+          "P4": "no"
+        }
+      },
+      "background": {
+        "P1": {
+          "background": "Preschool teacher",
+          "ml_background": "yes",
+          "checks_videos": "sometimes"
+        },
+        "P2": {
+          "background": "engineer ",
+          "ml_background": "yes",
+          "checks_videos": "it is part of my job"
+        },
+        "P3": {
+          "background": "veterinary student ",
+          "ml_background": "no",
+          "checks_videos": "never"
+        },
+        "P4": {
+          "background": "med student",
+          "ml_background": "no",
+          "checks_videos": "sometimes"
+        }
+      }
+    },
+    "2": {
+      "n": 4,
+      "participants": [
+        "P5",
+        "P6",
+        "P7",
+        "P8"
+      ],
+      "forms": {
+        "P5": "short",
+        "P6": "short",
+        "P7": "short",
+        "P8": "short"
+      },
+      "sus": {
+        "P5": 87.5,
+        "P6": 87.5,
+        "P7": 90.0,
+        "P8": 90.0
+      },
+      "sus_median": 88.75,
+      "sus_mean": 88.8,
+      "tasks": {
+        "T1": {
+          "outcomes": {
+            "not recorded": 4
+          },
+          "ease_median_1_to_7": null,
+          "ease_values": [],
+          "understood_purpose": {
+            "not recorded": 4
+          },
+          "notes": {
+            "P5": "",
+            "P6": "",
+            "P7": "",
+            "P8": ""
+          }
+        },
+        "T2": {
+          "outcomes": {
+            "done unaided": 4
+          },
+          "ease_median_1_to_7": 6.5,
+          "ease_values": [
+            7,
+            7,
+            6,
+            6
+          ],
+          "found_verdict": {
+            "yes": 4
+          },
+          "notes": {
+            "P5": "there was a big section to tell me where to upload it was very obvious.\n",
+            "P6": "it was easy to find how to upload.",
+            "P7": "yes it was simple to use the app",
+            "P8": "its very straight forward"
+          }
+        },
+        "T3": {
+          "outcomes": {
+            "done unaided": 4
+          },
+          "ease_median_1_to_7": 7.0,
+          "ease_values": [
+            7,
+            7,
+            7,
+            7
+          ],
+          "named_part": {
+            "the video": 4
+          },
+          "would_publish": {
+            "yes": 4
+          },
+          "notes": {
+            "P5": "it detected perfectly and gave a very good reasoning why it detected it like that\n",
+            "P6": "pretty accurate with the results",
+            "P7": "yes, the app seems to be very easy for new users to use and it is showing accurate results consistently.",
+            "P8": "the app is well design keeping in mind of the user and how they would use the app"
+          }
+        },
+        "T4": {
+          "outcomes": {
+            "not recorded": 4
+          },
+          "ease_median_1_to_7": null,
+          "ease_values": [],
+          "score_reading": {
+            "not recorded": 4
+          },
+          "notes": {
+            "P5": "",
+            "P6": "",
+            "P7": "",
+            "P8": ""
+          }
+        },
+        "T5": {
+          "outcomes": {
+            "not recorded": 4
+          },
+          "ease_median_1_to_7": null,
+          "ease_values": [],
+          "found_time": {
+            "not recorded": 4
+          },
+          "noticed_badge": {
+            "not recorded": 4
+          },
+          "wanted_what": {
+            "not recorded": 4
+          },
+          "notes": {
+            "P5": "",
+            "P6": "",
+            "P7": "",
+            "P8": ""
+          }
+        },
+        "T6": {
+          "outcomes": {
+            "not recorded": 4
+          },
+          "ease_median_1_to_7": null,
+          "ease_values": [],
+          "uploaded_unaided": {
+            "not recorded": 4
+          },
+          "inconclusive_reading": {
+            "not recorded": 4
+          },
+          "notes": {
+            "P5": "",
+            "P6": "",
+            "P7": "",
+            "P8": ""
+          }
+        },
+        "T7": {
+          "outcomes": {
+            "done unaided": 2,
+            "done with a hint": 2
+          },
+          "ease_median_1_to_7": 6.5,
+          "ease_values": [
+            7,
+            7,
+            5,
+            6
+          ],
+          "saw_warning": {
+            "yes, unprompted": 2,
+            "yes, after a hint": 2
+          },
+          "lowered_trust": {
+            "no": 4
+          },
+          "notes": {
+            "P5": "it was easy to use and gave accurate results",
+            "P6": "this was easy and i think it is pretty trustable ",
+            "P7": "yes although it is pretty accurate sometimes there are some flaws in the results",
+            "P8": "this app is quite trustable but still needs more work to be done here to make the accuracy to 100%"
+          }
+        },
+        "T8": {
+          "outcomes": {
+            "done with a hint": 3,
+            "done unaided": 1
+          },
+          "ease_median_1_to_7": 6.0,
+          "ease_values": [
+            6,
+            6,
+            6,
+            7
+          ],
+          "found_limits": {
+            "both": 1,
+            "the limits panel under the result": 3
+          },
+          "notes": {
+            "P5": "the information given were very detailed and precise and understandable",
+            "P6": " i feel that this is a trustable source to detect fake online content",
+            "P7": "the learn more tab explains what each model does and more info of how it got the results which is very helpful",
+            "P8": "the learn more tab is very useful for a first time user"
+          }
+        },
+        "T9": {
+          "outcomes": {
+            "not recorded": 4
+          },
+          "ease_median_1_to_7": null,
+          "ease_values": [],
+          "found_record": {
+            "not recorded": 4
+          },
+          "notes": {
+            "P5": "",
+            "P6": "",
+            "P7": "",
+            "P8": ""
+          }
+        }
+      },
+      "project": {
+        "Q1": {
+          "median": null,
+          "values": {}
+        },
+        "Q2": {
+          "median": null,
+          "values": {}
+        },
+        "Q3": {
+          "median": null,
+          "values": {}
+        },
+        "Q4": {
+          "median": null,
+          "values": {}
+        },
+        "Q5": {
+          "median": null,
+          "values": {}
+        },
+        "Q6": {
+          "median": null,
+          "values": {}
+        }
+      },
+      "features": {
+        "F_verdict": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        },
+        "F_partial": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        },
+        "F_scores": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        },
+        "F_explanation": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        },
+        "F_timing": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        },
+        "F_warning": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        },
+        "F_limits": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        },
+        "F_evaluation": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        },
+        "F_models": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        },
+        "F_record": {
+          "median": null,
+          "not_noticed": 0,
+          "asked": 0,
+          "values": []
+        }
+      },
+      "open": {
+        "O1": {
+          "P5": "very user friendly",
+          "P6": "its easy to use and accurate",
+          "P7": "i feel that this app has everything needed to use stated clearly but there might be too many informations in the learn more tab",
+          "P8": "its quite straight forward as everything is laid out perfectly"
+        },
+        "O2": {
+          "P5": "nothing much",
+          "P6": "it works fine ",
+          "P7": "maybe reduce the amount of information on the learn more tab",
+          "P8": "the information tab might be too long and extensive "
+        },
+        "O3": {
+          "P5": "",
+          "P6": "",
+          "P7": "",
+          "P8": ""
+        },
+        "O4": {
+          "P5": "",
+          "P6": "",
+          "P7": "",
+          "P8": ""
+        },
+        "O5": {
+          "P5": "",
+          "P6": "",
+          "P7": "",
+          "P8": ""
+        }
+      },
+      "facilitator": {
+        "top_problem": {
+          "P5": "nothing much",
+          "P6": "this is good positive feedback",
+          "P7": "its a really good feedback with good and learning points to improve this app where there is alot more information in the legend to let new users know what is going on in the app",
+          "P8": "its aa good feedback to learn from and there are mostly positive things in it"
+        },
+        "surprise": {
+          "P5": "",
+          "P6": "",
+          "P7": "",
+          "P8": ""
+        },
+        "debrief": {
+          "P5": "they were pleased with the way it looks and works",
+          "P6": "it was a good reaction",
+          "P7": "it was a good reaction",
+          "P8": "it was a good reaction"
+        },
+        "differed": {
+          "P5": "no",
+          "P6": "no",
+          "P7": "no",
+          "P8": "no"
+        }
+      },
+      "background": {
+        "P5": {
+          "background": "financial advisor",
+          "ml_background": "no",
+          "checks_videos": "never"
+        },
+        "P6": {
+          "background": "unemployed",
+          "ml_background": "no",
+          "checks_videos": "never"
+        },
+        "P7": {
+          "background": "business student ",
+          "ml_background": "no",
+          "checks_videos": "sometimes"
+        },
+        "P8": {
+          "background": "Accounting student",
+          "ml_background": "no",
+          "checks_videos": "sometimes"
+        }
+      }
+    }
+  },
+  "round1_vs_round2": {
+    "sus_median": [
+      60.0,
+      88.75
+    ],
+    "project_median": {
+      "Q1": [
+        null,
+        null
+      ],
+      "Q2": [
+        null,
+        null
+      ],
+      "Q3": [
+        null,
+        null
+      ],
+      "Q4": [
+        null,
+        null
+      ],
+      "Q5": [
+        null,
+        null
+      ],
+      "Q6": [
+        null,
+        null
+      ]
+    },
+    "task_ease_median": {
+      "T1": [
+        null,
+        null
+      ],
+      "T2": [
+        6.0,
+        6.5
+      ],
+      "T3": [
+        4.0,
+        7.0
+      ],
+      "T4": [
+        null,
+        null
+      ],
+      "T5": [
+        null,
+        null
+      ],
+      "T6": [
+        null,
+        null
+      ],
+      "T7": [
+        6.0,
+        6.5
+      ],
+      "T8": [
+        1.0,
+        6.0
+      ],
+      "T9": [
+        null,
+        null
+      ]
+    },
+    "same_participants_in_both": []
+  }
+}
